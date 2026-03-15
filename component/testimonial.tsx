@@ -115,7 +115,7 @@ export default function Testimonials() {
                         aria-selected={activeTab === "dummy"}
                         role="tab"
                     >
-                        Another Tab
+                        What Our Students Say
                     </button>
                 </div>
                 <div role="tabpanel" aria-labelledby={activeTab} className="max-w-6xl mx-auto ">

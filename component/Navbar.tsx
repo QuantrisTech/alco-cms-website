@@ -14,17 +14,17 @@ const menuData = [
   {
     name: "Program",
     submenu: [
-      { name: "Program 1", link: "/program1" },
-      { name: "Program 2", link: "/program2" },
-      { name: "Program 3", link: "/program3" },
-      { name: "Program 4", link: "/program4" },
+      { name: "Program 1", link: "/program/program-1" },
+      { name: "Program 2", link: "/program/program-2" },
+      { name: "Program 3", link: "/program/program-3" },
+      { name: "Program 4", link: "/program/program-4" },
     ],
   },
 
   {
     name: "About Us",
     submenu: [
-      { name: "Our Mission", link: "/mission" },
+      { name: "Our Mission", link: "/our-mission" },
       { name: "FAQs", link: "/faqs" },
     ],
   },
