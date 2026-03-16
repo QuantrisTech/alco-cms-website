@@ -22,7 +22,7 @@ export default function ConditionalLayout({
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, [pathname]);
@@ -35,10 +35,10 @@ export default function ConditionalLayout({
     <>
       {!hideLayout && <Navbar />}
       {children}
-      {/* <FloatingChatButton
-        whatsappNumber="1234567890"
-        phoneNumber="+1234567890"
-      /> */}
+      <FloatingChatButton
+        whatsappNumber="18886814808"
+        phoneNumber="+18886814808"
+      />
       {!hideLayout && <Footer />}
     </>
   );

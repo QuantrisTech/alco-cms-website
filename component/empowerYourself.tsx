@@ -55,15 +55,15 @@ export default function EmpowerYourself() {
             {data.description}
           </p>
         </div>
-        <div className="flex flex-col space-y-16 my-16">
+        <div className="flex flex-col space-y-6 md:space-y-8 lg:space-y-12 xl:space-y-16 my-6 md:my-8 lg:my-12 xl:my-16 ">
           {data.points.map((point, index) => (
-            <div key={index} className="grid grid-cols-12 gap-10 lg:gap-12 xl:gap-14 2xl:gap-16 ">
+            <div key={index} className="grid grid-cols-12 gap-8 lg:gap-10 xl:gap-12 2xl:gap-14 ">
               <div
-                className={`col-span-12 lg:col-span-5 ${index % 2 !== 0 ? "lg:order-2" : ""
+                className={`col-span-12 lg:col-span-5 xl:col-span-6 ${index % 2 !== 0 ? "lg:order-2" : ""
                   }`}>
-                <img src={point.image.src} alt={point.image.alt} className="object-cover shadow-xl max-h-[450px] w-full rounded-lg" />
+                <img src={point.image.src} alt={point.image.alt} className="xl:object-top object-cover shadow-xl max-h-[350px] lg:max-h-[450px] w-full rounded-lg" />
               </div>
-              <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
+              <div className="col-span-12 lg:col-span-7 xl:col-span-6 flex flex-col justify-center">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-outfit text-primary text-start mb-4 ">
                   {point.title}
                 </h3>

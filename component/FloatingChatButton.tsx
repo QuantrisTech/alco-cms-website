@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { HiOutlineChatBubbleLeftRight, HiOutlinePhone } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 
 interface FloatingChatButtonProps {
   whatsappNumber: string;
@@ -14,39 +17,39 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
 
   return (
     <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end">
-      {/* Main button */}
-      <button
-        onClick={() => setShowOptions(!showOptions)}
-        className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
-      >
-        💬
-      </button>
-
       {/* Options menu */}
       {showOptions && (
-        <div className="flex flex-col space-y-2 mt-2 animate-slide-up">
+        <div className="flex flex-col space-y-4 mb-4 animate-slide-up">
           <a
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 transition"
+            aria-label="WhatsApp"
+            className="bg-emerald-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-green-800 transition"
           >
-            WhatsApp
+            <FaWhatsapp size={28} />
           </a>
           <a
             href={`tel:${phoneNumber}`}
-            className="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow hover:bg-yellow-600 transition"
+            className="bg-cyan-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-cyan-800 transition"
           >
-            Phone
+            <HiOutlinePhone size={24} />
           </a>
-          <button
-            onClick={() => setShowOptions(false)}
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-600 transition"
-          >
-            Hide
-          </button>
         </div>
       )}
+
+      {/* Main button */}
+      {!showOptions ? (<button
+        onClick={() => setShowOptions(!showOptions)}
+        className="bg-sky-600/80 drop-shadow-2xl bg-cover bg-right-top text-white h-12 w-12 border  flex justify-center items-center rounded-full shadow-2xl transition"
+      >
+        <HiOutlineChatBubbleLeftRight size={28} />
+      </button>) : <button
+        onClick={() => setShowOptions(false)}
+        className="bg-black/60 drop-shadow-2xl bg-cover bg-right-top text-white h-12 w-12 flex justify-center items-center rounded-full shadow-2xl transition"
+      >
+        <IoMdClose size={28} />
+      </button>}
     </div>
   );
 };

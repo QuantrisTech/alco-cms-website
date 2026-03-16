@@ -1,27 +1,8 @@
+import LevelIntroWithVideo from "@/component/levelIntroWithVideo";
+import { ProgramType } from "@/type/programType";
 import { notFound } from "next/navigation";
-
-const programs = [
-  {
-    slug: "program-1",
-    title: "Program 1",
-    description: "This is Program 1 details page",
-  },
-  {
-    slug: "program-2",
-    title: "Program 2",
-    description: "This is Program 2 details page",
-  },
-  {
-    slug: "program-3",
-    title: "Program 3",
-    description: "This is Program 3 details page",
-  },
-  {
-    slug: "program-4",
-    title: "Program 4",
-    description: "This is Program 4 details page",
-  },
-];
+import { programs } from "@/app/program/[slug]/data";
+import Banner from "@/component/banner";
 
 export default async function ProgramDetail({
   params,
@@ -36,9 +17,11 @@ export default async function ProgramDetail({
   if (!program) return notFound();
 
   return (
-    <div className="container mx-auto py-20">
-      <h1 className="text-4xl font-bold mb-4">{program.title}</h1>
-      <p>{program.description}</p>
+    <div>
+      {/* <h1 className="text-4xl font-bold mb-4">{program.title}</h1>
+      <p>{program.description}</p> */}
+      <Banner data={program.BannerData} />
+      <LevelIntroWithVideo data={program.LevelIntroWithVideoData} />
     </div>
   );
 }

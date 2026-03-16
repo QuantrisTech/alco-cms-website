@@ -41,7 +41,8 @@ module.exports = {
         "medium-neutral": "url('@/assets/background/medium-neutral.webp')",
         "gradient-dark-primary-to-light": "url('@/assets/background/gradient-dark-primary-to-light.webp')",
         "gradient-light-neutral-lg": "url('@/assets/background/gradient-light-neutral-lg.webp')",
-        "gradient-secondary-primary": "linear-gradient(104.77deg, #346B96 3.46%, #C6CA8D 101.88%)"
+        "gradient-secondary-primary": "linear-gradient(104.77deg, #346B96 3.46%, #C6CA8D 101.88%)",
+        "gradient-secondary-to-light-secondary": "linear-gradient(90deg, #EAA601 0%, #FFE29D 100%)"
       },
     },
   },

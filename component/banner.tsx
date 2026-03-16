@@ -1,35 +1,42 @@
 "use client";
 
 import React from "react";
-import Button from "./button";
 import { BannerData } from "@/type/bannerType";
 
-const bannerData: BannerData = {
-  title: "Our Mission, Vision & Core Values",
+// bg-image-alco-center
 
-//   description:
-//     "Train with Arslan Larik & Company (AL&CO) to gain proven strategies, expert guidance, and personalized support that help you achieve breakthrough results and sustainable growth.",
-//   button1: {
-//     text: "Learn More",
-//     link: "/why-train-with-alco"
-//   },
-//   button2: {
-//     text: "Get Started",
-//     link: "/get-started"
-//   }
-};
+type Props = {
+  data: BannerData
+}
 
-export default function Banner() {
-  const data = bannerData;
+export default function Banner({ data }: Props) {
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-image-alco-center bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-cover bg-no-repeat w-full min-h-[450px] flex items-center" style={{ backgroundImage: `url(${data?.image})` }}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 my-8">
           <div className="flex flex-col justify-start ">
+            <div className="flex mb-4">
+            {data?.level && (
+              <div className="bg-gradient-secondary-to-light-secondary bg-cover text-black px-4 py-1">
+                {data?.level}
+              </div>
+            )}
+            </div>
             <h1 className="h1 text-white text-start max-w-2xl">
-              {data.title}
+              {data?.title?.line1}
+
+              {data?.title?.line2 && (
+                <span className="block">
+                  {data?.title?.line2}
+                </span>
+              )}
             </h1>
+            {data?.description && (
+              <p className="custom-text-1 font-light text-white text-start mt-4">
+                {data?.description}
+              </p>
+            )}
           </div>
         </div>
       </div>
