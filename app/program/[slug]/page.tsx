@@ -3,6 +3,11 @@ import { ProgramType } from "@/type/programType";
 import { notFound } from "next/navigation";
 import { programs } from "@/app/program/[slug]/data";
 import Banner from "@/component/banner";
+import LevelCertification from "@/component/levelCertification";
+import LevelBenefitsTable from "@/component/levelBenefitsTable";
+import ContactInfo from "@/component/contactInfo";
+import LevelProgramIncludes from "@/component/levelProgramIncludes";
+import LevelContent from "@/component/levelContent";
 
 export default async function ProgramDetail({
   params,
@@ -18,10 +23,13 @@ export default async function ProgramDetail({
 
   return (
     <div>
-      {/* <h1 className="text-4xl font-bold mb-4">{program.title}</h1>
-      <p>{program.description}</p> */}
       <Banner data={program.BannerData} />
       <LevelIntroWithVideo data={program.LevelIntroWithVideoData} />
+      <LevelCertification data={program.LevelCertificationData} />
+      <LevelProgramIncludes data={program.LevelProgramIncludesData} />
+      <ContactInfo />
+      <LevelBenefitsTable data={program.LevelBenefitsTableData} />
+      <LevelContent data={program.LevelContentData} />
     </div>
   );
 }

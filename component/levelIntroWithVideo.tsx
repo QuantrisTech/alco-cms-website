@@ -11,7 +11,7 @@ type Props = {
 export default function LevelIntroWithVideo({ data }: Props) {
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-light-neutral bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-light-neutral bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
 
         <h3 className="h3 text-start">
@@ -24,7 +24,7 @@ export default function LevelIntroWithVideo({ data }: Props) {
           </span>
         </h3>
         <div
-              className="custom-text-1 font-light text-black space-y-4"
+              className="custom-text1 font-light text-black my-2 xl:my-3"
               dangerouslySetInnerHTML={{ __html: data?.description }}
             />
 
@@ -32,7 +32,7 @@ export default function LevelIntroWithVideo({ data }: Props) {
           <video
             controls
             preload="metadata"
-            className="w-full h-[450px] object-cover rounded-lg"
+            className="w-full h-[350px] lg:h-[450px] object-cover rounded-lg"
           >
             <source src={data?.video} type="video/mp4" />
             Your browser does not support the video tag.

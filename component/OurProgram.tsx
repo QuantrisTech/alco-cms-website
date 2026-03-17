@@ -68,8 +68,8 @@ export default function OurProgram() {
   const data = ourProgramData;
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 bg-dark-primary bg-cover bg-top-left w-full">
-      <div className="container mx-auto px-8 ">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12  gap-2 my-8">
           <div className="flex flex-col justify-start col-span-5">
             <h3 className="h3 text-white text-start">
@@ -77,7 +77,7 @@ export default function OurProgram() {
             </h3>
           </div>
           <div className="flex flex-col justify-center col-span-7 pt-1">
-            <p className="custom-text-1 font-light text-white text-start mb-8">
+            <p className="custom-text1 font-light text-white text-start mb-8">
               {data.description}
             </p>
           </div>

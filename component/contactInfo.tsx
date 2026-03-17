@@ -21,11 +21,11 @@ export default function ContactInfo() {
   const data = contactInfoData;
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-light-neutral bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-light-neutral bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="px-6 md:px-8 lg:px-12 xl:px-16 py-4 md:py-6 lg:py-10 xl:py-14  bg-cover bg-top-left w-full rounded-xl" style={{ backgroundImage: `url(${ContactBg.src})` }}>
           <div className="grid grid-cols-12 gap-2 my-8">
-            <div className="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-4 2xl:col-span-5 flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
+            <div className="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-5 2xl:col-span-4 flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
               <a
                 href={`tel:+1234567890`}
                 className="bg-secondary-light text-white h-16 w-16 mb-4 flex justify-center items-center rounded-full shadow hover:bg-yellow-600 transition"
@@ -34,7 +34,7 @@ export default function ContactInfo() {
               </a>
 
               <div className="flex flex-col justify-start ">
-                <p className="custom-text-1 font-light text-white text-start ">
+                <p className="custom-text1 font-light text-white text-start ">
                   {data.title}
                 </p>
                 <h3 className="h3 text-white text-start ">
@@ -42,8 +42,8 @@ export default function ContactInfo() {
                 </h3>
               </div>
             </div>
-            <div className="col-span-12 xl:col-span-6 2xl:col-span-5 md:order-last xl:order-none">
-              <p className="custom-text-1 font-light text-white text-start my-4">
+            <div className="col-span-12 xl:col-span-5 2xl:col-span-6 md:order-last xl:order-none">
+              <p className="custom-text1 font-light text-white text-start my-4">
                 {data.description}
               </p>
             </div>

@@ -43,7 +43,7 @@ export default function WhatWeDo() {
   const data = whatWeDoData;
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-dark-primary bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
 
         <h3 className="h3 text-start">
@@ -61,18 +61,18 @@ export default function WhatWeDo() {
           {
             data.points.map((point, index) => (
               <div key={index} className="flex flex-col sm:flex-row sm:space-x-4 mb-2 sm:mb-6 last:mb-2">
-                <div className="px-3 h-8 bg-primary-dark text-secondary rounded-full mt-2 hidden sm:flex justify-center items-center " >{index + 1}
+                <div className="px-[15px] h-10 bg-primary-dark text-secondary rounded-full mt-1 hidden sm:flex justify-center items-center text-[20px]" >{index + 1}
                 </div>
                 <div className="flex flex-col mb-2 sm:mb-auto">
-                  <div className="flex items-center ">
+                  <div className="flex items-center mb-1 sm:mb-0">
                     <div className="px-3 h-8 mr-2 bg-primary-dark text-secondary rounded-full flex justify-center items-center sm:hidden" >{index + 1}
                   </div>
-                   <h6 className="h6 text-primary text-start font-outfit font-bold">
+                   <h6 className="h6 text-primary text-start font-semibold ">
                     {point.title}
                   </h6>
                   </div>
                  
-                  <p className="custom-text-1 font-light text-black/60 text-start ">
+                  <p className="custom-text1 font-light text-black/60 text-start ">
                     {point.description}
                   </p>
                 </div>

@@ -38,7 +38,7 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                   <h5 className="h5 text-white text-start">
                     {slide.title}
                   </h5>
-                  <p className="custom-text-1 font-light text-white text-start ">
+                  <p className="custom-text1 font-light text-white text-start ">
                     {slide.description}
                   </p>
                 </div>

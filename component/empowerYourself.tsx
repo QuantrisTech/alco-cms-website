@@ -45,13 +45,13 @@ export default function EmpowerYourself() {
   const data = empowerYourself;
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-gradient-light-neutral-lg bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-gradient-light-neutral-lg bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="flex flex-col justify-start ">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-outfit text-primary text-start mb-2">
             {data.title}
           </h2>
-          <p className="custom-text-1 font-light text-black text-start ">
+          <p className="custom-text1 font-light text-black text-start ">
             {data.description}
           </p>
         </div>
@@ -61,13 +61,13 @@ export default function EmpowerYourself() {
               <div
                 className={`col-span-12 lg:col-span-5 xl:col-span-6 ${index % 2 !== 0 ? "lg:order-2" : ""
                   }`}>
-                <img src={point.image.src} alt={point.image.alt} className="xl:object-top object-cover shadow-xl max-h-[350px] lg:max-h-[450px] w-full rounded-lg" />
+                <img src={point.image.src} alt={point.image.alt} className="xl:object-top object-cover shadow-xl max-h-[310px] sm:max-h-[350px] lg:max-h-[450px] w-full rounded-lg" />
               </div>
               <div className="col-span-12 lg:col-span-7 xl:col-span-6 flex flex-col justify-center">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-outfit text-primary text-start mb-4 ">
                   {point.title}
                 </h3>
-                <p className="custom-text-1 font-medium text-black/85 text-start font-outfit">
+                <p className="custom-text1 font-medium text-black/85 text-start font-outfit">
                   {point.description}
                 </p>
               </div>

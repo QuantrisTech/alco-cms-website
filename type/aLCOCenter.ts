@@ -1,6 +1,6 @@
 export type ALCOCenterData = {
   title: string
-  description: string
+  // description: string
   button1: {
     text: string
     link: string
