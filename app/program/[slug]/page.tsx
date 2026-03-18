@@ -8,6 +8,7 @@ import LevelBenefitsTable from "@/component/levelBenefitsTable";
 import ContactInfo from "@/component/contactInfo";
 import LevelProgramIncludes from "@/component/levelProgramIncludes";
 import LevelContent from "@/component/levelContent";
+import LevelGraduatesExperience from "@/component/levelGraduatesExperience";
 
 export default async function ProgramDetail({
   params,
@@ -30,6 +31,7 @@ export default async function ProgramDetail({
       <ContactInfo />
       <LevelBenefitsTable data={program.LevelBenefitsTableData} />
       <LevelContent data={program.LevelContentData} />
+      <LevelGraduatesExperience data={program.LevelGraduatesExperienceData} />
     </div>
   );
 }

@@ -21,6 +21,7 @@ import LevetContent3 from "@/assets/level-content/level-content-3.webp"
 import { LevelBenefitsTableType } from "@/type/levelBenefitsTable";
 import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
 import { LevelContentType } from "@/type/levelContent";
+import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
 
 const bannerData: BannerData = {
   level: "level 1",
@@ -142,7 +143,7 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       title: "10 Days of Immersive, Online Learning",
       description: (
         <p>
-          Step into a life-changing journey with our dynamic, 10-day live NLP Practitioner (Triple Certification) Training.
+          Step into a life-changing journey with our dynamic, 10-day live NLP Practitioner (Triple Certification) Training. Experience world-class NLP concepts in an interactive, engaging environment where learning is fun, practical, and immediately actionable. Each session is designed to give you proven tools to create breakthroughs, whether for yourself or others. Imagine the impact of transforming your mindset and mastering techniques to reshape emotions, behaviors, and goals, all from the comfort of your home.
         </p>
       ),
       theme: "dark",
@@ -155,7 +156,7 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       title: "Comprehensive Home Study Manual",
       description: (
         <p>
-          Dive deeper into NLP with a 450+ page manual designed to support your learning journey.
+          Dive deeper into the transformative world of NLP with a 450+ page home study manual meticulously designed to complement your learning journey. It covers every concept in detail, providing clarity, structure, and practical exercises you can revisit anytime.This isn’t just a manual; it’s your ongoing roadmap to success, ensuring you confidently apply what you learn, even after the training.
         </p>
       ),
       theme: "light",
@@ -168,7 +169,8 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       title: "Exclusive Audio Resources",
       description: (
         <p>
-          Access 220+ audio files by Dr. Tad James to master NLP concepts at your own pace.
+          Access over 220 audio files recorded by Dr. Tad James, a pioneer and global leader in NLP. These expertly crafted lessons align with your manual, allowing you to absorb knowledge at your own pace.
+Imagine having the wisdom of a global authority at your fingertips, guiding you to master the art and science of NLP.
         </p>
       ),
       theme: "yellow",
@@ -185,8 +187,9 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
             Earn three prestigious certifications:
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Certified NLP Coaching (ABNLP-USA)</li>
-            <li>Certified Time Line Therapy (TLTA-USA)</li>
+            <li>Certified Practitioner of Neuro-Linguistic Programming (ABNLP-USA) to master NLP techniques for leadership, communication, and personal transformation. </li>
+            <li> Certified Practitioner of NLP Coaching (ABNLP-USA) to launch your career as a transformational coach. </li>
+            <li> Certified Practitioner of Time Line Therapy Techniques (TLTA-USA) for eliminating negative emotions and limiting beliefs at an unconscious level.</li>
           </ul>
         </>
       ),
@@ -200,7 +203,7 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       title: "Five Years Access to Training",
       description: (
         <p>
-          Get 5-year access to revisit and master NLP training anytime.
+          True mastery comes with practice, and we ensure you never stop growing with a 5-year opportunity to revise and revisit our NLP Practitioner Training Program. This means you’re not just investing in 10 days—you’re investing in a lifetime of continuous learning and transformation.
         </p>
       ),
       theme: "dark",
@@ -214,12 +217,12 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       description: (
         <>
           <p className="mb-2">
-            Join a global community:
+            Join a vibrant, global community of AL&CO graduates—a space where learning thrives beyond the training room. You’ll:
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Practice with peers</li>
-            <li>Get mentorship</li>
-            <li>Stay motivated</li>
+            <li>Practice interventions with peers to sharpen your skills.</li>
+            <li> Gain access to expert mentorship and guidance whenever you need it.</li>
+            <li>Stay motivated and inspired through shared experiences and collaborative growth.</li>
           </ul>
         </>
       ),
@@ -283,6 +286,14 @@ const LevelContentData: LevelContentType = {
   ],
 };
 
+const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
+  title: {
+    line1: "Benefits of Choosing",
+    line2: "NLP Practitioner Training"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+}
+
 
 export const programs: ProgramType[] = [
   {
@@ -293,6 +304,7 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 
   {
@@ -303,6 +315,7 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 
   {
@@ -314,6 +327,7 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 
   {
@@ -326,6 +340,7 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 
   {
@@ -337,6 +352,7 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 
   {
@@ -347,5 +363,6 @@ export const programs: ProgramType[] = [
     LevelBenefitsTableData: LevelBenefitsTableData,
     LevelProgramIncludesData: LevelProgramIncludesData,
     LevelContentData: LevelContentData,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
   },
 ];

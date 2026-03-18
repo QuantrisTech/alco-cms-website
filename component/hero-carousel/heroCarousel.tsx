@@ -28,11 +28,30 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
       <div className="container mx-auto px-4 ">
         <div className="hero_embla__viewport " ref={emblaRef}>
           <div className="hero_embla__container">
-            {slides.map((slide) => (
-              <div className="hero_embla__slide" key={slide?._id}>
+            {slides.map((slide, index) => (
+              <div className="hero_embla__slide" key={slide?._id} >
                 <div className="hero_embla__slide__content mb-4 rounded-md text-white relative">
-                  <h1 className="h1 text-white overflow-hidden">{slide?.title?.line1}</h1>
-                  <h1 className="h1 text-secondary overflow-hidden">{slide?.title?.line2}</h1>
+                  {/* <h1 className="h1 text-white overflow-hidden">{slide?.title?.line1}</h1>
+                  <h1 className="h1 text-secondary overflow-hidden">{slide?.title?.line2}</h1> */}
+                  {index === 0 ? (
+                    <>
+                      <h1 className="h1 text-white overflow-hidden">
+                        {slide?.title?.line1}
+                      </h1>
+                      <h1 className="h1 text-secondary overflow-hidden">
+                        {slide?.title?.line2}
+                      </h1>
+                    </>
+                  ) : (
+                    <>
+                      <div className="h1 text-white overflow-hidden">
+                        {slide?.title?.line1}
+                      </div>
+                      <div className="h1 text-secondary overflow-hidden">
+                        {slide?.title?.line2}
+                      </div>
+                    </>
+                  )}
                   <p className="custom-text1 my-4 font-light max-w-[700px] w-full">{slide?.description}</p>
                   <div className="mt-4 flex gap-2">
                     {slide.button1?.text && (

@@ -29,15 +29,15 @@ export default function LevelContent({ data }: Props) {
           </div>
         </div>
 
-        <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
+        <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
           {data.points.map((point, index) => (
             <div
               key={index}
-              className="relative flex flex-col justify-end px-4 py-6 lg:px-8 lg:py-6 xl:px-8 xl:py-6 2xl:px-10 2xl:py-8 rounded-xl shadow-lg bg-cover bg-center overflow-hidden"
+              className="relative flex flex-col justify-center px-8 lg:py-6 xl:px-8 xl:py-6 2xl:px-10 2xl:py-8 rounded-xl shadow-lg bg-cover bg-center overflow-hidden min-h-[350px]"
               style={{ backgroundImage: `url(${point?.image?.src})` }}
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/60"></div>
+              <div className="absolute inset-0 bg-black/10"></div>
 
               {/* Content */}
               <div className="relative z-10 text-white">
