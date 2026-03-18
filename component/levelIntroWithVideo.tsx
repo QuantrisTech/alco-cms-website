@@ -2,7 +2,8 @@
 
 import React from "react";
 import Button from "./button";
-import {LevelIntroWithVideoType} from "@/type/levelIntroWithVideo"
+import { LevelIntroWithVideoType } from "@/type/levelIntroWithVideo"
+import VideoPlayer from "./videoPlayer";
 
 type Props = {
   data: LevelIntroWithVideoType
@@ -24,9 +25,9 @@ export default function LevelIntroWithVideo({ data }: Props) {
           </span>
         </h3>
         <div
-              className="custom-text1 font-light text-black my-2 xl:my-3"
-              dangerouslySetInnerHTML={{ __html: data?.description }}
-            />
+          className="custom-text1 font-light text-black my-2 xl:my-3"
+          dangerouslySetInnerHTML={{ __html: data?.description }}
+        />
 
         <div className="my-8">
           <video
@@ -38,6 +39,20 @@ export default function LevelIntroWithVideo({ data }: Props) {
             Your browser does not support the video tag.
           </video>
         </div>
+        {/* <div className="my-8 w-full rounded-lg aspect-video overflow-hidden h-[350px] lg:h-[450px] ">
+          <iframe
+            className="w-full h-full"
+            src={data?.video}
+            title="What is NLP"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div> */}
+        {/* <VideoPlayer
+          videoId={data?.video} // now it’s just the ID
+          thumbnail={`https://img.youtube.com/vi/${data?.video}/maxresdefault.jpg`} // auto generate thumbnail
+        /> */}
 
       </div>
     </section>

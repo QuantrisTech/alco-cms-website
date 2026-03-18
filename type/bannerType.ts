@@ -9,4 +9,5 @@ export type BannerData = {
   title: BannerTitle
   description?: string
   video?: string
+  className?: string
 }

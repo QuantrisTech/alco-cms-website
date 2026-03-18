@@ -2,13 +2,17 @@ import { BannerData } from "@/type/bannerType";
 import { LevelIntroWithVideoType } from "@/type/levelIntroWithVideo";
 import { ProgramType } from "@/type/programType";
 import programLevel1 from "@/assets/background/program-level-1.webp"
+import programLevel2 from "@/assets/background/program-level-2.webp"
 import { LevelCertificationType } from "@/type/levelCertification";
 import AccreditedBrand1 from "@/assets/accredited/accredited-1.webp"
 import AccreditedBrand2 from "@/assets/accredited/accredited-2.webp"
 import AccreditedBrand3 from "@/assets/accredited/accredited-3.webp"
-import Certificate1 from "@/assets/level-certificate/certificate-1.webp"
-import Certificate2 from "@/assets/level-certificate/certificate-2.webp"
-import Certificate3 from "@/assets/level-certificate/certificate-3.webp"
+import Certificate1Level1 from "@/assets/level-certificate/certificate-1-level-1.webp"
+import Certificate2Level1 from "@/assets/level-certificate/certificate-2-level-1.webp"
+import Certificate3Level1 from "@/assets/level-certificate/certificate-3-level-1.webp"
+import Certificate1Level2 from "@/assets/level-certificate/certificate-1-level-2.webp"
+import Certificate2Level2 from "@/assets/level-certificate/certificate-2-level-2.webp"
+import Certificate3Level2 from "@/assets/level-certificate/certificate-3-level-2.webp"
 import LevelProgram1 from "@/assets/level-program-included/program-1.webp"
 import LevelProgram2 from "@/assets/level-program-included/program-2.webp"
 import LevelProgram3 from "@/assets/level-program-included/program-3.webp"
@@ -23,7 +27,7 @@ import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
 import { LevelContentType } from "@/type/levelContent";
 import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
 
-const bannerData: BannerData = {
+const bannerDataLevel1: BannerData = {
   level: "level 1",
   title: {
     line1: "NLP Practitioner"
@@ -32,11 +36,13 @@ const bannerData: BannerData = {
   image: programLevel1.src
 };
 
-const LevelIntroWithVideoData: LevelIntroWithVideoType = {
+const LevelIntroWithVideoDataLevel1: LevelIntroWithVideoType = {
   title: {
     line1: "Three Certifications.",
     line2: "One Transformational Experience."
   },
+  // video: "https://drive.google.com/file/d/11zrPeNxVtXxnCcxYp4Z58obv0UTOD1BM/view",
+  // video: "zU0ArbCST1I",
   video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
   description:
     `<p>Do you feel stuck in a cycle of self-doubt and limiting beliefs? What if you could take complete control of your thoughts, emotions, and actions, starting now? At AL&CO, we don’t just teach NLP—we guide you through a transformative journey that unlocks your potential and reshapes your reality.</p> 
@@ -44,21 +50,23 @@ const LevelIntroWithVideoData: LevelIntroWithVideoType = {
     <p>If you’ve been searching for real change, this program is your answer. Over the course of 10 immersive days, you’ll discover how to turn challenges into opportunities and create the life you deserve; all from the comfort of your home.</p>`,
 }
 
-const LevelCertificationData: LevelCertificationType = {
+const LevelCertificationDataLevel1: LevelCertificationType = {
   title: {
-    line1: "Three Certifications.",
-    line2: "One Transformational Experience."
+    line1: "Certifications",
+    line2: "3-in-1 NLP Practitioner Certification"
   },
   points: [
     {
-      title: "Certified Practitioner of NLP via the American Board of NLP (ABNLP)",
+      title: `Certified Practitioner of NLP via
+        the American Board of
+        NLP (ABNLP)`,
       description: "ABNLP is the world’s most considerable NLP authority, making this certification internationally recognized and enabling you to practice NLP techniques in coaching, training and corporate or personal development environments. This certification will provide you with a ‘tool kit’ for leadership techniques, advanced communication, and soft skills.",
       imageBrand: {
         src: AccreditedBrand1.src,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1.src,
+        src: Certificate1Level1.src,
         alt: "Certificate One"
       },
     },
@@ -70,7 +78,7 @@ const LevelCertificationData: LevelCertificationType = {
         alt: "Accredited Brand Two"
       },
       imageCerficate: {
-        src: Certificate2.src,
+        src: Certificate2Level1.src,
         alt: "Certificate Two"
       },
     },
@@ -82,14 +90,14 @@ const LevelCertificationData: LevelCertificationType = {
         alt: "Accredited Brand Three"
       },
       imageCerficate: {
-        src: Certificate3.src,
+        src: Certificate3Level1.src,
         alt: "Accredited Three"
       },
     }
   ]
 }
 
-const LevelBenefitsTableData: LevelBenefitsTableType = {
+const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing",
     line2: "NLP Practitioner Training"
@@ -107,33 +115,33 @@ const LevelBenefitsTableData: LevelBenefitsTableType = {
       personal:
         "Develop clarity and alignment in thoughts and emotions.",
       coaches:
-        "Create structured coaching sessions that drive sustainable change.",
+        "Use NLP principles to create structured, impactful coaching sessions that help clients achieve sustainable change.",
     },
     {
       content: "Ecology",
       personal:
-        "Make decisions aligned with your values.",
+        "Make decisions that align with your values and positively impact your life and relationships.",
       coaches:
-        "Help clients evaluate impact for ethical and sustainable growth.",
+        "Guide clients to assess the impact of their goals on their lives, relationships, and overall well-being, ensuring ethical and sustainable growth.",
     },
     {
       content: "NLP Communication Model",
       personal:
-        "Improve communication and build stronger relationships.",
+        "Improve your communication to connect with others deeply, reduce misunderstandings, and build stronger relationships.",
       coaches:
-        "Teach effective communication and rapport building.",
+        "Teach clients how to communicate effectively and interpret verbal and non-verbal cues to build rapport and influence outcomes.",
     },
     {
       content: "Presuppositions of NLP",
       personal:
-        "Reframe mindset to embrace empowering beliefs.",
+        "Reframe your mindset to embrace positive, empowering beliefs that transform your approach to challenges.",
       coaches:
-        "Help clients dissolve limiting beliefs and grow.",
+        "Help clients adopt empowering perspectives that enable growth and dissolve self-limiting beliefs.",
     },
   ],
 }
 
-const LevelProgramIncludesData: LevelProgramIncludesType = {
+const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
   title: {
     line1: "This Program Includes",
     line2: "NLP Practitioner Training"
@@ -170,7 +178,7 @@ const LevelProgramIncludesData: LevelProgramIncludesType = {
       description: (
         <p>
           Access over 220 audio files recorded by Dr. Tad James, a pioneer and global leader in NLP. These expertly crafted lessons align with your manual, allowing you to absorb knowledge at your own pace.
-Imagine having the wisdom of a global authority at your fingertips, guiding you to master the art and science of NLP.
+          Imagine having the wisdom of a global authority at your fingertips, guiding you to master the art and science of NLP.
         </p>
       ),
       theme: "yellow",
@@ -235,10 +243,10 @@ Imagine having the wisdom of a global authority at your fingertips, guiding you 
   ],
 };
 
-const LevelContentData: LevelContentType = {
+const LevelContentDataLevel1: LevelContentType = {
   title: {
     line1: "Content Of NLP Practitioner",
-    line2:""
+    line2: ""
   },
   points: [
     {
@@ -248,7 +256,11 @@ const LevelContentData: LevelContentType = {
         "Themes of NLP",
         "Ecology",
         "NLP Communication Model",
-        "Presuppositions of NLP",
+        "The Presuppositions of NLP",
+        "Observing Other People (Sensory Acuity)",
+        "Rapport",
+        "Representational System (Preference Test)",
+        "Predicates",
       ],
       image: {
         src: LevetContent1.src,
@@ -258,11 +270,16 @@ const LevelContentData: LevelContentType = {
     {
       title: "Timeline Therapy Techniques",
       items: [
-        "Prime Directives",
-        "Elicitation of Timeline",
-        "Root Cause",
-        "Reframes",
-        "Limiting Decisions",
+        "Prime Directives of the Unconscious Mind",
+        "Elicitation of Time Line #1",
+        "Elicitation of Time Line #2",
+        "First Test of Elicitation",
+        "Discovering the Root Cause",
+        "Gestalt",
+        "General Reframes of TLT",
+        "TLT for Anxiety",
+        "TLT for Limiting Decisions",
+        "The Classic Through-Time & In-Time"
       ],
       image: {
         src: LevetContent2.src,
@@ -272,11 +289,15 @@ const LevelContentData: LevelContentType = {
     {
       title: "NLP Coaching",
       items: [
-        "SMART Goals",
-        "Coaching Cycle",
-        "Success Formula",
+        "SMART Goals – Wheel of Life",
+        "Starting the Coaching Cycle",
+        "Ultimate Success Formula (Coaching Method)",
         "Coaching Contract",
-        "Achievable Outcomes",
+        "Internal Drive History",
+        "Five Principles for Success",
+        "State vs. Goal",
+        "Keys to an Achievable Outcome",
+        "Well-Formed Conditions for Coaching"
       ],
       image: {
         src: LevetContent3.src,
@@ -286,7 +307,7 @@ const LevelContentData: LevelContentType = {
   ],
 };
 
-const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
+const LevelGraduatesExperienceDataLevel1: LevelGraduatesExperienceType = {
   title: {
     line1: "Benefits of Choosing",
     line2: "NLP Practitioner Training"
@@ -294,28 +315,493 @@ const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
   video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
 }
 
+const bannerDataLevel2: BannerData = {
+  level: "level 2",
+  title: {
+    line1: "NLP Master Practitioner"
+  },
+  description: "Triple Certification Training Program",
+  image: programLevel2.src,
+  className: "bg-center bg-no-repeat bg-primary"
+};
+
+const LevelIntroWithVideoDataLevel2: LevelIntroWithVideoType = {
+  title: {
+    line1: "Master Upgrade of ",
+    line2: "Your Mind and Life"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  // description:
+  // `<p></p>
+  // <p></p>
+  // <p></p>
+  // <p></p>`,
+  description:
+    `<p>The NLP Master Practitioner (Triple Certification) Training Program is not just the next step—it’s the quantum leap in your personal and professional transformation. Spanning 13 immersive days, this program takes you on a life-changing journey of empowerment, massive breakthroughs, and advanced mastery.</p>
+    <p>Building on the foundation of Level 1, where you learned 40% of NLP tools and techniques, this program dives into the remaining 60% of more profound concepts, advanced techniques, and transformative interventions. It’s where the true mastery begins—operating at both conscious and unconscious levels to create unparalleled results.</p>
+    <p>Think of it as constructing a magnificent castle on the solid foundation you built during Level 1. With 50 times more effective, faster, and comprehensive techniques, this training is designed to amplify your skills and bring life-changing outcomes for yourself and those you coach, lead, and inspire.</p>
+    <p>After completing this training, life won’t just improve—it will never be the same again.</p>`,
+
+};
+
+const LevelCertificationDataLevel2: LevelCertificationType = {
+  title: {
+    line1: "Certifications",
+    line2: "3-in-1 NLP Master Practitioner Certification"
+  },
+  points: [
+    {
+      title: "Certified Master Practitioner of NLP via the American Board of NLP (ABNLP)",
+      description: "Become a Certified Master Practitioner of NLP with ABNLP, the world’s leading NLP authority. Master influence, human behavior, and persuasive communication. Unlock coaching, training, and leadership opportunities to create profound transformations. Empower yourself and others with cutting-edge NLP techniques, accelerating professional growth and making a lasting impact.",
+      imageBrand: {
+        src: AccreditedBrand1.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate1Level2.src,
+        alt: "Accredited One"
+      },
+    },
+    {
+      title: "Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association",
+      description: "Become a Certified Master Practitioner of Time Line Therapy™ Techniques with the world’s leading authority, the Time Line Therapy™ Association. Master techniques to release past traumas, dissolve phobias, and eliminate negative emotions. Facilitate deep emotional healing, empower transformation, and help individuals unlock emotional freedom, creating a future unburdened by the past.",
+      imageBrand: {
+        src: AccreditedBrand2.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate2Level2.src,
+        alt: "Accredited Two"
+      },
+    },
+    {
+      title: "Certified Master Practitioner of NLP Coaching via the Coaching Division of ABNLP",
+      description: "Become a Certified Master Practitioner of NLP Coaching with ABNLP’s Coaching Division, the world’s leading NLP authority. Master transformative coaching, guide clients to breakthroughs in business, education, and personal growth. Unlock potential, elevate performance, and empower lasting change. This certification is your gateway to a thriving coaching career and global impact.",
+      imageBrand: {
+        src: AccreditedBrand3.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate3Level2.src,
+        alt: "Accredited Three"
+      },
+    }
+  ]
+};
+
+const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
+  title: {
+    line1: "Benefits of Choosing NLP",
+    line2: "Master Practitioner Training"
+  },
+  points: [
+  {
+    content: "Prime Directives of the Unconscious Mind",
+    personal: "Discover how your unconscious drives habits and emotions, helping you achieve personal breakthroughs.",
+    coaches: "Leverage this understanding to create coaching strategies that lead to lasting results for clients."
+  },
+  {
+    content: "Quantum Linguistics",
+    personal: "Change the way you think and speak to unlock new possibilities and overcome problems.",
+    coaches: "Guide clients to use empowering language patterns to create positive change."
+  },
+  {
+    content: "Releasing Negative Emotions (TLT #1 & #2)",
+    personal: "Let go of emotions like anger, sadness, and guilt that hold you back.",
+    coaches: "Guide clients to release emotional burdens for lasting change."
+  },
+  {
+    content: "Emotional Chains",
+    personal: "Break patterns of emotional reactions and create a calmer, more balanced mindset.",
+    coaches: "Help clients identify triggers and replace them with empowering responses."
+  },
+  {
+    content: "Full Coaching Cycle with NLP & TLT",
+    personal: "Achieve clarity on your goals and create actionable steps to reach them.",
+    coaches: "Guide clients through a proven coaching process to help them achieve their goals."
+  },
+  {
+    content: "Client Agreements",
+    personal: "Build trust and ensure clear communication in your relationships.",
+    coaches: "Establish clear expectations and goals with clients to create productive sessions."
+  }
+]
+};
+
+const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
+  title: {
+    line1: "This Program Includes",
+    line2: ""
+  },
+  points: [
+    {
+      title: "13 Days of Immersive, Online Learning",
+      description: (
+        <p>
+          Take the next step in your journey with our dynamic, 13-day live NLP Master Practitioner (Triple Certification) Training. Delve into advanced concepts and techniques in an interactive, engaging environment where learning is practical, transformative, and immediately applicable. Imagine mastering tools that reshape emotions, behaviors, and unconscious patterns—not only for yourself but also for those you guide and influence—all while learning from the comfort of your home.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "13 Days of Immersive, Online Learning",
+      },
+    },
+    {
+      title: "Triple International Certification: Credibility That Sets You Apart",
+      description: (
+        <>
+          <p className="mb-2">
+            Earn three globally recognized certifications that signify your expertise and open doors to boundless opportunities:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Certified Master Practitioner of Neuro-Linguistic Programming via The American Board of Neuro-Linguistic Programming (ABNLP-USA): Elevate your skills to lead, influence, and create profound change using advanced NLP techniques.</li>
+            <li>Certified Master Practitioner of NLP Coaching via Coaching Division of ABNLP (USA): Guide others with mastery-level coaching tools, empowering them to achieve their goals and unlock their potential.</li>
+            <li>Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association (TLTA-USA): Master tools to eliminate deep-rooted emotional barriers, limiting beliefs, and unresolved traumas at their root.</li>
+          </ul>
+        </>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "Triple International Certification: Credibility That Sets You Apart",
+      },
+    },
+    {
+      title: "Comprehensive Home Study Materials",
+      description: (
+         <>
+          <p className="mb-2">
+            Deepen your expertise with meticulously designed resources, including:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>A 600+ page NLP Master Practitioner manual covering advanced concepts, techniques, and applications in detail.</li>
+            <li>A 100+ page Time Line Therapy™ Techniques manual with practical exercises and applications.</li>
+            <li>Worksheets, questionnaires, and action guides to complement and enhance your learning experience.</li>
+          </ul>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "Comprehensive Home Study Materials",
+      },
+    },
+    {
+      title: "Exclusive Audio Resources from NLP Pioneer Dr. Tad James",
+      description: (
+        <>
+          <p className="mb-2">
+            Access over 250 audio files recorded by Dr. Tad James, a pioneer in the field of NLP. These lessons align with your training materials, allowing you to learn at your own pace and revisit advanced concepts anytime.
+Imagine having a world-renowned mentor guide you through every step of your journey.
+          </p>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "Exclusive Audio Resources from NLP Pioneer Dr. Tad James",
+      },
+    },
+    {
+      title: "Lifetime Access to Training: Your Journey Never Ends",
+      description: (
+        <p>
+          True mastery requires continuous learning. That’s why we provide lifetime access to revisit and revise our NLP Master Practitioner (Triple Certification) Training Program.
+This ensures you’re not just investing in 13 days—you’re investing in a lifetime of growth and evolution.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram5.src,
+        alt: "Lifetime Access to Training: Your Journey Never Ends",
+      },
+    },
+    {
+      title: "A Global Support Network: Empowered Together",
+      description: (
+        <>
+          <p className="mb-2">
+            Join the thriving AL&CO Global Coaches Support Community, where over 1,000 graduates connect, collaborate, and grow. In this vibrant community, you’ll:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Practice advanced interventions with peers to refine your skills.</li>
+            <li>Gain access to expert mentorship and guidance.</li>
+            <li>Stay motivated through shared experiences and collaborative learning.</li>
+          </ul>
+        </>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram6.src,
+        alt: "A Global Support Network: Empowered Together",
+      },
+    },
+  ],
+};
+
+const LevelContentDataLevel2: LevelContentType = {
+  title: {
+    line1: "Content of NLP Master Practitioner",
+    line2: ""
+  },
+  points: [
+  {
+    title: "Neuro-Linguistic Programming (NLP)",
+    items: [
+      "Prime Directives of the Unconscious Mind",
+      "Ecology",
+      "RAS Reticular Activating System",
+      "Quantum Linguistics",
+      "Advanced Presuppositions",
+      "Cartesian Coordinates",
+      "Meta Model III",
+      "Modal Operators Deeper Understanding",
+      "Time Scramble",
+      "Reality Intervention"
+    ],
+    image: {
+        src: LevetContent1.src,
+        alt: "Neuro-Linguistic Programming (NLP)",
+      },
+  },
+  {
+    title: "Timeline Therapy Techniques",
+    items: [
+      "Elicitation of Time Line #1 & #2",
+      "First Test of Elicitation",
+      "Root Cause / Gestalt",
+      "General Reframes I & II for TLT",
+      "What to do if Clients Associate into Traumatic Memory",
+      "Anxiety",
+      "Emotional Chains – 1",
+      "Changing the Time Line Location/Direction",
+      "Setting a Goal and Inserting it into the Future via TLT",
+      "Phobia Model",
+      "Forensic Regression"
+    ],
+    image: {
+      src: LevetContent2.src,
+      alt: "Timeline Therapy Techniques"
+    }
+  },
+  {
+    title: "NLP Coaching",
+    items: [
+      "Client Disclosure and Agreements",
+      "Assigning Coaching Tasks",
+      "Understanding Coaching and Major Outcomes for Coaching",
+      "Working with Clients Underperforming",
+      "Increased and Enhancing Performance",
+      "Focusing on Future Performance",
+      "Integration of Conscious and Unconscious Mind via Coaching",
+      "Traditional Therapy vs Coaching",
+      "Formats of Coaching"
+    ],
+    image: {
+      src: LevetContent3.src,
+      alt: "NLP Coaching"
+    }
+  }
+]
+};
+
+const LevelGraduatesExperienceDataLevel2: LevelGraduatesExperienceType = {
+  title: {
+    line1: "Benefits of Choosing",
+    line2: "NLP Master Practitioner"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4"
+};
+
+// dummy null structured
+
+const bannerData: BannerData = {
+  level: "",
+  title: {
+    line1: ""
+  },
+  description: "",
+  image: ""
+};
+
+const LevelIntroWithVideoData: LevelIntroWithVideoType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  video: "",
+  description: ""
+};
+
+const LevelCertificationData: LevelCertificationType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  points: [
+    {
+      title: "",
+      description: "",
+      imageBrand: {
+        src: "",
+        alt: ""
+      },
+      imageCerficate: {
+        src: "",
+        alt: ""
+      }
+    }
+  ]
+};
+
+const LevelBenefitsTableData: LevelBenefitsTableType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  points: [
+    {
+      content: "",
+      personal: "",
+      coaches: ""
+    }
+  ]
+};
+
+const LevelProgramIncludesData: LevelProgramIncludesType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  points: [
+    {
+      title: "",
+      description: (
+        <p>
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "",
+      },
+    },
+    {
+      title: "",
+      description: (
+        <p>
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "",
+      },
+    },
+    {
+      title: "",
+      description: (
+        <p>
+        </p>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "",
+      },
+    },
+    {
+      title: "",
+      description: (
+        <>
+          <p className="mb-2">
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li></li>
+          </ul>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "",
+      },
+    },
+    {
+      title: "",
+      description: (
+        <p>
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram5.src,
+        alt: "",
+      },
+    },
+    {
+      title: "",
+      description: (
+        <p>
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram6.src,
+        alt: "",
+      },
+    },
+  ],
+};
+
+const LevelContentData: LevelContentType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  points: [
+    {
+      title: "",
+      items: [],
+      image: {
+        src: "",
+        alt: ""
+      }
+    }
+  ]
+};
+
+const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  video: ""
+};
+
 
 export const programs: ProgramType[] = [
   {
     slug: "nlp-practitioner",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel1,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel1,
+    LevelCertificationData: LevelCertificationDataLevel1,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel1,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel1,
+    LevelContentData: LevelContentDataLevel1,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel1,
   },
 
   {
     slug: "nlp-master-practitioner",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel2,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel2,
+    LevelCertificationData: LevelCertificationDataLevel2,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel2,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel2,
+    LevelContentData: LevelContentDataLevel2,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel2,
   },
 
   {
