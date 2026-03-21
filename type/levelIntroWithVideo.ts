@@ -1,0 +1,11 @@
+import { BannerData } from "./bannerType"
+
+export type LevelIntroWithVideoType = {
+  title: {
+    line1: string
+    line2: string
+  }
+  description: string
+  video?: string
+
+}

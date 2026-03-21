@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: '#1B507C',
+          darkest:"#09263D",
           dark: "#071C43",
           medium: "#142756",
           light: "#25507D",
@@ -19,6 +20,7 @@ module.exports = {
 
         secondary: {
           DEFAULT: '#F9B81E',
+          darkest:"#F7AF00",
           dark: "#F09623",
           medium: "#FB8B21",
           light: "#F9B81E",
@@ -40,7 +42,9 @@ module.exports = {
         "light-neutral": "url('@/assets/background/light-neutral.webp')",
         "medium-neutral": "url('@/assets/background/medium-neutral.webp')",
         "gradient-dark-primary-to-light": "url('@/assets/background/gradient-dark-primary-to-light.webp')",
-        "gradient-secondary-primary": "linear-gradient(104.77deg, #346B96 3.46%, #C6CA8D 101.88%)"
+        "gradient-light-neutral-lg": "url('@/assets/background/gradient-light-neutral-lg.webp')",
+        "gradient-secondary-primary": "linear-gradient(104.77deg, #346B96 3.46%, #C6CA8D 101.88%)",
+        "gradient-secondary-to-light-secondary": "linear-gradient(90deg, #EAA601 0%, #FFE29D 100%)"
       },
     },
   },

@@ -38,12 +38,12 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                   <h5 className="h5 text-white text-start">
                     {slide.title}
                   </h5>
-                  <p className="custom-text-1 font-light text-white text-start ">
+                  <p className="custom-text1 font-light text-white text-start ">
                     {slide.description}
                   </p>
                 </div>
                 <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
-                  <Button variant="primary" size="medium" text="Learn More" href="#" className='my-auto xl:mx-3' />
+                  <Button variant="primary" size="medium" text="Learn More" href="#" className='' />
                 </div>
                 <div className="flex flex-col justify-center col-span-12 mt-4">
                   <img

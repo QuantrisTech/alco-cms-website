@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import { EmblaOptionsType } from "embla-carousel"
 import useEmblaCarousel from "embla-carousel-react"
 import Button from "@/component/button"
@@ -17,43 +17,58 @@ type PropType = {
 
 const StudentReviewCarousel = ({ slides, options }: PropType) => {
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
+    const [expandedSlides, setExpandedSlides] = useState<{ [key: string]: boolean }>({});
+
+    const toggleExpand = (id: string) => {
+        setExpandedSlides((prev) => ({ ...prev, [id]: !prev[id] }));
+    };
 
     return (
-        <section className="student_review_embla relative py-6 md:py-8 lg:py-12 xl:py-6 md:py-8 lg:py-12 xl:py-16 ">
+        <section className="student_review_embla relative py-6 md:py-8 lg:py-12 xl:py-16 ">
             <div className="student_review_embla__viewport relative" ref={emblaRef}>
                 <div className="student_review_embla__container ">
                     {slides.map((slide) => (
                         <div className="student_review_embla__slide " key={slide._id}>
                             <div className=" flex flex-col gap-4 min-h-[200px] rounded-md p-6 shadow-sm bg-neutral-light">
                                 <div className="flex flex-col relative">
-                                <div className="flex items-center gap-4">
-                                    <img
-                                        src={slide.thumbnail}
-                                        alt={slide.name}
-                                        className="w-12 h-12 object-cover rounded-full"
-                                    />
-                                    <div>
-                                        <h5 className="font-semibold text-lg font-outfit">{slide.name}</h5>
-                                        <p className="text-sm text-gray-600 font-outfit">{slide.designation}</p>
+                                    <div className="flex items-center gap-4">
+                                        <img
+                                            src={slide.thumbnail}
+                                            alt={slide.name}
+                                            className="w-12 h-12 object-cover rounded-full"
+                                        />
+                                        <div>
+                                            <h5 className="font-semibold text-lg font-outfit">{slide.name}</h5>
+                                            <p className="text-sm text-gray-600 font-outfit">{slide.designation}</p>
 
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-1 ">
+                                        {Array.from({ length: 5 }).map((_, i) => (
+                                            <span
+                                                key={i}
+                                                className={`text-yellow-400 text-[18px] ${i >= slide.rating ? "text-gray-300" : ""}`}
+                                            >
+                                                ★
+                                            </span>
+                                        ))}
+                                        <PiSealCheckFill className="text-blue-500 text-xl  ml-2" />
+                                    </div>
+                                    <div className="absolute top-1 right-1">
+                                        <FcGoogle className="text-2xl" />
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-1 ">
-                                    {Array.from({ length: 5 }).map((_, i) => (
-                                        <span
-                                            key={i}
-                                            className={`text-yellow-400 text-[18px] ${i >= slide.rating ? "text-gray-300" : ""}`}
-                                        >
-                                            ★
-                                        </span>
-                                    ))}
-                                    <PiSealCheckFill className="text-blue-500 text-xl  ml-2" />
-                                </div>
-                                <div className="absolute top-1 right-1">
-                                    <FcGoogle className="text-2xl" />
-                                </div>
-                                </div>
-                                <p className="text-gray-800 font-outfit">{slide.description}</p>
+                                <p
+                                    className={`text-gray-800 font-outfit ${!expandedSlides[slide._id] ? "line-clamp-3" : ""}`}
+                                >
+                                    {slide.description}
+                                </p>
+                                <button
+                                    className=" text-gray-500 font-normal hover:text-blue-500"
+                                    onClick={() => toggleExpand(slide._id)}
+                                >
+                                    {expandedSlides[slide._id] ? "Read Less" : "Read More"}
+                                </button>
                             </div>
                         </div>
                     ))}

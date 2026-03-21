@@ -7,10 +7,10 @@ import ArsalanLarik from "@/assets/intro-arsalan-larik/arsalan-larik.webp";
 
 
 const aralanLarikIntroData: AralanLarikIntroData = {
-  title: "What Is Neuro-Linguistic Programming?",
+  title: "Meet the Man Who Pioneers Change",
 
   description:
-    "What if you could master your thoughts, emotions, and behaviors to create a life of purpose and freedom? NLP is a transformative system of tools and techniques that empowers you to master your thoughts, emotions, and behaviors.",
+    "Step into a brighter future under the guidance of a visionary leader, Arslan Larik! At AL&CO, we go beyond training to provide life-changing experiences that empower you to achieve extraordinary results.",
 
   name: "Arslan Larik",
 
@@ -19,9 +19,9 @@ const aralanLarikIntroData: AralanLarikIntroData = {
   specification: `
   <p>Are you ready to learn from someone who has already transformed over <strong>500,000 lives?</strong></p>
 
-  <p><strong>Arslan Larik</strong>, Pakistan’s first Certified Master Trainer of Neuro-Linguistic Programming and Hypnotherapy via The American Board of Neuro-Linguistic Programming and Hypnotherapy (ABNLP-ABH), is a visionary leader who transforms lives globally.</p>
+  <p><strong>Arslan Larik</strong>, Pakistan’s first Certified Master Trainer of Neuro-Linguistic Programming and Hypnotherapy via The American Board of Neuro-Linguistic Programming and Hypnotherapy (ABNLP-ABH), is a visionary leader who transforms lives and inspires greatness globally.</p>
 
-  <p>As the Master Trainer and Managing Director of AL&CO, he has impacted thousands through coaching, training and leadership. His expertise includes <strong>NLP, Hypnotherapy, Timeline Therapy Techniques, NLP Coaching, and Behavioral Re-engineering.</strong></p>
+  <p>As the Master Trainer and Managing Director of AL&CO, he has positively impacted thousands of lives through his groundbreaking coaching, training, and leadership. With unparalleled expertise in NLP, Hypnotherapy, Timeline Therapy Techniques, NLP Coaching, and Behavioral Re-engineering, Arslan has empowered countless individuals and professionals to break barriers, unlock their true potential, and achieve extraordinary success. A true pioneer in human brilliance and alternative therapies, Arslan is not just a trainer; he is a beacon of transformation, igniting a legacy of empowerment and excellence in everyone he touches.</p>
   `,
 }
 
@@ -29,16 +29,16 @@ export default function AralanLarikIntro() {
   const data = aralanLarikIntroData;
 
   return (
-    <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4 bg-light-neutral bg-cover bg-top-left w-full">
+    <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-light-neutral bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 my-8">
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col ">
             <h3 className="h3 text-black text-start">
               {data.title}
             </h3>
           </div>
           <div className="flex flex-col justify-center pt-1">
-            <p className="custom-text-1 font-light text-black text-start mb-8">
+            <p className="custom-text1 font-light text-black text-start mb-8">
               {data.description}
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function AralanLarikIntro() {
               {data.designation}
             </h5>
             <div
-              className="custom-text-1 font-light text-black space-y-4"
+              className="custom-text1 font-light text-black space-y-4"
               dangerouslySetInnerHTML={{ __html: data.specification }}
             />
           </div>

@@ -10,21 +10,22 @@ import Image from "next/image";
 
 const menuData = [
   { name: "Home", link: "/" },
-
   {
     name: "Program",
     submenu: [
-      { name: "Program 1", link: "/program1" },
-      { name: "Program 2", link: "/program2" },
-      { name: "Program 3", link: "/program3" },
-      { name: "Program 4", link: "/program4" },
-    ],
+    { name: "NLP Practitioner", link: "/program/nlp-practitioner" },
+    { name: "NLP Master Practitioner", link: "/program/nlp-master-practitioner" },
+    // { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
+    // { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
+    // { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
+    // { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },
+  ],
   },
 
   {
     name: "About Us",
     submenu: [
-      { name: "Our Mission", link: "/mission" },
+      { name: "Our Mission", link: "/our-mission" },
       { name: "FAQs", link: "/faqs" },
     ],
   },
@@ -76,7 +77,7 @@ export default function Navbar() {
                   {/* Desktop Dropdown */}
                   {openDropdown === item.name && (
                     <div className="absolute left-0 top-full pt-2 ">
-                      <ul className="bg-primary rounded-lg shadow-lg min-w-[250px] my-2 overflow-hidden border border-primary">
+                      <ul className="bg-primary rounded-lg shadow-lg w-[250px] max-w-xl my-2 overflow-hidden border border-primary">
                         {item.submenu.map((sub) => (
                           <li key={sub.name}>
                             <Link

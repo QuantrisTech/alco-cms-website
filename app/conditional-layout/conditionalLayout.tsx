@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import Loader from "@/component/loader/loader";
+import FloatingChatButton from "@/component/FloatingChatButton";
 
 export default function ConditionalLayout({
   children,
@@ -16,22 +17,28 @@ export default function ConditionalLayout({
 
   const hideLayout = pathname.startsWith("/admin");
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 4000);
+  useEffect(() => {
+    setLoading(true);
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
 
-  // if (loading) {
-  //   return <Loader />;
-  // }
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
       {!hideLayout && <Navbar />}
       {children}
+      <FloatingChatButton
+        whatsappNumber="18886814808"
+        phoneNumber="+18886814808"
+      />
       {!hideLayout && <Footer />}
     </>
   );

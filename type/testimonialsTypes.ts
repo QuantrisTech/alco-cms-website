@@ -1,6 +1,7 @@
 export type TestimonialsPost = {
   _id: string
-  thumbnail: string
+  image?: string
+  thumbnail?: string
   videoUrl?: string
   name: string
   designation: string

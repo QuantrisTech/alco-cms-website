@@ -9,11 +9,12 @@ import Accredited from "@/component/Accredited";
 import WhyTrainWithAL from "@/component/WhyTrainWithAL";
 import ALCOCenter from "@/component/ALCOCenter";
 import Testimonials from "@/component/testimonial";
+import { home } from "./data";
 
 export default function Home() {
   return (
     <div className="">
-      <Hero />
+      <Hero data={home.hero}/>
       <Brand />
       <WhatIsNlp />
       <AralanLarikIntro />

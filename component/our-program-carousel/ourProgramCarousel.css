@@ -112,7 +112,7 @@
 @media (min-width: 1536px) {
     .our_program_embla {
         --slide-height: 24rem;
-        --slide-spacing: 90px;
+        --slide-spacing: 40px;
         --slide-size: 45%;
     }
 }
