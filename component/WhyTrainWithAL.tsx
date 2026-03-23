@@ -80,7 +80,8 @@ export default function WhyTrainWithAL() {
               {data.description}
             </p>
             <div className="mt-4">
-              <Button variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
+              <Button 
+iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
             </div>
           </div>
         </div>

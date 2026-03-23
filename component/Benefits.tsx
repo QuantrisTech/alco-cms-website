@@ -103,7 +103,8 @@ export default function Benefits() {
             {data.description}
           </p>
           <div>
-            <Button
+            <Button 
+iconRight={true}
               variant="secondary"
               size="medium"
               text="Explore More"

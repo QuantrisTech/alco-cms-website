@@ -48,7 +48,8 @@ export default function ContactInfo() {
               </p>
             </div>
             <div className="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2 flex flex-col justify-end ">
-              <Button variant="secondary" size="medium" text="Register Today" href="#" className='my-auto ml-auto' />
+              <Button 
+iconRight={true} variant="secondary" size="medium" text="Register Today" href="#" className='my-auto ml-auto' />
             </div>
           </div>
         </div>

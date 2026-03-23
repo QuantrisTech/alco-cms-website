@@ -1,6 +1,13 @@
+// Type
 import { BannerData } from "@/type/bannerType";
 import { LevelIntroWithVideoType } from "@/type/levelIntroWithVideo";
 import { ProgramType } from "@/type/programType";
+import { LevelBenefitsTableType } from "@/type/levelBenefitsTable";
+import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
+import { LevelContentType } from "@/type/levelContent";
+import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
+
+// Images
 import programLevel1 from "@/assets/background/program-level-1.webp"
 import programLevel2 from "@/assets/background/program-level-2.webp"
 import { LevelCertificationType } from "@/type/levelCertification";
@@ -22,10 +29,8 @@ import LevelProgram6 from "@/assets/level-program-included/program-6.webp"
 import LevetContent1 from "@/assets/level-content/level-content-1.webp"
 import LevetContent2 from "@/assets/level-content/level-content-2.webp"
 import LevetContent3 from "@/assets/level-content/level-content-3.webp"
-import { LevelBenefitsTableType } from "@/type/levelBenefitsTable";
-import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
-import { LevelContentType } from "@/type/levelContent";
-import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
+
+// Level 1 Start
 
 const bannerDataLevel1: BannerData = {
   level: "level 1",
@@ -314,6 +319,10 @@ const LevelGraduatesExperienceDataLevel1: LevelGraduatesExperienceType = {
   },
   video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
 }
+
+// Level 1 End
+
+// Level 2 Start
 
 const bannerDataLevel2: BannerData = {
   level: "level 2",
@@ -613,6 +622,8 @@ const LevelGraduatesExperienceDataLevel2: LevelGraduatesExperienceType = {
   },
   video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4"
 };
+
+// Level 2 End
 
 // dummy null structured
 

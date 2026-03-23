@@ -2,10 +2,12 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { PopupProvider } from "@/context/enrollPopupContext";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
 import Loader from "@/component/loader/loader";
 import FloatingChatButton from "@/component/FloatingChatButton";
+import EnrollPopup from "@/component/modal/popup/enrollPopup";
 
 export default function ConditionalLayout({
   children,
@@ -33,13 +35,16 @@ export default function ConditionalLayout({
 
   return (
     <>
+    <PopupProvider>
       {!hideLayout && <Navbar />}
       {children}
+      <EnrollPopup />
       <FloatingChatButton
         whatsappNumber="18886814808"
         phoneNumber="+18886814808"
       />
       {!hideLayout && <Footer />}
+      </PopupProvider>
     </>
   );
 }

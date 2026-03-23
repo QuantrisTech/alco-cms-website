@@ -1,9 +1,9 @@
 import React from "react";
-import { CgArrowTopRight } from "react-icons/cg";
+import { CgArrowTopLeft, CgArrowTopRight } from "react-icons/cg";
 
 type ButtonProps = {
     text?: string; // Button ka text, default "Click Me"
-    onClick?: () => void; // Button click handler
+    onClick?: (() => void) | undefined // Button click handler
     href?: string; // Optional link
     disabled?: boolean; // Button disable karne ke liye
     variant?:
@@ -20,6 +20,7 @@ type ButtonProps = {
     iconLeft?: React.ReactNode;  // Left side icon
     iconRight?: React.ReactNode; // Right side icon
     className?: string; // Extra Tailwind classes
+    type?: "button" | "submit" | "reset"; 
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -30,8 +31,9 @@ const Button: React.FC<ButtonProps> = ({
     variant = "primary",
     size = "medium",
     iconLeft,
-    iconRight = true,
+    iconRight = false,
     className = "",
+    type = "button",
 }) => {
     // Variant classes
     const variantClasses: Record<string, string> = {
@@ -73,7 +75,7 @@ const Button: React.FC<ButtonProps> = ({
             >
                 {iconLeft && <span className="flex items-center mr-1">{iconLeft}</span>}
                 {text}
-                {iconRight === true ? <span className="flex items-center ml-1"><CgArrowTopRight  size={16} /></span> : iconRight && <span className="flex items-center ml-1">{iconRight}</span>}
+                {iconRight === true ? <span className="flex items-center ml-1"><CgArrowTopRight size={16} /></span> : iconRight && <span className="flex items-center ml-1">{iconRight}</span>}
             </a>
         );
     }
@@ -84,10 +86,23 @@ const Button: React.FC<ButtonProps> = ({
             onClick={onClick}
             disabled={disabled}
             className={commonClasses}
+            type={type}
         >
-            {iconLeft && <span className="flex items-center mr-1">{iconLeft}</span>}
+            {iconLeft === true ? (
+                <span className="flex items-center ml-1">
+                    <CgArrowTopLeft size={16} />
+                </span>
+            ) : (
+                iconLeft && <span className="flex items-center ml-1">{iconLeft}</span>
+            )}
             {text}
-            {iconRight && <span className="flex items-center ml-1">{iconRight}</span>}
+            {iconRight === true ? (
+                <span className="flex items-center ml-1">
+                    <CgArrowTopRight size={16} />
+                </span>
+            ) : (
+                iconRight && <span className="flex items-center ml-1">{iconRight}</span>
+            )}
         </button>
     );
 };

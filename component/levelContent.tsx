@@ -25,7 +25,8 @@ export default function LevelContent({ data }: Props) {
             </span>
           </h3>
           <div className="my-2">
-            <Button variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
+            <Button 
+iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div>
         </div>
 

@@ -1,58 +1,75 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 
-type ButtonProps = {
-    text?: string; // Button ka text, default "Click Me"
-    onClick?: () => void; // Button click handler
-    disabled?: boolean; // Button disable karne ke liye
-    variant?: "primary" | "secondary" | "danger" | "outline"; // Button ka type
-    size?: "small" | "medium" | "large"; // Size of button
-    iconLeft?: React.ReactNode;  // Left side icon
-    iconRight?: React.ReactNode; // Right side icon
-    className?: string; // Extra Tailwind classes
+type InputProps = {
+  label: string;
+  type?: "text" | "password" | "number" | "email" | "tel";
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  textarea?: boolean;
+  name?: string;
+  disabled?: boolean;
+  size?: "small" | "medium" | "large";
 };
 
-const Button: React.FC<ButtonProps> = ({
-    text = "Click Me",
-    onClick,
-    disabled = false,
-    variant = "primary",
-    size = "medium",
-    iconLeft,
-    iconRight,
-    className = "",
+const InputField: React.FC<InputProps> = ({
+  label,
+  type = "text",
+  value,
+  onChange,
+  textarea = false,
+  name,
+  disabled = false,
+  size = "medium",
 }) => {
-    // Variant classes
-    const variantClasses: Record<string, string> = {
-        primary: "bg-blue-500 hover:bg-blue-600 text-white",
-        secondary: "bg-gray-500 hover:bg-gray-600 text-white",
-        danger: "bg-red-500 hover:bg-red-600 text-white",
-        outline: "border border-gray-500 text-gray-700 hover:bg-gray-100",
-    };
+  const [focus, setFocus] = useState(false);
 
-    // Size classes
-    const sizeClasses: Record<string, string> = {
-        small: "px-3 py-1 text-sm",
-        medium: "px-4 py-2 text-base",
-        large: "px-6 py-3 text-lg",
-    };
+  const isActive = focus || value;
 
-    return (
-        <button
-            onClick={onClick}
-            disabled={disabled}
-            className={`
-        rounded-md font-medium transition 
-        ${variantClasses[variant]} 
-        ${sizeClasses[size]} 
-        ${disabled ? "opacity-50 cursor-not-allowed" : ""}
-        ${className}
-      `}
-        >
-            {iconLeft && <span className="flex items-center">{iconLeft}</span>}
-            {text}
-            {iconRight && <span className="flex items-center">{iconRight}</span>}
-        </button>
-    );
+  // ✅ Size classes
+  const sizeClasses: Record<string, string> = {
+    sm: "px-2 pt-4 pb-1 text-sm",
+    md: "px-3 pt-5 pb-2 text-base",
+    lg: "px-4 pt-6 pb-3 text-lg",
+  };
+
+  return (
+    <div className="relative w-full">
+      {textarea ? (
+        <textarea
+          name={name}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary resize-none"
+          // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary resize-none ${sizeClasses[size]}`}
+        />
+      ) : (
+        <input
+          type={type}
+          name={name}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary"
+          // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary ${sizeClasses[size]}`}
+        />
+      )}
+
+      {/* Floating Label */}
+      <label
+        className={`absolute left-3 transition-all duration-200 pointer-events-none
+        ${isActive ? "top-1 text-xs text-primary" : "text-sm top-3 text-gray-400"}
+        `}
+      >
+        {label}
+      </label>
+    </div>
+  );
 };
 
-export default Button;
+export default InputField;

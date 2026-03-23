@@ -58,7 +58,7 @@
 // />
 //                   <div className="mt-4 flex gap-2">
 //                     {slide.button1?.text && (
-//                       <Button
+//                       <Button 
 //                         text={slide.button1.text}
 //                         href={slide.button1.link}
 //                         variant="secondary"
@@ -66,7 +66,7 @@
 //                       />
 //                     )}
 //                     {slide.button2?.text && (
-//                       <Button
+//                       <Button 
 //                         text={slide.button2.text}
 //                         href={slide.button2.link}
 //                         variant="white"
@@ -166,7 +166,8 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                   />
                   <div className="mt-4 flex gap-2">
                     {slide.button1?.text && (
-                      <Button
+                      <Button 
+iconRight={true}
                         text={slide.button1.text}
                         href={slide.button1.link}
                         variant="secondary"
@@ -174,7 +175,8 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                       />
                     )}
                     {slide.button2?.text && (
-                      <Button
+                      <Button 
+iconRight={true}
                         text={slide.button2.text}
                         href={slide.button2.link}
                         variant="white"

@@ -50,7 +50,8 @@ export default function WhatIsNlp() {
           {data.description}
         </p>
 
-        <Button
+        <Button 
+iconRight={true}
           text={data.button.text}
           href={data.button.link}
           variant="secondary"

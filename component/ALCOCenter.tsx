@@ -34,8 +34,10 @@ export default function ALCOCenter() {
               {data.description}
             </p> */}
             <div className="mt-4 flex gap-4">
-              <Button variant="secondaryBlack" size="medium" text={data.button1.text} href={data.button1.link} className='my-auto' />
-              <Button variant="white" size="medium" text={data.button2.text} href={data.button2.link} className='my-auto' />
+              <Button 
+iconRight={true} variant="secondaryBlack" size="medium" text={data.button1.text} href={data.button1.link} className='my-auto' />
+              <Button 
+iconRight={true} variant="white" size="medium" text={data.button2.text} href={data.button2.link} className='my-auto' />
             </div>
           </div>
           <div className="flex flex-col justify-center pt-1">

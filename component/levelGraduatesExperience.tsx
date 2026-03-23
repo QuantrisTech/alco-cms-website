@@ -23,8 +23,10 @@ export default function LevelGraduatesExperience({ data }: Props) {
             </span>
           </h3>
           <div className="mt-4 flex gap-4">
-            <Button variant="white" size="medium" text="Register Today" href="#" className='my-auto' />
-            <Button variant="secondary" size="medium" text="Learn More" href="#" className='my-auto' />
+            <Button 
+iconRight={true} variant="white" size="medium" text="Register Today" href="#" className='my-auto' />
+            <Button 
+iconRight={true} variant="secondary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div>
         </div>
         <div className="my-8">

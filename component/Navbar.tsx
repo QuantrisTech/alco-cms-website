@@ -7,19 +7,20 @@ import Button from "./button";
 import { IoChevronDown } from "react-icons/io5";
 import Logo from "@/assets/logo.webp";
 import Image from "next/image";
+import { usePopup } from "@/context/enrollPopupContext";
 
 const menuData = [
   { name: "Home", link: "/" },
   {
     name: "Program",
     submenu: [
-    { name: "NLP Practitioner", link: "/program/nlp-practitioner" },
-    { name: "NLP Master Practitioner", link: "/program/nlp-master-practitioner" },
-    // { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
-    // { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
-    // { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
-    // { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },
-  ],
+      { name: "NLP Practitioner", link: "/program/nlp-practitioner" },
+      { name: "NLP Master Practitioner", link: "/program/nlp-master-practitioner" },
+      // { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
+      // { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
+      // { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
+      // { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },
+    ],
   },
 
   {
@@ -39,138 +40,155 @@ const menuData = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const { openPopup } = usePopup();
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-2xl  border-b fixed w-full top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between p-4">
+    <>
+      <nav className="bg-white/80 backdrop-blur-2xl  border-b fixed w-full top-0 z-50">
+        <div className="container mx-auto flex items-center justify-between p-4">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src={Logo}
-            alt="logo"
-            className="h-10 md:h-11 xl:h-12 2xl:h-13  w-auto"
-            priority
-          />
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src={Logo}
+              alt="logo"
+              className="h-10 md:h-11 xl:h-12 2xl:h-13  w-auto"
+              priority
+            />
+          </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-stretch gap-4 xl:gap-8 2xl:gap-6 z-0">
-          {menuData.map((item) => (
-            <li
-              key={item.name}
-              className="relative "
-              onMouseEnter={() => item.submenu && setOpenDropdown(item.name)}
-              onMouseLeave={() => item.submenu && setOpenDropdown(null)}
-            >
-              {item.submenu ? (
-                <>
-                  <button className="header-menu-font flex items-center gap-x-1 ">
-                    {item.name}
-                    <IoChevronDown />
-                  </button>
-
-                  {/* Desktop Dropdown */}
-                  {openDropdown === item.name && (
-                    <div className="absolute left-0 top-full pt-2 ">
-                      <ul className="bg-primary rounded-lg shadow-lg w-[250px] max-w-xl my-2 overflow-hidden border border-primary">
-                        {item.submenu.map((sub) => (
-                          <li key={sub.name}>
-                            <Link
-                              href={sub.link}
-                              className="block px-4 py-2 header-submenu-font hover:bg-gray-100/10 backdrop-blur-sm text-neutral-100 hover:text-white "
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link href={item.link ?? "#"} className="header-menu-font flex items-center">
-                  {item.name}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex gap-3">
-          <Button text="Enroll Now" className="header-menu-button px-[12px]" href="#" />
-          <Button text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" />
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-2xl"
-        >
-          ☰
-        </button>
-
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="lg:hidden border-t bg-white/40 backdrop-blur-3xl">
-          <ul className="flex flex-col p-4 gap-3">
-
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex items-stretch gap-4 xl:gap-8 2xl:gap-6 z-0">
             {menuData.map((item) => (
-              <li key={item.name}>
-
+              <li
+                key={item.name}
+                className="relative "
+                onMouseEnter={() => item.submenu && setOpenDropdown(item.name)}
+                onMouseLeave={() => item.submenu && setOpenDropdown(null)}
+              >
                 {item.submenu ? (
                   <>
-                    <button
-                      onClick={() => toggleDropdown(item.name)}
-                      className="header-menu-font w-full text-left flex justify-between items-center"
-                    >
+                    <button className="header-menu-font flex items-center gap-x-1 ">
                       {item.name}
-                      <IoChevronDown
-                        className={`transition-transform ${openDropdown === item.name ? "rotate-180" : ""
-                          }`}
-                      />
+                      <IoChevronDown />
                     </button>
 
+                    {/* Desktop Dropdown */}
                     {openDropdown === item.name && (
-                      <ul className="pl-4 mt-2 flex flex-col gap-2">
-                        {item.submenu.map((sub) => (
-                          <li key={sub.name}>
-                            <Link
-                              href={sub.link}
-                              className="header-submenu-font"
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="absolute left-0 top-full pt-2 ">
+                        <ul className="bg-primary rounded-lg shadow-lg w-[250px] max-w-xl my-2 overflow-hidden border border-primary">
+                          {item.submenu.map((sub) => (
+                            <li key={sub.name}>
+                              <Link
+                                href={sub.link}
+                                className="block px-4 py-2 header-submenu-font hover:bg-gray-100/10 backdrop-blur-sm text-neutral-100 hover:text-white "
+                              >
+                                {sub.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     )}
                   </>
                 ) : (
-                  <Link href={item.link ?? "#"} className="header-menu-font">
+                  <Link href={item.link ?? "#"} className="header-menu-font flex items-center">
                     {item.name}
                   </Link>
                 )}
-
               </li>
             ))}
-
-            {/* Mobile Buttons */}
-            <div className="flex flex-col sm:flex-row gap-2 pt-4">
-              <Button text="Enroll Now" variant="primary" className="header-menu-button px-[12px] min-w-[160px]" href="#"/>
-              <Button text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px] min-w-[160px]" />
-            </div>
-
           </ul>
+
+          {/* Desktop Buttons */}
+          <div className="hidden lg:flex gap-3">
+            <Button
+              text="Enroll Now"
+              className="header-menu-button px-[12px]"
+              iconRight={true}
+              onClick={openPopup}
+            />
+            <Button
+              iconRight={true} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" />
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden text-2xl"
+          >
+            ☰
+          </button>
+
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="lg:hidden border-t bg-white/40 backdrop-blur-3xl">
+            <ul className="flex flex-col p-4 gap-3">
+
+              {menuData.map((item) => (
+                <li key={item.name}>
+
+                  {item.submenu ? (
+                    <>
+                      <button
+                        onClick={() => toggleDropdown(item.name)}
+                        className="header-menu-font w-full text-left flex justify-between items-center"
+                      >
+                        {item.name}
+                        <IoChevronDown
+                          className={`transition-transform ${openDropdown === item.name ? "rotate-180" : ""
+                            }`}
+                        />
+                      </button>
+
+                      {openDropdown === item.name && (
+                        <ul className="pl-4 mt-2 flex flex-col gap-2">
+                          {item.submenu.map((sub) => (
+                            <li key={sub.name}>
+                              <Link
+                                href={sub.link}
+                                className="header-submenu-font"
+                              >
+                                {sub.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </>
+                  ) : (
+                    <Link href={item.link ?? "#"} className="header-menu-font">
+                      {item.name}
+                    </Link>
+                  )}
+
+                </li>
+              ))}
+
+              {/* Mobile Buttons */}
+              <div className="flex flex-col sm:flex-row gap-2 pt-4">
+                <Button
+                  text="Enroll Now"
+                  className="header-menu-button px-[12px]"
+                  iconRight={true}
+                  onClick={openPopup}
+                />
+                <Button
+                  iconRight={true} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px] min-w-[160px]" />
+              </div>
+
+
+
+            </ul>
+          </div>
+        )}
+      </nav>
+    </>
   );
 }

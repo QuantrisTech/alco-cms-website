@@ -43,7 +43,8 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                   </p>
                 </div>
                 <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
-                  <Button variant="primary" size="medium" text="Learn More" href="#" className='' />
+                  <Button 
+iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='' />
                 </div>
                 <div className="flex flex-col justify-center col-span-12 mt-4">
                   <img

@@ -68,7 +68,8 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                           </span>
                         ))}
                       </div>
-                      <Button
+                      <Button 
+iconRight={true}
                         text="Read More"
                         variant="primary"
                         size="medium"
