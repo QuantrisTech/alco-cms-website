@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { BannerData } from "@/type/bannerType";
+import { BannerType } from "@/type/bannerType";
 
 // bg-image-alco-center
 
 type Props = {
-  data: BannerData
+  data: BannerType
 }
 
 export default function Banner({ data }: Props) {
