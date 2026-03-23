@@ -1,4 +1,3 @@
-import { BannerData } from "./bannerType"
 
 export type LevelIntroWithVideoType = {
   title: {

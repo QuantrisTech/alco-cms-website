@@ -1,5 +1,5 @@
 import React from "react"
-import { BannerData } from "./bannerType"
+
 
 export type LevelProgramIncludesType = {
   title: {

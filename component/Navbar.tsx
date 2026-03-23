@@ -16,10 +16,10 @@ const menuData = [
     submenu: [
       { name: "NLP Practitioner", link: "/program/nlp-practitioner" },
       { name: "NLP Master Practitioner", link: "/program/nlp-master-practitioner" },
-      // { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
-      // { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
-      // { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
-      // { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },
+      { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
+      { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
+      { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
+      { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },
     ],
   },
 
@@ -113,7 +113,7 @@ export default function Navbar() {
               onClick={openPopup}
             />
             <Button
-              iconRight={true} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" />
+              iconRight={false} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" />
           </div>
 
           {/* Mobile Toggle */}

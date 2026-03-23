@@ -1,4 +1,4 @@
-import { BannerData } from "./bannerType"
+import { BannerType } from "./bannerType"
 import { LevelBenefitsTableType } from "./levelBenefitsTable"
 import { LevelCertificationType } from "./levelCertification"
 import { LevelContentType } from "./levelContent"
@@ -10,7 +10,7 @@ export type ProgramType = {
   slug: string
   title?: string
   description?: string
-  BannerData: BannerData
+  BannerData: BannerType
   LevelIntroWithVideoData : LevelIntroWithVideoType
   LevelCertificationData : LevelCertificationType
   LevelProgramIncludesData : LevelProgramIncludesType

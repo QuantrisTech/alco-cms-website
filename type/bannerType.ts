@@ -3,7 +3,7 @@ type BannerTitle = {
   line2?: string
 }
 
-export type BannerData = {
+export type BannerType = {
   level?: string
   image?: string | undefined
   title: BannerTitle

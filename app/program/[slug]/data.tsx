@@ -1,5 +1,5 @@
 // Type
-import { BannerData } from "@/type/bannerType";
+import { BannerType } from "@/type/bannerType";
 import { LevelIntroWithVideoType } from "@/type/levelIntroWithVideo";
 import { ProgramType } from "@/type/programType";
 import { LevelBenefitsTableType } from "@/type/levelBenefitsTable";
@@ -14,12 +14,23 @@ import { LevelCertificationType } from "@/type/levelCertification";
 import AccreditedBrand1 from "@/assets/accredited/accredited-1.webp"
 import AccreditedBrand2 from "@/assets/accredited/accredited-2.webp"
 import AccreditedBrand3 from "@/assets/accredited/accredited-3.webp"
+import AccreditedBrand4 from "@/assets/accredited/accredited-4.webp"
+import AccreditedBrand5 from "@/assets/accredited/accredited-5.webp"
+import AccreditedBrand6 from "@/assets/accredited/accredited-6.webp"
 import Certificate1Level1 from "@/assets/level-certificate/certificate-1-level-1.webp"
 import Certificate2Level1 from "@/assets/level-certificate/certificate-2-level-1.webp"
 import Certificate3Level1 from "@/assets/level-certificate/certificate-3-level-1.webp"
 import Certificate1Level2 from "@/assets/level-certificate/certificate-1-level-2.webp"
 import Certificate2Level2 from "@/assets/level-certificate/certificate-2-level-2.webp"
 import Certificate3Level2 from "@/assets/level-certificate/certificate-3-level-2.webp"
+import Certificate1Level3 from "@/assets/level-certificate/certificate-1-level-3.webp"
+import Certificate2Level3 from "@/assets/level-certificate/certificate-2-level-3.webp"
+import Certificate3Level3 from "@/assets/level-certificate/certificate-3-level-3.webp"
+import Certificate4Level3 from "@/assets/level-certificate/certificate-4-level-3.webp"
+import Certificate5Level3 from "@/assets/level-certificate/certificate-5-level-3.webp"
+import Certificate1Level4 from "@/assets/level-certificate/certificate-1-level-4.webp"
+import Certificate1Level5 from "@/assets/level-certificate/certificate-1-level-5.webp"
+import Certificate1Level6 from "@/assets/level-certificate/certificate-1-level-6.webp"
 import LevelProgram1 from "@/assets/level-program-included/program-1.webp"
 import LevelProgram2 from "@/assets/level-program-included/program-2.webp"
 import LevelProgram3 from "@/assets/level-program-included/program-3.webp"
@@ -32,7 +43,7 @@ import LevetContent3 from "@/assets/level-content/level-content-3.webp"
 
 // Level 1 Start
 
-const bannerDataLevel1: BannerData = {
+const bannerDataLevel1: BannerType = {
   level: "level 1",
   title: {
     line1: "NLP Practitioner"
@@ -102,49 +113,100 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
   ]
 }
 
+// const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
+//   title: {
+//     line1: "Benefits of Choosing",
+//     line2: "NLP Practitioner Training"
+//   },
+//   points: [
+//     {
+//       content: "Definition of NLP",
+//       personal:
+//         "Understand how your mind works, allowing you to break free from limiting beliefs.",
+//       coaches:
+//         "Equip yourself with foundational NLP knowledge to guide clients confidently.",
+//     },
+//     {
+//       content: "Themes of NLP",
+//       personal:
+//         "Develop clarity and alignment in thoughts and emotions.",
+//       coaches:
+//         "Use NLP principles to create structured, impactful coaching sessions that help clients achieve sustainable change.",
+//     },
+//     {
+//       content: "Ecology",
+//       personal:
+//         "Make decisions that align with your values and positively impact your life and relationships.",
+//       coaches:
+//         "Guide clients to assess the impact of their goals on their lives, relationships, and overall well-being, ensuring ethical and sustainable growth.",
+//     },
+//     {
+//       content: "NLP Communication Model",
+//       personal:
+//         "Improve your communication to connect with others deeply, reduce misunderstandings, and build stronger relationships.",
+//       coaches:
+//         "Teach clients how to communicate effectively and interpret verbal and non-verbal cues to build rapport and influence outcomes.",
+//     },
+//     {
+//       content: "Presuppositions of NLP",
+//       personal:
+//         "Reframe your mindset to embrace positive, empowering beliefs that transform your approach to challenges.",
+//       coaches:
+//         "Help clients adopt empowering perspectives that enable growth and dissolve self-limiting beliefs.",
+//     },
+//   ],
+// }
+
 const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing",
-    line2: "NLP Practitioner Training"
+    line2: "NLP Practitioner Training",
   },
+
+  headers: [
+    "Content",
+    "Benefits for Personal Development",
+    "Benefits for Coaches",
+  ],
+
   points: [
     {
       content: "Definition of NLP",
-      personal:
+      values: [
         "Understand how your mind works, allowing you to break free from limiting beliefs.",
-      coaches:
         "Equip yourself with foundational NLP knowledge to guide clients confidently.",
+      ],
     },
     {
       content: "Themes of NLP",
-      personal:
+      values: [
         "Develop clarity and alignment in thoughts and emotions.",
-      coaches:
         "Use NLP principles to create structured, impactful coaching sessions that help clients achieve sustainable change.",
+      ],
     },
     {
       content: "Ecology",
-      personal:
+      values: [
         "Make decisions that align with your values and positively impact your life and relationships.",
-      coaches:
         "Guide clients to assess the impact of their goals on their lives, relationships, and overall well-being, ensuring ethical and sustainable growth.",
+      ],
     },
     {
       content: "NLP Communication Model",
-      personal:
+      values: [
         "Improve your communication to connect with others deeply, reduce misunderstandings, and build stronger relationships.",
-      coaches:
         "Teach clients how to communicate effectively and interpret verbal and non-verbal cues to build rapport and influence outcomes.",
+      ],
     },
     {
       content: "Presuppositions of NLP",
-      personal:
+      values: [
         "Reframe your mindset to embrace positive, empowering beliefs that transform your approach to challenges.",
-      coaches:
         "Help clients adopt empowering perspectives that enable growth and dissolve self-limiting beliefs.",
+      ],
     },
   ],
-}
+};
 
 const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
   title: {
@@ -324,7 +386,7 @@ const LevelGraduatesExperienceDataLevel1: LevelGraduatesExperienceType = {
 
 // Level 2 Start
 
-const bannerDataLevel2: BannerData = {
+const bannerDataLevel2: BannerType = {
   level: "level 2",
   title: {
     line1: "NLP Master Practitioner"
@@ -398,43 +460,101 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
   ]
 };
 
+// const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
+//   title: {
+//     line1: "Benefits of Choosing NLP",
+//     line2: "Master Practitioner Training"
+//   },
+//   points: [
+//     {
+//       content: "Prime Directives of the Unconscious Mind",
+//       personal: "Discover how your unconscious drives habits and emotions, helping you achieve personal breakthroughs.",
+//       coaches: "Leverage this understanding to create coaching strategies that lead to lasting results for clients."
+//     },
+//     {
+//       content: "Quantum Linguistics",
+//       personal: "Change the way you think and speak to unlock new possibilities and overcome problems.",
+//       coaches: "Guide clients to use empowering language patterns to create positive change."
+//     },
+//     {
+//       content: "Releasing Negative Emotions (TLT #1 & #2)",
+//       personal: "Let go of emotions like anger, sadness, and guilt that hold you back.",
+//       coaches: "Guide clients to release emotional burdens for lasting change."
+//     },
+//     {
+//       content: "Emotional Chains",
+//       personal: "Break patterns of emotional reactions and create a calmer, more balanced mindset.",
+//       coaches: "Help clients identify triggers and replace them with empowering responses."
+//     },
+//     {
+//       content: "Full Coaching Cycle with NLP & TLT",
+//       personal: "Achieve clarity on your goals and create actionable steps to reach them.",
+//       coaches: "Guide clients through a proven coaching process to help them achieve their goals."
+//     },
+//     {
+//       content: "Client Agreements",
+//       personal: "Build trust and ensure clear communication in your relationships.",
+//       coaches: "Establish clear expectations and goals with clients to create productive sessions."
+//     }
+//   ]
+// };
 const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing NLP",
-    line2: "Master Practitioner Training"
+    line2: "Master Practitioner Training",
   },
+
+  // 👇 dynamic headers
+  headers: [
+    "Content",
+    "Benefits for Personal Development",
+    "Benefits for Coaches",
+  ],
+
   points: [
-  {
-    content: "Prime Directives of the Unconscious Mind",
-    personal: "Discover how your unconscious drives habits and emotions, helping you achieve personal breakthroughs.",
-    coaches: "Leverage this understanding to create coaching strategies that lead to lasting results for clients."
-  },
-  {
-    content: "Quantum Linguistics",
-    personal: "Change the way you think and speak to unlock new possibilities and overcome problems.",
-    coaches: "Guide clients to use empowering language patterns to create positive change."
-  },
-  {
-    content: "Releasing Negative Emotions (TLT #1 & #2)",
-    personal: "Let go of emotions like anger, sadness, and guilt that hold you back.",
-    coaches: "Guide clients to release emotional burdens for lasting change."
-  },
-  {
-    content: "Emotional Chains",
-    personal: "Break patterns of emotional reactions and create a calmer, more balanced mindset.",
-    coaches: "Help clients identify triggers and replace them with empowering responses."
-  },
-  {
-    content: "Full Coaching Cycle with NLP & TLT",
-    personal: "Achieve clarity on your goals and create actionable steps to reach them.",
-    coaches: "Guide clients through a proven coaching process to help them achieve their goals."
-  },
-  {
-    content: "Client Agreements",
-    personal: "Build trust and ensure clear communication in your relationships.",
-    coaches: "Establish clear expectations and goals with clients to create productive sessions."
-  }
-]
+    {
+      content: "Prime Directives of the Unconscious Mind",
+      values: [
+        "Discover how your unconscious drives habits and emotions, helping you achieve personal breakthroughs.",
+        "Leverage this understanding to create coaching strategies that lead to lasting results for clients.",
+      ],
+    },
+    {
+      content: "Quantum Linguistics",
+      values: [
+        "Change the way you think and speak to unlock new possibilities and overcome problems.",
+        "Guide clients to use empowering language patterns to create positive change.",
+      ],
+    },
+    {
+      content: "Releasing Negative Emotions (TLT #1 & #2)",
+      values: [
+        "Let go of emotions like anger, sadness, and guilt that hold you back.",
+        "Guide clients to release emotional burdens for lasting change.",
+      ],
+    },
+    {
+      content: "Emotional Chains",
+      values: [
+        "Break patterns of emotional reactions and create a calmer, more balanced mindset.",
+        "Help clients identify triggers and replace them with empowering responses.",
+      ],
+    },
+    {
+      content: "Full Coaching Cycle with NLP & TLT",
+      values: [
+        "Achieve clarity on your goals and create actionable steps to reach them.",
+        "Guide clients through a proven coaching process to help them achieve their goals.",
+      ],
+    },
+    {
+      content: "Client Agreements",
+      values: [
+        "Build trust and ensure clear communication in your relationships.",
+        "Establish clear expectations and goals with clients to create productive sessions.",
+      ],
+    },
+  ],
 };
 
 const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
@@ -479,7 +599,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
     {
       title: "Comprehensive Home Study Materials",
       description: (
-         <>
+        <>
           <p className="mb-2">
             Deepen your expertise with meticulously designed resources, including:
           </p>
@@ -502,7 +622,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
         <>
           <p className="mb-2">
             Access over 250 audio files recorded by Dr. Tad James, a pioneer in the field of NLP. These lessons align with your training materials, allowing you to learn at your own pace and revisit advanced concepts anytime.
-Imagine having a world-renowned mentor guide you through every step of your journey.
+            Imagine having a world-renowned mentor guide you through every step of your journey.
           </p>
         </>
       ),
@@ -517,7 +637,7 @@ Imagine having a world-renowned mentor guide you through every step of your jour
       description: (
         <p>
           True mastery requires continuous learning. That’s why we provide lifetime access to revisit and revise our NLP Master Practitioner (Triple Certification) Training Program.
-This ensures you’re not just investing in 13 days—you’re investing in a lifetime of growth and evolution.
+          This ensures you’re not just investing in 13 days—you’re investing in a lifetime of growth and evolution.
         </p>
       ),
       theme: "dark",
@@ -555,64 +675,64 @@ const LevelContentDataLevel2: LevelContentType = {
     line2: ""
   },
   points: [
-  {
-    title: "Neuro-Linguistic Programming (NLP)",
-    items: [
-      "Prime Directives of the Unconscious Mind",
-      "Ecology",
-      "RAS Reticular Activating System",
-      "Quantum Linguistics",
-      "Advanced Presuppositions",
-      "Cartesian Coordinates",
-      "Meta Model III",
-      "Modal Operators Deeper Understanding",
-      "Time Scramble",
-      "Reality Intervention"
-    ],
-    image: {
+    {
+      title: "Neuro-Linguistic Programming (NLP)",
+      items: [
+        "Prime Directives of the Unconscious Mind",
+        "Ecology",
+        "RAS Reticular Activating System",
+        "Quantum Linguistics",
+        "Advanced Presuppositions",
+        "Cartesian Coordinates",
+        "Meta Model III",
+        "Modal Operators Deeper Understanding",
+        "Time Scramble",
+        "Reality Intervention"
+      ],
+      image: {
         src: LevetContent1.src,
         alt: "Neuro-Linguistic Programming (NLP)",
       },
-  },
-  {
-    title: "Timeline Therapy Techniques",
-    items: [
-      "Elicitation of Time Line #1 & #2",
-      "First Test of Elicitation",
-      "Root Cause / Gestalt",
-      "General Reframes I & II for TLT",
-      "What to do if Clients Associate into Traumatic Memory",
-      "Anxiety",
-      "Emotional Chains – 1",
-      "Changing the Time Line Location/Direction",
-      "Setting a Goal and Inserting it into the Future via TLT",
-      "Phobia Model",
-      "Forensic Regression"
-    ],
-    image: {
-      src: LevetContent2.src,
-      alt: "Timeline Therapy Techniques"
+    },
+    {
+      title: "Timeline Therapy Techniques",
+      items: [
+        "Elicitation of Time Line #1 & #2",
+        "First Test of Elicitation",
+        "Root Cause / Gestalt",
+        "General Reframes I & II for TLT",
+        "What to do if Clients Associate into Traumatic Memory",
+        "Anxiety",
+        "Emotional Chains – 1",
+        "Changing the Time Line Location/Direction",
+        "Setting a Goal and Inserting it into the Future via TLT",
+        "Phobia Model",
+        "Forensic Regression"
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: "Timeline Therapy Techniques"
+      }
+    },
+    {
+      title: "NLP Coaching",
+      items: [
+        "Client Disclosure and Agreements",
+        "Assigning Coaching Tasks",
+        "Understanding Coaching and Major Outcomes for Coaching",
+        "Working with Clients Underperforming",
+        "Increased and Enhancing Performance",
+        "Focusing on Future Performance",
+        "Integration of Conscious and Unconscious Mind via Coaching",
+        "Traditional Therapy vs Coaching",
+        "Formats of Coaching"
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: "NLP Coaching"
+      }
     }
-  },
-  {
-    title: "NLP Coaching",
-    items: [
-      "Client Disclosure and Agreements",
-      "Assigning Coaching Tasks",
-      "Understanding Coaching and Major Outcomes for Coaching",
-      "Working with Clients Underperforming",
-      "Increased and Enhancing Performance",
-      "Focusing on Future Performance",
-      "Integration of Conscious and Unconscious Mind via Coaching",
-      "Traditional Therapy vs Coaching",
-      "Formats of Coaching"
-    ],
-    image: {
-      src: LevetContent3.src,
-      alt: "NLP Coaching"
-    }
-  }
-]
+  ]
 };
 
 const LevelGraduatesExperienceDataLevel2: LevelGraduatesExperienceType = {
@@ -625,9 +745,1116 @@ const LevelGraduatesExperienceDataLevel2: LevelGraduatesExperienceType = {
 
 // Level 2 End
 
+// Level 3 Start
+
+const bannerDataLevel3: BannerType = {
+  level: "level 3",
+  title: {
+    line1: "Advanced Hypnotherapy & Interventionist Training"
+  },
+  description: "Dual Certification Training Program",
+  image: programLevel2.src,
+  className: "bg-center bg-no-repeat bg-primary"
+};
+
+const LevelIntroWithVideoDataLevel3: LevelIntroWithVideoType = {
+  title: {
+    line1: "Your Chance to Become ",
+    line2: "a World-Class Interventionist."
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  description: `<p>Hypnotherapy is the process through which the altered states of consciousness can influence positive changes in an individual’s attitudes, perceptions and behaviors. Once you become a hypnotist, you will be able to intertwine communication skills with deep relaxation techniques to assist people to reach a state where the conscious part of their mind is relaxed, and their unconscious part becomes more open to new suggestions or perspectives.</p>
+   <p>Hypnotherapy is a powerful tool for creating rapid transformation through healing and rewiring faulty programming at the deepest level of the unconscious mind. Hypnosis helps you get to the root of a problem quickly so that your clients can focus on creating the life they want and deserve.</p>`
+};
+
+const LevelCertificationDataLevel3: LevelCertificationType = {
+  title: {
+    line1: "",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Practitioner of Hypnosis via The American Board of Hypnotherapy (ABH)",
+      description: "Become a certified Practitioner of Hypnosis with ABH, the world’s largest hypnotherapy board. Master hypnosis for clinical, therapeutic, and coaching applications, creating lasting positive change. Unlock deep unconscious transformation, guiding clients toward breakthroughs and enhancing personal and professional growth with internationally recognized expertise in hypnotherapy.",
+      imageBrand: {
+        src: AccreditedBrand4.src,
+        alt: "ABH Logo"
+      },
+      imageCerficate: {
+        src: Certificate1Level3.src,
+        alt: "Practitioner Certificate"
+      }
+    },
+    {
+      title: "Master Practitioner of Hypnosis via The American Board of Hypnotherapy (ABH)",
+      description: "Become a Master Practitioner of Hypnosis with ABH, the world’s largest hypnotherapy board. Master advanced techniques to create profound transformation, unlock the hidden depths of the unconscious mind, and refine trance mastery. Elevate your expertise, integrating hypnosis into coaching for extraordinary breakthroughs and lasting impact.",
+      imageBrand: {
+        src: AccreditedBrand4.src,
+        alt: "ABH Master Logo"
+      },
+      imageCerficate: {
+        src: Certificate2Level3.src,
+        alt: "Master Practitioner Certificate"
+      }
+    },
+    {
+      title: "Master Practitioner of Hypnotherapy via National Guild of Hypnotists (NGH)",
+      description: "Become a Certified Master Hypnotist, Consulting Hypnotist, or Hypnotherapist with NGH. Gain a prestigious one-year membership and unlock global opportunities. This certification includes expert manuals, marketing strategies, and success guidelines to build a thriving hypnosis practice worldwide.",
+      imageBrand: {
+        src: AccreditedBrand4.src,
+        alt: "NGH Logo"
+      },
+      imageCerficate: {
+        src: Certificate3Level3.src,
+        alt: "NGH Certificate"
+      }
+    },
+    {
+      title: "Quintuple Certification Holder via Arslan Larik & Company (AL&CO)",
+      description: "An exclusive honor for AL&CO graduates who’ve mastered NLP, Time Line Therapy®, NLP Coaching, and Hypnosis. This elite set of certifications are accredited by globally renowned bodies, recognizing your expertise at the highest international standards.",
+      imageBrand: {
+        src: AccreditedBrand5.src,
+        alt: "AL&CO Logo"
+      },
+      imageCerficate: {
+        src: Certificate4Level3.src,
+        alt: "AL&CO Certificate"
+      }
+    },
+    {
+      imageCerficate: {
+        src: Certificate5Level3.src,
+        alt: "Final Certificate"
+      }
+    }
+  ]
+};
+
+// const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
+//   title: {
+//     line1: "Benefits of",
+//     line2: "Advanced Hypnotherapy & Interventionist Training"
+//   },
+//   points: [
+//     {
+//       content: "History of Hypnosis",
+//       personal: "Discover how hypnosis evolved from ancient practices to modern science-backed therapy, deepening self-awareness and unconscious mastery.",
+//       coaches: "Learn foundational principles that enhance your credibility and ability to explain hypnosis effectively to clients."
+//     },
+//     {
+//       content: "Working with Abreaction and Secondary Gains",
+//       personal: "Release suppressed emotions, overcome self-sabotaging behaviors, and create deep emotional healing.",
+//       coaches: "Guide clients through emotional catharsis safely, addressing unconscious blocks for lasting change."
+//     },
+//     {
+//       content: "Mastering Conversational Hypnosis",
+//       personal: "Enhance your ability to influence and communicate persuasively in everyday interactions, fostering deeper connections.",
+//       coaches: "Seamlessly induce trance states through conversation, bypassing conscious resistance and facilitating unconscious transformation."
+//     },
+//     {
+//       content: "Fundamentals of Ericksonian Hypnosis",
+//       personal: "Develop mental flexibility, enhance problem-solving skills, and use metaphors for self-reprogramming.",
+//       coaches: "Master indirect suggestions and storytelling to create effortless, resistance-free hypnosis sessions."
+//     },
+//     {
+//       content: "Hypnotic Patterns",
+//       personal: "Rewire thought processes for greater confidence, motivation, and personal growth.",
+//       coaches: "Apply structured language patterns to deepen trance, enhance suggestibility, and accelerate client breakthroughs."
+//     }
+//   ]
+// };
+
+const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
+  title: {
+    line1: "Benefits of",
+    line2: "Advanced Hypnotherapy & Interventionist Training",
+  },
+
+  // 👇 dynamic headers
+  headers: [
+    "Content",
+    "Benefits for Personal Development",
+    "Benefits for Coaches",
+  ],
+
+  points: [
+    {
+      content: "History of Hypnosis",
+      values: [
+        "Discover how hypnosis evolved from ancient practices to modern science-backed therapy, deepening self-awareness and unconscious mastery.",
+        "Learn foundational principles that enhance your credibility and ability to explain hypnosis effectively to clients.",
+      ],
+    },
+    {
+      content: "Working with Abreaction and Secondary Gains",
+      values: [
+        "Release suppressed emotions, overcome self-sabotaging behaviors, and create deep emotional healing.",
+        "Guide clients through emotional catharsis safely, addressing unconscious blocks for lasting change.",
+      ],
+    },
+    {
+      content: "Mastering Conversational Hypnosis",
+      values: [
+        "Enhance your ability to influence and communicate persuasively in everyday interactions, fostering deeper connections.",
+        "Seamlessly induce trance states through conversation, bypassing conscious resistance and facilitating unconscious transformation.",
+      ],
+    },
+    {
+      content: "Fundamentals of Ericksonian Hypnosis",
+      values: [
+        "Develop mental flexibility, enhance problem-solving skills, and use metaphors for self-reprogramming.",
+        "Master indirect suggestions and storytelling to create effortless, resistance-free hypnosis sessions.",
+      ],
+    },
+    {
+      content: "Hypnotic Patterns",
+      values: [
+        "Rewire thought processes for greater confidence, motivation, and personal growth.",
+        "Apply structured language patterns to deepen trance, enhance suggestibility, and accelerate client breakthroughs.",
+      ],
+    },
+  ],
+};
+
+const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
+  title: {
+    line1: "What’s Included in",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Twelve Intensive Days of Online Training",
+      description: (
+        <>
+          <p className="mb-2">
+            <strong>Delivered in Two Manageable Modules:</strong>
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li><strong className="me-1">Module 1 (5 Days):</strong>Training content from The American Board of Hypnotherapy (ABH-USA).</li>
+            <li><strong className="me-1">Module 2 (7 Days):</strong>Training content from The National Guild of Hypnotists (NGH-USA).</li>
+          </ul>
+          <p className="my-2">
+            <strong className="me-1">Led by Arslan Larik:</strong>
+            A globally acclaimed Master Trainer of Hypnotherapy via ABH & NGH.
+          </p>
+          <p>
+            <strong className="me-1">Hands-On Training:</strong>
+            Build real-world proficiency in hypnosis techniques under the direct mentorship of Master Trainer Arslan Larik.
+          </p>
+        </>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "Online Training",
+      },
+    },
+    {
+      title: "Dual Certifications via Prestigious Global Boards",
+      description: (
+        <>
+          <p>
+            Certified Practitioner of Hypnosis (ABH-USA).
+          </p>
+          <p>
+            Certified Master Practitioner of Hypnosis (ABH-USA).
+          </p>
+          <p>
+            Certified Master Hypnotherapy (NGH-USA).
+          </p>
+        </>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "Certifications",
+      },
+    },
+    {
+      title: "One-Year Paid NGH Board Membership",
+      description: (
+        <>
+          <p>Access exclusive NGH resources, research, and professional support.</p>
+          <p>Become a standing board member within the global hypnotherapy community.</p>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "NGH Membership",
+      },
+    },
+    {
+      title: "Mastery of 7-Path Self-Hypnosis",
+      description: (
+        <>
+          <p>Learn and master a self-hypnosis methodology that combines hypnosis with personal growth strategies.</p>
+        </>
+      ),
+      // title: "Comprehensive Training Materials",
+      // description: (
+      //   <>
+      //     <p className="mb-2">
+      //       Receive extensive learning resources to support your journey:
+      //     </p>
+      //     <ul className="list-disc pl-5 space-y-1">
+      //       <li>2 approved manuals from the American Board of Hypnotherapy</li>
+      //       <li>4 approved manuals from the National Guild of Hypnotists</li>
+      //       <li>3 bonus home study manuals for advanced learning</li>
+      //       <li>Access to 500+ hypnotic scripts</li>
+      //       <li>Exclusive Hypnosis Video Library by NGH</li>
+      //     </ul>
+      //   </>
+      // ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "Training Materials",
+      },
+    },
+    {
+      title: "Honorary Quintuple Acknowledgement Certificate",
+      description: (
+        <p>
+          Receive an honorary Quintuple Certification Holder Certificate via AL&CO.
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram5.src,
+        alt: "Self Hypnosis",
+      },
+    },
+    {
+      title: "Comprehensive Training Materials",
+      description: (
+        <>
+          <p className="mb-2">
+            <strong>
+              Training Manuals:
+            </strong>
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>2 approved manuals from The American Board of Hypnotherapy</li>
+            <li>4 approved manuals from The National Guild of Hypnotists</li>
+            <li>3 bonus home study manuals for advanced learning</li>
+          </ul>
+          <p className="my-2">
+            <strong>
+              Additional Resources:
+            </strong>
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Access to 500+ hypnotic scripts as a bonus</li>
+            <li>Exclusive access to the extensive Hypnosis Video Library by the National Guild of Hypnotists</li>
+          </ul>
+        </>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram6.src,
+        alt: "Lifetime Access",
+      },
+    },
+    {
+      title: "Lifetime Access to Training Content",
+      description: (
+        <p>
+          Enjoy unlimited access to training materials, allowing you to revisit, revise, and strengthen your skills anytime through AL&CO.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram4.src,
+        alt: "Training Materials",
+      },
+    },
+  ],
+};
+
+const LevelContentDataLevel3: LevelContentType = {
+  title: {
+    line1: "Content of Advanced Hypnotherapy and Interventionist Training",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Core Hypnosis Foundations",
+      items: [
+        "History of Hypnosis",
+        "Working with Abreaction and Secondary Gains",
+        "Mastering Conversational Hypnosis",
+        "Fundamentals of Ericksonian Hypnosis",
+        "Hypnotic Patterns",
+        "Direct & Indirect Suggestions",
+        "Embedded Commands",
+        "Truism about Sensations",
+        "Truism Utilizing Time",
+        "Not Knowing, Not Doing"
+      ],
+      image: {
+        src: LevetContent1.src,
+        alt: "Core Hypnosis Topics",
+      },
+    },
+    {
+      title: "Advanced Hypnotic Techniques",
+      items: [
+        "Open-Ended Suggestions",
+        "Covering all possibilities of Response",
+        "To Focus Attention",
+        "Facilitating Internal Change",
+        "Compound Suggestions",
+        "Implication and Implied Directives",
+        "Bind and Double Binds",
+        "Multi-Level Communication",
+        "Pre-Induction and Preparation for Trance",
+        "Hypnotic Contract"
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: "Advanced Hypnosis Techniques",
+      },
+    },
+    {
+      title: "Professional Practice & Client Mastery",
+      items: [
+        "Client Assessment and Goal Setting",
+        "Building Rapport and Trust",
+        "Ethics and Professional Standards in Hypnosis",
+        "Designing Effective Hypnosis Sessions",
+        "Handling Resistance in Clients",
+        "Deepening Techniques for Trance",
+        "Post-Hypnotic Suggestions",
+        "Session Structuring and Flow",
+        "Tracking Client Progress",
+        "Delivering Transformational Results"
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: "Professional Hypnosis Practice",
+      },
+    }
+  ]
+};
+
+const LevelGraduatesExperienceDataLevel3: LevelGraduatesExperienceType = {
+  title: {
+    line1: "Benefits of Choosing",
+    line2: "Advanced Hypnotherapy & Interventionist Training"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+};
+
+// Level 3 End
+
+// Level 4 Start
+
+const bannerDataLevel4: BannerType = {
+  level: "level 4",
+  title: {
+    line1: "NLP Trainers’ Training And Evaluation Certification Program"
+  },
+  // description: "Dual Certification Training Program",
+  image: programLevel2.src,
+  className: "bg-center bg-no-repeat bg-primary"
+};
+
+const LevelIntroWithVideoDataLevel4: LevelIntroWithVideoType = {
+  title: {
+    line1: "Master the Art of ",
+    line2: "Transformational Speaking and Training "
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  description: `<p>Step into the spotlight with unparalleled confidence, captivate every audience you address, and inspire change at every level. The NLP Trainer’s Training & Evaluation Certification by Arslan Larik & Company is more than a program—it’s a journey to becoming a transformational leader, a world-class presenter, and a certified NLP Trainer capable of influencing lives globally.</p>`
+};
+
+const LevelCertificationDataLevel4: LevelCertificationType = {
+  title: {
+    line1: "Certifications",
+    line2: "NLP Trainers’ Training And Evaluation Certification"
+  },
+  points: [
+    {
+      title: `Certified NLP Trainer via the American Board of Neuro-Linguistic Programming (ABNLP)`,
+      description: "This globally recognized certification establishes you as a Certified NLP Trainer, empowering you to deliver NLP training, certify NLP Practitioners and Master Practitioners, and lead transformational programs. Accredited by ABNLP, this certification validates your expertise in advanced training methodologies, public speaking, and personal development, positioning you as a world-class NLP Trainer.",
+      imageBrand: {
+        src: AccreditedBrand1.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate1Level4.src,
+        alt: "Certificate One"
+      },
+    }
+  ]
+}
+
+const LevelBenefitsTableDataLevel4: LevelBenefitsTableType = {
+  title: {
+    line1: "Benefits of",
+    line2: "NLP Trainers’ Training Program",
+  },
+
+  headers: [
+    "Content",
+    "Benefits for NLP Trainer",
+  ],
+
+  points: [
+    {
+      content: "Be the Best Presenter",
+      values: [
+        "Learn to take the stage with confidence and develop a presentation style that commands attention. Deliver captivating and persuasive speeches every time.",
+      ],
+    },
+    {
+      content: "Move Audiences Enthusiastically",
+      values: [
+        "Master the art of connecting emotionally with audiences through storytelling, humor, and advanced communication strategies that inspire action.",
+      ],
+    },
+    {
+      content: "Present Magically to Global Audiences",
+      values: [
+        "Gain the skills to adapt your message to any cultural or professional setting, ensuring impactful and memorable presentations worldwide.",
+      ],
+    },
+    {
+      content: "Inspire from Anywhere, Anytime",
+      values: [
+        "Whether online or in person, learn to deliver your message with clarity, passion, and purpose, inspiring transformation across platforms.",
+      ],
+    },
+    {
+      content: "Raise Your Professional Profile",
+      values: [
+        "Establish yourself as a credible and sought-after NLP Trainer, presenter, and speaker. Differentiate yourself in a competitive market.",
+      ],
+    },
+    {
+      content: "Create a Unique Edge as a Trainer",
+      values: [
+        "Whether you’re a corporate trainer, coach, presenter, or MC, develop a unique and compelling style that sets you apart and propels your career forward.",
+      ],
+    },
+  ],
+};
+
+const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
+  title: {
+    line1: "WHY BECOME AN NLP TRAINER?",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Master Public Speaking & Presentation Skills",
+      description: (
+        <p>
+          Overcome the fear of public speaking and learn how to command the room. With AL&CO’s training, you’ll develop an unstoppable stage presence and become a presenter who moves, captivates, and inspires audiences effortlessly.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Empower Others",
+      description: (
+        <p>
+          Unlock the tools to help others break free from limitations, transform their thinking, and achieve their goals. As an NLP Trainer, you’ll guide individuals and groups through life-changing journeys, leaving a lasting impact.
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Gain Global Recognition",
+      description: (
+        <p>
+          As a certified NLP Trainer accredited by ABNLP (American Board of Neuro-Linguistic Programming), you’ll join an elite group of trainers recognized internationally, opening doors to limitless professional opportunities.
+        </p>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Advance Your Career",
+      description: (
+        <>
+          <p className="">
+            Elevate your professional profile as a coach, corporate trainer, or business leader. With the authority to certify others as NLP Practitioners and Master Practitioners, you’ll establish yourself as a thought leader in personal and professional development.
+          </p>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Personal Transformation",
+      description: (
+        <p>
+          Teaching others is the ultimate path to mastering yourself. Through this training, you’ll experience profound growth, refine your communication skills, and step into your best self.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram5.src,
+        alt: "",
+      },
+    }
+  ],
+};
+
+const LevelContentDataLevel4: LevelContentType = {
+  title: {
+    line1: "What You Will Learn",
+    line2: ""
+  },
+  points: [
+   {
+      title: "Stage Mastery",
+      items: [
+        "Develop an unbeatable stage presence and learn to captivate any audience."
+      ],
+      image: {
+        src: LevetContent1.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Training Design",
+      items: [
+        "Learn how to design impactful workshops and training programs that inspire and deliver measurable results"
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Versatile Training Styles",
+      items: [
+        "Learn how to train audiences with diverse backgrounds and different learning preferences."
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Group Leadership Skills",
+      items: [
+        "Master the art of leading diverse groups in workshops, seminars, and corporate environments."
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Handling Difficult Participants",
+      items: [
+        "Learn the art of handling difficult participants while maintaining the decorum of the training and learning environment."
+      ],
+      image: {
+        src: LevetContent1.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Confidence Building",
+      items: [
+        " Transform into a leader who exudes charisma, confidence, and influence."
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: ""
+      }
+    }
+  ]
+};
+
+const LevelGraduatesExperienceDataLevel4: LevelGraduatesExperienceType = {
+    title: {
+    line1: "Benefits of Choosing",
+    line2: "NLP Trainers’ Training"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+
+};
+
+// Level 4 End
+
+// Level 5 Start
+
+const bannerDataLevel5: BannerType = {
+  level: "level 5",
+  title: {
+    line1: "Hypnosis Trainer’s Training Certification and Evaluation Program"
+  },
+  // description: "Dual Certification Training Program",
+  image: programLevel2.src,
+  className: "bg-center bg-no-repeat bg-primary"
+};
+
+const LevelIntroWithVideoDataLevel5: LevelIntroWithVideoType = {
+  title: {
+    line1: "Transform Lives,  ",
+    line2: "Empower Change, and Create Global Impact"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  description: `<p>Are you ready to go beyond learning hypnosis and take the stage to train others in this fascinating field?</p>
+   <p>If yes, then Hypnosis Trainer’s Training by Arslan Larik & Company (AL&CO) is your next step. This transformational training is designed to equip you with the skills, tools, and confidence to become an exceptional Hypnosis Trainer accredited by The American Board of Hypnotherapy (ABH). Whether you’re new to hypnosis or an experienced practitioner, this program will elevate your expertise to new heights and empower you to inspire others.</p>`
+};
+
+const LevelCertificationDataLevel5: LevelCertificationType = {
+  title: {
+    line1: "Certifications",
+    line2: "Hypnosis Trainer’s Training Certification and Evaluation"
+  },
+  points: [
+    {
+      title: `Certified Hypnosis Trainer via the American Board of Hypnotherapy (ABH)`,
+      description: "This globally recognized certification establishes you as a Certified Hypnosis Trainer, empowering you to train and certify Hypnosis Practitioners and Master Practitioners. Accredited by ABH, this certification validates your expertise in hypnosis techniques, training design, and transformational influence, positioning you as a leading hypnosis trainer with the authority to impact lives worldwide.",
+      imageBrand: {
+        src: AccreditedBrand1.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate1Level5.src,
+        alt: "Certificate One"
+      },
+    }
+  ]
+}
+
+const LevelBenefitsTableDataLevel5: LevelBenefitsTableType = {
+  title: {
+    line1: "Benefits of",
+    line2: "Hypnosis Trainers’ Training Program",
+  },
+
+  // 👇 headers
+  headers: [
+    "Content",
+    "Benefits for Hypnosis Trainer",
+  ],
+
+  points: [
+    {
+      content: "Master the Art of Hypnosis Training",
+      values: [
+        "Learn how to teach and inspire others with confidence and charisma, whether you’re training in a workshop or leading a large audience.",
+      ],
+    },
+    {
+      content: "Ready-to-Go Hypnosis Materials",
+      values: [
+        "Receive pre-designed training manuals, slides, and resources to help you start training immediately.",
+      ],
+    },
+    {
+      content: "Teach with Global Recognition",
+      values: [
+        "Certify your students under the ABH banner, the world’s largest hypnosis organization, ensuring their credentials are globally respected.",
+      ],
+    },
+    {
+      content: "Diverse Applications of Hypnosis",
+      values: [
+        "From therapeutic environments to corporate wellness and stage hypnosis, this training opens doors to multiple career paths.",
+      ],
+    },
+    {
+      content: "Lifetime Support from AL&CO",
+      values: [
+        "Join our exclusive community of Hypnosis Trainers and enjoy unlimited support, guidance, and networking opportunities.",
+      ],
+    },
+  ],
+};
+
+const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
+  title: {
+    line1: "Why Become a Hypnosis Trainer?",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Master Your Craft",
+      description: (
+        <p>
+          Becoming a Hypnosis Trainer means achieving mastery in both practicing and teaching hypnosis. You’ll gain a deep understanding of how hypnosis works and the tools to inspire transformation in others.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Teach & Inspire",
+      description: (
+        <p>
+          Equip your students with the knowledge and techniques to help others create positive, lasting change. As a trainer, you’ll play a vital role in spreading the life-changing benefits of hypnosis.
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Global Recognition",
+      description: (
+        <p>
+          At AL&CO, we certify our graduates through the American Board of Hypnotherapy (ABH) as certified Trainers of Hypnosis, ensuring your credentials are respected and recognized worldwide.
+        </p>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Expand Your Career Opportunities",
+      description: (
+        <>
+          <p className="mb-2">
+            As a certified Hypnosis Trainer, you can lead workshops, launch your own Hypnosis Practitioner and Master Practitioner Batches, train and certify students, offer corporate wellness programs, or even host hypnosis stage shows. The possibilities are endless!
+          </p>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Create Meaningful Impact",
+      description: (
+        <p>
+          Transform lives by teaching others how to use hypnosis for personal growth, professional success, and emotional well-being.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram5.src,
+        alt: "",
+      },
+    }
+  ],
+};
+
+const LevelContentDataLevel5: LevelContentType = {
+  title: {
+    line1: "What You Will Learn",
+    line2: ""
+  },
+  points: [
+   {
+      title: "Teaching 5 Types of Hypnosis",
+      items: [
+        "Master the skills to train others in Ericksonian Hypnosis, Estabrooks Hypnosis, Elman Hypnosis, Krasner Hypnosis, and Direct Authoritarian Hypnosis."
+      ],
+      image: {
+        src: LevetContent1.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Conversational Hypnosis & Deep Trance Phenomena",
+      items: [
+        "Learn how to guide individuals into deep trance states and influence positive change through conversational techniques."
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Designing & Leading Hypnosis Trainings",
+      items: [
+        "Gain the knowledge and tools to run your own hypnosis workshops and certify Practitioners and Master Practitioners of Hypnosis."
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: ""
+      }
+    },
+    {
+      title: "Advanced Hypnosis Applications",
+      items: [
+        "Develop the expertise to conduct hypnosis introduction workshops, and advanced trainings in Hypnosis in corporate sector."
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: ""
+      }
+    }
+  ]
+};
+
+const LevelGraduatesExperienceDataLevel5: LevelGraduatesExperienceType = {
+    title: {
+    line1: "Benefits of Choosing",
+    line2: "Hypnosis Trainers’ Training"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+
+};
+
+// Level 5 End
+
+// Level 6 Start
+
+const bannerDataLevel6: BannerType = {
+  level: "level 6",
+  title: {
+    line1: "NLP MASTER TRAINER PROGRAM"
+  },
+  description: "Dual Certification Training Program",
+  image: programLevel2.src,
+  className: "bg-center bg-no-repeat bg-primary"
+};
+
+const LevelIntroWithVideoDataLevel6: LevelIntroWithVideoType = {
+  title: {
+    line1: "Your Pathway to Global",
+    line2: "Recognition and Transformational Leadership"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  description: `<p>The NLP Master Trainer Program is a global mentoring program designed for results-focused NLP Trainers who want to elevate their training businesses, deepen their expertise, and gain international recognition. This program provides a comprehensive system to help you achieve mastery in NLP while excelling in business, marketing, and coaching.</p>`
+};
+
+const LevelCertificationDataLevel6: LevelCertificationType = {
+  title: {
+    line1: "Certifications",
+    line2: "NLP MASTER TRAINER PROGRAM Certification"
+  },
+  points: [
+    {
+      title: `Certified NLP Master Trainer via the American Board of Neuro-Linguistic Programming (ABNLP)`,
+      description: "This prestigious certification establishes you as a Certified NLP Master Trainer, empowering you to train and certify NLP Trainers, lead global transformations, and build a thriving NLP business. Accredited by ABNLP, this certification validates your mastery in advanced NLP training, leadership, and coaching, positioning you as a top-tier authority in the NLP industry.",
+      imageBrand: {
+        src: AccreditedBrand1.src,
+        alt: "Accredited Brand One"
+      },
+      imageCerficate: {
+        src: Certificate1Level6.src,
+        alt: "Certificate One"
+      },
+    }
+  ]
+}
+
+const LevelBenefitsTableDataLevel6: LevelBenefitsTableType = {
+  title: {
+    line1: "Benefits of",
+    line2: "NLP Master Trainer Program",
+  },
+
+  headers: [
+    "Content",
+    "Benefits for NLP Master Trainer",
+  ],
+
+  points: [
+    {
+      content: "Personalized Mentorship",
+      values: [
+        "Receive one-on-one coaching and mentoring from Arslan Larik and his team to refine your skills and achieve your goals.",
+      ],
+    },
+    {
+      content: "Global Community",
+      values: [
+        "Join a network of elite NLP Trainers who share knowledge, collaborate, and inspire one another.",
+      ],
+    },
+    {
+      content: "Transformational Learning",
+      values: [
+        "Experience cutting-edge training methods that elevate your capabilities as a trainer and leader.",
+      ],
+    },
+    {
+      content: "Proven Business Systems",
+      values: [
+        "Learn and implement systems that guarantee growth and sustainability in your NLP business.",
+      ],
+    },
+    {
+      content: "Lifetime Support",
+      values: [
+        "Enjoy continued access to resources, webinars, and coaching to keep your skills sharp and your business thriving.",
+      ],
+    },
+  ],
+};
+
+const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
+  title: {
+    line1: "Why Join the NLP Master Trainer Program?",
+    line2: ""
+  },
+  points: [
+    {
+      title: "Master Your Craft",
+      description: (
+        <p>
+          Elevate your skills to the highest level. As an NLP Master Trainer, you’ll refine your ability to train and certify NLP Trainers, making an impact on a global scale.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram1.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Build a Thriving Business ",
+      description: (
+        <p>
+          Learn proven strategies to grow your NLP training business year after year. From marketing to business development, this program covers everything you need to succeed in a competitive industry.
+        </p>
+      ),
+      theme: "light",
+      image: {
+        src: LevelProgram2.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Gain Global Recognition",
+      description: (
+        <p>
+          Be certified by ABNLP and join the ranks of internationally respected NLP leaders. Your credentials will position you as an authority in the NLP community.
+        </p>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram3.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Exclusive Access to AL&CO Resources",
+      description: (
+        <>
+          <p className="mb-2">
+            Get lifetime access to manuals, slides, audios, and business tools that have been fine-tuned to produce results.
+          </p>
+        </>
+      ),
+      theme: "yellow",
+      image: {
+        src: LevelProgram4.src,
+        alt: "",
+      },
+    },
+    {
+      title: "Mentorship and Networking",
+      description: (
+        <p>
+          Be guided by Arslan Larik, Pakistan’s first and only NLP Master Trainer certified via ABNLP, and connect with a global network of NLP Trainers.
+        </p>
+      ),
+      theme: "dark",
+      image: {
+        src: LevelProgram5.src,
+        alt: "",
+      },
+    }
+  ],
+};
+
+const LevelContentDataLevel6: LevelContentType = {
+  title: {
+    line1: "What You Will Learn",
+    line2: "",
+  },
+  points: [
+    {
+      title: "Unparalleled Training Expertise",
+      items: [
+        "Master the art of training other trainers.",
+        "Develop skills to create captivating, results-driven workshops and certifications.",
+        "Develop an unbeatable stage presence and learn to captivate any audience.",
+      ],
+      image: {
+        src: LevetContent1.src,
+        alt: "Training Expertise",
+      },
+    },
+    {
+      title: "Business Growth Strategies",
+      items: [
+        "Learn how to market and grow your NLP business globally.",
+        "Create a marketing plan to establish yourself as a global brand.",
+        "Build a network of loyal clients and trainers who trust your leadership.",
+      ],
+      image: {
+        src: LevetContent2.src,
+        alt: "Business Growth",
+      },
+    },
+    {
+      title: "Global Recognition",
+      items: [
+        "Be certified by ABNLP, the world’s largest NLP authority.",
+        "Gain credibility as a leader in the NLP community, nationally and internationally.",
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: "Global Recognition",
+      },
+    },
+    {
+      title: "Access to AL&CO’s Exclusive Resources",
+      items: [
+        "Training manuals, PowerPoint slides, and audios.",
+        "Weekly webinars and access to a members-only portal.",
+        "Priority opportunities to assist at AL&CO training events worldwide.",
+      ],
+      image: {
+        src: LevetContent3.src,
+        alt: "Resources",
+      },
+    }
+  ],
+};
+
+const LevelGraduatesExperienceDataLevel6: LevelGraduatesExperienceType = {
+    title: {
+    line1: "Benefits of Choosing",
+    line2: "NLP Master Trainer"
+  },
+  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+
+};
+
+// Level 6 End
+
 // dummy null structured
 
-const bannerData: BannerData = {
+const bannerData: BannerType = {
   level: "",
   title: {
     line1: ""
@@ -666,19 +1893,19 @@ const LevelCertificationData: LevelCertificationType = {
   ]
 };
 
-const LevelBenefitsTableData: LevelBenefitsTableType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  points: [
-    {
-      content: "",
-      personal: "",
-      coaches: ""
-    }
-  ]
-};
+// const LevelBenefitsTableData: LevelBenefitsTableType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   points: [
+//     {
+//       content: "",
+//       personal: "",
+//       coaches: ""
+//     }
+//   ]
+// };
 
 const LevelProgramIncludesData: LevelProgramIncludesType = {
   title: {
@@ -818,48 +2045,48 @@ export const programs: ProgramType[] = [
   {
     slug: "advanced-hypnotherapy-interventionis",
     title: "Advanced Hypnotherapy Training",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel3,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel3,
+    LevelCertificationData: LevelCertificationDataLevel3,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel3,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel3,
+    LevelContentData: LevelContentDataLevel3,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel3,
   },
 
   {
     slug: "nlp-trainers-training-program",
     title: "NLP Trainer’s Training Program",
     description: "Become a Certified NLP Trainer",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel4,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel4,
+    LevelCertificationData: LevelCertificationDataLevel4,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel4,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel4,
+    LevelContentData: LevelContentDataLevel4,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel4,
   },
 
   {
     slug: "hypnosis-trainers-training-program",
     description: "Train Others in Hypnosis",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel5,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel5,
+    LevelCertificationData: LevelCertificationDataLevel5,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel5,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel5,
+    LevelContentData: LevelContentDataLevel5,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel5,
   },
 
   {
     slug: "nlp-master-trainer-program",
-    BannerData: bannerData,
-    LevelIntroWithVideoData: LevelIntroWithVideoData,
-    LevelCertificationData: LevelCertificationData,
-    LevelBenefitsTableData: LevelBenefitsTableData,
-    LevelProgramIncludesData: LevelProgramIncludesData,
-    LevelContentData: LevelContentData,
-    LevelGraduatesExperienceData: LevelGraduatesExperienceData,
+    BannerData: bannerDataLevel6,
+    LevelIntroWithVideoData: LevelIntroWithVideoDataLevel6,
+    LevelCertificationData: LevelCertificationDataLevel6,
+    LevelBenefitsTableData: LevelBenefitsTableDataLevel6,
+    LevelProgramIncludesData: LevelProgramIncludesDataLevel6,
+    LevelContentData: LevelContentDataLevel6,
+    LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel6,
   },
 ];

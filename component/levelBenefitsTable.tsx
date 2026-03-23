@@ -22,8 +22,8 @@ export default function LevelBenefitsTable({ data }: Props) {
             </span>
           </h3>
           <div className="mt-4">
-            <Button 
-iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
+            <Button
+              iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div>
         </div>
         <div className="grid grid-cols-1 gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
@@ -33,14 +33,19 @@ iconRight={true} variant="primary" size="medium" text="Learn More" href="#" clas
               {/* Header */}
               <thead>
                 <tr className="bg-primary text-white text-left ">
-                  <th className="px-8 py-6 h6">Content</th>
+                  {/* <th className="px-8 py-6 h6">Content</th>
                   <th className="px-8 py-6 h6">Benefits for Personal Development</th>
-                  <th className="px-8 py-6 h6">Benefits for Coaches</th>
+                  <th className="px-8 py-6 h6">Benefits for Coaches</th> */}
+                  {data.headers.map((header, i) => (
+                    <th key={i} className="px-8 py-6 h6">
+                      {header}
+                    </th>
+                  ))}
                 </tr>
               </thead>
 
               {/* Body */}
-              <tbody>
+              {/* <tbody>
                 {data.points.map((point, index) => (
                   <tr
                     key={index}
@@ -55,9 +60,32 @@ iconRight={true} variant="primary" size="medium" text="Learn More" href="#" clas
                     <td className="px-8 py-6 text-gray-600 custom-text1">
                       {point.personal}
                     </td>
-                    <td className="px-8 py-6 text-gray-600 custom-text1">
+                    {point.coaches && (<td className="px-8 py-6 text-gray-600 custom-text1">
                       {point.coaches}
+                    </td>)}
+                  </tr>
+                ))}
+              </tbody> */}
+              <tbody>
+                {data.points.map((point, index) => (
+                  <tr
+                    key={index}
+                    className={`${index % 2 === 0
+                        ? "bg-white"
+                        : "bg-blue-50 border-y border-primary"
+                      }`}
+                  >
+                    {/* First column (Content) */}
+                    <td className="px-8 py-6 font-medium text-gray-800">
+                      {point.content}
                     </td>
+
+                    {/* Dynamic columns */}
+                    {point.values.map((val, i) => (
+                      <td key={i} className="px-8 py-6 text-gray-600">
+                        {val}
+                      </td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
