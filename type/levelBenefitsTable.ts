@@ -23,4 +23,11 @@ export type LevelBenefitsTableType = {
     content: string;
     values: string[];  // 👈 NEW (dynamic columns)
   }[];
+  introPage?: boolean
+  videos?: {
+    video?: string;
+    title?: string;
+  }[];
+  videoTitle?: string
+
 };

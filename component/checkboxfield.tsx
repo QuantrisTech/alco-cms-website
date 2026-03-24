@@ -33,8 +33,8 @@ export default function Checkboxfield({
   };
 
   const colorClasses = {
-    primary: "accent-primary",
-    black: "accent-black",
+    primary: "accent-primary-light",
+    black: "accent-neutral-medium",
     green: "accent-green-600",
     red: "accent-red-600",
   };
@@ -47,25 +47,25 @@ export default function Checkboxfield({
 
       {options ? (
         options.map((opt) => (
-          <label key={opt.value} className="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
+          <label key={opt.value} className="flex items-center gap-2 cursor-pointer font-light text-sm text-gray-600">
             <input
               type="checkbox"
               checked={values.includes(opt.value)}
               onChange={() => handleChange(opt.value)}
-              className={`w-4 h-4 ${colorClasses[color]}`} // 👈 APPLY
+              className={`w-[14px] h-[14px] ${colorClasses[color]}`} // 👈 APPLY
             />
             <span>{opt.label}</span>
           </label>
         ))
       ) : (
-        <label className=" flex items-start gap-2 cursor-pointer text-xs">
+        <label className=" flex items-start gap-2 cursor-pointer text-xs ">
           <input
             type="checkbox"
             checked={checked}
             onChange={(e) => onChange(e.target.checked)}
-            className={`mt-1 w-4 h-4 ${colorClasses[color]}`} // 👈 APPLY
+            className={`mt-1 w-[14px] h-[14px] ${colorClasses[color]}`} // 👈 APPLY
           />
-          <span className="text-gray-600">{label}</span>
+          <span className="text-gray-600 mt-1">{label}</span>
         </label>
       )}
     </div>

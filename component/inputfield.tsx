@@ -10,6 +10,7 @@ type InputProps = {
   name?: string;
   disabled?: boolean;
   size?: "small" | "medium" | "large";
+  error?: string;
 };
 
 const InputField: React.FC<InputProps> = ({
@@ -21,6 +22,7 @@ const InputField: React.FC<InputProps> = ({
   name,
   disabled = false,
   size = "medium",
+  error,
 }) => {
   const [focus, setFocus] = useState(false);
 
@@ -33,6 +35,13 @@ const InputField: React.FC<InputProps> = ({
     lg: "px-4 pt-6 pb-3 text-lg",
   };
 
+    const baseClasses =
+    "w-full border rounded-lg px-2 pt-4 pb-1 focus:outline-none font-light text-sm";
+
+  const borderClass = error
+    ? "border-red-500 focus:border-red-500"
+    : "border-gray-300 focus:border-primary";
+
   return (
     <div className="relative w-full">
       {textarea ? (
@@ -43,7 +52,8 @@ const InputField: React.FC<InputProps> = ({
           disabled={disabled}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
-          className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary resize-none"
+          className={`${baseClasses} ${borderClass} resize-none`}
+          // className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary resize-none font-light text-sm"
           // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary resize-none ${sizeClasses[size]}`}
         />
       ) : (
@@ -55,7 +65,8 @@ const InputField: React.FC<InputProps> = ({
           disabled={disabled}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
-          className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary"
+          className={`${baseClasses} ${borderClass}`}
+          // className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary font-light text-sm"
           // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary ${sizeClasses[size]}`}
         />
       )}
@@ -68,6 +79,13 @@ const InputField: React.FC<InputProps> = ({
       >
         {label}
       </label>
+
+       {/* ✅ Error Message (Bottom Right Absolute) */}
+      {error && (
+        <span className="absolute -bottom-4 right-0 text-[10px] text-red-500">
+          {error}
+        </span>
+      )}
     </div>
   );
 };

@@ -119,13 +119,14 @@ export default function EnrollPopup({
               ) : (
                 <div className="">
                   <div className="grid grid-cols-2 gap-4">
-                    <div className=" flex flex-col gap-2">
+                    <div className=" flex flex-col gap-[20px]">
                       <InputField
                         label="Full Name"
                         name="name"
                         value={formData.name}
                         // size="small"
                         onChange={handleChange}
+                        error={!formData.name?.trim() ? "Full Name is required" : ""}
                       />
 
                       <InputField
@@ -135,6 +136,7 @@ export default function EnrollPopup({
                         value={formData.phone}
                         // size="small"
                         onChange={handleChange}
+                        error={!formData.phone?.trim() ? "Phone Number is required" : ""}
                       />
 
                       <SelectField
@@ -150,7 +152,7 @@ export default function EnrollPopup({
                       />
 
                     </div>
-                    <div className="flex flex-col gap-2 ">
+                    <div className="flex flex-col gap-[20px] ">
 
                       <InputField
                         label="Email"
@@ -159,6 +161,7 @@ export default function EnrollPopup({
                         value={formData.email}
                         // size="small"
                         onChange={handleChange}
+                        error={!formData.email?.trim() ? "Email is required" : ""}
                       />
 
                       <InputField
@@ -167,6 +170,7 @@ export default function EnrollPopup({
                         value={formData.profession}
                         // size="small"
                         onChange={handleChange}
+                        error={!formData.profession?.trim() ? "Profession is required" : ""}
                       />
 
                     </div>
@@ -189,6 +193,7 @@ export default function EnrollPopup({
                         value={formData.concern}
                         onChange={handleChange}
                         textarea
+                        error={!formData.concern?.trim() ? "Concern is required" : ""}
                       />
 
                     </div>
@@ -209,6 +214,7 @@ export default function EnrollPopup({
                         value={formData.otherInfo}
                         onChange={handleChange}
                         textarea
+                        // error={!formData.concern?.trim() ? "Concern is required" : ""}
                       />
                     </div>
                   </div>
@@ -227,7 +233,6 @@ export default function EnrollPopup({
                   label={
                     <span>
                       By checking this box, I consent to receive transactional messages related to my account, orders, or services I have requested. These messages may include appointment reminders, order confirmations, and account notifications among others.
-
                       Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
 
                     </span>
@@ -242,9 +247,7 @@ export default function EnrollPopup({
                   label={
                     <span>
                       By checking this box, I consent to receive marketing and promotional messages, including special offers, discounts, new product updates among others.
-
                       Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
-
                     </span>
                   } />
               </div>
@@ -262,7 +265,7 @@ export default function EnrollPopup({
                   text="Submit"
                   type="submit"
                   variant="primary"
-                  className="mt-2 px-24"
+                  className="mt-2 min-w-[150px]"
                 />
               </div>
             </div>

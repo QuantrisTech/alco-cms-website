@@ -6,8 +6,10 @@ type BannerTitle = {
 export type BannerType = {
   level?: string
   image?: string | undefined
-  title: BannerTitle
+  title?: BannerTitle
   description?: string
+  intoBanner?: boolean
   video?: string
   className?: string
+  height?: string
 }

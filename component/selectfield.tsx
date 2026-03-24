@@ -58,7 +58,7 @@ export default function SelectField({
         }}
         className={`relative w-full min-h-12 border border-gray-300 focus:border-primary rounded-lg cursor-pointer bg-white px-3 pt-5 pb-1 text-base flex items-center justify-between`}
       >
-        <span className={`${!value && "text-gray-400"}`}>
+        <span className={`${!value && "text-gray-400"} font-light text-sm`}>
           {selected?.label || ""}
         </span>
         <span

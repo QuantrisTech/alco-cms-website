@@ -113,50 +113,6 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
   ]
 }
 
-// const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
-//   title: {
-//     line1: "Benefits of Choosing",
-//     line2: "NLP Practitioner Training"
-//   },
-//   points: [
-//     {
-//       content: "Definition of NLP",
-//       personal:
-//         "Understand how your mind works, allowing you to break free from limiting beliefs.",
-//       coaches:
-//         "Equip yourself with foundational NLP knowledge to guide clients confidently.",
-//     },
-//     {
-//       content: "Themes of NLP",
-//       personal:
-//         "Develop clarity and alignment in thoughts and emotions.",
-//       coaches:
-//         "Use NLP principles to create structured, impactful coaching sessions that help clients achieve sustainable change.",
-//     },
-//     {
-//       content: "Ecology",
-//       personal:
-//         "Make decisions that align with your values and positively impact your life and relationships.",
-//       coaches:
-//         "Guide clients to assess the impact of their goals on their lives, relationships, and overall well-being, ensuring ethical and sustainable growth.",
-//     },
-//     {
-//       content: "NLP Communication Model",
-//       personal:
-//         "Improve your communication to connect with others deeply, reduce misunderstandings, and build stronger relationships.",
-//       coaches:
-//         "Teach clients how to communicate effectively and interpret verbal and non-verbal cues to build rapport and influence outcomes.",
-//     },
-//     {
-//       content: "Presuppositions of NLP",
-//       personal:
-//         "Reframe your mindset to embrace positive, empowering beliefs that transform your approach to challenges.",
-//       coaches:
-//         "Help clients adopt empowering perspectives that enable growth and dissolve self-limiting beliefs.",
-//     },
-//   ],
-// }
-
 const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing",
@@ -460,44 +416,6 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
   ]
 };
 
-// const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
-//   title: {
-//     line1: "Benefits of Choosing NLP",
-//     line2: "Master Practitioner Training"
-//   },
-//   points: [
-//     {
-//       content: "Prime Directives of the Unconscious Mind",
-//       personal: "Discover how your unconscious drives habits and emotions, helping you achieve personal breakthroughs.",
-//       coaches: "Leverage this understanding to create coaching strategies that lead to lasting results for clients."
-//     },
-//     {
-//       content: "Quantum Linguistics",
-//       personal: "Change the way you think and speak to unlock new possibilities and overcome problems.",
-//       coaches: "Guide clients to use empowering language patterns to create positive change."
-//     },
-//     {
-//       content: "Releasing Negative Emotions (TLT #1 & #2)",
-//       personal: "Let go of emotions like anger, sadness, and guilt that hold you back.",
-//       coaches: "Guide clients to release emotional burdens for lasting change."
-//     },
-//     {
-//       content: "Emotional Chains",
-//       personal: "Break patterns of emotional reactions and create a calmer, more balanced mindset.",
-//       coaches: "Help clients identify triggers and replace them with empowering responses."
-//     },
-//     {
-//       content: "Full Coaching Cycle with NLP & TLT",
-//       personal: "Achieve clarity on your goals and create actionable steps to reach them.",
-//       coaches: "Guide clients through a proven coaching process to help them achieve their goals."
-//     },
-//     {
-//       content: "Client Agreements",
-//       personal: "Build trust and ensure clear communication in your relationships.",
-//       coaches: "Establish clear expectations and goals with clients to create productive sessions."
-//     }
-//   ]
-// };
 const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing NLP",
@@ -829,40 +747,6 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
     }
   ]
 };
-
-// const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
-//   title: {
-//     line1: "Benefits of",
-//     line2: "Advanced Hypnotherapy & Interventionist Training"
-//   },
-//   points: [
-//     {
-//       content: "History of Hypnosis",
-//       personal: "Discover how hypnosis evolved from ancient practices to modern science-backed therapy, deepening self-awareness and unconscious mastery.",
-//       coaches: "Learn foundational principles that enhance your credibility and ability to explain hypnosis effectively to clients."
-//     },
-//     {
-//       content: "Working with Abreaction and Secondary Gains",
-//       personal: "Release suppressed emotions, overcome self-sabotaging behaviors, and create deep emotional healing.",
-//       coaches: "Guide clients through emotional catharsis safely, addressing unconscious blocks for lasting change."
-//     },
-//     {
-//       content: "Mastering Conversational Hypnosis",
-//       personal: "Enhance your ability to influence and communicate persuasively in everyday interactions, fostering deeper connections.",
-//       coaches: "Seamlessly induce trance states through conversation, bypassing conscious resistance and facilitating unconscious transformation."
-//     },
-//     {
-//       content: "Fundamentals of Ericksonian Hypnosis",
-//       personal: "Develop mental flexibility, enhance problem-solving skills, and use metaphors for self-reprogramming.",
-//       coaches: "Master indirect suggestions and storytelling to create effortless, resistance-free hypnosis sessions."
-//     },
-//     {
-//       content: "Hypnotic Patterns",
-//       personal: "Rewire thought processes for greater confidence, motivation, and personal growth.",
-//       coaches: "Apply structured language patterns to deepen trance, enhance suggestibility, and accelerate client breakthroughs."
-//     }
-//   ]
-// };
 
 const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
   title: {
@@ -1854,169 +1738,174 @@ const LevelGraduatesExperienceDataLevel6: LevelGraduatesExperienceType = {
 
 // dummy null structured
 
-const bannerData: BannerType = {
-  level: "",
-  title: {
-    line1: ""
-  },
-  description: "",
-  image: ""
-};
+// const bannerData: BannerType = {
+//   level: "",
+//   title: {
+//     line1: ""
+//   },
+//   description: "",
+//   image: ""
+// };
 
-const LevelIntroWithVideoData: LevelIntroWithVideoType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  video: "",
-  description: ""
-};
+// const LevelIntroWithVideoData: LevelIntroWithVideoType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   video: "",
+//   description: ""
+// };
 
-const LevelCertificationData: LevelCertificationType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  points: [
-    {
-      title: "",
-      description: "",
-      imageBrand: {
-        src: "",
-        alt: ""
-      },
-      imageCerficate: {
-        src: "",
-        alt: ""
-      }
-    }
-  ]
-};
-
-// const LevelBenefitsTableData: LevelBenefitsTableType = {
+// const LevelCertificationData: LevelCertificationType = {
 //   title: {
 //     line1: "",
 //     line2: ""
 //   },
 //   points: [
 //     {
-//       content: "",
-//       personal: "",
-//       coaches: ""
+//       title: "",
+//       description: "",
+//       imageBrand: {
+//         src: "",
+//         alt: ""
+//       },
+//       imageCerficate: {
+//         src: "",
+//         alt: ""
+//       }
 //     }
 //   ]
 // };
 
-const LevelProgramIncludesData: LevelProgramIncludesType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  points: [
-    {
-      title: "",
-      description: (
-        <p>
-        </p>
-      ),
-      theme: "dark",
-      image: {
-        src: LevelProgram1.src,
-        alt: "",
-      },
-    },
-    {
-      title: "",
-      description: (
-        <p>
-        </p>
-      ),
-      theme: "light",
-      image: {
-        src: LevelProgram2.src,
-        alt: "",
-      },
-    },
-    {
-      title: "",
-      description: (
-        <p>
-        </p>
-      ),
-      theme: "yellow",
-      image: {
-        src: LevelProgram3.src,
-        alt: "",
-      },
-    },
-    {
-      title: "",
-      description: (
-        <>
-          <p className="mb-2">
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li></li>
-          </ul>
-        </>
-      ),
-      theme: "yellow",
-      image: {
-        src: LevelProgram4.src,
-        alt: "",
-      },
-    },
-    {
-      title: "",
-      description: (
-        <p>
-        </p>
-      ),
-      theme: "dark",
-      image: {
-        src: LevelProgram5.src,
-        alt: "",
-      },
-    },
-    {
-      title: "",
-      description: (
-        <p>
-        </p>
-      ),
-      theme: "light",
-      image: {
-        src: LevelProgram6.src,
-        alt: "",
-      },
-    },
-  ],
-};
+// const LevelBenefitsTableData: LevelBenefitsTableType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   headers: [
+//     "",
+//     "r",
+//   ],
+//    points: [
+//     {
+//       content: "",
+//       values: [
+//         "",
+//       ],
+//     },
+//   ]
+// };
 
-const LevelContentData: LevelContentType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  points: [
-    {
-      title: "",
-      items: [],
-      image: {
-        src: "",
-        alt: ""
-      }
-    }
-  ]
-};
+// const LevelProgramIncludesData: LevelProgramIncludesType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   points: [
+//     {
+//       title: "",
+//       description: (
+//         <p>
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram1.src,
+//         alt: "",
+//       },
+//     },
+//     {
+//       title: "",
+//       description: (
+//         <p>
+//         </p>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram2.src,
+//         alt: "",
+//       },
+//     },
+//     {
+//       title: "",
+//       description: (
+//         <p>
+//         </p>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram3.src,
+//         alt: "",
+//       },
+//     },
+//     {
+//       title: "",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li></li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram4.src,
+//         alt: "",
+//       },
+//     },
+//     {
+//       title: "",
+//       description: (
+//         <p>
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram5.src,
+//         alt: "",
+//       },
+//     },
+//     {
+//       title: "",
+//       description: (
+//         <p>
+//         </p>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram6.src,
+//         alt: "",
+//       },
+//     },
+//   ],
+// };
 
-const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
-  title: {
-    line1: "",
-    line2: ""
-  },
-  video: ""
-};
+// const LevelContentData: LevelContentType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   points: [
+//     {
+//       title: "",
+//       items: [],
+//       image: {
+//         src: "",
+//         alt: ""
+//       }
+//     }
+//   ]
+// };
+
+// const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
+//   title: {
+//     line1: "",
+//     line2: ""
+//   },
+//   video: ""
+// };
 
 
 export const programs: ProgramType[] = [

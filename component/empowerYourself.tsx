@@ -4,9 +4,9 @@ import React from "react";
 import Button from "./button";
 import { EmpowerYourselfData } from "@/type/empowerYourself";
 // images
-import About1 from '@/assets/about/About1.webp'
-import About2 from '@/assets/about/About2.webp'
-import About3 from '@/assets/about/About3.webp'
+import About1 from '@/assets/our-mission/About1.webp'
+import About2 from '@/assets/our-mission/About2.webp'
+import About3 from '@/assets/our-mission/About3.webp'
 
 const empowerYourself: EmpowerYourselfData = {
   title: "Empower Yourself For Life",

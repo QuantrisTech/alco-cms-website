@@ -1,0 +1,95 @@
+.gallery_embla {
+  /* max-width: 48rem; */
+  margin: auto;
+
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  
+}
+
+.gallery_embla__viewport {
+  overflow: hidden;
+}
+
+.gallery_embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.gallery_embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+
+.gallery_embla__slide__number {
+  border: 0.2rem solid var(--detail-medium-contrast);
+  border-radius: 1.8rem;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--slide-height);
+  user-select: none;
+}
+
+.gallery_embla-thumbs {
+  height: 450px; /* 6 thumbnails × ~70px */
+  overflow: hidden;
+}
+
+.gallery_embla-thumbs__viewport {
+  overflow: hidden;
+}
+
+.gallery_embla-thumbs__container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery_embla-thumbs__slide {
+  flex: 0 0 calc(100% / 4); /* 👈 EXACTLY 6 visible */
+  min-height: 0;
+}
+/* @media (min-width: 576px) {
+  .gallery_embla-thumbs__slide {
+    flex: 0 0 10%;
+  }
+} */
+
+.gallery_embla-thumbs__slide__number {
+  border-radius: 1.8rem;
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border: 0.2rem solid var(--detail-medium-contrast);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--detail-high-contrast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--thumbs-slide-height);
+  width: 100%;
+}
+
+.gallery_embla-thumbs__slide--selected .gallery_embla-thumbs__slide__number {
+  color: var(--text-body);
+}
+
+.gallery_embla-thumbs__slide--selected img {
+  border-color: white;
+  transform: scale(1.05);
+}
