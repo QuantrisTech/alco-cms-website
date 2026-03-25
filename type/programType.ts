@@ -1,4 +1,5 @@
 import { BannerType } from "./bannerType"
+import { ContentSectionType } from "./contentSection"
 import { LevelBenefitsTableType } from "./levelBenefitsTable"
 import { LevelCertificationType } from "./levelCertification"
 import { LevelContentType } from "./levelContent"
@@ -13,8 +14,10 @@ export type ProgramType = {
   BannerData: BannerType
   LevelIntroWithVideoData : LevelIntroWithVideoType
   LevelCertificationData : LevelCertificationType
+  ContentSectionData? : ContentSectionType
   LevelProgramIncludesData : LevelProgramIncludesType
   LevelBenefitsTableData : LevelBenefitsTableType
+  ContentSectionContentListData?: ContentSectionType
   LevelContentData : LevelContentType
   LevelGraduatesExperienceData : LevelGraduatesExperienceType
 }

@@ -15,7 +15,7 @@ export default function Banner({ data }: Props) {
     <>
       <section className={`py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 w-full ${data.height ? data.height : "min-h-[450px]"} flex items-center  ${data?.className ? data?.className : "bg-cover bg-no-repeat"}`} style={{ backgroundImage: `url(${data?.image})` }}>
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 my-8">
+          <div className={`grid grid-cols-1 ${!data?.title?.align && "lg:grid-cols-2"} gap-2 my-8`}>
             <div className="flex flex-col justify-start ">
               <div className="flex mb-4">
                 {data?.level && (
@@ -24,7 +24,7 @@ export default function Banner({ data }: Props) {
                   </div>
                 )}
               </div>
-              {!data?.intoBanner && data?.title?.line1 && (<h1 className="h1 text-white text-start">
+              {!data?.intoBanner && data?.title?.line1 && (<h1 className={`h1 text-white ${data?.title?.align ? data?.title?.align : "text-start"}`}>
                 {data?.title?.line1}
 
                 {data?.title?.line2 && (
@@ -43,11 +43,16 @@ export default function Banner({ data }: Props) {
                   </span>
                 )}
               </h1>)}
-              {!data?.intoBanner && data?.description && (
-                <p className="custom-text1 font-light text-white text-start mt-4">
-                  {data?.description}
-                </p>
-              )}
+              {data?.intoBanner === true && (data?.miniTitle && <div className="h6 text-white/80 text-start rounded-md py-4 px-6 bg-white/10 drop-shadow-xl">
+                {data?.miniTitle?.line1}
+
+                {data?.miniTitle?.line2 && (
+                  <span className="block h6 text-secondary/80">
+                    {data?.miniTitle?.line2}
+                  </span>
+                )}
+              </div>)}
+             
             </div>
           </div>
         </div>
@@ -56,13 +61,30 @@ export default function Banner({ data }: Props) {
       {data?.intoBanner === true && (
         <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 w-full">
           <div className=" flex justify-center flex-col items-center">
-          <h6 className="h6 max-w-2xl text-center">{data?.description}</h6>
+            <h6 className="h6 max-w-2xl text-center">{data?.description}</h6>
 
-          {data?.title?.line1 && (<h4 className="h4 text-primary text-start font-semibold mt-2">
-                - {data?.title?.line1}
-              </h4>)}
+            {data?.title?.line1 && (<h4 className="h4 text-primary text-start font-semibold mt-2">
+              - {data?.title?.line1}
+            </h4>)}
+
+             {data?.intoBanner === true && (data?.video &&
+                <div className="my-8">
+                  <video
+                    controls
+                    preload="metadata"
+                    className="w-full h-[350px] lg:h-[450px] object-cover rounded-lg"
+                  >
+                    <source src={data?.video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>)}
+              {!data?.intoBanner && data?.description && (
+                <p className="custom-text1 font-light text-white text-start mt-4">
+                  {data?.description}
+                </p>
+              )}
           </div>
-          </section>
+        </section>
       )}
     </>
   );

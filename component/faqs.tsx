@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import { Faq } from "@/app/faqs/data";
+import { SlArrowDown } from "react-icons/sl";
 
 type Props = {
-  data: {
-    faqs: Faq[];
-  };
+  data?: Faq[];
 };
 
 export default function OurFaqs({ data }: Props) {
@@ -17,39 +16,37 @@ export default function OurFaqs({ data }: Props) {
   };
 
   return (
-    <>
-      {data?.faqs?.length > 0 && (
+    data && data?.length > 0 && (
         <section className="w-full bg-white py-4 px-4 sm:px-20 rounded-tr-[150px] my-10">
 
           <div className="flex justify-center items-center">
             <h3 className="h4 text-primary font-bold font-outfit">
-              {/* FREQUENTLY <span className="text-primaryGreen">ASKED</span> QUESTIONS */}
               Your Questions <span className="text-primary-dark">Answered</span>
             </h3>
           </div>
 
-          <div className="accordion-group w-[90%] lg:w-[75%] 2xl:w-[60%] mx-auto">
-            {data.faqs.map((faq, i) => {
+          <div className="accordion-group max-w-5xl mx-auto">
+            {data.map((faq, i) => {
               const isOpen = expanded === i;
 
               return (
-                <div key={i} className="accordion py-6 border-b border-gray-200">
+                <div key={i} className={`accordion p-6 border-b border-gray-200 ${isOpen ? "bg-neutral-50 border-b border-primary ": ""}`}>
 
                   <button
                     onClick={() => handleChange(i)}
-                    className={`flex justify-between w-full text-2xl text-outfit transition-colors duration-300 relative ${isOpen ? "text-gray-400" : "text-primary"
+                    className={`flex justify-between w-full text-2xl text-outfit transition-colors duration-300 relative ${isOpen ? "text-gray-800" : "text-primary"
                       }`}
                   >
-                    <h5 className="text-left pr-3 w-[90%]">
+                    <h5 className="text-left pr-3 w-[90%] font-outfit">
                       {faq.question}
                     </h5>
 
                     {/* Arrow */}
                     <span
-                      className={`transition-transform duration-300 absolute top-1 right-4 ${isOpen ? "rotate-180" : ""
+                      className={`transition-transform duration-300 absolute top-2 right-4 ${isOpen ? "rotate-180" : ""
                         }`}
                     >
-                      ⌄
+                      <SlArrowDown size={14}/>
                     </span>
                   </button>
 
@@ -72,7 +69,7 @@ export default function OurFaqs({ data }: Props) {
                           dangerouslySetInnerHTML={{ __html: faq.answer }}
                         /> */}
                         <div
-                          className="pr-4 text-gray-600 text-sm md:text-base ">
+                          className="pr-4 text-gray-600 text-sm md:text-base font-outfit">
                             {faq.answer}
                       </div>
                       </div>
@@ -84,7 +81,6 @@ export default function OurFaqs({ data }: Props) {
             })}
           </div>
         </section>
-      )}
-    </>
+      )
   );
 }

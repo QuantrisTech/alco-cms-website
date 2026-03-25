@@ -8,6 +8,6 @@ export type GalleryImage = {
 
 export type GalleryItem = {
     title: string
-    description: React.ReactNode
+    description?: React.ReactNode
     image: GalleryImage[]
 };

@@ -10,6 +10,7 @@
 
 .gallery_embla__viewport {
   overflow: hidden;
+  margin-left: auto;
 }
 
 .gallery_embla__container {
@@ -39,6 +40,7 @@
 .gallery_embla-thumbs {
   height: 450px; /* 6 thumbnails × ~70px */
   overflow: hidden;
+  margin-right: auto;
 }
 
 .gallery_embla-thumbs__viewport {
@@ -52,7 +54,7 @@
 }
 
 .gallery_embla-thumbs__slide {
-  flex: 0 0 calc(100% / 4); /* 👈 EXACTLY 6 visible */
+  /* flex: 0 0 calc(100% / 4); */
   min-height: 0;
 }
 /* @media (min-width: 576px) {
@@ -92,4 +94,10 @@
 .gallery_embla-thumbs__slide--selected img {
   border-color: white;
   transform: scale(1.05);
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .gallery_embla-thumbs {
+    height: 350px; /* adjust as needed */
+  }
 }

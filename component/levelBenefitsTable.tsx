@@ -4,12 +4,13 @@ import React from "react";
 import Button from "./button";
 
 type Props = {
-  data: LevelBenefitsTableType
+  data?: LevelBenefitsTableType
 }
 
 export default function LevelBenefitsTable({ data }: Props) {
 
   return (
+    data &&
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="flex flex-col xl:flex-row justify-between xl:items-center">
@@ -45,7 +46,7 @@ export default function LevelBenefitsTable({ data }: Props) {
               {/* Header */}
               <thead>
                 <tr className="bg-primary text-white text-left ">
-                  {data.headers.map((header, i) => (
+                  {data?.headers.map((header, i) => (
                     <th key={i} className="px-8 py-6 h6">
                       {header}
                     </th>

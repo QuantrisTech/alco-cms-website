@@ -73,11 +73,7 @@ const ContactUS = () => {
     };
 
     return (
-        <section className="max-w-7xl mx-auto py-10 px-4 md:px-8">
-            {/* Heading */}
-            {/* <h2 className="bg-yellow-400 text-center font-bold text-2xl md:text-3xl py-3 rounded-md text-blue-900 mb-8">
-                Have any question?
-            </h2> */}
+        <section className="max-w-7xl mx-auto pb-6 md:pb-8 lg:pb-12 xl:pb-16 px-4">
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Info Box */}
@@ -124,6 +120,9 @@ const ContactUS = () => {
 
                 {/* Right Contact Form */}
                 <form onSubmit={handleSubmit} className="border border-gray-300 p-6 rounded-lg">
+                    <div className={`text-2xl md:text-4xl font-semibold text-center text-primary mb-6`}>
+                        Contact Us
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <InputField
                             label="First Name*"

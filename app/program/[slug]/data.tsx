@@ -40,6 +40,11 @@ import LevelProgram6 from "@/assets/level-program-included/program-6.webp"
 import LevetContent1 from "@/assets/level-content/level-content-1.webp"
 import LevetContent2 from "@/assets/level-content/level-content-2.webp"
 import LevetContent3 from "@/assets/level-content/level-content-3.webp"
+import ContentSectionEnroll1 from "@/assets/content-section/level-4-enroll-1.svg"
+import ContentSectionEnroll2 from "@/assets/content-section/level-4-enroll-2.svg"
+import ContentSectionEnroll3 from "@/assets/content-section/level-4-enroll-3.svg"
+import ContentSectionEnroll4 from "@/assets/content-section/level-4-enroll-4.svg"
+import { ContentSectionType } from "@/type/contentSection";
 
 // Level 1 Start
 
@@ -800,6 +805,22 @@ const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
   ],
 };
 
+const ContentSectionData: ContentSectionType = {
+  title: "An Authority in Transformation",
+  description: (
+    <>
+      <p className="my-4">
+        As the <strong>Master Trainer and Managing Director of AL&CO,</strong> Arslan has set new standards in coaching, training, and personal development. His dynamic, results-driven programs equip participants with the tools to:
+      </p>
+      <p className="mt-4">
+        Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals,</strong> and organizations worldwide.
+      </p>
+    </>
+  ),
+  fullBg: "bg-slate-100 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4 ",
+}
+
 const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
   title: {
     line1: "What’s Included in",
@@ -1125,6 +1146,38 @@ const LevelBenefitsTableDataLevel4: LevelBenefitsTableType = {
   ],
 };
 
+const ContentSectionContentListData: ContentSectionType = {
+  title: "An Authority in Transformation",
+  contentlist : [
+    {
+      title: "Professional Trainers",
+      description:"Elevate your credentials and gain the tools to lead dynamic, engaging training sessions.",
+      src: ContentSectionEnroll1.src,
+      alt: "Professional Trainers",
+    },
+    {
+      title: "Aspiring",
+      description:"Build the foundation for a successful career in NLP training.",
+      src: ContentSectionEnroll2.src,
+      alt: "Trainers",
+    },
+    {
+      title: "Corporate",
+      description:"Enhance your leadership and communication skills to inspire teams and drive results.",
+      src: ContentSectionEnroll3.src,
+      alt: "Leaders",
+    },
+    {
+      title: "Personal Growth Enthusiasts",
+      description:"Experience unparalleled personal transformation while gaining professional expertise.",
+      src: ContentSectionEnroll4.src,
+      alt: "Personal Growth Enthusiasts",
+    },
+  ],
+  fullBg: "bg-slate-100 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4 ",
+}
+
 const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
   title: {
     line1: "WHY BECOME AN NLP TRAINER?",
@@ -1207,7 +1260,7 @@ const LevelContentDataLevel4: LevelContentType = {
     line2: ""
   },
   points: [
-   {
+    {
       title: "Stage Mastery",
       items: [
         "Develop an unbeatable stage presence and learn to captivate any audience."
@@ -1271,7 +1324,7 @@ const LevelContentDataLevel4: LevelContentType = {
 };
 
 const LevelGraduatesExperienceDataLevel4: LevelGraduatesExperienceType = {
-    title: {
+  title: {
     line1: "Benefits of Choosing",
     line2: "NLP Trainers’ Training"
   },
@@ -1452,7 +1505,7 @@ const LevelContentDataLevel5: LevelContentType = {
     line2: ""
   },
   points: [
-   {
+    {
       title: "Teaching 5 Types of Hypnosis",
       items: [
         "Master the skills to train others in Ericksonian Hypnosis, Estabrooks Hypnosis, Elman Hypnosis, Krasner Hypnosis, and Direct Authoritarian Hypnosis."
@@ -1496,7 +1549,7 @@ const LevelContentDataLevel5: LevelContentType = {
 };
 
 const LevelGraduatesExperienceDataLevel5: LevelGraduatesExperienceType = {
-    title: {
+  title: {
     line1: "Benefits of Choosing",
     line2: "Hypnosis Trainers’ Training"
   },
@@ -1726,7 +1779,7 @@ const LevelContentDataLevel6: LevelContentType = {
 };
 
 const LevelGraduatesExperienceDataLevel6: LevelGraduatesExperienceType = {
-    title: {
+  title: {
     line1: "Benefits of Choosing",
     line2: "NLP Master Trainer"
   },
@@ -1938,6 +1991,7 @@ export const programs: ProgramType[] = [
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel3,
     LevelCertificationData: LevelCertificationDataLevel3,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel3,
+    ContentSectionData: ContentSectionData,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel3,
     LevelContentData: LevelContentDataLevel3,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel3,
@@ -1951,6 +2005,7 @@ export const programs: ProgramType[] = [
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel4,
     LevelCertificationData: LevelCertificationDataLevel4,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel4,
+    ContentSectionContentListData: ContentSectionContentListData,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel4,
     LevelContentData: LevelContentDataLevel4,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel4,

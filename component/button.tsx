@@ -43,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
         danger: "bg-danger hover:bg-danger-600 text-white",
         white: "bg-white hover:bg-gray-100 text-gray-800 border border-gray-300",
         outlinePrimary: "border border-primary text-primary hover:bg-primary hover:text-white",
-        outlineSecondary: "border border-secondary text-secondary hover:bg-secondary hover:text-white",
+        outlineSecondary: "border border-secondary-dark text-secondary-dark hover:bg-secondary-dark hover:text-white",
         outlineDanger: "border border-danger text-danger hover:bg-danger hover:text-white",
         outlineWhite: "border border-white text-white hover:bg-white hover:text-gray-900",
 

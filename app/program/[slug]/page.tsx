@@ -9,6 +9,7 @@ import ContactInfo from "@/component/contactInfo";
 import LevelProgramIncludes from "@/component/levelProgramIncludes";
 import LevelContent from "@/component/levelContent";
 import LevelGraduatesExperience from "@/component/levelGraduatesExperience";
+import ContentSection from "@/component/contentSection";
 
 export default async function ProgramDetail({
   params,
@@ -27,9 +28,11 @@ export default async function ProgramDetail({
       <Banner data={program.BannerData} />
       <LevelIntroWithVideo data={program.LevelIntroWithVideoData} />
       <LevelCertification data={program.LevelCertificationData} />
+      <ContentSection data={program.ContentSectionData} />
       <LevelProgramIncludes data={program.LevelProgramIncludesData} />
       <ContactInfo />
       <LevelBenefitsTable data={program.LevelBenefitsTableData} />
+      <ContentSection data={program.ContentSectionContentListData} />
       <LevelContent data={program.LevelContentData} />
       <LevelGraduatesExperience data={program.LevelGraduatesExperienceData} />
     </div>

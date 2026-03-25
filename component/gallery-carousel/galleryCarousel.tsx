@@ -18,7 +18,7 @@ type ThumbProps = {
 };
 
 type Props = {
-    slides: GalleryImage[];
+    slides?: GalleryImage[];
     options?: EmblaOptionsType;
 };
 
@@ -32,7 +32,7 @@ const Thumb = ({ selected, onClick, image }: ThumbProps) => {
             <button onClick={onClick} type="button">
                 <img
                     src={image}
-                    className="w-full h-16 object-cover rounded-lg border-2 border-transparent hover:border-white transition"
+                    className="w-full h-[150px] object-cover rounded-lg border-2 border-transparent hover:border-white transition"
                 />
             </button>
         </div>
@@ -80,24 +80,24 @@ const GalleryCarousel = ({ slides, options }: Props) => {
 
     /* ================= UI ================= */
     return (
-        <div className="gallery_embla grid grid-cols-12 gap-4 max-w-6xl">
+        <div className="gallery_embla  flex gap-4 max-w-6xl">
             {/* MAIN SLIDER */}
-            <div className="gallery_embla__viewport col-span-11" ref={emblaMainRef}>
+            <div className="gallery_embla__viewport w-[70%] md:w-[75%] lg:w-[80%]" ref={emblaMainRef}>
                 <div className="gallery_embla__container">
-                    {slides.map((slide, index) => (
+                    {slides?.map((slide, index) => (
                         <div
-                            className="gallery_embla__slide relative"
+                            className="gallery_embla__slide relative bg-black "
                             key={index}
                         >
                             <img
                                 src={slide.src}
                                 alt={slide.alt}
-                                className="w-full h-[350px] md:h-[450px] object-cover rounded-xl"
+                                className="w-full h-[350px] md:h-[450px] object-contain "
                             />
 
                             {/* Overlay Title */}
                             {slide.title && (
-                                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base">
+                                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base ">
                                     {slide.title}
                                 </div>
                             )}
@@ -107,13 +107,13 @@ const GalleryCarousel = ({ slides, options }: Props) => {
             </div>
 
             {/* THUMBNAILS */}
-            <div className="gallery_embla-thumbs  col-span-1">
+            <div className="gallery_embla-thumbs  w-[30%] md:w-[25%] lg:w-[15%]">
                 <div
                     className="gallery_embla-thumbs__viewport"
                     ref={emblaThumbsRef}
                 >
                     <div className="gallery_embla-thumbs__container flex gap-1">
-                        {slides.map((slide, index) => (
+                        {slides?.map((slide, index) => (
                             <Thumb
                                 key={index}
                                 onClick={() => onThumbClick(index)}

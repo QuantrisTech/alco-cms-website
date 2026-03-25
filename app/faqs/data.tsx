@@ -1,8 +1,8 @@
 import React from "react";
 
 export type Faq = {
-  question: string;
-  answer: React.ReactNode;
+  question?: string;
+  answer?: React.ReactNode;
 };
 
 export const homeFaqs: Faq[] = [
