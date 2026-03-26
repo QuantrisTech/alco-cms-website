@@ -12,7 +12,8 @@ type SelectFieldProps = {
   options: Option[];
   value?: string;
   onChange?: (value: string) => void;
-//   size?: "sm" | "md" | "lg";
+  error?: string;
+  //   size?: "sm" | "md" | "lg";
 };
 
 export default function SelectField({
@@ -20,7 +21,8 @@ export default function SelectField({
   options,
   value,
   onChange,
-//   size = "md",
+  error
+  //   size = "md",
 }: SelectFieldProps) {
   const [open, setOpen] = useState(false);
   const [focus, setFocus] = useState(false);
@@ -30,11 +32,11 @@ export default function SelectField({
 
   const isActive = focus || value;
 
-//   const sizeClasses = {
-//     sm: "px-2 pt-4 pb-1 text-sm",
-//     md: "px-3 pt-5 pb-2 text-base",
-//     lg: "px-4 pt-6 pb-3 text-lg",
-//   };
+  //   const sizeClasses = {
+  //     sm: "px-2 pt-4 pb-1 text-sm",
+  //     md: "px-3 pt-5 pb-2 text-base",
+  //     lg: "px-4 pt-6 pb-3 text-lg",
+  //   };
 
   // close on outside click
   useEffect(() => {
@@ -48,6 +50,10 @@ export default function SelectField({
     return () => document.removeEventListener("click", handleClick);
   }, []);
 
+  const borderClass = error
+    ? "border-red-500"
+    : "border-gray-300 focus:border-primary";
+
   return (
     <div ref={ref} className="relative w-full">
       {/* Select Box */}
@@ -56,15 +62,14 @@ export default function SelectField({
           setOpen(!open);
           setFocus(true);
         }}
-        className={`relative w-full min-h-12 border border-gray-300 focus:border-primary rounded-lg cursor-pointer bg-white px-3 pt-5 pb-1 text-base flex items-center justify-between`}
+        className={`relative w-full min-h-12 border ${borderClass} rounded-lg cursor-pointer bg-white px-3 pt-5 pb-1 text-base flex items-center justify-between`}
       >
         <span className={`${!value && "text-gray-400"} font-light text-sm`}>
           {selected?.label || ""}
         </span>
         <span
-          className={`transition-transform duration-300 text-gray-600 absolute top-[25%] right-4 ${
-            open ? "rotate-180" : ""
-          }`}
+          className={`transition-transform duration-300 text-gray-600 absolute top-[25%] right-4 ${open ? "rotate-180" : ""
+            }`}
         >
           <IoMdArrowDropdown size={26} />
         </span>
@@ -98,6 +103,13 @@ export default function SelectField({
           </div>
         ))}
       </div>
+
+      {/* ✅ Error Message */}
+      {error && (
+        <span className="absolute -bottom-4 right-0 text-[10px] text-red-500">
+          {error}
+        </span>
+      )}
     </div>
   );
 }
