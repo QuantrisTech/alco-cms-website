@@ -377,7 +377,38 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       },
     },
   ],
-  pointsClass: "grid grid-col-1 lg:grid-cols-2 gap-4 lg:gap-8 py-2 md:py-4 lg:py-8 xl:py-12"
+  pointsClass: "grid grid-col-1 lg:grid-cols-2 gap-4 lg:gap-8 py-2 md:py-4 lg:py-8 xl:py-12",
+  textAlign:"text-start",
+  detailContent: (
+    <div className="text-primary">
+      <p className="my-4">
+        These are the four clouds that have been developing since our birth, and if not attended to or corrected, they will create huge storms in our lives—storms that will leave us emotionally drained, frustrated, depressed, confused, powerless, and disempowered.
+      </p>
+      <p className="mb-4">
+        In our NLP training, we work deeply with you and your four clouds to emerge from the other side into paradise. NLP is all about reprogramming our minds so that they start perceiving things differently and more positively, which ultimately results in an empowering mindset and behaviors. 
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>
+          <strong>Negative Thinking Patterns</strong> will be converted into positive thinking patterns.
+        </li>
+        <li>
+          <strong>Negative Emotions</strong> will be converted into positive learnings.
+        </li>
+        <li>
+          <strong>Inner Conflicts</strong> would be resolved through Values Realignment work, creating more wholeness.
+        </li>
+        <li>
+          <strong>Limiting Beliefs</strong> would be destroyed from the root cause, and new empowering beliefs would be installed.
+        </li>
+      </ul>
+      <p className="my-4">
+        And ignite lasting transformation in yourself and those you serve.
+      </p>
+      <p>
+        NLP Training works extensively on all the aspects that put a person in the stuck phase and help them unstick themselves quickly and effortlessly by creating more ways for them at a very unconscious level. When people start operating their lives from this side of the coin, life takes on a whole new meaning and becomes an empowering experience.
+      </p>
+    </div>
+  ),
 };
 
 

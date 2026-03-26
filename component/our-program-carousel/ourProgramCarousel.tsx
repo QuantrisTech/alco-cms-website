@@ -1,7 +1,7 @@
 import React from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import { DotButton, useDotButton } from "../emblaCarouselDot"
-import Level1 from "@/assets/our-program/level1_image.webp";
+import Level1 from "@/assets/our-program/level1_image_1.webp";
 import useEmblaCarousel from 'embla-carousel-react'
 import { OurProgramSlideType } from '@/type/ourProgram'
 import Button from '../button'
@@ -44,7 +44,7 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                 </div>
                 <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
                   <Button 
-iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='' />
+iconRight={true} variant="primary" size="small" text="Find out more" href="#" className='px-2' />
                 </div>
                 <div className="flex flex-col justify-center col-span-12 mt-4">
                   <img

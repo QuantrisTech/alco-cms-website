@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = ({
 
     // Size classes
     const sizeClasses: Record<string, string> = {
-        small: "px-3 py-1 text-sm",
+        small: "px-0 py-2 text-sm",
         medium: "px-4 py-2 text-base",
         large: "px-6 py-3 text-lg",
     };

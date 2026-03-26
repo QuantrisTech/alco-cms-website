@@ -2,7 +2,13 @@
 
 import React from "react";
 import Button from "./button";
-import Level1 from "@/assets/our-program/level1_image.webp";
+// import Level1 from "@/assets/our-program/level1_image_old.webp";
+import Level1 from "@/assets/our-program/level1_image_1.webp";
+import Level2 from "@/assets/our-program/level1_image_2.webp";
+import Level3 from "@/assets/our-program/level1_image_3.webp";
+import Level4 from "@/assets/our-program/level1_image_4.webp";
+import Level5 from "@/assets/our-program/level1_image_5.webp";
+import Level6 from "@/assets/our-program/level1_image_6.webp";
 import { OurProgramData } from "@/type/ourProgram";
 import OurProgramCarousel from "./our-program-carousel/ourProgramCarousel";
 
@@ -33,7 +39,7 @@ const ourProgramData: OurProgramData = {
         link: "#"
       },
       image: {
-        src: Level1.src,
+        src: Level2.src,
         alt: "Arslan Larik"
       }
     },
@@ -45,7 +51,7 @@ const ourProgramData: OurProgramData = {
         link: "#"
       },
       image: {
-        src: Level1.src,
+        src: Level3.src,
         alt: "Arslan Larik"
       }
     },
@@ -57,7 +63,7 @@ const ourProgramData: OurProgramData = {
         link: "#"
       },
       image: {
-        src: Level1.src,
+        src: Level4.src,
         alt: "Arslan Larik"
       }
     },
@@ -69,7 +75,7 @@ const ourProgramData: OurProgramData = {
         link: "#"
       },
       image: {
-        src: Level1.src,
+        src: Level5.src,
         alt: "Arslan Larik"
       }
     },
@@ -81,7 +87,7 @@ const ourProgramData: OurProgramData = {
         link: "#"
       },
       image: {
-        src: Level1.src,
+        src: Level6.src,
         alt: "Arslan Larik"
       }
     },

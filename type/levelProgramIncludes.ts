@@ -7,6 +7,8 @@ export type LevelProgramIncludesType = {
     line2?: string
   }
   pointsClass?: string
+  detailContent?: React.ReactNode
+  textAlign?: string
   points: {
     title: string
     description: string | React.ReactNode

@@ -26,8 +26,8 @@ export default function LevelProgramIncludes({ data }: Props) {
             </span>
           </h3>
           <div className="my-2">
-            <Button 
-iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
+            <Button
+              iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div>
         </div>
 
@@ -50,13 +50,18 @@ iconRight={true} variant="primary" size="medium" text="Learn More" href="#" clas
                 {point.title}
               </h6>
               <div className={`text-md font-outfit text-start
-                  ${point.theme === "dark" ? "text-white" :  "text-gray-800"}`}>
+                  ${point.theme === "dark" ? "text-white" : "text-gray-800"}`}>
                 {point.description}
               </div>
             </div>
           ))}
 
         </div>
+
+        {/* Deatil Content */}
+        {data?.detailContent && (
+          <div className={`${data?.textAlign ? data?.textAlign : "text-center"} text-primary-light custom-text1  mx-auto`}>{data?.detailContent}</div>
+        )}
       </div>
     </section>
   );
