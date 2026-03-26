@@ -11,6 +11,7 @@ type contentType = {
   src?: any
   alt?: string
   textAlign?: string
+  height?: string
 };
 
 type ButtonType = {
@@ -25,11 +26,15 @@ export type ContentSectionType = {
   miniTitle?: string
   detailContent?: React.ReactNode
   textAlign?: string
+  titleColor?: string
   padding?: string
   fullBg?: string
   imagelist?: ImageType[];
   button?: ButtonType;
   contentlist?: contentType[];
   contentlistColumn?: string
+  contentlistClass?: string
+  contentlisItemClass?: string
+  contentlistTitle?: string
 
 };

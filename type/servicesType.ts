@@ -1,16 +1,14 @@
+import { BannerType } from "./bannerType"
+import { ContentSectionType } from "./contentSection";
+import { LevelProgramIncludesType } from "./levelProgramIncludes";
 
 
 export type servicesType = {
   slug: string
-  // title?: string
-  // description?: string
-  // BannerData: BannerType
-  // LevelBenefitsTableData?: LevelBenefitsTableType
-  // galleryData?: GalleryItem;
-  // FaqsData?: Faq[];
-  // ContentSectionData1?: ContentSectionType;
-  // ContentSectionData2?: ContentSectionType;
-  // ContentSectionData3?: ContentSectionType;
-  // ContentSectionData4?: ContentSectionType;
-  // ContentSectionDataFeatureImage?: ContentSectionType
+  BannerData: BannerType
+  ContentSectionData1?: ContentSectionType;
+  ContentSectionImgContentListData?: ContentSectionType
+  ContentSectionData2?: ContentSectionType;
+  ContentSectionContentListData?: ContentSectionType;
+  LevelProgramIncludesData?: LevelProgramIncludesType
 }

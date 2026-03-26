@@ -16,7 +16,7 @@ const ContentSection = ({ data }: Props) => {
             <div className="container mx-auto px-4">
                 {/* Title */}
                 {data?.title && (
-                    <div className={`h4 font-semibold  ${data?.textAlign ? data?.textAlign : "text-center"} text-primary ${data?.underline === true && "underline"} `}>
+                    <div className={`h4 font-semibold  ${data?.textAlign ? data?.textAlign : "text-center"} ${data?.titleColor ? data?.titleColor : "text-primary"}  ${data?.underline === true && "underline"} `}>
                         {data?.title}
                     </div>
                 )}
@@ -35,19 +35,19 @@ const ContentSection = ({ data }: Props) => {
 
                 {/* content List */}
                 {data?.contentlist && data.contentlist.length > 0 && (
-                    <div className={`grid ${data.contentlistColumn ? data.contentlistColumn : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"}   max-w-6xl mx-auto pt-6 md:pt-8 lg:pt-12 xl:pt-16`}>
+                    <div className={data.contentlistClass ? data.contentlistClass : `grid ${data.contentlistColumn ? data.contentlistColumn : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 "}   max-w-6xl mx-auto pt-6 md:pt-8 lg:pt-12 xl:pt-16 `}>
                         {data.contentlist.map((content, index) => (
-                            <div className="rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6">
+                            <div className={data?.contentlisItemClass ? data?.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`}>
                                 {/* Images */}
                                 {content.src && (<img
                                     key={index}
                                     src={content.src}
                                     alt={content.alt}
-                                    className="w-full h-28 rounded-lg"
+                                    className={`w-full ${content.height ? content.height : "h-28"} rounded-lg`}
                                 />)}
                                 {/* Title */}
                                 {content?.title && (
-                                    <div className={`text-2xl font-semibold ${content?.textAlign ? content?.textAlign : "text-center"} text-primary my-4 min-h-12`}>
+                                    <div className={data.contentlistTitle ? data.contentlistTitle : `text-2xl font-semibold ${content?.textAlign ? content?.textAlign : "text-center"} text-primary my-4 min-h-12`}>
                                         {content?.title}
                                     </div>
                                 )}

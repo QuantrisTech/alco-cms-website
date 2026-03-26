@@ -4,7 +4,7 @@ import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
 import Button from "./button";
 
 type Props = {
-  data: LevelProgramIncludesType
+  data?: LevelProgramIncludesType
 }
 
 const themeClasses: any = {
@@ -16,6 +16,7 @@ const themeClasses: any = {
 export default function LevelProgramIncludes({ data }: Props) {
 
   return (
+    data &&
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-gradient-light-neutral-lg bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="flex flex-col xl:flex-row justify-between xl:items-center">
@@ -30,8 +31,8 @@ iconRight={true} variant="primary" size="medium" text="Learn More" href="#" clas
           </div>
         </div>
 
-        <div className="grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
-          {data.points.map((point, index) => (
+        <div className={data?.pointsClass ? data?.pointsClass : "grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12"}>
+          {data?.points.map((point, index) => (
             <div key={index} className={`flex flex-col px-4 py-6 lg:px-8 lg:py-6 xl:px-8 xl:py-6 2xl:px-10 2xl:py-8 rounded-xl shadow-lg ${themeClasses[point?.theme]}`}>
               <div className="w-[70px] h-[70px] p-3 bg-primary rounded-lg">
                 <img
@@ -44,12 +45,12 @@ iconRight={true} variant="primary" size="medium" text="Learn More" href="#" clas
                 text-lg sm:text-xl 
                 text-start
                 font-outfit font-semibold my-3
-                ${point.theme === "dark" ? "text-secondary" : point.theme === "light" ? "text-primary" : "text-black"}
+                ${point.theme === "dark" ? "text-secondary" : point.theme === "light" ? "text-primary" : "text-gray-800"}
                 `}>
                 {point.title}
               </h6>
-              <div className={`text-md font-outfit font-light text-start
-                  ${point.theme === "dark" ? "text-white" : "text-black"}`}>
+              <div className={`text-md font-outfit text-start
+                  ${point.theme === "dark" ? "text-white" :  "text-gray-800"}`}>
                 {point.description}
               </div>
             </div>
