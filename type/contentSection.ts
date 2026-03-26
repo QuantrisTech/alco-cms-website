@@ -8,8 +8,9 @@ type ImageType = {
 type contentType = {
   title?: string
   description?: React.ReactNode
-  src: any
-  alt: string
+  src?: any
+  alt?: string
+  textAlign?: string
 };
 
 type ButtonType = {
@@ -29,5 +30,6 @@ export type ContentSectionType = {
   imagelist?: ImageType[];
   button?: ButtonType;
   contentlist?: contentType[];
+  contentlistColumn?: string
 
 };

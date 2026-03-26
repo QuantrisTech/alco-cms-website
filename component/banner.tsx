@@ -61,7 +61,7 @@ export default function Banner({ data }: Props) {
       {data?.intoBanner === true && (
         <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 w-full">
           <div className=" flex justify-center flex-col items-center">
-            <h6 className="h6 max-w-2xl text-center">{data?.description}</h6>
+            <h6 className="h6 max-w-3xl text-center">{data?.description}</h6>
 
             {data?.title?.line1 && (<h4 className="h4 text-primary text-start font-semibold mt-2">
               - {data?.title?.line1}

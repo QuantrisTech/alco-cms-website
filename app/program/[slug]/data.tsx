@@ -44,6 +44,11 @@ import ContentSectionEnroll1 from "@/assets/content-section/level-4-enroll-1.svg
 import ContentSectionEnroll2 from "@/assets/content-section/level-4-enroll-2.svg"
 import ContentSectionEnroll3 from "@/assets/content-section/level-4-enroll-3.svg"
 import ContentSectionEnroll4 from "@/assets/content-section/level-4-enroll-4.svg"
+import ContentSectionEnroll5 from "@/assets/content-section/level-4-enroll-5.svg"
+import ContentSectionEnroll6 from "@/assets/content-section/level-4-enroll-6.svg"
+import ContentSectionEnroll7 from "@/assets/content-section/level-4-enroll-7.svg"
+import ContentSectionEnroll8 from "@/assets/content-section/level-4-enroll-8.svg"
+import ContentSectionEnroll9 from "@/assets/content-section/level-4-enroll-9.svg"
 import { ContentSectionType } from "@/type/contentSection";
 
 // Level 1 Start
@@ -692,7 +697,7 @@ const LevelIntroWithVideoDataLevel3: LevelIntroWithVideoType = {
 
 const LevelCertificationDataLevel3: LevelCertificationType = {
   title: {
-    line1: "",
+    line1: "Certifications",
     line2: ""
   },
   points: [
@@ -805,25 +810,25 @@ const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
   ],
 };
 
-const ContentSectionData: ContentSectionType = {
+const ContentSectionDataLevel1: ContentSectionType = {
   title: "An Authority in Transformation",
   description: (
-    <>
+    <div className="max-w-7xl mx-auto">
       <p className="my-4">
         As the <strong>Master Trainer and Managing Director of AL&CO,</strong> Arslan has set new standards in coaching, training, and personal development. His dynamic, results-driven programs equip participants with the tools to:
       </p>
       <p className="mt-4">
         Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals,</strong> and organizations worldwide.
       </p>
-    </>
+    </div>
   ),
   fullBg: "bg-slate-100 ",
-  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
 }
 
 const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
   title: {
-    line1: "What’s Included in",
+    line1: "This Program Includes",
     line2: ""
   },
   points: [
@@ -1146,30 +1151,30 @@ const LevelBenefitsTableDataLevel4: LevelBenefitsTableType = {
   ],
 };
 
-const ContentSectionContentListData: ContentSectionType = {
+const ContentSectionImgContentListData4: ContentSectionType = {
   title: "An Authority in Transformation",
-  contentlist : [
+  contentlist: [
     {
       title: "Professional Trainers",
-      description:"Elevate your credentials and gain the tools to lead dynamic, engaging training sessions.",
+      description: "Elevate your credentials and gain the tools to lead dynamic, engaging training sessions.",
       src: ContentSectionEnroll1.src,
       alt: "Professional Trainers",
     },
     {
       title: "Aspiring",
-      description:"Build the foundation for a successful career in NLP training.",
+      description: "Build the foundation for a successful career in NLP training.",
       src: ContentSectionEnroll2.src,
       alt: "Trainers",
     },
     {
       title: "Corporate",
-      description:"Enhance your leadership and communication skills to inspire teams and drive results.",
+      description: "Enhance your leadership and communication skills to inspire teams and drive results.",
       src: ContentSectionEnroll3.src,
       alt: "Leaders",
     },
     {
       title: "Personal Growth Enthusiasts",
-      description:"Experience unparalleled personal transformation while gaining professional expertise.",
+      description: "Experience unparalleled personal transformation while gaining professional expertise.",
       src: ContentSectionEnroll4.src,
       alt: "Personal Growth Enthusiasts",
     },
@@ -1423,6 +1428,63 @@ const LevelBenefitsTableDataLevel5: LevelBenefitsTableType = {
   ],
 };
 
+const ContentSectionDataLevel5: ContentSectionType = {
+  title: "Why Hypnosis?",
+  description: (
+    <>
+      <p className="my-4">
+        <strong>Hypnosis </strong> is a natural and powerful tool for accessing the unconscious mind, enabling transformation at the deepest level. It’s a practice that fosters relaxation, healing, and personal empowerment. As a Hypnosis Trainer, you will not only master these techniques but also guide others to use them effectively—unlocking their true potential and creating lasting impact.
+      </p>
+      <p className="my-4">
+        <strong>Through hypnosis, individuals can: </strong>
+      </p>
+      <ul className="list-disc pl-5 space-y-1">
+        <li>Overcome limiting beliefs and behaviors.</li>
+        <li>Enhance focus, creativity, and productivity.</li>
+        <li>Heal emotional wounds & Traumas.</li>
+        <li>Reduce Stress & Anxiety.</li>
+        <li>Access untapped personal potential for success and fulfillment.</li>
+      </ul>
+    </>
+  ),
+  // underline: true,
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
+  textAlign: "text-start",
+  fullBg: "bg-slate-100 ",
+}
+
+const ContentSectionImgContentListData5: ContentSectionType = {
+  title: "WHO SHOULD ENROLL?",
+  contentlist: [
+    {
+      title: "Hypnosis Practitioners",
+      description: "Ready to take their skills to the next level by teaching others.",
+      src: ContentSectionEnroll1.src,
+      alt: "Hypnosis Practitioners",
+    },
+    {
+      title: "Coaches & Therapists",
+      description: "Wanting to expand their toolkit with powerful hypnosis techniques.",
+      src: ContentSectionEnroll5.src,
+      alt: "Coaches & Therapists",
+    },
+    {
+      title: "Corporate Trainers",
+      description: "Seeking to incorporate hypnosis into corporate wellness programs.",
+      src: ContentSectionEnroll3.src,
+      alt: "Corporate Trainers",
+    },
+    {
+      title: "Aspiring Hypnosis Trainerss",
+      description: "Looking to gain recognition and start a fulfilling career in hypnosis training.",
+      src: ContentSectionEnroll2.src,
+      alt: "Aspiring Hypnosis Trainers",
+    },
+  ],
+  fullBg: "bg-slate-100 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
+}
+
 const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
   title: {
     line1: "Why Become a Hypnosis Trainer?",
@@ -1601,6 +1663,60 @@ const LevelCertificationDataLevel6: LevelCertificationType = {
   ]
 }
 
+const ContentSectionContentListData6: ContentSectionType = {
+  title: "The Two Pathways to Becoming an NLP Master Trainer",
+  description: `Whether you’re eager to fast-track your journey or prefer a steady, balanced approach, our program offers two pathways to becoming an NLP Master Trainer.`,
+  contentlist: [
+    {
+      title: "1. Accelerated Pathway (3 Years):",
+      description: (
+        <div className="text-gray-600">
+          <p className="my-4">
+            This fast-track program is ideal for trainers driven to achieve results quickly. You will:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>In three years, complete mandatory requirements, including training milestones and business projects.</li>
+            <li>Receive mentorship and hands-on guidance to rapidly set up and scale your NLP Trainer business.</li>
+            <li>Be eligible for advanced mentoring for continued professional development in years 4 and 5.</li>
+          </ul>
+        </div>
+      ),
+      textAlign: "text-start px-4"
+    },
+    {
+      title: "2. Relaxed Pathway (5 Years):",
+      description: (
+        <div className="text-gray-600">
+          <p className="my-4">
+            This pathway is perfect for those who want to balance growth with other commitments. You will:
+          </p>
+          <ul className="list-disc pl-5 space-y-1 ">
+            <li>Progress at your own pace, completing milestones over five years.</li>
+            <li>Build a solid foundation in business, marketing, and training mastery.</li>
+            <li>Enjoy long-term mentorship and access to resources to ensure sustainable growth.</li>
+          </ul>
+        </div>
+      ),
+      textAlign: "text-start px-4"
+    },
+  ],
+  detailContent: (
+    <div className="text-start max-w-4xl mx-auto pt-4 md:pt-6 lg:pt-8 xl:pt-12 ">
+      <p className="">
+        <strong>After the Program; Upon completing the NLP Master Trainer Program, you will</strong>
+      </p>
+      <ul className="list-disc pl-5 space-y-1 mt-4">
+        <li><strong>Certify NLP Trainers:</strong> As an NLP Master Trainer, you will have the authority to train and certify others to become NLP Trainers.</li>
+        <li><strong>Create Global Impact:</strong> Lead transformational workshops, seminars, and certifications that change lives worldwide.</li>
+        <li><strong>Build a Legacy:</strong> Join the elite ranks of NLP leaders who leave a lasting mark on the world.</li>
+      </ul>
+    </div>
+  ),
+  contentlistColumn: "grid-cols-2 gap-6 max-w-4xl",
+  fullBg: "bg-slate-100 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
+}
+
 const LevelBenefitsTableDataLevel6: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of",
@@ -1645,6 +1761,38 @@ const LevelBenefitsTableDataLevel6: LevelBenefitsTableType = {
     },
   ],
 };
+
+const ContentSectionImgContentListData6: ContentSectionType = {
+  title: "WHO SHOULD ENROLL?",
+  contentlist: [
+    {
+      title: "NLP Trainers",
+      description: "Ready to take the next step and train other trainers.",
+      src: ContentSectionEnroll6.src,
+      alt: "NLP Trainers",
+    },
+    {
+      title: "Business Owners",
+      description: "Seeking to grow a successful and scalable NLP coaching and training business.",
+      src: ContentSectionEnroll7.src,
+      alt: "Business Owners",
+    },
+    {
+      title: "Global Leaders",
+      description: "Committed to creating a lasting impact in the NLP community.",
+      src: ContentSectionEnroll8.src,
+      alt: "Global Leaders",
+    },
+    {
+      title: "Visionaries",
+      description: "Driven by the mission to transform lives and leave a legacy.",
+      src: ContentSectionEnroll9.src,
+      alt: "Visionaries",
+    },
+  ],
+  fullBg: "bg-slate-100 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
+}
 
 const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
   title: {
@@ -1789,178 +1937,6 @@ const LevelGraduatesExperienceDataLevel6: LevelGraduatesExperienceType = {
 
 // Level 6 End
 
-// dummy null structured
-
-// const bannerData: BannerType = {
-//   level: "",
-//   title: {
-//     line1: ""
-//   },
-//   description: "",
-//   image: ""
-// };
-
-// const LevelIntroWithVideoData: LevelIntroWithVideoType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   video: "",
-//   description: ""
-// };
-
-// const LevelCertificationData: LevelCertificationType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   points: [
-//     {
-//       title: "",
-//       description: "",
-//       imageBrand: {
-//         src: "",
-//         alt: ""
-//       },
-//       imageCerficate: {
-//         src: "",
-//         alt: ""
-//       }
-//     }
-//   ]
-// };
-
-// const LevelBenefitsTableData: LevelBenefitsTableType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   headers: [
-//     "",
-//     "r",
-//   ],
-//    points: [
-//     {
-//       content: "",
-//       values: [
-//         "",
-//       ],
-//     },
-//   ]
-// };
-
-// const LevelProgramIncludesData: LevelProgramIncludesType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   points: [
-//     {
-//       title: "",
-//       description: (
-//         <p>
-//         </p>
-//       ),
-//       theme: "dark",
-//       image: {
-//         src: LevelProgram1.src,
-//         alt: "",
-//       },
-//     },
-//     {
-//       title: "",
-//       description: (
-//         <p>
-//         </p>
-//       ),
-//       theme: "light",
-//       image: {
-//         src: LevelProgram2.src,
-//         alt: "",
-//       },
-//     },
-//     {
-//       title: "",
-//       description: (
-//         <p>
-//         </p>
-//       ),
-//       theme: "yellow",
-//       image: {
-//         src: LevelProgram3.src,
-//         alt: "",
-//       },
-//     },
-//     {
-//       title: "",
-//       description: (
-//         <>
-//           <p className="mb-2">
-//           </p>
-//           <ul className="list-disc pl-5 space-y-1">
-//             <li></li>
-//           </ul>
-//         </>
-//       ),
-//       theme: "yellow",
-//       image: {
-//         src: LevelProgram4.src,
-//         alt: "",
-//       },
-//     },
-//     {
-//       title: "",
-//       description: (
-//         <p>
-//         </p>
-//       ),
-//       theme: "dark",
-//       image: {
-//         src: LevelProgram5.src,
-//         alt: "",
-//       },
-//     },
-//     {
-//       title: "",
-//       description: (
-//         <p>
-//         </p>
-//       ),
-//       theme: "light",
-//       image: {
-//         src: LevelProgram6.src,
-//         alt: "",
-//       },
-//     },
-//   ],
-// };
-
-// const LevelContentData: LevelContentType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   points: [
-//     {
-//       title: "",
-//       items: [],
-//       image: {
-//         src: "",
-//         alt: ""
-//       }
-//     }
-//   ]
-// };
-
-// const LevelGraduatesExperienceData: LevelGraduatesExperienceType = {
-//   title: {
-//     line1: "",
-//     line2: ""
-//   },
-//   video: ""
-// };
-
-
 export const programs: ProgramType[] = [
   {
     slug: "nlp-practitioner",
@@ -1991,7 +1967,7 @@ export const programs: ProgramType[] = [
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel3,
     LevelCertificationData: LevelCertificationDataLevel3,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel3,
-    ContentSectionData: ContentSectionData,
+    ContentSectionData: ContentSectionDataLevel1,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel3,
     LevelContentData: LevelContentDataLevel3,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel3,
@@ -2005,7 +1981,7 @@ export const programs: ProgramType[] = [
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel4,
     LevelCertificationData: LevelCertificationDataLevel4,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel4,
-    ContentSectionContentListData: ContentSectionContentListData,
+    ContentSectionImgContentListData: ContentSectionImgContentListData4,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel4,
     LevelContentData: LevelContentDataLevel4,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel4,
@@ -2018,6 +1994,8 @@ export const programs: ProgramType[] = [
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel5,
     LevelCertificationData: LevelCertificationDataLevel5,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel5,
+    ContentSectionData: ContentSectionDataLevel5,
+    ContentSectionImgContentListData: ContentSectionImgContentListData5,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel5,
     LevelContentData: LevelContentDataLevel5,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel5,
@@ -2028,7 +2006,9 @@ export const programs: ProgramType[] = [
     BannerData: bannerDataLevel6,
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel6,
     LevelCertificationData: LevelCertificationDataLevel6,
+    ContentSectionContentListData: ContentSectionContentListData6,
     LevelBenefitsTableData: LevelBenefitsTableDataLevel6,
+    ContentSectionImgContentListData: ContentSectionImgContentListData6,
     LevelProgramIncludesData: LevelProgramIncludesDataLevel6,
     LevelContentData: LevelContentDataLevel6,
     LevelGraduatesExperienceData: LevelGraduatesExperienceDataLevel6,

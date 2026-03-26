@@ -37,7 +37,7 @@ const ContentSectionData: ContentSectionType = {
     </>
   ),
   textAlign:"text-start",
-  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4"
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 "
 }
 
 export default function Contact() {

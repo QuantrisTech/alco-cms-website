@@ -31,8 +31,9 @@ export default async function ProgramDetail({
       <ContentSection data={program.ContentSectionData} />
       <LevelProgramIncludes data={program.LevelProgramIncludesData} />
       <ContactInfo />
-      <LevelBenefitsTable data={program.LevelBenefitsTableData} />
       <ContentSection data={program.ContentSectionContentListData} />
+      <LevelBenefitsTable data={program.LevelBenefitsTableData} />
+      <ContentSection data={program.ContentSectionImgContentListData} />
       <LevelContent data={program.LevelContentData} />
       <LevelGraduatesExperience data={program.LevelGraduatesExperienceData} />
     </div>

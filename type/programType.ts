@@ -16,8 +16,9 @@ export type ProgramType = {
   LevelCertificationData : LevelCertificationType
   ContentSectionData? : ContentSectionType
   LevelProgramIncludesData : LevelProgramIncludesType
-  LevelBenefitsTableData : LevelBenefitsTableType
   ContentSectionContentListData?: ContentSectionType
+  LevelBenefitsTableData : LevelBenefitsTableType
+  ContentSectionImgContentListData?: ContentSectionType
   LevelContentData : LevelContentType
   LevelGraduatesExperienceData : LevelGraduatesExperienceType
 }

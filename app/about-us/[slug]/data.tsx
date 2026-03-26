@@ -55,7 +55,7 @@ who learn from it, get back up more
 quickly and persevere with positivity.`,
   image: BannerImage1.src,
   height: "",
-  className: "bg-no-repeat bg-center bg-contain",
+  className: "bg-no-repeat sm:bg-top sm:bg-cover",
   intoBanner: true,
   video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
 };
@@ -154,7 +154,7 @@ const ContentSectionData2AL: ContentSectionType = {
     </>
   ),
   // underline: true,
-  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
   textAlign:"text-start"
 }
 
@@ -179,24 +179,24 @@ const ContentSectionData3AL: ContentSectionType = {
     </>
   ),
   // underline: true,
-  padding: "pb-6 md:pb-8 lg:pb-12 xl:pb-16 px-4",
+  padding: "pb-6 md:pb-8 lg:pb-12 xl:pb-16 ",
   textAlign:"text-start"
 }
 
 const ContentSectionData4AL: ContentSectionType = {
   title: "An Authority in Transformation",
   description: (
-    <>
+    <div className="max-w-6xl mx-auto">
       <p className="my-4">
         As the <strong>Master Trainer and Managing Director of AL&CO,</strong> Arslan has set new standards in coaching, training, and personal development. His dynamic, results-driven programs equip participants with the tools to:
       </p>
       <p className="mt-4">
         Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals,</strong> and organizations worldwide.
       </p>
-    </>
+    </div>
   ),
   fullBg:"bg-neutral-100 ",
-  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4 ",
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
 }
 
 // who-is-bismillah-pervez
@@ -213,8 +213,8 @@ perfection, but those who are always
 open to learning and adapting
 their mindset.`,
   image: BannerImage2.src,
-  height: "min-h-[700px]",
-  className: "bg-no-repeat bg-left bg-contain",
+  height: "",
+  className: "bg-no-repeat sm:bg-top sm:bg-cover",
   intoBanner: true
 };
 
@@ -359,7 +359,7 @@ const ContentSectionDataFeatureImage: ContentSectionType = {
   ],
   // underline: true,
   fullBg: "bg-neutral-100",
-  padding: "py-6 md:py-8 lg:py-12 xl:py-16 px-4"
+  padding: "py-6 md:py-8 lg:py-12 xl:py-16 "
 };
 
 // why-train-with-alco
@@ -387,7 +387,7 @@ const ContentSectionData1WTALCO: ContentSectionType = {
     </>
   ),
   underline: true,
-  padding: "pt-6 md:pt-8 lg:pt-12 xl:pt-16 px-4"
+  padding: "pt-6 md:pt-8 lg:pt-12 xl:pt-16 "
 }
 
 const galleryDataWTALCO: GalleryItem = {
@@ -598,9 +598,6 @@ export const about: AboutType[] = [
     ContentSectionData2: ContentSectionData2AL,
     ContentSectionData3: ContentSectionData3AL,
     ContentSectionData4: ContentSectionData4AL,
-    // galleryData: galleryData,
-    // ContentSectionData2: ContentSectionData2BP,
-    // ContentSectionData3: ContentSectionData3BP
   },
   {
     slug: "who-is-bismillah-pervez",
