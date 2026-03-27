@@ -25,14 +25,15 @@ type Props = {
 /* ================= THUMB ================= */
 const Thumb = ({ selected, onClick, image }: ThumbProps) => {
     return (
-        <div
-            className={`gallery_embla-thumbs__slide ${selected ? "gallery_embla-thumbs__slide--selected" : ""
-                }`}
-        >
-            <button onClick={onClick} type="button">
+        <div className={`gallery_embla-thumbs__slide ${selected ? "gallery_embla-thumbs__slide--selected" : ""}`}>
+            <button onClick={onClick} type="button" className="w-full">
                 <img
                     src={image}
-                    className="w-full h-[150px] object-cover rounded-lg border-2 border-transparent hover:border-white transition"
+                    className={`w-full h-[100px] object-cover rounded-lg border-2 transition-all duration-200 ${
+                        selected
+                            ? "border-white scale-105"
+                            : "border-transparent hover:border-white/60"
+                    }`}
                 />
             </button>
         </div>
@@ -48,12 +49,6 @@ const GalleryCarousel = ({ slides, options }: Props) => {
         ...options,
     });
 
-    const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
-        containScroll: "keepSnaps",
-        dragFree: true,
-        axis: "y",
-    });
-
     /* ================= HANDLERS ================= */
     const onThumbClick = useCallback(
         (index: number) => {
@@ -64,40 +59,39 @@ const GalleryCarousel = ({ slides, options }: Props) => {
     );
 
     const onSelect = useCallback(() => {
-        if (!emblaMainApi || !emblaThumbsApi) return;
-
+        if (!emblaMainApi) return;
         const selected = emblaMainApi.selectedScrollSnap();
         setSelectedIndex(selected);
-        emblaThumbsApi.scrollTo(selected);
-    }, [emblaMainApi, emblaThumbsApi]);
+    }, [emblaMainApi]);
 
     useEffect(() => {
         if (!emblaMainApi) return;
-
         onSelect();
         emblaMainApi.on("select", onSelect);
+        return () => {
+            emblaMainApi.off("select", onSelect);
+        };
     }, [emblaMainApi, onSelect]);
 
     /* ================= UI ================= */
     return (
-        <div className="gallery_embla  flex gap-4 max-w-6xl">
+        <div className="gallery_embla flex gap-4 max-w-6xl items-start">
+
             {/* MAIN SLIDER */}
-            <div className="gallery_embla__viewport w-[70%] md:w-[75%] lg:w-[80%]" ref={emblaMainRef}>
+            <div
+                className="gallery_embla__viewport w-[70%] md:w-[75%] lg:w-[80%]"
+                ref={emblaMainRef}
+            >
                 <div className="gallery_embla__container">
                     {slides?.map((slide, index) => (
-                        <div
-                            className="gallery_embla__slide relative bg-black "
-                            key={index}
-                        >
+                        <div className="gallery_embla__slide relative bg-black" key={index}>
                             <img
                                 src={slide.src}
                                 alt={slide.alt}
-                                className="w-full h-[350px] md:h-[450px] object-contain "
+                                className="w-full h-[350px] md:h-[450px] object-contain"
                             />
-
-                            {/* Overlay Title */}
                             {slide.title && (
-                                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base ">
+                                <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base">
                                     {slide.title}
                                 </div>
                             )}
@@ -106,13 +100,10 @@ const GalleryCarousel = ({ slides, options }: Props) => {
                 </div>
             </div>
 
-            {/* THUMBNAILS */}
-            <div className="gallery_embla-thumbs  w-[30%] md:w-[25%] lg:w-[15%]">
-                <div
-                    className="gallery_embla-thumbs__viewport"
-                    ref={emblaThumbsRef}
-                >
-                    <div className="gallery_embla-thumbs__container flex gap-1">
+            {/* THUMBNAILS — pure native CSS scroll */}
+            <div className="gallery_embla-thumbs w-[30%] md:w-[25%] lg:w-[20%]">
+                <div className="gallery_embla-thumbs__viewport">
+                    <div className="gallery_embla-thumbs__container">
                         {slides?.map((slide, index) => (
                             <Thumb
                                 key={index}
@@ -124,6 +115,7 @@ const GalleryCarousel = ({ slides, options }: Props) => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

@@ -2,6 +2,7 @@
 import React from "react";
 import Button from "./button";
 import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
+import VideoPlayer from "./videoPlayer";
 
 type Props = {
   data: LevelGraduatesExperienceType
@@ -30,14 +31,21 @@ iconRight={true} variant="secondary" size="medium" text="Learn More" href="#" cl
           </div>
         </div>
         <div className="my-8">
-          <video
+          {/* <video
             controls
             preload="metadata"
             className="w-full h-[350px] lg:h-[450px] object-cover rounded-lg"
           >
             <source src={data?.video} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
+          <VideoPlayer
+            className="aspect-video relative rounded-xl overflow-hidden h-[60dvh] w-full"
+            videoUrl={data?.video}
+            thumbnail={data?.thumbnail} 
+            videoClass="w-full h-full object-cover rounded-lg"
+            // hoverPlay={true}
+          />
         </div>
       </div>
     </section>

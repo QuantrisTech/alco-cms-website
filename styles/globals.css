@@ -410,3 +410,17 @@
 .scrollHeader ::-webkit-scrollbar-thumb:hover {
   background: #868686;
 }
+
+/* global.css */
+.mini-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mini-scroll::-webkit-scrollbar-thumb {
+  background-color: #868686; /* blue */
+  border-radius: 25px;
+}
+
+.mini-scroll::-webkit-scrollbar-track {
+  background: #e5e7eb; /* gray */
+}

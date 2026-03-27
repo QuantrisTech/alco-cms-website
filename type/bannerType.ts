@@ -12,6 +12,7 @@ export type BannerType = {
   description?: string
   intoBanner?: boolean
   video?: string
+  thumbnail?: string
   className?: string
   height?: string
 }

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { BannerType } from "@/type/bannerType";
+import VideoPlayer from "./videoPlayer";
 
 // bg-image-alco-center
 
@@ -52,7 +53,7 @@ export default function Banner({ data }: Props) {
                   </span>
                 )}
               </div>)}
-             
+
             </div>
           </div>
         </div>
@@ -67,22 +68,29 @@ export default function Banner({ data }: Props) {
               - {data?.title?.line1}
             </h4>)}
 
-             {data?.intoBanner === true && (data?.video &&
-                <div className="my-8">
-                  <video
+            {data?.intoBanner === true && (data?.video &&
+              <div className="my-8">
+                {/* <video
                     controls
                     preload="metadata"
                     className="w-full h-[350px] lg:h-[450px] object-cover rounded-lg"
                   >
                     <source src={data?.video} type="video/mp4" />
                     Your browser does not support the video tag.
-                  </video>
-                </div>)}
-              {!data?.intoBanner && data?.description && (
-                <p className="custom-text1 font-light text-white text-start mt-4">
-                  {data?.description}
-                </p>
-              )}
+                  </video> */}
+                <VideoPlayer
+                  className="aspect-video relative rounded-xl overflow-hidden h-[350px] lg:h-[450px] w-full"
+                  videoUrl={data?.video}
+                  thumbnail={data?.thumbnail}
+                  videoClass="w-full h-full object-cover rounded-lg"
+                // hoverPlay={true}
+                />
+              </div>)}
+            {!data?.intoBanner && data?.description && (
+              <p className="custom-text1 font-light text-white text-start mt-4">
+                {data?.description}
+              </p>
+            )}
           </div>
         </section>
       )}

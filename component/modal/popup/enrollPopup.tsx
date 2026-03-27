@@ -89,13 +89,13 @@ export default function EnrollPopup({
   return (
     <Popup isOpen={isOpen} onClose={() => closePopup()}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid grid-cols-12 gap-x-6 gap-y-4">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-4 h-[80dvh] overflow-y-auto pr-2 pb-4 xl:pb-0 xl:h-full xl:overflow-hidden mini-scroll">
           {/* Left Column */}
-          <div className="col-span-4">
+          <div className="col-span-12 xl:col-span-4 ">
             <img
               src={EnrollPopupImage.src}
               alt="Enroll popup"
-              className="w-full h-[90px] sm:h-[120px] md:h-[150px] lg:h-[200px] object-cover rounded-md "
+              className="w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px] object-cover rounded-md "
             />
             <div className="mt-4">
               <h2 className="text-3xl font-outfit font-semibold">{title}</h2>
@@ -104,10 +104,10 @@ export default function EnrollPopup({
           </div>
 
           {/* Right Column */}
-          <div className="col-span-8">
+          <div className="col-span-12 xl:col-span-8">
             {children || (
               <div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-4">
                     {/* Name */}
                     <Controller
@@ -191,7 +191,7 @@ export default function EnrollPopup({
                 </div>
 
                 {/* Goals and Concern */}
-                <div className="grid grid-cols-2 gap-4 mt-4">
+                <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="flex flex-col gap-2 justify-between">
                     <Controller
                       name="goals"
@@ -297,8 +297,8 @@ export default function EnrollPopup({
               />
             </div>
 
-            <div className="flex justify-between items-center ">
-              <div className="text-xs text-gray-500 ms-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center ">
+              <div className="text-xs text-gray-500 mb-2 sm:mb-0 sm:ms-6">
                 <a href="/privacy-policy" className="underline text-primary me-2">
                   Privacy Policy
                 </a>
@@ -307,7 +307,9 @@ export default function EnrollPopup({
                   Terms of Service
                 </a>
               </div>
-              <Button text="Submit" type="submit" variant="primary" className="mt-2 min-w-[150px]" />
+              <div className="w-full sm:max-w-[150px]">
+              <Button text="Submit" type="submit" variant="primary" className="mt-2 w-full " />
+              </div>
             </div>
           </div>
         </div>

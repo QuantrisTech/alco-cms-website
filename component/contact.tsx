@@ -1,82 +1,47 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Button from "./button";
 import InputField from "./inputfield";
-
 import ContactBg from "@/assets/background/contact-info.webp";
 
+type ContactFormValues = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    comments: string;
+};
+
 const ContactUS = () => {
-    // Form state
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        comments: "",
+    const {
+        handleSubmit,
+        control,
+        formState: { errors, isSubmitting },
+        reset,
+    } = useForm<ContactFormValues>({
+        defaultValues: {
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            comments: "",
+        },
     });
 
-    // Validation errors
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-    // Handle change for all fields
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-
-        // Clear error on input change
-        if (errors[name]) {
-            setErrors(prev => {
-                const newErrors = { ...prev };
-                delete newErrors[name];
-                return newErrors;
-            });
-        }
-    };
-
-    // Simple validation on submit
-    const validate = () => {
-        const newErrors: { [key: string]: string } = {};
-
-        if (!formData.firstName.trim()) newErrors.firstName = "is required";
-        if (!formData.lastName.trim()) newErrors.lastName = "is required";
-        if (!formData.email.trim()) newErrors.email = "is required";
-        else {
-            // Basic email regex check
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) newErrors.email = "invalid email";
-        }
-        if (!formData.phone.trim()) newErrors.phone = "is required";
-        if (!formData.comments.trim()) newErrors.comments = "comments is required";
-
-        setErrors(newErrors);
-
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (validate()) {
-            // Handle form submit here (e.g., send data)
-            alert("Form submitted!");
-            // Clear form if needed
-            setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: "",
-                comments: "",
-            });
-            setErrors({});
-        }
+    const onSubmit = (data: ContactFormValues) => {
+        console.log("Contact Form:", data);
+        alert("Form submitted!");
+        reset();
     };
 
     return (
         <section className="max-w-7xl mx-auto pb-6 md:pb-8 lg:pb-12 xl:pb-16 px-4">
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Left Info Box */}
+
+                {/* Left Info */}
                 {/* <div className="bg-blue-700 text-white p-6 rounded-lg flex flex-col gap-6"> */}
                 <div
                     className="relative flex flex-col justify-center px-8 lg:py-6 xl:px-8 xl:py-6 2xl:px-10 2xl:py-8 rounded-xl shadow-lg bg-cover bg-no-repeat bg-right overflow-hidden min-h-[350px]"
@@ -118,103 +83,110 @@ const ContactUS = () => {
                     </div>
                 </div>
 
-                {/* Right Contact Form */}
-                <form onSubmit={handleSubmit} className="border border-gray-300 p-6 rounded-lg">
-                    <div className={`text-2xl md:text-4xl font-semibold text-center text-primary mb-6`}>
+                {/* Form */}
+                <form onSubmit={handleSubmit(onSubmit)} className="border border-gray-300 p-6 rounded-lg">
+                    <h2 className="text-2xl md:text-4xl font-semibold text-center text-primary mb-6">
                         Contact Us
-                    </div>
+                    </h2>
+
+                    {/* First + Last */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <InputField
-                            label="First Name*"
+                        <Controller
                             name="firstName"
-                            value={formData.firstName}
-                            onChange={handleChange}
-                            error={errors.firstName}
-                            size="medium"
+                            control={control}
+                            rules={{ required: "First Name is required" }}
+                            render={({ field }) => (
+                                <InputField
+                                    label="First Name*"
+                                    {...field}
+                                    error={errors.firstName?.message}
+                                />
+                            )}
                         />
 
-                        <InputField
-                            label="Last Name*"
+                        <Controller
                             name="lastName"
-                            value={formData.lastName}
-                            onChange={handleChange}
-                            error={errors.lastName}
-                            size="medium"
+                            control={control}
+                            rules={{ required: "Last Name is required" }}
+                            render={({ field }) => (
+                                <InputField
+                                    label="Last Name*"
+                                    {...field}
+                                    error={errors.lastName?.message}
+                                />
+                            )}
                         />
                     </div>
 
+                    {/* Email */}
                     <div className="mt-6">
-                        <InputField
-                            label="Email*"
-                            type="email"
+                        <Controller
                             name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            error={errors.email}
-                            size="medium"
+                            control={control}
+                            rules={{
+                                required: "Email is required",
+                                pattern: {
+                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                    message: "Invalid email",
+                                },
+                            }}
+                            render={({ field }) => (
+                                <InputField
+                                    label="Email*"
+                                    type="email"
+                                    {...field}
+                                    error={errors.email?.message}
+                                />
+                            )}
                         />
                     </div>
 
+                    {/* Phone */}
                     <div className="mt-6">
-                        <InputField
-                            label="Phone*"
-                            type="tel"
+                        <Controller
                             name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            error={errors.phone}
-                            size="medium"
+                            control={control}
+                            rules={{
+                                required: "Phone is required",
+                                minLength: {
+                                    value: 10,
+                                    message: "Phone must be at least 10 digits",
+                                },
+                            }}
+                            render={({ field }) => (
+                                <InputField
+                                    label="Phone*"
+                                    type="tel"
+                                    {...field}
+                                    error={errors.phone?.message}
+                                />
+                            )}
                         />
                     </div>
 
-                    {/* <div className="mt-6">
-                        <label
-                            htmlFor="phone"
-                            className={`block relative left-3 mb-1 text-sm transition-all duration-200 pointer-events-none ${formData.phone || errors.phone ? "text-primary top-1" : "text-gray-400 top-3"
-                                }`}
-                        >
-                            Phone*
-                        </label>
-                        <div className="flex items-center border rounded-lg border-gray-300 focus-within:border-primary px-3 py-2">
-                            
-                            <span className="mr-3 select-none">🇵🇰</span>
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                className="w-full outline-none font-light text-sm"
-                                placeholder="Phone*"
-                            />
-                        </div>
-                        {errors.phone && (
-                            <span className="text-red-500 text-xs absolute right-3 -mt-5">{errors.phone}</span>
-                        )}
-                    </div> */}
-
+                    {/* Comments */}
                     <div className="my-6">
-                        <InputField
-                            label="Comments*"
-                            textarea
+                        <Controller
                             name="comments"
-                            value={formData.comments}
-                            onChange={handleChange}
-                            error={errors.comments}
-                            size="medium"
+                            control={control}
+                            rules={{ required: "Comments are required" }}
+                            render={({ field }) => (
+                                <InputField
+                                    label="Comments*"
+                                    textarea={true}
+                                    {...field}
+                                    error={errors.comments?.message}
+                                />
+                            )}
                         />
                     </div>
 
                     <Button
-                        iconRight={true} variant="primary" size="medium" text="Submit" href="#" className='w-full' />
-
-
-                    {/* <button
-            type="submit"
-            className="mt-8 w-full bg-yellow-400 text-blue-900 font-semibold py-3 rounded-md hover:bg-yellow-500 transition"
-          >
-            Send
-          </button> */}
+                        text={isSubmitting ? "Submitting..." : "Submit"}
+                        type="submit"
+                        variant="primary"
+                        className="w-full"
+                    />
                 </form>
             </div>
         </section>

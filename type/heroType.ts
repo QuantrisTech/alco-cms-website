@@ -6,7 +6,7 @@ export type HeroItem = {
   description: string
   button1: {
     text: string
-    link: string
+    link?: string
   }
   button2: {
     text: string

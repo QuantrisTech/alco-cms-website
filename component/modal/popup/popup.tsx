@@ -42,14 +42,14 @@ export default function Popup({ isOpen, onClose, children }: PopupProps) {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[999] px-10 py-5">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[999] px-6 sm:px-10 py-5">
             <div
                 ref={popupRef}
                 // className="bg-white rounded-xl p-6 w-[90%] max-w-6xl shadow-lg animate-fadeIn border grid grid-cols-2 gap-4"
-                className="bg-white rounded-xl px-6 py-8 shadow-lg animate-fadeIn border relative"
+                className="bg-white rounded-xl pe-3 ps-4 py-6 sm:px-6 sm:py-8 shadow-lg animate-fadeIn border relative"
             >
                 {children}
-                <button className="absolute -top-2 -right-2 text-sm rounded-full bg-white cursor-pointer" 
+                <button className="absolute -top-3 sm:-top-2 -right-3 sm:-right-2 text-sm rounded-full bg-white cursor-pointer" 
                 onClick={onClose}>
                     <BsXCircleFill size={24} className="text-gray-800" />
                 </button>

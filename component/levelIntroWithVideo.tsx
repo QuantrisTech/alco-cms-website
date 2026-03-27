@@ -30,29 +30,14 @@ export default function LevelIntroWithVideo({ data }: Props) {
         />
 
         <div className="my-8">
-          <video
-            controls
-            preload="metadata"
-            className="w-full h-[350px] lg:h-[450px] object-cover rounded-lg"
-          >
-            <source src={data?.video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <VideoPlayer
+            className="aspect-video relative rounded-xl overflow-hidden h-[60dvh] w-full"
+            videoUrl={data?.video}
+            thumbnail={data?.thumbnail} 
+            videoClass="w-full h-full object-cover rounded-lg"
+            // hoverPlay={true}
+          />
         </div>
-        {/* <div className="my-8 w-full rounded-lg aspect-video overflow-hidden h-[350px] lg:h-[450px] ">
-          <iframe
-            className="w-full h-full"
-            src={data?.video}
-            title="What is NLP"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div> */}
-        {/* <VideoPlayer
-          videoId={data?.video} // now it’s just the ID
-          thumbnail={`https://img.youtube.com/vi/${data?.video}/maxresdefault.jpg`} // auto generate thumbnail
-        /> */}
 
       </div>
     </section>

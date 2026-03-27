@@ -2,6 +2,7 @@
 import { LevelBenefitsTableType } from "@/type/levelBenefitsTable";
 import React from "react";
 import Button from "./button";
+import VideoPlayer from "./videoPlayer";
 
 type Props = {
   data?: LevelBenefitsTableType
@@ -100,14 +101,21 @@ export default function LevelBenefitsTable({ data }: Props) {
                     key={index}
                     className="bg-white/20 backdrop-blur-md shadow-xl rounded-xl overflow-hidden"
                   >
-                    <video
+                    {/* <video
                       controls
                       preload="metadata"
                       className="w-full h-[200px] sm:h-[220px] md:h-[250px] object-cover"
                     >
                       <source src={item.video} type="video/mp4" />
                       Your browser does not support the video tag.
-                    </video>
+                    </video> */}
+                    <VideoPlayer
+                      className="aspect-video relative rounded-xl overflow-hidden h-[200px] sm:h-[220px] md:h-[250px] w-full"
+                      videoUrl={item?.video}
+                      thumbnail={item?.thumbnail}
+                      videoClass="w-full h-full object-cover rounded-lg"
+                      autoPlayOnVisible={true}
+                    />
 
                     <p className="custom-text1 font-light text-white my-3 text-center px-2">
                       {item.title}

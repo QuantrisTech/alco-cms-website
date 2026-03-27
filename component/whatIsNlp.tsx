@@ -5,12 +5,12 @@ import Button from "./button";
 import { WhatIsNlpData } from "@/type/whatIsNlp";
 import VideoPlayer from "./videoPlayer";
 // import NlpVideo from "/videos/What-is-NLP.mp4";
-import Level1 from "@/assets/our-program/level1_image_old.webp";
+import whatIsNLPThumbnail from "@/assets/whatIsNLP/What-is-NLP-Thumbnail.webp";
 
 const whatIsNlpData: WhatIsNlpData = {
   title: "What Is Neuro-Linguistic Programming?",
-  video: "https://www.youtube.com/embed/9tZ6LOCQ0So",
-  thumbnail: Level1.src,
+  video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774598216/What-is-NLP_u9fi3t.mp4",
+  thumbnail: whatIsNLPThumbnail.src,
   description:
     "What if you could master your thoughts, emotions, and behaviors to create a life of purpose and freedom? NLP is a transformative system of tools and techniques that empowers you to master your thoughts, emotions, and behaviors. Imagine having the ability to take full control of your life—reprogramming your mind to break free from limitations, achieve clarity, and create unstoppable momentum toward your goals.",
   button: {
@@ -46,6 +46,9 @@ export default function WhatIsNlp() {
           <VideoPlayer
             videoUrl={data.video}
             thumbnail={data.thumbnail}
+            className="aspect-video relative rounded-xl overflow-hidden h-[60dvh] w-full"
+            videoClass="w-full h-full object-cover rounded-lg"
+
           />
         </div>
 

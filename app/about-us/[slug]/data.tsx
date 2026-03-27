@@ -29,6 +29,10 @@ import GalleryWTALCO2 from "@/assets/about-us/gallery-WTALCO/gallery-2.webp"
 import GalleryWTALCO3 from "@/assets/about-us/gallery-WTALCO/gallery-3.webp"
 import GalleryWTALCO4 from "@/assets/about-us/gallery-WTALCO/gallery-4.webp"
 import accreditedBrands from "@/assets/accredited/accredited-brands.webp"
+import ThumbnailAL1 from "@/assets/thumbnail/about/who-is-AL.webp";
+import ThumbnailBP1 from "@/assets/thumbnail/about/collerbration_BP_1.webp";
+import ThumbnailBP2 from "@/assets/thumbnail/about/collerbration_BP_2.webp";
+import ThumbnailBP3 from "@/assets/thumbnail/about/collerbration_BP_3.webp";
 
 type Faq = {
   question: string;
@@ -57,7 +61,8 @@ quickly and persevere with positivity.`,
   height: "",
   className: "bg-no-repeat sm:bg-top sm:bg-cover",
   intoBanner: true,
-  video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
+  video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603634/Arslan-video_rgwll0.mp4",
+  thumbnail: ThumbnailAL1.src
 };
 
 const LevelBenefitsTableDataAL: LevelBenefitsTableType = {
@@ -266,16 +271,19 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
 
   videos: [
     {
-      video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
-      title: "Emaar Pakistan"
+      video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/Emaar_fcp94x.mp4",
+      title: "Emaar Pakistan",
+      thumbnail: ThumbnailBP1.src,
     },
     {
-      video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
-      title: "Hamdard Pakistan"
+      video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/Hamdard_sqvjf7.mp4",
+      title: "Hamdard Pakistan",
+      thumbnail: ThumbnailBP2.src,
     },
     {
-      video: "https://arslanlarik.com/wp-content/uploads/2025/03/What-is-NLP.mp4",
-      title: "AlRahim Textile Mills"
+      video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/AlRahim_jnaitu.mp4",
+      title: "AlRahim Textile Mills",
+      thumbnail: ThumbnailBP3.src,
     },
   ]
 

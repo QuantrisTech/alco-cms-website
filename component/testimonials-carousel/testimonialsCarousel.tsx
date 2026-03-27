@@ -5,6 +5,7 @@ import Button from "@/component/button"
 import "@/component/testimonials-carousel/testimonialsCarousel.css"
 import { TestimonialsPost } from "@/type/testimonialsTypes"
 import { HiStar } from "react-icons/hi2";
+import VideoPlayer from "../videoPlayer"
 
 type PropType = {
   slides: TestimonialsPost[]
@@ -14,17 +15,17 @@ type PropType = {
 
 const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
-  const videoRefs = useRef<HTMLVideoElement[]>([])
+  // const videoRefs = useRef<HTMLVideoElement[]>([])
 
-  const handleMouseEnter = (index: number) => {
-    const video = videoRefs.current[index]
-    if (video) video.play()
-  }
+  // const handleMouseEnter = (index: number) => {
+  //   const video = videoRefs.current[index]
+  //   if (video) video.play()
+  // }
 
-  const handleMouseLeave = (index: number) => {
-    const video = videoRefs.current[index]
-    if (video) video.pause()
-  }
+  // const handleMouseLeave = (index: number) => {
+  //   const video = videoRefs.current[index]
+  //   if (video) video.pause()
+  // }
 
   return (
 
@@ -37,23 +38,31 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                 <div className=" grid grid-cols-12 gap-8 ">
                   <div
                     className="col-span-12 lg:col-span-5 relative cursor-pointer overflow-hidden rounded-md"
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={() => handleMouseLeave(index)}
+                    // onMouseEnter={() => handleMouseEnter(index)}
+                    // onMouseLeave={() => handleMouseLeave(index)}
                   >
-                    <video
+                    {/* <video
                       ref={(el) => {
                         if (el) videoRefs.current[index] = el
                       }}
-                      src="https://arslanlarik.com/wp-content/uploads/2025/01/christine-1-1-1.mp4"
-                      className="w-full h-72 lg:h-96 object-cover rounded-md"
+                      src={slide?.videoUrl ?? "https://drive.google.com/uc?export=download&id=17f9eM6vQnTuYhWCOJ9X77X_vnCXN2bYw"}        // "/videos/aneeka-messey.mp4"
+                      poster={slide.thumbnail}    
+                      className="w-full h-72 lg:h-96 object-contain rounded-md bg-primary"
                       muted
                       loop
                       playsInline
+                    /> */}
+                    <VideoPlayer
+                      className="relative rounded-md bg-primary overflow-hidden h-72 lg:h-96 w-full"
+                      videoUrl={slide?.videoUrl}
+                      thumbnail={slide?.thumbnail}
+                      videoClass="w-full h-full object-cover rounded-lg"
+                      hoverPlay={true}
                     />
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-blue-500 bg-opacity-40 flex items-center justify-center opacity-100 transition-opacity duration-300 hover:opacity-0">
+                    {/* <div className="absolute inset-0 bg-blue-500 bg-opacity-40 flex items-center justify-center opacity-100 transition-opacity duration-300 hover:opacity-0">
                       <span className="text-white text-4xl font-bold">▶</span>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="col-span-12  lg:col-span-7 flex flex-col justify-between">
@@ -68,8 +77,8 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                           </span>
                         ))}
                       </div>
-                      <Button 
-iconRight={true}
+                      <Button
+                        iconRight={true}
                         text="Read More"
                         variant="primary"
                         size="medium"

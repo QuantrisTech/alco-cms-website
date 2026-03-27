@@ -37,7 +37,7 @@ const ContentSection = ({ data }: Props) => {
                 {data?.contentlist && data.contentlist.length > 0 && (
                     <div className={data.contentlistClass ? data.contentlistClass : `grid ${data.contentlistColumn ? data.contentlistColumn : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 "}   max-w-6xl mx-auto pt-6 md:pt-8 lg:pt-12 xl:pt-16 `}>
                         {data.contentlist.map((content, index) => (
-                            <div className={data.contentlisItemClass ? data.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`}>
+                            <div className={data?.contentlisItemClass ? data?.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`}>
                                 {/* Images */}
                                 {content.src && (<img
                                     key={index}

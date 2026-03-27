@@ -27,6 +27,7 @@ export type LevelBenefitsTableType = {
   videos?: {
     video?: string;
     title?: string;
+    thumbnail?: string
   }[];
   videoTitle?: string
 

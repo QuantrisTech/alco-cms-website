@@ -115,6 +115,7 @@ import "@/component/hero-carousel/heroCarousel.css"
 // images
 import heroSlide1 from "@/assets/hero/hero_slide1.webp";
 import { HeroItem } from "@/type/heroType";
+import { usePopup } from "@/context/enrollPopupContext";
 
 type PropType = {
   slides: HeroItem[]
@@ -125,13 +126,23 @@ type PropType = {
 const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
   const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
+  const { openPopup } = usePopup();
   console.log(slides)
+
+  // 👇 Get current slide's image
+  const currentBg = slides[selectedIndex]?.image ?? heroSlide1.src;
+
   return (
-    <section className="hero_embla py-6 md:py-8 lg:py-12 xl:py-16 min-h-[500px]" style={{
-      background: `linear-gradient(90.5deg, #000000 -3.72%, rgba(0, 0, 0, 0) 104.47%), url(${heroSlide1.src})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}>
+    <section
+      className="hero_embla py-6 md:py-8 lg:py-12 xl:py-16 min-h-[550px] "
+      style={{
+        backgroundImage: `linear-gradient(90.5deg, #000000 -3.72%, rgba(0, 0, 0, 0) 104.47%), url(${currentBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        transition: "background-image 0.5s ease-in-out",
+      }}
+    >
       {/* <div className="container mx-auto border px-4 2xl:px-0 "> */}
       <div className="container mx-auto px-4 ">
         <div className="hero_embla__viewport " ref={emblaRef}>
@@ -166,17 +177,17 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                   />
                   <div className="mt-4 flex gap-2">
                     {slide.button1?.text && (
-                      <Button 
-iconRight={true}
+                      <Button
+                        iconRight={true}
                         text={slide.button1.text}
-                        href={slide.button1.link}
+                        // href={slide.button1.link}
                         variant="secondary"
                       // iconLeft={<svg>...</svg>}
                       />
                     )}
                     {slide.button2?.text && (
-                      <Button 
-iconRight={true}
+                      <Button
+                        iconRight={true}
                         text={slide.button2.text}
                         href={slide.button2.link}
                         variant="white"

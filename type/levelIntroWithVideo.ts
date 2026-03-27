@@ -6,5 +6,6 @@ export type LevelIntroWithVideoType = {
   }
   description: string
   video?: string
+  thumbnail?: string
 
 }

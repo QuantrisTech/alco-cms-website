@@ -4,4 +4,5 @@ export type LevelGraduatesExperienceType = {
     line2: string
   }
   video: string
+  thumbnail?: string
 }

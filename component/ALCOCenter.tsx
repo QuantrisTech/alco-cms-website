@@ -1,4 +1,5 @@
 "use client";
+import { usePopup } from "@/context/enrollPopupContext";
 import Button from "./button";
 import { ALCOCenterData } from "@/type/aLCOCenter";
 
@@ -6,7 +7,6 @@ const aLCOCenterData: ALCOCenterData = {
   title: "AL&CO – Center of Human Brilliance and Behavioral Reengineering",
   button1: {
     text: "Enroll Now",
-    link: "/why-train-with-alco"
   },
   button2: {
     text: "Call Now",
@@ -16,6 +16,7 @@ const aLCOCenterData: ALCOCenterData = {
 
 export default function ALCOCenter() {
   const data = aLCOCenterData;
+  const { openPopup } = usePopup();
 
   return (
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-image-alco-center bg-cover bg-top-left w-full">
@@ -29,7 +30,13 @@ export default function ALCOCenter() {
               <Button
                 iconRight={true} variant="secondaryBlack" size="medium" text={data.button1.text} href={data.button1.link} className='my-auto' />
               <Button
-                iconRight={true} variant="white" size="medium" text={data.button2.text} href={data.button2.link} className='my-auto' />
+                iconRight={true}
+                variant="white"
+                size="medium"
+                text={data.button2.text}
+                // href={data.button2.link}
+                className='my-auto'
+                onClick={openPopup} />
             </div>
           </div>
           <div className="flex flex-col justify-center pt-1">

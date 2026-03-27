@@ -180,6 +180,7 @@ const ContentSectionContentListDataRE: ContentSectionType = {
     },
   ],
   contentlistColumn: "grid-cols-2 gap-6 max-w-2xl",
+  contentlisItemClass: "rounded-xl bg-white drop-shadow-sm px-4 py-6",
   fullBg: "bg-primary",
 }
 
@@ -216,7 +217,7 @@ const ContentSectionData1FCM: ContentSectionType = {
 }
 
 const ContentSectionImgContentListDataFCM: ContentSectionType = {
-  title: "WHO SHOULD ENROLL?",
+  title: "Four Clouds",
   titleColor: "text-white",
   contentlist: [
     {
