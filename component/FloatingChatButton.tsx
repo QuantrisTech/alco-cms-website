@@ -42,6 +42,7 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
       {/* Main button */}
       {!showOptions ? (<button
         onClick={() => setShowOptions(!showOptions)}
+        aria-label="Open WhatsApp chat"
         className="bg-sky-600/80 drop-shadow-2xl bg-cover bg-right-top text-white h-12 w-12 border  flex justify-center items-center rounded-full shadow-2xl transition"
       >
         <HiOutlineChatBubbleLeftRight size={28} />

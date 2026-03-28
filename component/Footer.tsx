@@ -31,18 +31,19 @@ const ContactDetails = [
   { icon: <FiMapPin />, name: "D-86/1, Block-7, Gulshan-e-iqbal, Karachi Sindh, Pakistan." },
 
 ];
+
 const socialLinks = [
-  // { icon: <FaWhatsapp />, link: "https://wa.me/12066140234" },
-  { icon: <FaFacebookF />, link: "https://www.facebook.com/arslanlariknlp/" },
-  { icon: <FaInstagram />, link: "https://www.instagram.com/arslanlariknlp/" },
-  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/company/arslanlarikco/" },
-  { icon: <FaYoutube />, link: "https://www.youtube.com/channel/UCEwzXP7OMPUvxFgTr2H5p_w/videos" },
-  { icon: <FaWhatsapp />, link: "https://wa.me/18886814808" },
+  { icon: <FaFacebookF />, link: "https://www.facebook.com/arslanlariknlp/", label: "Facebook" },
+  { icon: <FaInstagram />, link: "https://www.instagram.com/arslanlariknlp/", label: "Instagram" },
+  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/company/arslanlarikco/", label: "LinkedIn" },
+  { icon: <FaYoutube />, link: "https://www.youtube.com/channel/UCEwzXP7OMPUvxFgTr2H5p_w/videos", label: "YouTube" },
+  { icon: <FaWhatsapp />, link: "https://wa.me/18886814808", label: "WhatsApp" },
+  // { icon: <FaWhatsapp />, link: "https://wa.me/12066140234", label: "WhatsApp" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-dark-primary-to-light bg-top-left bg-cover w-full">
+    <footer className="bg-gradient-dark-primary-to-light bg-top-left bg-cover w-full" role="contentinfo" >
 
       <div className="container mx-auto px-4 py-12">
 
@@ -53,7 +54,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src={Logo}
-                alt="logo"
+                alt="Arslan Larik & Company Logo"
                 className="h-10 md:h-11 xl:h-12 2xl:h-20  w-auto"
                 priority
               />
@@ -102,6 +103,7 @@ export default function Footer() {
                     {
                       item.isLinked === true ? <Link
                         href={item?.href}
+                        aria-label={item.name}
                         className="hover:text-secondary"
                       >
                         {item.name}
@@ -127,9 +129,11 @@ export default function Footer() {
 
           <div className="flex mt-4 sm:mt-0 sm:justify-center gap-3">
             {socialLinks.map((item, index) => (
+
               <Link
                 key={index}
                 href={item.link}
+                aria-label={item.label}
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:text-secondary transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
               >
                 {item.icon}

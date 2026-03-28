@@ -4,7 +4,7 @@
 import { useState } from "react";
 // import TestimonialsCarousel from "./testimonials-carousel/testimonialsCarousel";
 const TestimonialsCarousel = dynamic(() => import('@/component/testimonials-carousel/testimonialsCarousel'), {
-  ssr: false,
+    ssr: false,
 });
 import { TestimonialsPost } from "@/type/testimonialsTypes";
 import StudentReviewCarousel from "./student-review-carousel/studentReviewCarousel";
@@ -165,15 +165,21 @@ export default function Testimonials() {
 
                 {/* <section className="max-w-screen-xl mx-auto px-4 py-6 md:py-8 lg:py-12 xl:py-16 w-full"> */}
                 {/* Tabs navigation */}
-                <div className="flex  mb-8 justify-center">
+                <div
+                    className="flex mb-8 justify-center"
+                    role="tablist"
+                    aria-label="Testimonials Tabs"
+                >
                     <button
                         onClick={() => setActiveTab("testimonials")}
                         className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "testimonials"
-                            ? "border-primary text-primary"
-                            : "border-transparent text-gray-600 hover:text-primary"
+                                ? "border-primary text-primary"
+                                : "border-transparent text-gray-600 hover:text-primary"
                             }`}
-                        aria-selected={activeTab === "testimonials"}
                         role="tab"
+                        aria-selected={activeTab === "testimonials"}
+                        aria-controls="tabpanel-testimonials"
+                        id="tab-testimonials"
                     >
                         Testimonials
                     </button>
@@ -181,11 +187,13 @@ export default function Testimonials() {
                     <button
                         onClick={() => setActiveTab("dummy")}
                         className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "dummy"
-                            ? "border-primary text-primary"
-                            : "border-transparent text-gray-600 hover:text-primary"
+                                ? "border-primary text-primary"
+                                : "border-transparent text-gray-600 hover:text-primary"
                             }`}
-                        aria-selected={activeTab === "dummy"}
                         role="tab"
+                        aria-selected={activeTab === "dummy"}
+                        aria-controls="tabpanel-students"
+                        id="tab-students"
                     >
                         What Our Students Say
                     </button>

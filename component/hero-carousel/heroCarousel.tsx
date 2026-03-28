@@ -235,6 +235,7 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
             key={index}
             onClick={() => onDotButtonClick(index)}
             className={`hero_embla__dot ${index === selectedIndex ? "hero_embla__dot--selected" : ""}`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
