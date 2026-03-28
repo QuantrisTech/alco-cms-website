@@ -18,7 +18,7 @@ const heroData: HeroData = [
       "text": "Contact us",
       "link": "/contact/"
     },
-    "image": heroSlide1.src
+    "image": heroSlide1
   },
   {
     "title": {
@@ -33,7 +33,7 @@ const heroData: HeroData = [
       "text": "Contact us",
       "link": "/contact/"
     },
-    "image": heroSlide2.src
+    "image": heroSlide2
   },
   {
     "title": {
@@ -48,7 +48,7 @@ const heroData: HeroData = [
       "text": "Contact us",
       "link": "/contact/"
     },
-    "image": heroSlide3.src
+    "image": heroSlide3
   }
 ]
 

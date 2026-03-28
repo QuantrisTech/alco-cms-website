@@ -2,7 +2,10 @@
 
 
 import { useState } from "react";
-import TestimonialsCarousel from "./testimonials-carousel/testimonialsCarousel";
+// import TestimonialsCarousel from "./testimonials-carousel/testimonialsCarousel";
+const TestimonialsCarousel = dynamic(() => import('@/component/testimonials-carousel/testimonialsCarousel'), {
+  ssr: false,
+});
 import { TestimonialsPost } from "@/type/testimonialsTypes";
 import StudentReviewCarousel from "./student-review-carousel/studentReviewCarousel";
 import Thumbnail1 from "@/assets/testimonial/thumbnail_1.webp"
@@ -11,6 +14,7 @@ import Thumbnail3 from "@/assets/testimonial/thumbnail_3.webp"
 import Thumbnail4 from "@/assets/testimonial/thumbnail_4.webp"
 import Thumbnail5 from "@/assets/testimonial/thumbnail_5.webp"
 import Thumbnail6 from "@/assets/testimonial/thumbnail_6.webp"
+import dynamic from "next/dynamic";
 // Example testimonial data
 const testimonialsData: TestimonialsPost[] = [
     {

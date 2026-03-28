@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image"
+
 export type HeroItem = {
   title: {
     line1: string
@@ -12,7 +14,7 @@ export type HeroItem = {
     text: string
     link: string
   }
-  image: string
+  image: StaticImageData
 }
 
 export type HeroData = HeroItem[]

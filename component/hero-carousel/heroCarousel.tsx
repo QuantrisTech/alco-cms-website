@@ -116,6 +116,7 @@ import "@/component/hero-carousel/heroCarousel.css"
 import heroSlide1 from "@/assets/hero/hero_slide1.webp";
 import { HeroItem } from "@/type/heroType";
 import { usePopup } from "@/context/enrollPopupContext";
+import Image from "next/image";
 
 type PropType = {
   slides: HeroItem[]
@@ -133,16 +134,26 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
   const currentBg = slides[selectedIndex]?.image ?? heroSlide1.src;
 
   return (
-    <section
-      className="hero_embla py-6 md:py-8 lg:py-12 xl:py-16 min-h-[550px] "
-      style={{
-        backgroundImage: `linear-gradient(90.5deg, #000000 -3.72%, rgba(0, 0, 0, 0) 104.47%), url(${currentBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        transition: "background-image 0.5s ease-in-out",
-      }}
-    >
+    // <section
+    //   className="hero_embla py-6 md:py-8 lg:py-12 xl:py-16 min-h-[550px] "
+    //   style={{
+    //     backgroundImage: `linear-gradient(90.5deg, #000000 -3.72%, rgba(0, 0, 0, 0) 104.47%), url(${currentBg})`,
+    //     backgroundSize: "cover",
+    //     backgroundPosition: "center",
+    //     backgroundRepeat: "no-repeat",
+    //     transition: "background-image 0.5s ease-in-out",
+    //   }}
+    // >
+    <section className="hero_embla py-6 md:py-8 lg:py-12 xl:py-16 min-h-[550px] relative overflow-hidden">
+      {/* Background Image using Next.js Image */}
+      <Image
+        src={currentBg}
+        alt="Hero Slide"
+        priority // 👈 tells Next.js to load this ASAP (good for LCP)
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
+      />
       {/* <div className="container mx-auto border px-4 2xl:px-0 "> */}
       <div className="container mx-auto px-4 ">
         <div className="hero_embla__viewport " ref={emblaRef}>
