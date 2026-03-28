@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { CgArrowTopLeft, CgArrowTopRight } from "react-icons/cg";
 
@@ -67,7 +68,7 @@ const Button: React.FC<ButtonProps> = ({
     // If href is provided, render as <a>
     if (href) {
         return (
-            <a
+            <Link
                 href={href}
                 className={commonClasses}
                 target="_blank"
@@ -76,7 +77,7 @@ const Button: React.FC<ButtonProps> = ({
                 {iconLeft && <span className="flex items-center mr-1">{iconLeft}</span>}
                 {text}
                 {iconRight === true ? <span className="flex items-center ml-1"><CgArrowTopRight size={16} /></span> : iconRight && <span className="flex items-center ml-1">{iconRight}</span>}
-            </a>
+            </Link>
         );
     }
 

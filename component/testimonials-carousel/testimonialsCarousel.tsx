@@ -15,17 +15,6 @@ type PropType = {
 
 const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options)
-  // const videoRefs = useRef<HTMLVideoElement[]>([])
-
-  // const handleMouseEnter = (index: number) => {
-  //   const video = videoRefs.current[index]
-  //   if (video) video.play()
-  // }
-
-  // const handleMouseLeave = (index: number) => {
-  //   const video = videoRefs.current[index]
-  //   if (video) video.pause()
-  // }
 
   return (
 
@@ -38,20 +27,7 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                 <div className=" grid grid-cols-12 gap-8 ">
                   <div
                     className="col-span-12 lg:col-span-5 relative cursor-pointer overflow-hidden rounded-md"
-                    // onMouseEnter={() => handleMouseEnter(index)}
-                    // onMouseLeave={() => handleMouseLeave(index)}
                   >
-                    {/* <video
-                      ref={(el) => {
-                        if (el) videoRefs.current[index] = el
-                      }}
-                      src={slide?.videoUrl ?? "https://drive.google.com/uc?export=download&id=17f9eM6vQnTuYhWCOJ9X77X_vnCXN2bYw"}        // "/videos/aneeka-messey.mp4"
-                      poster={slide.thumbnail}    
-                      className="w-full h-72 lg:h-96 object-contain rounded-md bg-primary"
-                      muted
-                      loop
-                      playsInline
-                    /> */}
                     <VideoPlayer
                       className="relative rounded-md bg-primary overflow-hidden h-72 lg:h-96 w-full"
                       videoUrl={slide?.videoUrl}
@@ -82,7 +58,7 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                         text="Read More"
                         variant="primary"
                         size="medium"
-                        href="#"
+                        href="/#testimonials"
                         className="mt-3"
                       />
                     </div>

@@ -34,6 +34,7 @@ export default function Banner({ data }: Props) {
                   </span>
                 )}
               </h1>)}
+              {!data?.intoBanner && data?.children}
 
               {data?.intoBanner === true && (<h1 className="h1 text-secondary text-start">
                 {data?.title?.line1}

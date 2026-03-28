@@ -40,7 +40,6 @@ type Faq = {
 };
 
 // who-is-arslan-larik
-
 const bannerDataAL: BannerType = {
   title: {
     line1: "Arslan Larik",

@@ -1,3 +1,5 @@
+import React from "react"
+
 type BannerTitle = {
   line1: string
   line2?: string
@@ -15,4 +17,5 @@ export type BannerType = {
   thumbnail?: string
   className?: string
   height?: string
+  children?: React.ReactNode
 }

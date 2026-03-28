@@ -6,6 +6,7 @@ import { WhatIsNlpData } from "@/type/whatIsNlp";
 import VideoPlayer from "./videoPlayer";
 // import NlpVideo from "/videos/What-is-NLP.mp4";
 import whatIsNLPThumbnail from "@/assets/whatIsNLP/What-is-NLP-Thumbnail.webp";
+import { usePopup } from "@/context/enrollPopupContext";
 
 const whatIsNlpData: WhatIsNlpData = {
   title: "What Is Neuro-Linguistic Programming?",
@@ -14,13 +15,13 @@ const whatIsNlpData: WhatIsNlpData = {
   description:
     "What if you could master your thoughts, emotions, and behaviors to create a life of purpose and freedom? NLP is a transformative system of tools and techniques that empowers you to master your thoughts, emotions, and behaviors. Imagine having the ability to take full control of your life—reprogramming your mind to break free from limitations, achieve clarity, and create unstoppable momentum toward your goals.",
   button: {
-    text: "Enroll Now",
-    link: "https://arslanlarik.com/enroll-now/",
+    text: "Enroll Now"
   },
 }
 
 export default function WhatIsNlp() {
   const data = whatIsNlpData;
+  const { openPopup } = usePopup();
 
   return (
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
@@ -60,7 +61,7 @@ export default function WhatIsNlp() {
         <Button
           iconRight={true}
           text={data.button.text}
-          href={data.button.link}
+          onClick={openPopup}
           variant="secondary"
         />
 

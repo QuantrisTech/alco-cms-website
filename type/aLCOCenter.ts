@@ -7,6 +7,5 @@ export type ALCOCenterData = {
   },
   button2: {
     text: string
-    link: string
   }
 }

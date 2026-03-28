@@ -175,13 +175,14 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                     className="custom-text1 my-4 font-light max-w-[700px] w-full"
                     dangerouslySetInnerHTML={{ __html: slide?.description }}
                   />
-                  <div className="mt-4 flex gap-2">
+                  <div className="mt-4 flex gap-2 ">
                     {slide.button1?.text && (
                       <Button
                         iconRight={true}
                         text={slide.button1.text}
                         // href={slide.button1.link}
                         variant="secondary"
+                        onClick={openPopup}
                       // iconLeft={<svg>...</svg>}
                       />
                     )}

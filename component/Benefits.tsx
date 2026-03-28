@@ -104,11 +104,11 @@ export default function Benefits() {
           </p>
           <div>
             <Button 
-iconRight={true}
+              iconRight={true}
               variant="secondary"
               size="medium"
               text="Explore More"
-              href="#"
+              href="/one-on-one-coaching-sessions"
             />
           </div>
 

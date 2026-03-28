@@ -9,8 +9,7 @@ const aLCOCenterData: ALCOCenterData = {
     text: "Enroll Now",
   },
   button2: {
-    text: "Call Now",
-    link: "/get-started"
+    text: "Call Now"
   }
 };
 
@@ -28,13 +27,19 @@ export default function ALCOCenter() {
             </h3>
             <div className="mt-4 flex gap-4">
               <Button
-                iconRight={true} variant="secondaryBlack" size="medium" text={data.button1.text} href={data.button1.link} className='my-auto' />
+                iconRight={true} 
+                variant="secondaryBlack" 
+                size="medium" 
+                text={data.button1.text} 
+                 onClick={openPopup}
+                // href={data.button1.link} 
+                className='my-auto' />
               <Button
                 iconRight={true}
                 variant="white"
                 size="medium"
                 text={data.button2.text}
-                // href={data.button2.link}
+                href={`tel:+18886814808`}
                 className='my-auto'
                 onClick={openPopup} />
             </div>

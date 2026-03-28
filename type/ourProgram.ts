@@ -1,9 +1,10 @@
 export type OurProgramSlideType = {
   title: string
   description: string
+  href?: string
   button?: {
     text: string
-    link: string
+    // link: string
   }
   image?: {
     src: string

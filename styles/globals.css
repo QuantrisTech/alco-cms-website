@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
+  
 
 /* Header Menu Font */
 
@@ -356,6 +357,10 @@
       /* largest for xl screens */
     }
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @keyframes slide-up {

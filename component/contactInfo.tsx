@@ -27,7 +27,7 @@ export default function ContactInfo() {
           <div className="grid grid-cols-12 gap-2 my-8">
             <div className="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-5 2xl:col-span-4 flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
               <a
-                href={`tel:+1234567890`}
+                href={`tel:+18886814808`}
                 className="bg-secondary-light text-white h-16 w-16 mb-4 flex justify-center items-center rounded-full shadow hover:bg-yellow-600 transition"
               >
                 <HiOutlinePhone size={30} />

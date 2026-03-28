@@ -22,9 +22,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "NLP Practitioner",
       description: "A 10-day online course offering triple certifications, NLP techniques, and tools for personal and professional growth. Ideal for coaches, leaders, and individuals seeking transformation and self-mastery.",
+      href: "/program/nlp-practitioner",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level1.src,
@@ -34,9 +34,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "NLP Master Practitioner",
       description: "A 13-day advanced course offering triple certifications in NLP, Time Line Therapy, and coaching. Gain mastery in emotional healing, transformation, and launching a successful coaching career.	",
+      href: "/program/nlp-master-practitioner",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level2.src,
@@ -46,9 +46,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "Advanced Hypnotherapy Training",
       description: "A 12-day dual certification course from ABH and NGH. Learn advanced hypnotherapy, Ericksonian techniques, self-hypnosis, and regression with lifetime access and 500+ scripts.",
+      href: "/program/advanced-hypnotherapy-interventionis",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level3.src,
@@ -58,9 +58,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "NLP Trainer’s Training Program",
       description: "An 18-day hybrid course by Arslan Larik &amp; Company with ABNLP accreditation. Become a certified trainer in public speaking, training design, audience engagement, and transformation.",
+      href: "/program/nlp-trainers-training-program",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level4.src,
@@ -70,9 +70,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "Hypnosis Trainer’s Training Program",
       description: "An 8-day online training program, accredited by The American Board of Hypnotherapy, opening doors to multiple career paths, from therapeutic environments to corporate wellness and stage hypnosis.",
+      href: "/program/hypnosis-trainers-training-program",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level5.src,
@@ -82,9 +82,9 @@ const ourProgramData: OurProgramData = {
     {
       title: "NLP Master Trainer Program",
       description: "A global mentoring program designed for results-focused NLP Trainers who want to elevate their training businesses, deepen their expertise, and gain international recognition.",
+      href: "program/nlp-master-trainer-program",
       button: {
-        text: "Learn More",
-        link: "#"
+        text: "Learn More"
       },
       image: {
         src: Level6.src,

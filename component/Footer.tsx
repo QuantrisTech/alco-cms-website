@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiUser, FiMail, FiMapPin } from "react-icons/fi";
+import { FiUser, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import {
   FaFacebookF,
   FaInstagram,
@@ -15,27 +15,29 @@ const quickLinks = [
   { name: "Blogs", link: "/blogs" },
   { name: "Contact", link: "/contact" },
   { name: "Privacy Policy", link: "/privacy-policy" },
+  { name: "Terms & Conditions", link: "/terms" },
 ];
 
 const usefulLinks = [
-  { name: "Our Mission, Vision & Core Values", link: "/mission" },
-  { name: "Who is Arslan Larik?", link: "/arslan-larik" },
-  { name: "Who is Bismillah?", link: "/bismillah" },
-  { name: "Why Train With AL&CO?", link: "/why-train" },
+  { name: "Our Mission, Vision & Core Values", link: "/our-mission" },
+  { name: "Who is Arsalan Larik", link: "/about-us/who-is-arslan-larik" },
+  { name: "Who is Bismillah pervez", link: "/about-us/who-is-bismillah-pervez" },
+  { name: "Why Train With AL&CO", link: "/about-us/why-train-with-alco" },
 ];
 
 const ContactDetails = [
-  { icon: <FiUser />, name: "Who is Arslan Larik?" },
-  { icon: <FiMail />, name: "connect@arslanlarik.com" },
+  { icon: <FiPhone />, name: "+1 (888) 681 4808", isLinked: true, href: "tel:+18886814808" },
+  { icon: <FiMail />, name: "connect@arslanlarik.com", isLinked: true, href: "mailto:connect@arslanlarik.com" },
   { icon: <FiMapPin />, name: "D-86/1, Block-7, Gulshan-e-iqbal, Karachi Sindh, Pakistan." },
 
 ];
 const socialLinks = [
-  { icon: <FaFacebookF />, link: "#" },
-  { icon: <FaInstagram />, link: "#" },
-  { icon: <FaYoutube />, link: "#" },
-  { icon: <FaLinkedinIn />, link: "#" },
-  { icon: <FaWhatsapp />, link: "#" },
+  // { icon: <FaWhatsapp />, link: "https://wa.me/12066140234" },
+  { icon: <FaFacebookF />, link: "https://www.facebook.com/arslanlariknlp/" },
+  { icon: <FaInstagram />, link: "https://www.instagram.com/arslanlariknlp/" },
+  { icon: <FaLinkedinIn />, link: "https://www.linkedin.com/company/arslanlarikco/" },
+  { icon: <FaYoutube />, link: "https://www.youtube.com/channel/UCEwzXP7OMPUvxFgTr2H5p_w/videos" },
+  { icon: <FaWhatsapp />, link: "https://wa.me/18886814808" },
 ];
 
 export default function Footer() {
@@ -65,7 +67,7 @@ export default function Footer() {
             <ul className="footer-menu-font text-white space-y-2">
               {quickLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.link} className="">
+                  <Link href={item.link} className="hover:text-secondary">
                     {item.name}
                   </Link>
                 </li>
@@ -80,7 +82,7 @@ export default function Footer() {
             <ul className="footer-menu-font text-white space-y-2">
               {usefulLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.link} className="">
+                  <Link href={item.link} className="hover:text-secondary">
                     {item.name}
                   </Link>
                 </li>
@@ -97,7 +99,15 @@ export default function Footer() {
                 <li key={index} className="flex gap-2 ">
                   <div className="h-4 w-4  mt-1">{item.icon}</div>
                   <div className="">
-                    {item.name}
+                    {
+                      item.isLinked === true ? <a
+                        href={item?.href}
+                        className="hover:text-secondary"
+                      >
+                        {item.name}
+                      </a> :
+                        item.name
+                    }
                   </div>
                 </li>
               ))}
@@ -120,7 +130,7 @@ export default function Footer() {
               <Link
                 key={index}
                 href={item.link}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white hover:text-secondary transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
               >
                 {item.icon}
               </Link>

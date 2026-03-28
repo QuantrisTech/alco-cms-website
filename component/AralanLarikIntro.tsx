@@ -38,9 +38,18 @@ export default function AralanLarikIntro() {
             </h3>
           </div>
           <div className="flex flex-col justify-center pt-1">
-            <p className="custom-text1 font-light text-black text-start mb-8">
+            <p className="custom-text1 font-light text-black text-start ">
               {data.description}
             </p>
+            <div className="mt-4">
+              <Button
+                iconRight={true} 
+                variant="primary" 
+                size="medium" 
+                text="More about us" 
+                href="/about-us/who-is-arslan-larik" 
+                className='my-auto' />
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-12 lg:grid-cols-2 gap-4 lg:gap-2 my-8">

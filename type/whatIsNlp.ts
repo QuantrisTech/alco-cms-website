@@ -5,6 +5,5 @@ export type WhatIsNlpData = {
   description: string
   button: {
     text: string
-    link: string
   }
 }

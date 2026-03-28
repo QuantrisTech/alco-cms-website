@@ -77,7 +77,7 @@ const VideoPlayer = ({
           <img
             src={thumbnail}
             alt="video thumbnail"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-top"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition" />
           {!hoverPlay && !autoPlayOnVisible && (

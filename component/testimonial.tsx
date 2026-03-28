@@ -156,7 +156,7 @@ const studentReviews: TestimonialsPost[] = [
 export default function Testimonials() {
     const [activeTab, setActiveTab] = useState<"testimonials" | "dummy">("testimonials");
     return (
-        <section className="py-6 md:py-8 lg:py-12 xl:py-16  px-4 bg-light-neutral bg-cover bg-top-left w-full">
+        <section id="testimonials" className="py-6 md:py-8 lg:py-12 xl:py-16  px-4 bg-light-neutral bg-cover bg-top-left w-full">
             <div className="container mx-auto ">
 
                 {/* <section className="max-w-screen-xl mx-auto px-4 py-6 md:py-8 lg:py-12 xl:py-16 w-full"> */}
