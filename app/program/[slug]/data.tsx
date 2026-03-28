@@ -81,7 +81,7 @@ const LevelIntroWithVideoDataLevel1: LevelIntroWithVideoType = {
   // video: "https://drive.google.com/file/d/11zrPeNxVtXxnCcxYp4Z58obv0UTOD1BM/view",
   // video: "zU0ArbCST1I",
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599136/Level1_Intro_pssnhq.mp4",
-  thumbnail: ThumbnailIntro1.src,
+  thumbnail: ThumbnailIntro1,
   description:
     `<p>Do you feel stuck in a cycle of self-doubt and limiting beliefs? What if you could take complete control of your thoughts, emotions, and actions, starting now? At AL&CO, we don’t just teach NLP—we guide you through a transformative journey that unlocks your potential and reshapes your reality.</p> 
     <p>In this 10-day online NLP Practitioner Training Program, you’ll gain three prestigious certifications and master practical tools to achieve breakthrough results—not only for yourself but for those you coach, lead, and inspire.</p> 
@@ -358,7 +358,7 @@ const LevelGraduatesExperienceDataLevel1: LevelGraduatesExperienceType = {
     line2: "NLP Practitioner Training"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599133/Level1_Review_f8fbjg.mp4",
-  thumbnail: ThumbnailReview1.src,
+  thumbnail: ThumbnailReview1,
 }
 
 // Level 1 End
@@ -381,7 +381,7 @@ const LevelIntroWithVideoDataLevel2: LevelIntroWithVideoType = {
     line2: "Your Mind and Life"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599143/Level2_Intro_rhs6uo.mp4",
-  thumbnail: ThumbnailIntro2.src,
+  thumbnail: ThumbnailIntro2,
   description:
     `<p>The NLP Master Practitioner (Triple Certification) Training Program is not just the next step—it’s the quantum leap in your personal and professional transformation. Spanning 13 immersive days, this program takes you on a life-changing journey of empowerment, massive breakthroughs, and advanced mastery.</p>
     <p>Building on the foundation of Level 1, where you learned 40% of NLP tools and techniques, this program dives into the remaining 60% of more profound concepts, advanced techniques, and transformative interventions. It’s where the true mastery begins—operating at both conscious and unconscious levels to create unparalleled results.</p>
@@ -678,7 +678,7 @@ const LevelGraduatesExperienceDataLevel2: LevelGraduatesExperienceType = {
     line2: "NLP Master Practitioner"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599132/Level2_Review_psgcmr.mp4",
-  thumbnail: ThumbnailReview2.src,
+  thumbnail: ThumbnailReview2,
 };
 
 // Level 2 End
@@ -701,7 +701,7 @@ const LevelIntroWithVideoDataLevel3: LevelIntroWithVideoType = {
     line2: "a World-Class Interventionist."
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599141/Level3_Intro_w093ky.mp4",
-  thumbnail: ThumbnailIntro3.src,
+  thumbnail: ThumbnailIntro3,
   description: `<p>Hypnotherapy is the process through which the altered states of consciousness can influence positive changes in an individual’s attitudes, perceptions and behaviors. Once you become a hypnotist, you will be able to intertwine communication skills with deep relaxation techniques to assist people to reach a state where the conscious part of their mind is relaxed, and their unconscious part becomes more open to new suggestions or perspectives.</p>
    <p>Hypnotherapy is a powerful tool for creating rapid transformation through healing and rewiring faulty programming at the deepest level of the unconscious mind. Hypnosis helps you get to the root of a problem quickly so that your clients can focus on creating the life they want and deserve.</p>`
 };
@@ -1065,7 +1065,7 @@ const LevelGraduatesExperienceDataLevel3: LevelGraduatesExperienceType = {
     line2: "Advanced Hypnotherapy & Interventionist Training"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774599132/Level3_Review_jzdltq.mp4",
-  thumbnail: ThumbnailReview3.src,
+  thumbnail: ThumbnailReview3,
 };
 
 // Level 3 End
@@ -1088,7 +1088,7 @@ const LevelIntroWithVideoDataLevel4: LevelIntroWithVideoType = {
     line2: "Transformational Speaking and Training "
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603562/Level4_Intro_otvc3u.mp4",
-  thumbnail: ThumbnailIntro4.src,
+  thumbnail: ThumbnailIntro4,
   description: `<p>Step into the spotlight with unparalleled confidence, captivate every audience you address, and inspire change at every level. The NLP Trainer’s Training & Evaluation Certification by Arslan Larik & Company is more than a program—it’s a journey to becoming a transformational leader, a world-class presenter, and a certified NLP Trainer capable of influencing lives globally.</p>`
 };
 
@@ -1347,7 +1347,7 @@ const LevelGraduatesExperienceDataLevel4: LevelGraduatesExperienceType = {
     line2: "NLP Trainers’ Training"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603567/Level4_Review_jh6n5s.mp4",
-  thumbnail: ThumbnailReview4.src,
+  thumbnail: ThumbnailReview4,
 
 };
 
@@ -1371,7 +1371,7 @@ const LevelIntroWithVideoDataLevel5: LevelIntroWithVideoType = {
     line2: "Empower Change, and Create Global Impact"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603567/Level5_intro_jy8cqr.mp4",
-  thumbnail: ThumbnailIntro5.src,
+  thumbnail: ThumbnailIntro5,
   description: `<p>Are you ready to go beyond learning hypnosis and take the stage to train others in this fascinating field?</p>
    <p>If yes, then Hypnosis Trainer’s Training by Arslan Larik & Company (AL&CO) is your next step. This transformational training is designed to equip you with the skills, tools, and confidence to become an exceptional Hypnosis Trainer accredited by The American Board of Hypnotherapy (ABH). Whether you’re new to hypnosis or an experienced practitioner, this program will elevate your expertise to new heights and empower you to inspire others.</p>`
 };
@@ -1631,7 +1631,7 @@ const LevelGraduatesExperienceDataLevel5: LevelGraduatesExperienceType = {
     line2: "Hypnosis Trainers’ Training"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603571/Level5_Review_q1l8ff.mp4",
-  thumbnail: ThumbnailReview5.src,
+  thumbnail: ThumbnailReview5,
 
 };
 
@@ -1655,7 +1655,7 @@ const LevelIntroWithVideoDataLevel6: LevelIntroWithVideoType = {
     line2: "Recognition and Transformational Leadership"
   },
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603569/Level6_Intro_oscnrq.mp4",
-  thumbnail: ThumbnailIntro6.src,
+  thumbnail: ThumbnailIntro6,
   description: `<p>The NLP Master Trainer Program is a global mentoring program designed for results-focused NLP Trainers who want to elevate their training businesses, deepen their expertise, and gain international recognition. This program provides a comprehensive system to help you achieve mastery in NLP while excelling in business, marketing, and coaching.</p>`
 };
 

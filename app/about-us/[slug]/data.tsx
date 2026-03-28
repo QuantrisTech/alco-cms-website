@@ -280,17 +280,17 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
     {
       video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/Emaar_fcp94x.mp4",
       title: "Emaar Pakistan",
-      thumbnail: ThumbnailBP1.src,
+      thumbnail: ThumbnailBP1,
     },
     {
       video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/Hamdard_sqvjf7.mp4",
       title: "Hamdard Pakistan",
-      thumbnail: ThumbnailBP2.src,
+      thumbnail: ThumbnailBP2,
     },
     {
       video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603635/AlRahim_jnaitu.mp4",
       title: "AlRahim Textile Mills",
-      thumbnail: ThumbnailBP3.src,
+      thumbnail: ThumbnailBP3,
     },
   ]
 

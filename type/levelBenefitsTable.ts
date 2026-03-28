@@ -11,6 +11,8 @@
 //     coaches?: string;
 //   }[]
 
+import { StaticImageData } from "next/image";
+
 // }
 
 export type LevelBenefitsTableType = {
@@ -27,7 +29,7 @@ export type LevelBenefitsTableType = {
   videos?: {
     video?: string;
     title?: string;
-    thumbnail?: string
+    thumbnail?: StaticImageData
   }[];
   videoTitle?: string
 

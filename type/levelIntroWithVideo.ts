@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image"
 
 export type LevelIntroWithVideoType = {
   title: {
@@ -6,6 +7,6 @@ export type LevelIntroWithVideoType = {
   }
   description: string
   video?: string
-  thumbnail?: string
+  thumbnail?: StaticImageData
 
 }

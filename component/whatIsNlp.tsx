@@ -11,7 +11,7 @@ import { usePopup } from "@/context/enrollPopupContext";
 const whatIsNlpData: WhatIsNlpData = {
   title: "What Is Neuro-Linguistic Programming?",
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774598216/What-is-NLP_u9fi3t.mp4",
-  thumbnail: whatIsNLPThumbnail.src,
+  thumbnail: whatIsNLPThumbnail,
   description:
     "What if you could master your thoughts, emotions, and behaviors to create a life of purpose and freedom? NLP is a transformative system of tools and techniques that empowers you to master your thoughts, emotions, and behaviors. Imagine having the ability to take full control of your life—reprogramming your mind to break free from limitations, achieve clarity, and create unstoppable momentum toward your goals.",
   button: {
