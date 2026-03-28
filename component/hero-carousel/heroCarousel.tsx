@@ -152,10 +152,14 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
         priority // 👈 tells Next.js to load this ASAP (good for LCP)
         fill
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center bg-[linear-gradient(90.5deg, #000000 -3.72%, rgba(0, 0, 0, 0) 104.47%)]"
       />
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(90.5deg,_#000000_-3.72%,_rgba(0,0,0,0)_104.47%)] z-10" />
+
       {/* <div className="container mx-auto border px-4 2xl:px-0 "> */}
-      <div className="container mx-auto px-4 ">
+      <div className="container mx-auto px-4 z-20">
         <div className="hero_embla__viewport " ref={emblaRef}>
           <div className="hero_embla__container">
             {slides.map((slide, index) => (
