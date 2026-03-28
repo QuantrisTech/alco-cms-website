@@ -6,15 +6,8 @@ import { PopupProvider } from "@/context/enrollPopupContext";
 import Loader from "@/component/loader/loader";
 import EnrollPopup from "@/component/modal/popup/enrollPopup";
 import FloatingChatButton from "@/component/FloatingChatButton";
-import dynamic from "next/dynamic";
-
-// Dynamically import Navbar and Footer with Loader fallback
-const Navbar = dynamic(() => import("@/component/Navbar"), {
-  loading: () => <Loader />,
-});
-const Footer = dynamic(() => import("@/component/Footer"), {
-  loading: () => <Loader />,
-});
+import Navbar from "@/component/Navbar";
+import Footer from "@/component/Footer";
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -23,32 +16,29 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Show loader only until the page is fully hydrated/rendered
-    if (document.readyState === "complete") {
+    const timer = setTimeout(() => {
       setLoading(false);
-    } else {
-      const handleLoad = () => setLoading(false);
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
+    }, 300); // 👈 small delay only
+
+    return () => clearTimeout(timer);
   }, [pathname]);
 
-  if (loading) {
-    // Small loader overlay
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
-        <Loader  />
-      </div>
-    );
-  }
-
   return (
-    <PopupProvider>
-      {!hideLayout && <Navbar />}
-      {children}
-      <EnrollPopup />
-      <FloatingChatButton whatsappNumber="18886814808" phoneNumber="+18886814808" />
-      {!hideLayout && <Footer />}
-    </PopupProvider>
+    <>
+      {/* ✅ Overlay Loader (no layout shift) */}
+      {loading && (
+        <div className="fixed inset-0 z-[999] bg-white flex items-center justify-center">
+          <Loader />
+        </div>
+      )}
+
+      <PopupProvider>
+        {!hideLayout && <Navbar />}
+        {children}
+        <EnrollPopup />
+        <FloatingChatButton whatsappNumber="18886814808" phoneNumber="+18886814808" />
+        {!hideLayout && <Footer />}
+      </PopupProvider>
+    </>
   );
 }

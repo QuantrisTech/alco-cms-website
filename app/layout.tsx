@@ -5,6 +5,7 @@ import "../styles/globals.css";
 
 const lexend = Lexend({
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
