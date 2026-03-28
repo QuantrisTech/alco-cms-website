@@ -15,7 +15,7 @@ import Thumbnail6 from "@/assets/testimonial/thumbnail_6.webp"
 const testimonialsData: TestimonialsPost[] = [
     {
         _id: "1",
-        thumbnail: Thumbnail1.src,
+        thumbnail: Thumbnail1,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597497/testimonial_1_bumlft.mp4",
         name: "Aneeka Messey",
         designation: "Client",
@@ -24,7 +24,7 @@ const testimonialsData: TestimonialsPost[] = [
     },
     {
         _id: "2",
-        thumbnail: Thumbnail2.src,
+        thumbnail: Thumbnail2,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597479/testimonial_2_v6euks.mp4",
         name: "Hibba-Tur-Rehman",
         designation: "Client",
@@ -33,7 +33,7 @@ const testimonialsData: TestimonialsPost[] = [
     },
     {
         _id: "3",
-        thumbnail: Thumbnail3.src,
+        thumbnail: Thumbnail3,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597477/testimonial_3_lne9lq.mp4",
         name: "Christine Best",
         designation: "Client",
@@ -42,7 +42,7 @@ const testimonialsData: TestimonialsPost[] = [
     },
     {
         _id: "4",
-        thumbnail: Thumbnail4.src,
+        thumbnail: Thumbnail4,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597477/testimonial_4_gv7myy.mp4",
         name: "Joan Seurei",
         designation: "Client",
@@ -51,7 +51,7 @@ const testimonialsData: TestimonialsPost[] = [
     },
     {
         _id: "5",
-        thumbnail: Thumbnail5.src,
+        thumbnail: Thumbnail5,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597483/testimonial_5_dbbbqd.mp4",
         name: "Rabia Khan",
         rating: 5,
@@ -61,7 +61,7 @@ const testimonialsData: TestimonialsPost[] = [
     },
     {
         _id: "6",
-        thumbnail: Thumbnail6.src,
+        thumbnail: Thumbnail6,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597483/testimonial_6_zj8tb1.mp4",
         name: "Sadie Jones",
         rating: 5,

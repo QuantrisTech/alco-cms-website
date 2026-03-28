@@ -65,7 +65,7 @@ const Button: React.FC<ButtonProps> = ({
     ${className}
 `;
 
-    // If href is provided, render as <a>
+    // If href is provided, render as Link
     if (href) {
         return (
             <Link

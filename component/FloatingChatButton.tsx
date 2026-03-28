@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineChatBubbleLeftRight, HiOutlinePhone } from "react-icons/hi2";
@@ -20,7 +21,7 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
       {/* Options menu */}
       {showOptions && (
         <div className="flex flex-col space-y-4 mb-4 animate-slide-up">
-          <a
+          <Link
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -28,13 +29,13 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
             className="bg-emerald-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-green-800 transition"
           >
             <FaWhatsapp size={28} />
-          </a>
-          <a
+          </Link>
+          <Link
             href={`tel:${phoneNumber}`}
             className="bg-cyan-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-cyan-800 transition"
           >
             <HiOutlinePhone size={24} />
-          </a>
+          </Link>
         </div>
       )}
 

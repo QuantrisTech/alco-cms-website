@@ -9,6 +9,7 @@ import { TestimonialsPost } from "@/type/testimonialsTypes"
 import { MdArrowForwardIos } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { PiSealCheckFill } from "react-icons/pi";
+import Image from "next/image"
 
 type PropType = {
     slides: TestimonialsPost[]
@@ -32,11 +33,17 @@ const StudentReviewCarousel = ({ slides, options }: PropType) => {
                             <div className=" flex flex-col gap-4 min-h-[200px] rounded-md p-6 shadow-sm bg-neutral-light">
                                 <div className="flex flex-col relative">
                                     <div className="flex items-center gap-4">
-                                        <img
-                                            src={slide.thumbnail}
-                                            alt={slide.name}
-                                            className="w-12 h-12 object-cover rounded-full"
-                                        />
+                                        {slide.thumbnail && (
+                                            <div className="w-12 h-12 relative rounded-full overflow-hidden">
+                                                <Image
+                                                    src={slide.thumbnail}          // must be defined
+                                                    alt={slide.name}
+                                                    fill                            // makes it fill the parent div
+                                                    className="object-cover rounded-full"
+                                                    sizes="48px"                    // optional, since w-12 h-12 = 48px
+                                                />
+                                            </div>
+                                        )}
                                         <div>
                                             <h5 className="font-semibold text-lg font-outfit">{slide.name}</h5>
                                             <p className="text-sm text-gray-600 font-outfit">{slide.designation}</p>

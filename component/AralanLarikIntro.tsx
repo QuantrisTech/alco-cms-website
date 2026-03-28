@@ -4,6 +4,7 @@ import React from "react";
 import Button from "./button";
 import { AralanLarikIntroData } from "@/type/aralanLarikIntro";
 import ArsalanLarik from "@/assets/intro-arsalan-larik/arsalan-larik.webp";
+import Image from "next/image";
 
 
 const aralanLarikIntroData: AralanLarikIntroData = {
@@ -43,11 +44,11 @@ export default function AralanLarikIntro() {
             </p>
             <div className="mt-4">
               <Button
-                iconRight={true} 
-                variant="primary" 
-                size="medium" 
-                text="More about us" 
-                href="/about-us/who-is-arslan-larik" 
+                iconRight={true}
+                variant="primary"
+                size="medium"
+                text="More about us"
+                href="/about-us/who-is-arslan-larik"
                 className='my-auto' />
             </div>
           </div>
@@ -66,10 +67,18 @@ export default function AralanLarikIntro() {
             />
           </div>
           <div className="flex justify-center md:justify-end col-span-12 md:col-span-5 lg:col-span-1">
-            <img
+            {/* <img
               src={data.image?.src ?? ArsalanLarik.src}
               alt={data.image?.alt ?? "Arslan Larik"}
               className="w-full max-w-md object-cover rounded-xl"
+            /> */}
+            <Image
+              src={ArsalanLarik}
+              alt="Arslan Larik"
+              priority // 🔥 important for LCP
+              sizes="(max-width: 768px) 100vw, 400px"
+              style={{ width: "100%", height: "auto" }}
+              className="max-w-md object-cover rounded-xl"
             />
 
           </div>

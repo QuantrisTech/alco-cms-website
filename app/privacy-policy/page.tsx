@@ -3,6 +3,7 @@ import { BannerType } from '@/type/bannerType';
 import { ContentSectionType } from '@/type/contentSection'
 import programLevel2 from "@/assets/background/program-level-2.webp"
 import Banner from '@/component/banner';
+import Link from 'next/link';
 
 const bannerData: BannerType = {
     title: {
@@ -18,7 +19,7 @@ const bannerData: BannerType = {
             </p>
 
             <p className="text-sm text-center text-white mt-2 font-light">
-                At <a href='/' className='underline text-secondary'>Arslan Larik,</a> we respect your privacy and are committed to protecting your personal data.
+                At <Link href='/' className='underline text-secondary'>Arslan Larik,</Link> we respect your privacy and are committed to protecting your personal data.
             </p>
         </>
     )
@@ -104,12 +105,12 @@ const ContentSectionData: ContentSectionType = {
             <p className="my-4 text-xl font-extrabold">10. Contact Us</p>
             <ul className="list-none pl-5 space-y-2">
                 <li>If you have any questions about this Privacy Policy, you can contact us at:</li>
-                <li>Email:  <a
+                <li>Email:  <Link
                     href="mailto:connect@arslanlarik.com"
                     className="text-primary underline"
                 >
                     connect@arslanlarik.com
-                </a></li>
+                </Link></li>
             </ul>
         </>
     ),

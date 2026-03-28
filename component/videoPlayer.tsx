@@ -1,11 +1,12 @@
 "use client";
 
+import Image, { StaticImageData } from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 
 type VideoPlayerProps = {
   videoUrl?: string;
-  thumbnail?: string;
+  thumbnail?: StaticImageData;
   videoClass?: string;
   className?: string;
   hoverPlay?: boolean;
@@ -74,11 +75,22 @@ const VideoPlayer = ({
           className="absolute inset-0 cursor-pointer group"
           onClick={() => !hoverPlay && !autoPlayOnVisible && setPlay(true)}
         >
-          <img
+          {/* <img
             src={thumbnail}
             alt="video thumbnail"
             className="w-full h-full object-top"
-          />
+          /> */}
+          {thumbnail && (
+            <div className="relative w-full h-full">
+              <Image
+                src={thumbnail} // works for string URLs or StaticImageData
+                alt="video thumbnail"
+                fill
+                sizes="(max-width: 768px) 100vw, 600px"
+                className="object-cover object-top rounded-lg"
+              />
+            </div>
+          )}
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition" />
           {!hoverPlay && !autoPlayOnVisible && (
             // <div className="absolute inset-0 flex items-center justify-center">

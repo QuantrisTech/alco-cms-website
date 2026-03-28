@@ -286,7 +286,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "Negative Thinking: Dimming Your Inner Sun",
       },
     },
@@ -316,7 +316,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "Negative Emotions",
       },
     },
@@ -343,7 +343,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "Limiting Beliefs",
       },
     },
@@ -373,7 +373,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "Inner Conflict",
       },
     },

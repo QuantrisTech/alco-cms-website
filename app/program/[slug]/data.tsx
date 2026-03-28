@@ -100,11 +100,11 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
         NLP (ABNLP)`,
       description: "ABNLP is the world’s most considerable NLP authority, making this certification internationally recognized and enabling you to practice NLP techniques in coaching, training and corporate or personal development environments. This certification will provide you with a ‘tool kit’ for leadership techniques, advanced communication, and soft skills.",
       imageBrand: {
-        src: AccreditedBrand1.src,
+        src: AccreditedBrand1,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level1.src,
+        src: Certificate1Level1,
         alt: "Certificate One"
       },
     },
@@ -112,11 +112,11 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
       title: "Certified Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association (TLTA)",
       description: "The Time Line Therapy™ Association (TLTA) is the world’s largest Time Line Therapy™ organization, making this certification internationally recognized. Timeline Line Therapy™ is acknowledged as the world’s best technique for removing negative emotions and limiting beliefs. The change created through these techniques is long-lasting, as it occurs at a neurological and unconscious level.",
       imageBrand: {
-        src: AccreditedBrand2.src,
+        src: AccreditedBrand2,
         alt: "Accredited Brand Two"
       },
       imageCerficate: {
-        src: Certificate2Level1.src,
+        src: Certificate2Level2,
         alt: "Certificate Two"
       },
     },
@@ -124,11 +124,11 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
       title: "Certified Practitioner of NLP Coaching via the Coaching Division of ABNLP",
       description: "Coaching is one of the fastest-growing and most rewarding industries on the planet. This certification, certified by the coaching division of the most significant NLP authority, ABNLP, will allow you to kick-start your career as a coach. This is where you will learn how to implement all your new NLP tools in a coaching, mentoring, or leadership environment.",
       imageBrand: {
-        src: AccreditedBrand3.src,
+        src: AccreditedBrand3,
         alt: "Accredited Brand Three"
       },
       imageCerficate: {
-        src: Certificate3Level1.src,
+        src: Certificate3Level1,
         alt: "Accredited Three"
       },
     }
@@ -201,7 +201,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "10 Days of Immersive, Online Learning",
       },
     },
@@ -214,7 +214,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "Comprehensive Home Study Manual",
       },
     },
@@ -228,7 +228,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "Exclusive Audio Resources",
       },
     },
@@ -248,7 +248,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "Triple Certification",
       },
     },
@@ -261,7 +261,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "Five Years Access",
       },
     },
@@ -281,7 +281,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram6.src,
+        src: LevelProgram6,
         alt: "Global Network",
       },
     },
@@ -400,11 +400,11 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
       title: "Certified Master Practitioner of NLP via the American Board of NLP (ABNLP)",
       description: "Become a Certified Master Practitioner of NLP with ABNLP, the world’s leading NLP authority. Master influence, human behavior, and persuasive communication. Unlock coaching, training, and leadership opportunities to create profound transformations. Empower yourself and others with cutting-edge NLP techniques, accelerating professional growth and making a lasting impact.",
       imageBrand: {
-        src: AccreditedBrand1.src,
+        src: AccreditedBrand1,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level2.src,
+        src: Certificate1Level1,
         alt: "Accredited One"
       },
     },
@@ -412,11 +412,11 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
       title: "Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association",
       description: "Become a Certified Master Practitioner of Time Line Therapy™ Techniques with the world’s leading authority, the Time Line Therapy™ Association. Master techniques to release past traumas, dissolve phobias, and eliminate negative emotions. Facilitate deep emotional healing, empower transformation, and help individuals unlock emotional freedom, creating a future unburdened by the past.",
       imageBrand: {
-        src: AccreditedBrand2.src,
+        src: AccreditedBrand2,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate2Level2.src,
+        src: Certificate2Level2,
         alt: "Accredited Two"
       },
     },
@@ -424,11 +424,11 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
       title: "Certified Master Practitioner of NLP Coaching via the Coaching Division of ABNLP",
       description: "Become a Certified Master Practitioner of NLP Coaching with ABNLP’s Coaching Division, the world’s leading NLP authority. Master transformative coaching, guide clients to breakthroughs in business, education, and personal growth. Unlock potential, elevate performance, and empower lasting change. This certification is your gateway to a thriving coaching career and global impact.",
       imageBrand: {
-        src: AccreditedBrand3.src,
+        src: AccreditedBrand3,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate3Level2.src,
+        src: Certificate3Level3,
         alt: "Accredited Three"
       },
     }
@@ -509,7 +509,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "13 Days of Immersive, Online Learning",
       },
     },
@@ -529,7 +529,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "Triple International Certification: Credibility That Sets You Apart",
       },
     },
@@ -549,7 +549,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "Comprehensive Home Study Materials",
       },
     },
@@ -565,7 +565,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "Exclusive Audio Resources from NLP Pioneer Dr. Tad James",
       },
     },
@@ -579,7 +579,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "Lifetime Access to Training: Your Journey Never Ends",
       },
     },
@@ -599,7 +599,7 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram6.src,
+        src: LevelProgram6,
         alt: "A Global Support Network: Empowered Together",
       },
     },
@@ -716,11 +716,11 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
       title: "Practitioner of Hypnosis via The American Board of Hypnotherapy (ABH)",
       description: "Become a certified Practitioner of Hypnosis with ABH, the world’s largest hypnotherapy board. Master hypnosis for clinical, therapeutic, and coaching applications, creating lasting positive change. Unlock deep unconscious transformation, guiding clients toward breakthroughs and enhancing personal and professional growth with internationally recognized expertise in hypnotherapy.",
       imageBrand: {
-        src: AccreditedBrand4.src,
+        src: AccreditedBrand4,
         alt: "ABH Logo"
       },
       imageCerficate: {
-        src: Certificate1Level3.src,
+        src: Certificate1Level3,
         alt: "Practitioner Certificate"
       }
     },
@@ -728,11 +728,11 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
       title: "Master Practitioner of Hypnosis via The American Board of Hypnotherapy (ABH)",
       description: "Become a Master Practitioner of Hypnosis with ABH, the world’s largest hypnotherapy board. Master advanced techniques to create profound transformation, unlock the hidden depths of the unconscious mind, and refine trance mastery. Elevate your expertise, integrating hypnosis into coaching for extraordinary breakthroughs and lasting impact.",
       imageBrand: {
-        src: AccreditedBrand4.src,
+        src: AccreditedBrand4,
         alt: "ABH Master Logo"
       },
       imageCerficate: {
-        src: Certificate2Level3.src,
+        src: Certificate2Level3,
         alt: "Master Practitioner Certificate"
       }
     },
@@ -740,11 +740,11 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
       title: "Master Practitioner of Hypnotherapy via National Guild of Hypnotists (NGH)",
       description: "Become a Certified Master Hypnotist, Consulting Hypnotist, or Hypnotherapist with NGH. Gain a prestigious one-year membership and unlock global opportunities. This certification includes expert manuals, marketing strategies, and success guidelines to build a thriving hypnosis practice worldwide.",
       imageBrand: {
-        src: AccreditedBrand4.src,
+        src: AccreditedBrand4,
         alt: "NGH Logo"
       },
       imageCerficate: {
-        src: Certificate3Level3.src,
+        src: Certificate3Level3,
         alt: "NGH Certificate"
       }
     },
@@ -752,17 +752,17 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
       title: "Quintuple Certification Holder via Arslan Larik & Company (AL&CO)",
       description: "An exclusive honor for AL&CO graduates who’ve mastered NLP, Time Line Therapy®, NLP Coaching, and Hypnosis. This elite set of certifications are accredited by globally renowned bodies, recognizing your expertise at the highest international standards.",
       imageBrand: {
-        src: AccreditedBrand5.src,
+        src: AccreditedBrand5,
         alt: "AL&CO Logo"
       },
       imageCerficate: {
-        src: Certificate4Level3.src,
+        src: Certificate4Level3,
         alt: "AL&CO Certificate"
       }
     },
     {
       imageCerficate: {
-        src: Certificate5Level3.src,
+        src: Certificate5Level3,
         alt: "Final Certificate"
       }
     }
@@ -866,7 +866,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "Online Training",
       },
     },
@@ -887,7 +887,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "Certifications",
       },
     },
@@ -901,7 +901,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "NGH Membership",
       },
     },
@@ -929,7 +929,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       // ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "Training Materials",
       },
     },
@@ -942,7 +942,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "Self Hypnosis",
       },
     },
@@ -973,7 +973,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram6.src,
+        src: LevelProgram6,
         alt: "Lifetime Access",
       },
     },
@@ -986,7 +986,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "Training Materials",
       },
     },
@@ -1102,11 +1102,11 @@ const LevelCertificationDataLevel4: LevelCertificationType = {
       title: `Certified NLP Trainer via the American Board of Neuro-Linguistic Programming (ABNLP)`,
       description: "This globally recognized certification establishes you as a Certified NLP Trainer, empowering you to deliver NLP training, certify NLP Practitioners and Master Practitioners, and lead transformational programs. Accredited by ABNLP, this certification validates your expertise in advanced training methodologies, public speaking, and personal development, positioning you as a world-class NLP Trainer.",
       imageBrand: {
-        src: AccreditedBrand1.src,
+        src: AccreditedBrand1,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level4.src,
+        src: Certificate1Level4,
         alt: "Certificate One"
       },
     }
@@ -1211,7 +1211,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "",
       },
     },
@@ -1224,7 +1224,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "",
       },
     },
@@ -1237,7 +1237,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "",
       },
     },
@@ -1252,7 +1252,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "",
       },
     },
@@ -1265,7 +1265,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "",
       },
     }
@@ -1386,11 +1386,11 @@ const LevelCertificationDataLevel5: LevelCertificationType = {
       title: `Certified Hypnosis Trainer via the American Board of Hypnotherapy (ABH)`,
       description: "This globally recognized certification establishes you as a Certified Hypnosis Trainer, empowering you to train and certify Hypnosis Practitioners and Master Practitioners. Accredited by ABH, this certification validates your expertise in hypnosis techniques, training design, and transformational influence, positioning you as a leading hypnosis trainer with the authority to impact lives worldwide.",
       imageBrand: {
-        src: AccreditedBrand1.src,
+        src: AccreditedBrand1,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level5.src,
+        src: Certificate1Level5,
         alt: "Certificate One"
       },
     }
@@ -1515,7 +1515,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "",
       },
     },
@@ -1528,7 +1528,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "",
       },
     },
@@ -1541,7 +1541,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "",
       },
     },
@@ -1556,7 +1556,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "",
       },
     },
@@ -1569,7 +1569,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "",
       },
     }
@@ -1669,11 +1669,11 @@ const LevelCertificationDataLevel6: LevelCertificationType = {
       title: `Certified NLP Master Trainer via the American Board of Neuro-Linguistic Programming (ABNLP)`,
       description: "This prestigious certification establishes you as a Certified NLP Master Trainer, empowering you to train and certify NLP Trainers, lead global transformations, and build a thriving NLP business. Accredited by ABNLP, this certification validates your mastery in advanced NLP training, leadership, and coaching, positioning you as a top-tier authority in the NLP industry.",
       imageBrand: {
-        src: AccreditedBrand1.src,
+        src: AccreditedBrand1,
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level6.src,
+        src: Certificate1Level6,
         alt: "Certificate One"
       },
     }
@@ -1826,7 +1826,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram1.src,
+        src: LevelProgram1,
         alt: "",
       },
     },
@@ -1839,7 +1839,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       ),
       theme: "light",
       image: {
-        src: LevelProgram2.src,
+        src: LevelProgram2,
         alt: "",
       },
     },
@@ -1852,7 +1852,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram3.src,
+        src: LevelProgram3,
         alt: "",
       },
     },
@@ -1867,7 +1867,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       ),
       theme: "yellow",
       image: {
-        src: LevelProgram4.src,
+        src: LevelProgram4,
         alt: "",
       },
     },
@@ -1880,7 +1880,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       ),
       theme: "dark",
       image: {
-        src: LevelProgram5.src,
+        src: LevelProgram5,
         alt: "",
       },
     }

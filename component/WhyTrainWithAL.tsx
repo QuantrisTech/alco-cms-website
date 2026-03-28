@@ -11,6 +11,7 @@ import Train3 from '@/assets/whyTrainWithAL/Train3.webp';
 import Train4 from '@/assets/whyTrainWithAL/Train4.webp';
 import Train5 from '@/assets/whyTrainWithAL/Train5.webp';
 import Train6 from '@/assets/whyTrainWithAL/Train6.webp';
+import Image from "next/image";
 
 const whyTrainWithALData: WhyTrainWithALData = {
   title: "Why Train with Arslan Larik & Company (AL&CO)?",
@@ -21,42 +22,42 @@ const whyTrainWithALData: WhyTrainWithALData = {
     {
       title: "Train with Pakistan’s 1st Master Trainer",
       image: {
-        src: Train1.src,
+        src: Train1,
         alt: "Train with Pakistan’s 1st Master Trainer"
       },
     },
     {
       title: "Pioneers in Online NLP Trainings",
       image: {
-        src: Train2.src,
+        src: Train2,
         alt: "Pioneers in Online NLP Trainings"
       },
     },
     {
       title: "Unlimited Revise & Revisit Opportunities",
       image: {
-        src: Train3.src,
+        src: Train3,
         alt: "Unlimited Revise & Revisit Opportunities"
       },
     },
     {
       title: "Advanced Self-Study Resources",
       image: {
-        src: Train4.src,
+        src: Train4,
         alt: "Advanced Self-Study Resources"
       },
     },
     {
       title: "Expand Your Global Network",
       image: {
-        src: Train5.src,
+        src: Train5,
         alt: "Expand Your Global Network"
       },
     },
     {
       title: "Lifetime Support from Experts",
       image: {
-        src: Train6.src,
+        src: Train6,
         alt: "Lifetime Support from Experts"
       },
     }
@@ -81,11 +82,11 @@ export default function WhyTrainWithAL() {
             </p>
             <div className="mt-4">
               <Button
-                iconRight={true} 
-                variant="primary" 
-                size="medium" 
-                text="More about us" 
-                href="/about-us/why-train-with-alco" 
+                iconRight={true}
+                variant="primary"
+                size="medium"
+                text="More about us"
+                href="/about-us/why-train-with-alco"
                 className='my-auto' />
             </div>
           </div>
@@ -94,7 +95,18 @@ export default function WhyTrainWithAL() {
 
           {data.points.map((point, index) => (
             <div key={index} className="flex items-center text-center gap-4 p-6 border rounded-lg shadow-md">
-              <img src={point.image.src} alt={point.image.alt} className="w-16 h-16 object-cover " />
+              {/* <img src={point.image.src} alt={point.image.alt} className="w-16 h-16 object-cover " /> */}
+              {point.image && (
+                <div className="w-16 h-16 relative">
+                  <Image
+                    src={point.image.src}          // must be defined
+                    alt={point.image.alt}
+                    fill                            // makes it fill the parent div
+                    className="object-contain "
+                    // sizes="48px"                    // optional, since w-12 h-12 = 48px
+                  />
+                </div>
+              )}
               <p className="text-md lg:text-lg font-medium text-black/85 text-start font-outfit">
                 {point.title}
               </p>

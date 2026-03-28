@@ -1,7 +1,8 @@
+import { StaticImageData } from "next/image";
 import React from "react";
 
 export type GalleryImage = {
-        src: string
+        src: StaticImageData
         alt: string
         title: string
 };

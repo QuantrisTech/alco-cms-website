@@ -1,7 +1,7 @@
 "use client";
 
 import { GalleryItem } from "@/type/gallery";
-import GalleryCarousel, { GalleryImage } from "./gallery-carousel/galleryCarousel";
+import GalleryCarousel from "./gallery-carousel/galleryCarousel";
 
 type Props = {
   data?: GalleryItem;

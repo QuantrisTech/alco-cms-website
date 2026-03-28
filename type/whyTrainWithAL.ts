@@ -1,10 +1,12 @@
+import { StaticImageData } from "next/image"
+
 export type WhyTrainWithALData = {
   title: string
   description: string
   points: {
     title: string
     image: {
-      src: string
+      src: StaticImageData
       alt: string
     }
   }[]

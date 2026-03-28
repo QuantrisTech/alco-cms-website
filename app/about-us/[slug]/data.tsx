@@ -33,6 +33,7 @@ import ThumbnailAL1 from "@/assets/thumbnail/about/who-is-AL.webp";
 import ThumbnailBP1 from "@/assets/thumbnail/about/collerbration_BP_1.webp";
 import ThumbnailBP2 from "@/assets/thumbnail/about/collerbration_BP_2.webp";
 import ThumbnailBP3 from "@/assets/thumbnail/about/collerbration_BP_3.webp";
+import Image from "next/image";
 
 type Faq = {
   question: string;
@@ -61,7 +62,7 @@ quickly and persevere with positivity.`,
   className: "bg-no-repeat sm:bg-top sm:bg-cover",
   intoBanner: true,
   video: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774603634/Arslan-video_rgwll0.mp4",
-  thumbnail: ThumbnailAL1.src
+  thumbnail: ThumbnailAL1
 };
 
 const LevelBenefitsTableDataAL: LevelBenefitsTableType = {
@@ -147,11 +148,11 @@ const ContentSectionData2AL: ContentSectionType = {
         As the <strong>Master Trainer and Managing Director of AL&CO,</strong> Arslan has set new standards in coaching, training, and personal development. His dynamic, results-driven programs equip participants with the tools to:
       </p>
       <ul className="list-disc pl-5 space-y-1">
-            <li>Master their Minds and Emotions.</li>
-            <li>Overcome Personal and Professional Limitations.</li>
-            <li>Achieve extraordinary goals.</li>
-            <li>Lead with purpose and authenticity.</li>
-          </ul>
+        <li>Master their Minds and Emotions.</li>
+        <li>Overcome Personal and Professional Limitations.</li>
+        <li>Achieve extraordinary goals.</li>
+        <li>Lead with purpose and authenticity.</li>
+      </ul>
       <p className="mt-4">
         Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals,</strong> and organizations worldwide.
       </p>
@@ -159,7 +160,7 @@ const ContentSectionData2AL: ContentSectionType = {
   ),
   // underline: true,
   padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
-  textAlign:"text-start"
+  textAlign: "text-start"
 }
 
 const ContentSectionData3AL: ContentSectionType = {
@@ -169,22 +170,29 @@ const ContentSectionData3AL: ContentSectionType = {
       <p className="my-4">
         Arslan Larik & Company is an <strong>Approved School of NLP, Hypnotherapy, Time Line Therapy Techniques & NLP Coaching</strong> Certified by:
       </p>
-      <img src={accreditedBrands.src} className="object-contain h-40 my-4" />
+      {/* <img src={accreditedBrands.src} className="object-contain h-40 my-4" /> */}
+      <Image
+        src={accreditedBrands}
+        alt="accredited brands"
+        className="object-contain my-4"
+        width={800}
+        height={100}
+      />
       <ul className="list-disc pl-5 space-y-1">
-            <li><strong>The American Board of Neuro Linguistic Programming (ABNLP-USA)</strong></li>
-            <li><strong>The American Board of Hypnotherapy (ABH-USA)</strong></li>
-            <li><strong>The National Guild of Hypnotists (NGH-USA)</strong></li>
-            <li><strong>Time Line Therapy™ Association (TLTA-USA)</strong></li>
-            <li><strong>Coaching Division of ABNLP (USA)</strong></li>
-          </ul>
+        <li><strong>The American Board of Neuro Linguistic Programming (ABNLP-USA)</strong></li>
+        <li><strong>The American Board of Hypnotherapy (ABH-USA)</strong></li>
+        <li><strong>The National Guild of Hypnotists (NGH-USA)</strong></li>
+        <li><strong>Time Line Therapy™ Association (TLTA-USA)</strong></li>
+        <li><strong>Coaching Division of ABNLP (USA)</strong></li>
+      </ul>
       <p className="mt-4">
-       At AL&CO, you gain access to a global network of excellence, lifetime learning opportunities, and mentorship under a <strong>globally recognized pioneer.</strong>
+        At AL&CO, you gain access to a global network of excellence, lifetime learning opportunities, and mentorship under a <strong>globally recognized pioneer.</strong>
       </p>
     </>
   ),
   // underline: true,
   padding: "pb-6 md:pb-8 lg:pb-12 xl:pb-16 ",
-  textAlign:"text-start"
+  textAlign: "text-start"
 }
 
 const ContentSectionData4AL: ContentSectionType = {
@@ -199,7 +207,7 @@ const ContentSectionData4AL: ContentSectionType = {
       </p>
     </div>
   ),
-  fullBg:"bg-neutral-100 ",
+  fullBg: "bg-neutral-100 ",
   padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
 }
 
@@ -301,16 +309,16 @@ const galleryDataBP: GalleryItem = {
     </>
   ),
   image: [
-    { src: GalleryBM2.src, alt: "", title: "Gallery Image 2" },
-    { src: GalleryBM3.src, alt: "", title: "Gallery Image 3" },
-    { src: GalleryBM4.src, alt: "", title: "Gallery Image 4" },
-    { src: GalleryBM5.src, alt: "", title: "Gallery Image 5" },
-    { src: GalleryBM6.src, alt: "", title: "Gallery Image 6" },
-    { src: GalleryBM7.src, alt: "", title: "Gallery Image 7" },
-    { src: GalleryBM8.src, alt: "", title: "Gallery Image 8" },
-    { src: GalleryBM9.src, alt: "", title: "Gallery Image 9" },
-    { src: GalleryBM10.src, alt: "", title: "Gallery Image 10" },
-    { src: GalleryBM11.src, alt: "", title: "Gallery Image 11" },
+    { src: GalleryBM2, alt: "", title: "Gallery Image 2" },
+    { src: GalleryBM3, alt: "", title: "Gallery Image 3" },
+    { src: GalleryBM4, alt: "", title: "Gallery Image 4" },
+    { src: GalleryBM5, alt: "", title: "Gallery Image 5" },
+    { src: GalleryBM6, alt: "", title: "Gallery Image 6" },
+    { src: GalleryBM7, alt: "", title: "Gallery Image 7" },
+    { src: GalleryBM8, alt: "", title: "Gallery Image 8" },
+    { src: GalleryBM9, alt: "", title: "Gallery Image 9" },
+    { src: GalleryBM10, alt: "", title: "Gallery Image 10" },
+    { src: GalleryBM11, alt: "", title: "Gallery Image 11" },
   ]
 }
 
@@ -406,10 +414,10 @@ const galleryDataWTALCO: GalleryItem = {
     </>
   ),
   image: [
-    { src: GalleryWTALCO1.src, alt: "", title: "Gallery Image 1" },
-    { src: GalleryWTALCO2.src, alt: "", title: "Gallery Image 2" },
-    { src: GalleryWTALCO3.src, alt: "", title: "Gallery Image 3" },
-    { src: GalleryWTALCO4.src, alt: "", title: "Gallery Image 4" },
+    { src: GalleryWTALCO1, alt: "", title: "Gallery Image 1" },
+    { src: GalleryWTALCO2, alt: "", title: "Gallery Image 2" },
+    { src: GalleryWTALCO3, alt: "", title: "Gallery Image 3" },
+    { src: GalleryWTALCO4, alt: "", title: "Gallery Image 4" },
   ]
 
 }

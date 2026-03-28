@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { LevelCertificationType } from "@/type/levelCertification";
+import Image from "next/image";
 
 type Props = {
   data: LevelCertificationType
@@ -21,11 +22,11 @@ export default function LevelCertification({ data }: Props) {
             {data?.title?.line2}
           </span>
         </h3>
-        <div className="grid grid-cols-1 gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
+        {/* <div className="grid grid-cols-1 gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
           {data.points.map((point, index) => (
             <div className="grid grid-cols-12 gap-8 2xl:gap-12" key={index}>
               {point?.title && (
-                <div className="flex items-center col-span-12 lg:col-span-7 xl:col-span-8 2xl:col-span-9 bg-white px-4 py-6 gap-4 rounded-xl border shadow-2xl">
+                <div className="flex items-center col-span-12 lg:col-span-7 xl:col-span-8 2xl:col-span-9 bg-white px-4 py-6 gap-4 rounded-md border shadow-2xl">
                   <div className="hidden xl:block">
                     <img
                       src={point?.imageBrand?.src}
@@ -55,9 +56,83 @@ export default function LevelCertification({ data }: Props) {
                 <img
                   src={point?.imageCerficate?.src}
                   alt={point?.imageCerficate?.alt ?? "Arslan Larik"}
-                  className={`${point?.title ? "w-full max-w-md" : "w-full lg:w-[41.666%] xl:w-[33.333%] 2xl:w-[22.5%]"} object-cover rounded-xl`}
+                  className={`${point?.title ? "w-full max-w-md" : "w-full lg:w-[41.666%] xl:w-[33.333%] 2xl:w-[22.5%]"} object-cover rounded-md`}
                 />
               </div>
+            </div> */}
+        <div className="grid grid-cols-1 gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
+          {data.points.map((point, index) => (
+            <div className="grid grid-cols-12 gap-8 2xl:gap-12" key={index}>
+
+              {/* LEFT CONTENT */}
+              {point?.title && (
+                <div className="flex items-center col-span-12 lg:col-span-7 xl:col-span-8 2xl:col-span-9 bg-white px-4 py-6 gap-4 rounded-md border shadow-2xl">
+
+                  {/* Desktop Brand Image */}
+                  <div className="hidden xl:block">
+                    {point?.imageBrand?.src && (
+                      <Image
+                        src={point.imageBrand.src}
+                        alt={point.imageBrand.alt || "Brand"}
+                        width={200}
+                        height={80}
+                        className="object-contain"
+                      />
+                    )}
+                  </div>
+
+                  <div className="w-full xl:max-w-[70%]">
+
+                    <div className="flex items-center gap-2">
+
+                      {/* Mobile Brand Image */}
+                      <div className="xl:hidden">
+                        {point?.imageBrand?.src && (
+                          <Image
+                            src={point.imageBrand.src}
+                            alt={point.imageBrand.alt || "Brand"}
+                            width={200}
+                            height={80}
+                            className="object-contain"
+                          />
+                        )}
+                      </div>
+
+                      <h6 className="text-lg sm:text-xl xl:text-2xl text-primary text-start font-outfit font-semibold mb-2">
+                        {point?.title}
+                      </h6>
+                    </div>
+
+                    <p className="custom-text1 font-light text-black/60 text-start">
+                      {point.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* RIGHT CERTIFICATE IMAGE */}
+              <div
+                className={`${point?.title
+                  ? "col-span-12 lg:col-span-5 xl:col-span-4 2xl:col-span-3 justify-center"
+                  : "col-span-12 justify-end"
+                  } flex items-center`}
+              >
+                <div
+                  className={`relative ${point?.title
+                    ? "w-full max-w-md h-[250px] sm:h-[300px] lg:h-[350px]"
+                    : "w-full lg:w-[41.666%] xl:w-[33.333%] 2xl:w-[22.5%] h-[200px] sm:h-[250px]"
+                    } rounded-md overflow-hidden`}
+                >
+                  <Image
+                    src={point?.imageCerficate?.src}
+                    alt={point?.imageCerficate?.alt || "Certificate"}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain bg-white"
+                  />
+                </div>
+              </div>
+
             </div>
           ))}
         </div>

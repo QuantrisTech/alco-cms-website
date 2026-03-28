@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image"
+
 export type LevelCertificationType = {
   title: {
     line1: string
@@ -7,11 +9,11 @@ export type LevelCertificationType = {
     title?: string
     description?: string
     imageBrand?: {
-      src?: string
+      src: StaticImageData
       alt?: string
     }
     imageCerficate: {
-      src: string
+      src: StaticImageData
       alt: string
     }
   }[]

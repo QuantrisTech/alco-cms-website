@@ -7,6 +7,7 @@ import { EmpowerYourselfData } from "@/type/empowerYourself";
 import About1 from '@/assets/our-mission/About1.webp'
 import About2 from '@/assets/our-mission/About2.webp'
 import About3 from '@/assets/our-mission/About3.webp'
+import Image from "next/image";
 
 const empowerYourself: EmpowerYourselfData = {
   title: "Empower Yourself For Life",
@@ -61,7 +62,16 @@ export default function EmpowerYourself() {
               <div
                 className={`col-span-12 lg:col-span-5 xl:col-span-6 ${index % 2 !== 0 ? "lg:order-2" : ""
                   }`}>
-                <img src={point.image.src} alt={point.image.alt} className="xl:object-top object-cover shadow-xl max-h-[310px] sm:max-h-[350px] lg:max-h-[450px] w-full rounded-lg" />
+                <div className="relative w-full h-[310px] sm:h-[350px] lg:h-[450px] rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src={point.image.src}
+                    alt={point.image.alt || "image"}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover xl:object-top"
+                  />
+                </div>
+                {/* <img src={point.image.src} alt={point.image.alt} className="xl:object-top object-cover shadow-xl max-h-[310px] sm:max-h-[350px] lg:max-h-[450px] w-full rounded-lg" /> */}
               </div>
               <div className="col-span-12 lg:col-span-7 xl:col-span-6 flex flex-col justify-center">
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold font-outfit text-primary text-start mb-4 ">

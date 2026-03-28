@@ -3,6 +3,7 @@ import { BannerType } from '@/type/bannerType';
 import { ContentSectionType } from '@/type/contentSection'
 import programLevel2 from "@/assets/background/program-level-2.webp"
 import Banner from '@/component/banner';
+import Link from 'next/link';
 
 const bannerData: BannerType = {
     title: {
@@ -18,7 +19,7 @@ const bannerData: BannerType = {
             </p>
 
             <p className="text-sm text-center text-white mt-2 font-light">
-                Welcome to <a href='/' className='underline text-secondary'>Arslan Larik.</a> By using our website, you agree to these terms.
+                Welcome to <Link href='/' className='underline text-secondary'>Arslan Larik.</Link> By using our website, you agree to these terms.
             </p>
         </>
     )
@@ -120,12 +121,12 @@ const ContentSectionData: ContentSectionType = {
             <p className="my-4 text-xl font-extrabold">12. Contact Us</p>
             <ul className="list-none pl-5 space-y-2">
                 <li>If you have any questions regarding these Terms, you can contact us at:</li>
-                <li>Email:  <a
+                <li>Email:  <Link
                         href="mailto:connect@arslanlarik.com"
                         className="text-primary underline"
                     >
                         connect@arslanlarik.com
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </>

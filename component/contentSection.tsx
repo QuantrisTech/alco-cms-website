@@ -3,6 +3,7 @@
 import { ContentSectionType } from "@/type/contentSection";
 import React from "react";
 import Button from "./button";
+import Image from "next/image";
 
 
 type Props = {
@@ -39,12 +40,24 @@ const ContentSection = ({ data }: Props) => {
                         {data.contentlist.map((content, index) => (
                             <div className={data?.contentlisItemClass ? data?.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`}>
                                 {/* Images */}
-                                {content.src && (<img
+                                {/* {content.src && (<img
                                     key={index}
                                     src={content.src}
                                     alt={content.alt}
                                     className={`w-full ${content.height ? content.height : "h-28"} rounded-lg`}
-                                />)}
+                                />)} */}
+                                {content.src && (
+                                    <div className="relative w-full h-28">
+                                        <Image
+                                            key={index}
+                                            src={content.src}
+                                            alt={content.alt || "image"}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 600px"
+                                            className="rounded-lg object-cover"
+                                        />
+                                    </div>
+                                )}
                                 {/* Title */}
                                 {content?.title && (
                                     <div className={data.contentlistTitle ? data.contentlistTitle : `text-2xl font-semibold ${content?.textAlign ? content?.textAlign : "text-center"} text-primary my-4 min-h-12`}>
@@ -62,7 +75,7 @@ const ContentSection = ({ data }: Props) => {
                         ))}
                     </div>
                 )}
-                
+
                 {/* Deatil Content */}
                 {data?.detailContent && (
                     <div className={`${data?.textAlign ? data?.textAlign : "text-center"} text-primary-light custom-text1  mx-auto`}>{data?.detailContent}</div>

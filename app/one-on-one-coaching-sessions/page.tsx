@@ -181,7 +181,7 @@ const OneOnOneCoachingData: LevelProgramIncludesType = {
             ),
             theme: "dark",
             image: {
-                src: LevelProgram1.src,
+                src: LevelProgram1,
                 alt: "Negative Thinking: Dimming Your Inner Sun",
             },
         },
@@ -225,7 +225,7 @@ const OneOnOneCoachingData: LevelProgramIncludesType = {
             ),
             theme: "light",
             image: {
-                src: LevelProgram2.src,
+                src: LevelProgram2,
                 alt: "Negative Thinking: Dimming Your Inner Sun",
             },
         },
@@ -261,7 +261,7 @@ const OneOnOneCoachingData: LevelProgramIncludesType = {
             ),
             theme: "yellow",
             image: {
-                src: LevelProgram3.src,
+                src: LevelProgram3,
                 alt: "Negative Thinking: Dimming Your Inner Sun",
             },
         },

@@ -1,7 +1,9 @@
+import { StaticImageData } from "next/image"
+
 export type accreditedType = {
     title: string
     image: {
-        src: string
+        src: StaticImageData
         alt: string
     }
 }

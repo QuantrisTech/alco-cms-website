@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image"
+
 export type OurProgramSlideType = {
   title: string
   description: string
@@ -7,7 +9,7 @@ export type OurProgramSlideType = {
     // link: string
   }
   image?: {
-    src: string
+    src: StaticImageData
     alt: string
   }
 }

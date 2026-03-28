@@ -3,12 +3,14 @@ import React from "react";
 import Button from "./button";
 import { LevelGraduatesExperienceType } from "@/type/levelGraduatesExperience";
 import VideoPlayer from "./videoPlayer";
+import { usePopup } from "@/context/enrollPopupContext";
 
 type Props = {
   data: LevelGraduatesExperienceType
 }
 
 export default function LevelGraduatesExperience({ data }: Props) {
+  const { openPopup } = usePopup();
 
   return (
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
@@ -25,7 +27,7 @@ export default function LevelGraduatesExperience({ data }: Props) {
           </h3>
           <div className="mt-4 flex gap-4">
             <Button 
-iconRight={true} variant="white" size="medium" text="Register Today" href="#" className='my-auto' />
+iconRight={true} variant="white" size="medium" text="Register Today" href="" className='my-auto' onClick={openPopup} />
             <Button 
 iconRight={true} variant="secondary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div>

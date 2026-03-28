@@ -2,6 +2,7 @@
 import React from "react";
 import { LevelProgramIncludesType } from "@/type/levelProgramIncludes";
 import Button from "./button";
+import Image from "next/image";
 
 type Props = {
   data?: LevelProgramIncludesType
@@ -35,11 +36,22 @@ export default function LevelProgramIncludes({ data }: Props) {
           {data?.points.map((point, index) => (
             <div key={index} className={`flex flex-col px-4 py-6 lg:px-8 lg:py-6 xl:px-8 xl:py-6 2xl:px-10 2xl:py-8 rounded-xl shadow-lg ${themeClasses[point?.theme]}`}>
               <div className="w-[70px] h-[70px] p-3 bg-primary rounded-lg">
-                <img
+                {/* <img
                   src={point?.image?.src}
                   alt={point?.image?.alt}
                   className="object-cover"
-                />
+                /> */}
+                {point?.image?.src && (
+                  <div className="relative ">
+                    <Image
+                      src={point.image.src}
+                      alt={point.image.alt || "image"}
+                      width={100}
+                      height={100}
+                      className="object-cover"
+                    />
+                  </div>
+                )}
               </div>
               <h6 className={`
                 text-lg sm:text-xl 

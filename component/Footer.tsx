@@ -100,12 +100,12 @@ export default function Footer() {
                   <div className="h-4 w-4  mt-1">{item.icon}</div>
                   <div className="">
                     {
-                      item.isLinked === true ? <a
+                      item.isLinked === true ? <Link
                         href={item?.href}
                         className="hover:text-secondary"
                       >
                         {item.name}
-                      </a> :
+                      </Link> :
                         item.name
                     }
                   </div>

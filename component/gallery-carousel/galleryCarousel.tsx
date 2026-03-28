@@ -4,9 +4,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { EmblaOptionsType } from "embla-carousel";
 import "@/component/gallery-carousel/galleryCarousel.css";
+import Image, { StaticImageData } from "next/image";
 
 export type GalleryImage = {
-    src: string;
+    src: StaticImageData;
     alt: string;
     title: string;
 };
@@ -14,7 +15,7 @@ export type GalleryImage = {
 type ThumbProps = {
     selected: boolean;
     onClick: () => void;
-    image: string;
+    image: StaticImageData;
 };
 
 type Props = {
@@ -27,14 +28,27 @@ const Thumb = ({ selected, onClick, image }: ThumbProps) => {
     return (
         <div className={`gallery_embla-thumbs__slide ${selected ? "gallery_embla-thumbs__slide--selected" : ""}`}>
             <button onClick={onClick} type="button" className="w-full">
-                <img
+                {/* <img
                     src={image}
                     className={`w-full h-[100px] object-cover rounded-lg border-2 transition-all duration-200 ${
                         selected
                             ? "border-white scale-105"
                             : "border-transparent hover:border-white/60"
                     }`}
-                />
+                /> */}
+                {Image && (
+                    <div className="relative w-full h-[100px]">
+                        <Image
+                            src={image} // string | StaticImageData
+                            alt="Image" // you can replace with dynamic alt if needed
+                            fill
+                            className={`object-cover rounded-lg border-2 transition-all duration-200 ${selected
+                                ? "border-white scale-105"
+                                : "border-transparent hover:border-white/60"
+                                }`}
+                        />
+                    </div>
+                )}
             </button>
         </div>
     );
@@ -85,11 +99,21 @@ const GalleryCarousel = ({ slides, options }: Props) => {
                 <div className="gallery_embla__container">
                     {slides?.map((slide, index) => (
                         <div className="gallery_embla__slide relative bg-black" key={index}>
-                            <img
+                            {/* <img
                                 src={slide.src}
                                 alt={slide.alt}
                                 className="w-full h-[350px] md:h-[450px] object-contain"
-                            />
+                            /> */}
+                            {slide.src && (
+                                <div className="relative w-full h-[350px] md:h-[450px]">
+                                    <Image
+                                        src={slide.src} // string | StaticImageData
+                                        alt={slide.alt}
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                            )}
                             {slide.title && (
                                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base">
                                     {slide.title}

@@ -5,6 +5,8 @@ import Button from "./button";
 import { ContactInfoData } from "@/type/contactInfo";
 import ContactBg from "@/assets/background/contact-info.webp";
 import { HiOutlinePhone } from "react-icons/hi2";
+import Link from "next/link";
+import { usePopup } from "@/context/enrollPopupContext";
 
 const contactInfoData: ContactInfoData = {
   title: "Call Us for More Information",
@@ -19,6 +21,7 @@ const contactInfoData: ContactInfoData = {
 
 export default function ContactInfo() {
   const data = contactInfoData;
+    const { openPopup } = usePopup();
 
   return (
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-light-neutral bg-cover bg-top-left w-full">
@@ -26,12 +29,12 @@ export default function ContactInfo() {
         <div className="px-6 md:px-8 lg:px-12 xl:px-16 py-4 md:py-6 lg:py-10 xl:py-14  bg-cover bg-top-left w-full rounded-xl" style={{ backgroundImage: `url(${ContactBg.src})` }}>
           <div className="grid grid-cols-12 gap-2 my-8">
             <div className="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-5 2xl:col-span-4 flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
-              <a
+              <Link
                 href={`tel:+18886814808`}
                 className="bg-secondary-light text-white h-16 w-16 mb-4 flex justify-center items-center rounded-full shadow hover:bg-yellow-600 transition"
               >
                 <HiOutlinePhone size={30} />
-              </a>
+              </Link>
 
               <div className="flex flex-col justify-start ">
                 <p className="custom-text1 font-light text-white text-start ">
@@ -49,7 +52,7 @@ export default function ContactInfo() {
             </div>
             <div className="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-2 2xl:col-span-2 flex flex-col justify-end ">
               <Button 
-iconRight={true} variant="secondary" size="medium" text="Register Today" href="#" className='my-auto ml-auto' />
+iconRight={true} variant="secondary" size="medium" text="Register Today" onClick={openPopup} className='my-auto ml-auto' />
             </div>
           </div>
         </div>

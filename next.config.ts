@@ -4,9 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
   images: {
-    // Allow local images and external URLs if needed
-    domains: [],
-    formats: ['image/avif', 'image/webp'], // add any formats you use
+    domains: ["res.cloudinary.com", "lh3.googleusercontent.com"], // only domain, no https://
+    formats: ["image/avif", "image/webp"],
   },
 };
 

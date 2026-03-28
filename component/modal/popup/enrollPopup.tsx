@@ -8,6 +8,8 @@ import SelectField from "@/component/selectfield";
 import Checkboxfield from "@/component/checkboxfield";
 import { useForm, Controller } from "react-hook-form";
 import EnrollPopupImage from "@/assets/enroll-popup/enroll-popup.webp";
+import Image from "next/image";
+import Link from "next/link";
 
 type EnrollPopupProps = {
   buttonText?: string;
@@ -92,11 +94,21 @@ export default function EnrollPopup({
         <div className="grid grid-cols-12 gap-x-6 gap-y-4 h-[80dvh] overflow-y-auto pr-2 pb-4 xl:pb-0 xl:h-full xl:overflow-hidden mini-scroll">
           {/* Left Column */}
           <div className="col-span-12 xl:col-span-4 ">
-            <img
+            {/* <img
               src={EnrollPopupImage.src}
               alt="Enroll popup"
               className="w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px] object-cover rounded-md "
-            />
+            /> */}
+            {EnrollPopupImage && (
+              <div className="relative w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px]">
+                <Image
+                  src={EnrollPopupImage} // StaticImageData imported
+                  alt="Enroll popup"
+                  fill
+                  className="object-cover rounded-md"
+                />
+              </div>
+            )}
             <div className="mt-4">
               <h2 className="text-3xl font-outfit font-semibold">{title}</h2>
               <div className="text-sm font-outfit text-gray-600 mt-3">{description}</div>
@@ -299,16 +311,16 @@ export default function EnrollPopup({
 
             <div className="flex flex-col sm:flex-row justify-between items-center ">
               <div className="text-xs text-gray-500 mb-2 sm:mb-0 sm:ms-6">
-                <a href="/privacy-policy" className="underline text-primary me-2">
+                <Link href="/privacy-policy" className="underline text-primary me-2">
                   Privacy Policy
-                </a>
+                </Link>
                 |
-                <a href="/terms" className="underline text-primary ms-2">
+                <Link href="/terms" className="underline text-primary ms-2">
                   Terms of Service
-                </a>
+                </Link>
               </div>
               <div className="w-full sm:max-w-[150px]">
-              <Button text="Submit" type="submit" variant="primary" className="mt-2 w-full " />
+                <Button text="Submit" type="submit" variant="primary" className="mt-2 w-full " />
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { OurProgramSlideType } from '@/type/ourProgram'
 import Button from '../button'
 import "@/component/our-program-carousel/ourProgramCarousel.css"
+import Image from 'next/image';
 
 
 type PropType = {
@@ -44,19 +45,29 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                 </div>
                 <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
                   <Button
-                    iconRight={true} 
-                    variant="primary" 
-                    size="small" 
-                    text="Find out more" 
-                    href={slide.href} 
+                    iconRight={true}
+                    variant="primary"
+                    size="small"
+                    text="Find out more"
+                    href={slide.href}
                     className='px-2' />
                 </div>
                 <div className="flex flex-col justify-center col-span-12 mt-4">
-                  <img
+                  {slide.image && (<div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl">
+                    <Image
+                      src={slide.image?.src } // use StaticImageData directly
+                      alt={slide.image?.alt }
+                      fill
+                      className="object-conatin rounded-xl"
+                      // style={{ objectFit: "cover" }} // optional, for safety
+                    />
+                  </div>
+                )}
+                  {/* <img
                     src={slide.image?.src ?? Level1.src}
                     alt={slide.image?.alt ?? "Arslan Larik"}
                     className="w-full h-auto object-cover rounded-xl"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

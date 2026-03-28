@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image"
 import React from "react"
 
 type BannerTitle = {
@@ -14,7 +15,7 @@ export type BannerType = {
   description?: string
   intoBanner?: boolean
   video?: string
-  thumbnail?: string
+  thumbnail?: StaticImageData
   className?: string
   height?: string
   children?: React.ReactNode

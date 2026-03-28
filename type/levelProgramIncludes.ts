@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image"
 import React from "react"
 
 
@@ -14,7 +15,7 @@ export type LevelProgramIncludesType = {
     description: string | React.ReactNode
     theme: string
     image: {
-      src: string
+      src: StaticImageData
       alt: string
     }
   }[]

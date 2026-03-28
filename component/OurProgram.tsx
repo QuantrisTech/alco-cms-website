@@ -27,7 +27,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level1.src,
+        src: Level1,
         alt: "Arslan Larik"
       }
     },
@@ -39,7 +39,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level2.src,
+        src: Level2,
         alt: "Arslan Larik"
       }
     },
@@ -51,7 +51,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level3.src,
+        src: Level3,
         alt: "Arslan Larik"
       }
     },
@@ -63,7 +63,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level4.src,
+        src: Level4,
         alt: "Arslan Larik"
       }
     },
@@ -75,7 +75,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level5.src,
+        src: Level5,
         alt: "Arslan Larik"
       }
     },
@@ -87,7 +87,7 @@ const ourProgramData: OurProgramData = {
         text: "Learn More"
       },
       image: {
-        src: Level6.src,
+        src: Level6,
         alt: "Arslan Larik"
       }
     },
