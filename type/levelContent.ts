@@ -13,5 +13,9 @@ export type LevelContentType = {
       alt: string
     }
   }[]
+  button?: {
+    text?: string
+    href?: string
+  }
 
 }

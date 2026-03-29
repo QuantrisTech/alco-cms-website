@@ -6,6 +6,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Button from "./button";
 import InputField from "./inputfield";
 import ContactBg from "@/assets/background/contact-info.webp";
+import Link from "next/link";
 
 type ContactFormValues = {
     firstName: string;
@@ -48,7 +49,7 @@ const ContactUS = () => {
                     style={{ backgroundImage: `url(${ContactBg.src})` }}
                 >
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-primary/10 "></div>
+                    <div className="absolute inset-0 bg-primary/10 z-10"></div>
                     <div className="flex items-center gap-4 mb-6">
                         <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
                         >
@@ -60,25 +61,38 @@ const ContactUS = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4 mb-6">
-                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
+                    <div className="flex items-center gap-4 mb-6 z-20">
+                        <Link
+                            href="tel:+18886814808"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
                         >
                             <FaPhoneAlt size={20} />
-                        </div>
+                        </Link>
+
                         <div>
-                            <h3 className="font-semibold text-secondary-dark ">Call Us On</h3>
-                            <p className="text-white">+1(888)681-4808</p>
+                            <h3 className="font-semibold text-secondary-dark order">Call Us On</h3>
+                            <Link href="tel:+18886814808" className="text-white hover:underline">
+                                +1(888) 681-4808
+                            </Link>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4 mb-6">
-                        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
+                    <div className="flex items-center gap-4 mb-6 z-20">
+                        <Link
+                            href="mailto:connect@arslanlarik.com"
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
                         >
                             <FaEnvelope size={20} />
-                        </div>
+                        </Link>
+
                         <div>
-                            <h3 className="font-semibold text-secondary-dark ">Email Us</h3>
-                            <p className="text-white">connect@arslanlarik.com</p>
+                            <h3 className="font-semibold text-secondary-dark">Email Us</h3>
+                            <Link
+                                href="mailto:connect@arslanlarik.com"
+                                className="text-white hover:underline"
+                            >
+                                connect@arslanlarik.com
+                            </Link>
                         </div>
                     </div>
                 </div>

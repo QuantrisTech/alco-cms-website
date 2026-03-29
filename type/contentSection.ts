@@ -12,6 +12,7 @@ type contentType = {
   alt?: string
   textAlign?: string
   height?: string
+  position?: string
 };
 
 type ButtonType = {

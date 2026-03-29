@@ -87,7 +87,7 @@ const VideoPlayer = ({
                 alt="video thumbnail"
                 fill
                 sizes="(max-width: 768px) 100vw, 600px"
-                className="object-cover object-top rounded-lg"
+                className="object-contain object-top rounded-lg"
               />
             </div>
           )}

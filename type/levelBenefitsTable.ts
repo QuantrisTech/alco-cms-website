@@ -20,11 +20,13 @@ export type LevelBenefitsTableType = {
     line1: string;
     line2: string;
   };
+  bgColor?: string
   headers: string[];   // 👈 NEW
   points: {
     content: string;
     values: string[];  // 👈 NEW (dynamic columns)
   }[];
+    dynamicColumn?: string;
   introPage?: boolean
   videos?: {
     video?: string;
@@ -32,5 +34,9 @@ export type LevelBenefitsTableType = {
     thumbnail?: StaticImageData
   }[];
   videoTitle?: string
+  button?: {
+    text?: string
+    href?: string
+  }
 
 };

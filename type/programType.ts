@@ -22,3 +22,19 @@ export type ProgramType = {
   LevelContentData : LevelContentType
   LevelGraduatesExperienceData : LevelGraduatesExperienceType
 }
+
+export type ProgramTypeInnerDetail = {
+  slug: string
+  BannerData: BannerType
+  LevelBenefitsTableData1 : LevelBenefitsTableType
+  LevelBenefitsTableData2?: LevelBenefitsTableType
+  LevelBenefitsTableData3?: LevelBenefitsTableType
+}
+
+export type CourseTypeInnerDetail = {
+  slug: string
+  BannerData: BannerType
+  LevelBenefitsTableData1 : LevelBenefitsTableType
+  LevelBenefitsTableData2?: LevelBenefitsTableType
+  LevelBenefitsTableData3?: LevelBenefitsTableType
+}

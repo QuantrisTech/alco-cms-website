@@ -141,6 +141,11 @@ const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
     line2: "NLP Practitioner Training",
   },
 
+  button: {
+    text: "Learn More",
+    href: '/program-detail/benefits-of-choosing-nlp-training-course/'
+  },
+
   headers: [
     "Content",
     "Benefits for Personal Development",
@@ -293,6 +298,12 @@ const LevelContentDataLevel1: LevelContentType = {
     line1: "Content Of NLP Practitioner",
     line2: ""
   },
+
+  button: {
+    text: "Learn More",
+    href: '/course-outline/nlp-practitioner/'
+  },
+
   points: [
     {
       title: "Neuro Linguistic Programming (NLP)",
@@ -439,6 +450,11 @@ const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of Choosing NLP",
     line2: "Master Practitioner Training",
+  },
+
+  button: {
+    text: "Learn More",
+    href: '/program-detail/how-nlp-master-practitioner-training-helps-you-in-your-life/'
   },
 
   // 👇 dynamic headers
@@ -611,6 +627,12 @@ const LevelContentDataLevel2: LevelContentType = {
     line1: "Content of NLP Master Practitioner",
     line2: ""
   },
+
+  button: {
+    text: "Learn More",
+    href: '/course-outline/nlp-master-practitioner/'
+  },
+
   points: [
     {
       title: "Neuro-Linguistic Programming (NLP)",
@@ -773,6 +795,11 @@ const LevelBenefitsTableDataLevel3: LevelBenefitsTableType = {
   title: {
     line1: "Benefits of",
     line2: "Advanced Hypnotherapy & Interventionist Training",
+  },
+
+  button: {
+    text: "Learn More",
+    href: '/program-detail/benefits-of-advanced-hypnotherapy-interventionist-training/'
   },
 
   // 👇 dynamic headers
@@ -998,6 +1025,12 @@ const LevelContentDataLevel3: LevelContentType = {
     line1: "Content of Advanced Hypnotherapy and Interventionist Training",
     line2: ""
   },
+
+  button: {
+    text: "Learn More",
+    href: '/course-outline/advanced-hypnotherapy-interventionis/'
+  },
+
   points: [
     {
       title: "Core Hypnosis Foundations",

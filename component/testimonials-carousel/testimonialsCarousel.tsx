@@ -29,10 +29,10 @@ const TestimonialsCarousel = ({ slides, options, onEditSlide }: PropType) => {
                     className="col-span-12 lg:col-span-5 relative cursor-pointer overflow-hidden rounded-md"
                   >
                     <VideoPlayer
-                      className="relative rounded-md bg-primary overflow-hidden h-72 lg:h-96 w-full"
+                      className="relative bg-primary overflow-hidden h-72 lg:h-96 w-full"
                       videoUrl={slide?.videoUrl}
                       thumbnail={slide?.thumbnail}
-                      videoClass="w-full h-full object-cover rounded-lg"
+                      videoClass="w-full h-full object-contain rounded-lg"
                       hoverPlay={true}
                     />
                     {/* Overlay */}

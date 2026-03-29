@@ -24,10 +24,16 @@ export default function LevelContent({ data }: Props) {
               {data?.title?.line1}
             </span>
           </h3>
-          <div className="my-2">
-            <Button 
-iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
-          </div>
+          {data?.button && (<div className="my-2">
+            <Button
+              iconRight
+              variant="primary"
+              size="medium"
+              text={data?.button?.text}
+              href={data?.button?.href}
+              className="my-auto"
+            />
+          </div>)}
         </div>
 
         <div className="grid grid-col-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12">
