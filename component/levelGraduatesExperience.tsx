@@ -42,7 +42,7 @@ iconRight={true} variant="secondary" size="medium" text="Learn More" href="#" cl
             Your browser does not support the video tag.
           </video> */}
           <VideoPlayer
-            className="aspect-video relative rounded-xl overflow-hidden h-[70dvh] w-full bg-black"
+            className="aspect-video relative rounded-xl overflow-hidden lg:h-[70dvh] w-full bg-black"
             videoUrl={data?.video}
             thumbnail={data?.thumbnail} 
             videoClass="w-full h-full object-contain rounded-lg"

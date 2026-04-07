@@ -114,11 +114,11 @@ const GalleryCarousel = ({ slides, options }: Props) => {
                                     />
                                 </div>
                             )}
-                            {slide.title && (
+                            {/* {slide.title && (
                                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white text-center p-3 text-sm md:text-base">
                                     {slide.title}
                                 </div>
-                            )}
+                            )} */}
                         </div>
                     ))}
                 </div>

@@ -783,6 +783,12 @@ const LevelCertificationDataLevel3: LevelCertificationType = {
       }
     },
     {
+      title: "Quintuple Certification Holder Certificate",
+      description: "As a testament to your dedication and mastery, you will receive a prestigious certificate from AL&CO, recognizing you as a Quintuple Certification Holder. This exclusive honor signifies your expertise in NLP, Time Line Therapy®, NLP Coaching, and Hypnosis, accredited by globally renowned bodies. It’s not just a certificate; it’s a symbol of your commitment to excellence and your place among the elite in personal transformation.",
+      imageBrand: {
+        src: AccreditedBrand5,
+        alt: "AL&CO Logo"
+      },
       imageCerficate: {
         src: Certificate5Level3,
         alt: "Final Certificate"

@@ -75,6 +75,7 @@ a prestigious portfolio
 of certifications, each
 reflecting his commitment to
 mastery and impact:`,
+line2Class: "text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mt-2",             
   },
 
   headers: [

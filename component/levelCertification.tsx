@@ -66,7 +66,7 @@ export default function LevelCertification({ data }: Props) {
 
               {/* LEFT CONTENT */}
               {point?.title && (
-                <div className="flex items-center col-span-12 lg:col-span-7 xl:col-span-8 2xl:col-span-9 bg-white px-4 py-6 gap-4 rounded-md border shadow-2xl">
+                <div className="flex items-center col-span-12 lg:col-span-7 xl:col-span-8 2xl:col-span-8 bg-white px-4 py-6 gap-4 rounded-md border shadow-2xl">
 
                   {/* Desktop Brand Image */}
                   <div className="hidden xl:block">
@@ -113,7 +113,7 @@ export default function LevelCertification({ data }: Props) {
               {/* RIGHT CERTIFICATE IMAGE */}
               <div
                 className={`${point?.title
-                  ? "col-span-12 lg:col-span-5 xl:col-span-4 2xl:col-span-3 justify-center"
+                  ? "col-span-12 lg:col-span-5 xl:col-span-4 2xl:col-span-4 justify-center"
                   : "col-span-12 justify-end"
                   } flex items-center`}
               >
@@ -128,7 +128,7 @@ export default function LevelCertification({ data }: Props) {
                     alt={point?.imageCerficate?.alt || "Certificate"}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-contain bg-white"
+                    className="object-center rounded-md "
                   />
                 </div>
               </div>

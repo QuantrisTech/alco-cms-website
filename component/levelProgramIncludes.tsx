@@ -26,10 +26,10 @@ export default function LevelProgramIncludes({ data }: Props) {
               {data?.title?.line1}
             </span>
           </h3>
-          <div className="my-2">
+          {/* <div className="my-2">
             <Button
               iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
-          </div>
+          </div> */}
         </div>
 
         <div className={data?.pointsClass ? data?.pointsClass : "grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12"}>

@@ -5,7 +5,7 @@ import Level1 from "@/assets/our-program/level1_image_1.webp";
 import useEmblaCarousel from 'embla-carousel-react'
 import { OurProgramSlideType } from '@/type/ourProgram'
 import Button from '../button'
-import "@/component/our-program-carousel/ourProgramCarousel.css"
+import "./ourProgramCarousel.css"
 import Image from 'next/image';
 
 
@@ -34,7 +34,7 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
               key={index}
             >
               <div className="our_program_embla__slide__box bg-gradient-secondary-primary grid grid-cols-12  gap-2 rounded-lg">
-                <div className="flex flex-col justify-start col-span-12 xl:col-span-8 2xl:col-span-9">
+                <div className="flex flex-col justify-start col-span-12 ">
                   <h6 className='text-md md:text-lg lg:text-xl text-white'>Level {index + 1}</h6>
                   <h5 className="h5 text-white text-start">
                     {slide.title}
@@ -43,26 +43,39 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                     {slide.description}
                   </p>
                 </div>
-                <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
+                {/* <div className="flex xl:flex-col xl:justify-center col-span-12 xl:col-span-4 2xl:col-span-3">
                   <Button
                     iconRight={true}
                     variant="primary"
                     size="small"
                     text="Find out more"
                     href={slide.href}
-                    className='px-2' />
-                </div>
+                    className='' />
+                </div> */}
                 <div className="flex flex-col justify-center col-span-12 mt-4">
-                  {slide.image && (<div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl">
+                  {slide.image && (<div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl group">
+                    {/* button jo compent m h usa image k overlay py show kro jb user card hover kra */}
                     <Image
-                      src={slide.image?.src } // use StaticImageData directly
-                      alt={slide.image?.alt }
+                      src={slide.image?.src} // use StaticImageData directly
+                      alt={slide.image?.alt}
                       fill
-                      className="object-conatin rounded-xl"
-                      // style={{ objectFit: "cover" }} // optional, for safety
+                      className="object-contain rounded-xl bg-primary"
+                    // style={{ objectFit: "cover" }} // optional, for safety
                     />
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-xl">
+                      <Button
+                        iconRight={true}
+                    variant="white"
+                    size="small"
+                    text="Find out more"
+                    href={slide.href}
+                    className='px-4 py-2'
+                      />
+                    </div>
                   </div>
-                )}
+                  )}
                   {/* <img
                     src={slide.image?.src ?? Level1.src}
                     alt={slide.image?.alt ?? "Arslan Larik"}

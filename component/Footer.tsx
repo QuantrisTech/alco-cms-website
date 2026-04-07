@@ -124,7 +124,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="footer-menu-font text-white sm:text-center">
-            © 2025 Vistar Media. All Rights Reserved.
+            © 2026 Vistar Media. All Rights Reserved.
           </span>
 
           <div className="flex mt-4 sm:mt-0 sm:justify-center gap-3">

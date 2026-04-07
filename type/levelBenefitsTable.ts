@@ -19,6 +19,7 @@ export type LevelBenefitsTableType = {
   title: {
     line1: string;
     line2: string;
+    line2Class?: any;
   };
   bgColor?: string
   headers: string[];   // 👈 NEW
