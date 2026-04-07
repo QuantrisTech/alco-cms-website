@@ -602,7 +602,7 @@ const ContentSectionData2WTALCO: ContentSectionType = {
   underline: true,
   button: {
     text: "Contact",
-    link: "#"
+    link: "/contact"
   }
 }
 
