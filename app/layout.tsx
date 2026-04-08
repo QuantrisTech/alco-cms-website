@@ -11,6 +11,11 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: "ALCO CMS Website",
   description: "SEO Friendly CMS Website built with Next.js",
+  icons: {
+  icon: [
+    { url: "/mini-logo.svg", type: "image/svg+xml" },
+  ],
+},
   // // Canonical
   //   alternates: { canonical: 'https://ai-pro-resume-next.vercel.app/' },
   //   // OG Metas

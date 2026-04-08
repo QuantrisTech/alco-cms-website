@@ -47,7 +47,7 @@ const ContentSection = ({ data }: Props) => {
                                     className={`w-full ${content.height ? content.height : "h-28"} rounded-lg`}
                                 />)} */}
                                 {content.src && (
-                                    <div className={`relative w-full ${content.height ? content.height : "h-28"}`}>
+                                    <div className={`relative w-full ${content.height ? content.height : "h-36"}`}>
                                         <Image
                                             key={index}
                                             src={content.src}

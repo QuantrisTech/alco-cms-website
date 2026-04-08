@@ -1211,24 +1211,28 @@ const ContentSectionImgContentListData4: ContentSectionType = {
       description: "Elevate your credentials and gain the tools to lead dynamic, engaging training sessions.",
       src: ContentSectionEnroll1.src,
       alt: "Professional Trainers",
+      position: "object-contain",
     },
     {
       title: "Aspiring",
       description: "Build the foundation for a successful career in NLP training.",
       src: ContentSectionEnroll2.src,
       alt: "Trainers",
+      position: "object-contain",
     },
     {
       title: "Corporate",
       description: "Enhance your leadership and communication skills to inspire teams and drive results.",
       src: ContentSectionEnroll3.src,
       alt: "Leaders",
+      position: "object-contain",
     },
     {
       title: "Personal Growth Enthusiasts",
       description: "Experience unparalleled personal transformation while gaining professional expertise.",
       src: ContentSectionEnroll4.src,
       alt: "Personal Growth Enthusiasts",
+      position: "object-contain",
     },
   ],
   fullBg: "bg-slate-100 ",
@@ -1515,24 +1519,28 @@ const ContentSectionImgContentListData5: ContentSectionType = {
       description: "Ready to take their skills to the next level by teaching others.",
       src: ContentSectionEnroll1.src,
       alt: "Hypnosis Practitioners",
+      position: "object-contain",
     },
     {
       title: "Coaches & Therapists",
       description: "Wanting to expand their toolkit with powerful hypnosis techniques.",
       src: ContentSectionEnroll5.src,
       alt: "Coaches & Therapists",
+      position: "object-contain",
     },
     {
       title: "Corporate Trainers",
       description: "Seeking to incorporate hypnosis into corporate wellness programs.",
       src: ContentSectionEnroll3.src,
       alt: "Corporate Trainers",
+      position: "object-contain",
     },
     {
       title: "Aspiring Hypnosis Trainerss",
       description: "Looking to gain recognition and start a fulfilling career in hypnosis training.",
       src: ContentSectionEnroll2.src,
       alt: "Aspiring Hypnosis Trainers",
+      position: "object-contain",
     },
   ],
   fullBg: "bg-slate-100 ",
@@ -1820,30 +1828,34 @@ const LevelBenefitsTableDataLevel6: LevelBenefitsTableType = {
 
 const ContentSectionImgContentListData6: ContentSectionType = {
   title: "WHO SHOULD ENROLL?",
-  contentlist: [
+  contentlist: [ 
     {
       title: "NLP Trainers",
       description: "Ready to take the next step and train other trainers.",
       src: ContentSectionEnroll6.src,
       alt: "NLP Trainers",
+      position: "object-contain"
     },
     {
       title: "Business Owners",
       description: "Seeking to grow a successful and scalable NLP coaching and training business.",
       src: ContentSectionEnroll7.src,
       alt: "Business Owners",
+      position: "object-contain"
     },
     {
       title: "Global Leaders",
       description: "Committed to creating a lasting impact in the NLP community.",
       src: ContentSectionEnroll8.src,
       alt: "Global Leaders",
+      position: "object-contain"
     },
     {
       title: "Visionaries",
       description: "Driven by the mission to transform lives and leave a legacy.",
       src: ContentSectionEnroll9.src,
       alt: "Visionaries",
+      position: "object-contain"
     },
   ],
   fullBg: "bg-slate-100 ",
