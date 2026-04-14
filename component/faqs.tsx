@@ -17,7 +17,7 @@ export default function OurFaqs({ data }: Props) {
 
   return (
     data && data?.length > 0 && (
-        <section className="w-full bg-white py-4 px-4 sm:px-20 rounded-tr-[150px] my-10">
+        <section className="w-full bg-white py-4 px-4 sm:px-20  my-10 rounded-md">
 
           <div className="flex justify-center items-center">
             <h3 className="h4 text-primary font-bold font-outfit">

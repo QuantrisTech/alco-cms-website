@@ -52,14 +52,14 @@ const OurProgramCarousel = ({ slides, options }: PropType) => {
                     href={slide.href}
                     className='' />
                 </div> */}
-                <div className="flex flex-col justify-center col-span-12 mt-4">
-                  {slide.image && (<div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] rounded-xl group">
+                <div className="flex flex-col justify-center col-span-12 mt-2">
+                  {slide.image && (<div className="relative w-full aspect-video rounded-xl overflow-hidden group">
                     {/* button jo compent m h usa image k overlay py show kro jb user card hover kra */}
                     <Image
                       src={slide.image?.src} // use StaticImageData directly
                       alt={slide.image?.alt}
                       fill
-                      className="object-contain rounded-xl bg-primary"
+                      className="object-cover rounded-xl bg-primary w-full"
                     // style={{ objectFit: "cover" }} // optional, for safety
                     />
 

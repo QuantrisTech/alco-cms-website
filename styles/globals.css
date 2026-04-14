@@ -357,6 +357,10 @@
       /* largest for xl screens */
     }
   }
+
+  .custom-text2 {
+  @apply font-outfit text-[14px] leading-[26px] md:text-[16px] md:leading-[28px];
+}
 }
 
 html {

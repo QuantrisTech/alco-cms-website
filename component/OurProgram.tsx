@@ -3,12 +3,18 @@
 import React from "react";
 import Button from "./button";
 // import Level1 from "@/assets/our-program/level1_image_old.webp";
-import Level1 from "@/assets/our-program/level1_image_1.webp";
-import Level2 from "@/assets/our-program/level1_image_2.webp";
-import Level3 from "@/assets/our-program/level1_image_3.webp";
-import Level4 from "@/assets/our-program/level1_image_4.webp";
-import Level5 from "@/assets/our-program/level1_image_5.webp";
-import Level6 from "@/assets/our-program/level1_image_6.webp";
+// import Level1 from "@/assets/thumbnail/intro/intro_level1.webp";
+// import Level2 from "@/assets/thumbnail/intro/intro_level2.webp";
+// import Level3 from "@/assets/thumbnail/intro/intro_level3.webp";
+// import Level4 from "@/assets/thumbnail/intro/intro_level4.webp";
+// import Level5 from "@/assets/thumbnail/intro/intro_level5.webp";
+// import Level6 from "@/assets/thumbnail/intro/intro_level6.webp";
+import Level1 from "@/assets/Untitled design/1.webp";
+import Level2 from "@/assets/Untitled design/2.webp";
+import Level3 from "@/assets/Untitled design/3.webp";
+import Level4 from "@/assets/Untitled design/4.webp";
+import Level5 from "@/assets/Untitled design/5.webp";
+import Level6 from "@/assets/Untitled design/6.webp";
 import { OurProgramData } from "@/type/ourProgram";
 import OurProgramCarousel from "./our-program-carousel/ourProgramCarousel";
 
@@ -107,7 +113,7 @@ export default function OurProgram() {
             </h3>
           </div>
           <div className="flex flex-col justify-center col-span-7 pt-1">
-            <p className="custom-text1 font-light text-white text-start mb-8">
+            <p className="custom-text2 font-light text-white text-start mb-8">
               {data.description}
             </p>
           </div>

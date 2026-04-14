@@ -1,21 +1,28 @@
 "use client";
-
-
-import { useState } from "react";
-// import TestimonialsCarousel from "./testimonials-carousel/testimonialsCarousel";
-const TestimonialsCarousel = dynamic(() => import('@/component/testimonials-carousel/testimonialsCarousel'), {
-    ssr: false,
-});
+import React from "react";
+import ContactInfo from "@/component/contactInfo";
+import OurFaqs from "@/component/faqs";
+import programLevel1 from "@/assets/background/program-level-1.webp";
+import Banner from "@/component/banner";
+import ContactUS from "@/component/contact";
+import TestimonialsCarousel from "@/component/testimonials-carousel/testimonialsCarousel";
 import { TestimonialsPost } from "@/type/testimonialsTypes";
-import StudentReviewCarousel from "./student-review-carousel/studentReviewCarousel";
 import Thumbnail1 from "@/assets/testimonial/thumbnail_1.webp"
 import Thumbnail2 from "@/assets/testimonial/thumbnail_2.webp"
 import Thumbnail3 from "@/assets/testimonial/thumbnail_3.webp"
 import Thumbnail4 from "@/assets/testimonial/thumbnail_4.webp"
 import Thumbnail5 from "@/assets/testimonial/thumbnail_5.webp"
 import Thumbnail6 from "@/assets/testimonial/thumbnail_6.webp"
-import dynamic from "next/dynamic";
-// Example testimonial data
+import StudentReviewCarousel from "@/component/student-review-carousel/studentReviewCarousel";
+
+const bannerData = {
+    title: {
+        line1: "Testimonial",
+        align: "text-center mx-auto"
+    },
+    image: programLevel1.src
+};
+
 const testimonialsData: TestimonialsPost[] = [
     {
         _id: "1",
@@ -157,73 +164,148 @@ const studentReviews: TestimonialsPost[] = [
     },
 ]
 
-export default function Testimonials() {
-    const [activeTab, setActiveTab] = useState<"testimonials" | "dummy">("testimonials");
+const FaqsData = [
+    {
+        question: "What do past students say about this NLP training?",
+        answer: (
+            <>
+                <p>
+                    Our students consistently report deep emotional, behavioral, and professional transformation after completing the NLP program.
+                </p>
+                <p>
+                    Many describe it as life-changing, helping them overcome anxiety, improve relationships, and gain clarity in their personal and professional lives.
+                </p>
+            </>
+        ),
+    },
+    {
+        question: "Can NLP really create real-life transformation like shown in testimonials?",
+        answer: (
+            <>
+                <p>
+                    Yes. Testimonials highlight real transformations such as reduced anxiety, improved confidence, better relationships, and even career growth.
+                </p>
+                <p>
+                    The tools taught in NLP are practical and designed for real-world application, not just theory.
+                </p>
+            </>
+        ),
+    },
+    {
+        question: "Who benefits the most from this training according to students?",
+        answer: (
+            <>
+                <p>
+                    Based on feedback, the training benefits a wide range of people:
+                </p>
+                <ul className="list-none">
+                    <li>Coaches & Trainers improving client results</li>
+                    <li>Professionals improving communication and leadership</li>
+                    <li>Individuals overcoming fear, anxiety, and limiting beliefs</li>
+                </ul>
+            </>
+        ),
+    },
+    {
+        question: "Do students feel the training is practical or only theoretical?",
+        answer: (
+            <>
+                <p>
+                    According to testimonials, the training is highly practical and interactive.
+                </p>
+                <p>
+                    Students appreciate that techniques can be applied immediately in daily life, relationships, and work situations.
+                </p>
+            </>
+        ),
+    },
+    {
+        question: "What is the biggest transformation students mention?",
+        answer: (
+            <>
+                <p>
+                    The most common transformation mentioned is mindset shift — from limitation to clarity, confidence, and emotional control.
+                </p>
+                <p>
+                    Many students also report improved self-awareness and stronger decision-making abilities.
+                </p>
+            </>
+        ),
+    },
+];
+
+export default function Faqs() {
     return (
-        <section id="testimonials" className="py-6 md:py-8 lg:py-12 xl:py-16  px-4 bg-light-neutral bg-cover bg-top-left w-full">
-            <div className="container mx-auto ">
+        <>
+            <Banner data={bannerData} />
 
-                {/* <section className="max-w-screen-xl mx-auto px-4 py-6 md:py-8 lg:py-12 xl:py-16 w-full"> */}
-                {/* Tabs navigation */}
-                <div
-                    className="flex mb-8 justify-center"
-                    role="tablist"
-                    aria-label="Testimonials Tabs"
-                >
-                    <button
-                        onClick={() => setActiveTab("testimonials")}
-                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "testimonials"
-                                ? "border-primary text-primary"
-                                : "border-transparent text-gray-600 hover:text-primary"
-                            }`}
-                        role="tab"
-                        aria-selected={activeTab === "testimonials"}
-                        aria-controls="tabpanel-testimonials"
-                        id="tab-testimonials"
-                    >
-                        Testimonials
-                    </button>
+            <div className="max-w-6xl mx-auto px-4">
 
-                    <button
-                        onClick={() => setActiveTab("dummy")}
-                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "dummy"
-                                ? "border-primary text-primary"
-                                : "border-transparent text-gray-600 hover:text-primary"
-                            }`}
-                        role="tab"
-                        aria-selected={activeTab === "dummy"}
-                        aria-controls="tabpanel-students"
-                        id="tab-students"
-                    >
-                        What Our Students Say
-                    </button>
-                </div>
-                <div role="tabpanel" aria-labelledby={activeTab} className="max-w-6xl mx-auto ">
-                    {activeTab === "testimonials" &&
-                        <TestimonialsCarousel
-                            slides={testimonialsData}
-                            options={{
-                                loop: true,
-                                align: "start",
-                                skipSnaps: false,
-                            }}
-                            onEditSlide={(slide) => alert(`Edit ${slide.name}`)}
-                        />
-                    }
-                    {activeTab === "dummy" &&
-                        <StudentReviewCarousel
-                            slides={studentReviews}
-                            options={{
-                                // loop: true,
-                                align: "start",
-                                skipSnaps: false,
-                            }}
-                        />}
+                {/* ───────── Testimonials Section ───────── */}
+                <section className="py-16">
+                    <div className="text-center ">
+                        <h2 className="h4 font-semibold text-primary">
+                            What Our Clients Say
+                        </h2>
+                        <p className="custom-text1 text-gray-800 mt-3 max-w-2xl mx-auto border-b pb-6">
+                            Real transformations shared by our clients after completing NLP training.
+                            These stories reflect emotional, professional, and personal growth.
+                        </p>
+                    </div>
 
-                </div>
+                    <TestimonialsCarousel
+                        slides={testimonialsData}
+                        // padding=""
+                        options={{
+                            align: "start",
+                            skipSnaps: false,
+                        }}
+                    />
+                </section>
 
+                {/* ───────── Student Reviews Section ───────── */}
+                <section className="py-8 ">
+                    <div className="text-center ">
+                        <h2 className="h4 font-semibold text-primary">
+                            Student Experiences
+                        </h2>
+                        <p className="custom-text1 text-gray-800 mt-3 max-w-2xl mx-auto border-b pb-6">
+                            Hear directly from our NLP students who completed Practitioner
+                            and Master Practitioner programs and transformed their lives.
+                        </p>
+                    </div>
+
+                    <StudentReviewCarousel
+                        slides={studentReviews}
+                        options={{
+                            align: "start",
+                            skipSnaps: false,
+                        }}
+                    />
+                </section>
 
             </div>
-        </section>
+
+            {/* ───────── FAQ Section ───────── */}
+            <section className="bg-dark-primary bg-cover bg-top-left py-8">
+                <div className="max-w-5xl mx-auto px-4">
+                    {/* <div className="text-center mb-10">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                            Frequently Asked Questions
+                        </h2>
+                        <p className="text-gray-500 mt-3">
+                            Everything you need to know about NLP training, results, and student experience.
+                        </p>
+                    </div> */}
+
+                    <OurFaqs data={FaqsData} />
+                </div>
+            </section>
+
+            {/* ───────── Contact Section ───────── */}
+            <section className="">
+                <ContactInfo />
+            </section>
+        </>
     );
 }
