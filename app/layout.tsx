@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ConditionalLayout from "./conditional-layout/conditionalLayout";
 import { Lexend } from "next/font/google";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -9,37 +9,36 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "ALCO CMS Website",
-  description: "SEO Friendly CMS Website built with Next.js",
+  title: "ALCO CMS Website | NLP & Hypnotherapy Training",
+  description:
+    "SEO Friendly CMS Website built with Next.js. Learn NLP & Hypnotherapy with AL&CO certified trainers.",
+
+  // ✅ Favicon
   icons: {
-  icon: [
-    { url: "/mini-logo.svg", type: "image/svg+xml" },
-  ],
-},
-  // // Canonical
-  //   alternates: { canonical: 'https://ai-pro-resume-next.vercel.app/' },
-  //   // OG Metas
-  //   openGraph: {
-  //     title: "",
-  //     description: "",
-  //     url: 'https://ai-pro-resume-next.vercel.app/',
-  //     siteName: 'Ai Pro Resume',
-  //     locale: 'en_US',
-  //     type: 'website',
-  //   },
-  //   //===== No-Index =====
-  //   robots: {
-  //     index: false,
-  //     follow: false,
-  //     googleBot: {
-  //       index: false,
-  //       follow: false,
-  //       noimageindex: false,
-  //       'max-snippet': -1,
-  //       'max-video-preview': -1,
-  //       'max-image-preview': 'large',
-  //     },
-  //   }
+    icon: [{ url: "/mini-logo.svg", type: "image/svg+xml" }],
+  },
+
+  // ✅ Canonical
+  alternates: {
+    canonical: "https://arslanlarik.com",
+  },
+
+  // ✅ Open Graph (Facebook, WhatsApp, LinkedIn)
+  openGraph: {
+    title: "ALCO CMS Website | NLP Training",
+    description:
+      "Learn NLP & Hypnotherapy with certified trainers at AL&CO.",
+    url: "https://arslanlarik.com",
+    siteName: "ALCO",
+    locale: "en_US",
+    type: "website",
+  },
+
+  // ✅ Robots (HOME PAGE MUST BE INDEXED)
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

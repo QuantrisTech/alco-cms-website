@@ -314,11 +314,12 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
           </p>
         </div>
       ),
-      theme: "light",
+      theme: "yellow",
       image: {
-        src: LevelProgram2,
-        alt: "Negative Emotions",
+        src: LevelProgram3,
+        alt: "Limiting Beliefs",
       },
+
     },
     {
       title: "Limiting Beliefs: The Invisible Barrier",
@@ -329,7 +330,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
           </p>
 
           <p>
-            Limiting beliefs are statements like, <strong>“I am not good enough”</strong> …. <strong>“I am not capable enough”</strong> … <strong>“I don’t have enough knowledge”</strong> … <strong>“Life is too hard”</strong> …. <strong>“All men are disloyal”</strong> …. <strong>“I am too young to work”</strong> … <strong>“I can’t make money”</strong> …. <strong>“I am too old to start over again,”</strong> … <strong>“I can never be loved,”</strong> etc. All these statements indicate a belief system that is so deeply rooted that it puts a person in the pitfall of self-doubt.
+            Limiting beliefs are statements like, <strong>“I am not good enough”</strong>, <strong>“I am not capable enough”</strong>, <strong>“I don’t have enough knowledge”</strong>, <strong>“Life is too hard”</strong>, <strong>“All men are disloyal”</strong>, <strong>“I am too young to work”</strong>, <strong>“I can’t make money”</strong>, <strong>“I am too old to start over again,”</strong>, <strong>“I can never be loved,”</strong> etc. All these statements indicate a belief system that is so deeply rooted that it puts a person in the pitfall of self-doubt.
           </p>
 
           <p>
@@ -341,10 +342,10 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
           </p>
         </div>
       ),
-      theme: "yellow",
+      theme: "light",
       image: {
-        src: LevelProgram3,
-        alt: "Limiting Beliefs",
+        src: LevelProgram2,
+        alt: "Negative Emotions",
       },
     },
     {
@@ -379,14 +380,14 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
     },
   ],
   pointsClass: "grid grid-col-1 lg:grid-cols-2 gap-4 lg:gap-8 py-2 md:py-4 lg:py-8 xl:py-12",
-  textAlign:"text-start",
+  textAlign: "text-start",
   detailContent: (
     <div className="text-primary">
       <p className="my-4">
         These are the four clouds that have been developing since our birth, and if not attended to or corrected, they will create huge storms in our lives—storms that will leave us emotionally drained, frustrated, depressed, confused, powerless, and disempowered.
       </p>
       <p className="mb-4">
-        In our NLP training, we work deeply with you and your four clouds to emerge from the other side into paradise. NLP is all about reprogramming our minds so that they start perceiving things differently and more positively, which ultimately results in an empowering mindset and behaviors. 
+        In our NLP training, we work deeply with you and your four clouds to emerge from the other side into paradise. NLP is all about reprogramming our minds so that they start perceiving things differently and more positively, which ultimately results in an empowering mindset and behaviors.
       </p>
       <ul className="list-disc pl-5 space-y-1">
         <li>

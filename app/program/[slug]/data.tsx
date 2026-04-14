@@ -191,6 +191,108 @@ const LevelBenefitsTableDataLevel1: LevelBenefitsTableType = {
   ],
 };
 
+// const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
+//   title: {
+//     line1: "This Program Includes",
+//     line2: "NLP Practitioner Training"
+//   },
+//   points: [
+//     {
+//       title: "10 Days of Immersive, Online Learning",
+//       description: (
+//         <p>
+//           Step into a life-changing journey with our dynamic, 10-day live NLP Practitioner (Triple Certification) Training. Experience world-class NLP concepts in an interactive, engaging environment where learning is fun, practical, and immediately actionable. Each session is designed to give you proven tools to create breakthroughs, whether for yourself or others. Imagine the impact of transforming your mindset and mastering techniques to reshape emotions, behaviors, and goals, all from the comfort of your home.
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram1,
+//         alt: "10 Days of Immersive, Online Learning",
+//       },
+//     },
+//     {
+//       title: "Comprehensive Home Study Manual",
+//       description: (
+//         <p>
+//           Dive deeper into the transformative world of NLP with a 450+ page home study manual meticulously designed to complement your learning journey. It covers every concept in detail, providing clarity, structure, and practical exercises you can revisit anytime.This isn’t just a manual; it’s your ongoing roadmap to success, ensuring you confidently apply what you learn, even after the training.
+//         </p>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram2,
+//         alt: "Comprehensive Home Study Manual",
+//       },
+//     },
+//     {
+//       title: "Exclusive Audio Resources",
+//       description: (
+//         <p>
+//           Access over 220 audio files recorded by Dr. Tad James, a pioneer and global leader in NLP. These expertly crafted lessons align with your manual, allowing you to absorb knowledge at your own pace.
+//           Imagine having the wisdom of a global authority at your fingertips, guiding you to master the art and science of NLP.
+//         </p>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram3,
+//         alt: "Exclusive Audio Resources",
+//       },
+//     },
+//     {
+//       title: "Triple International Certification",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Earn three prestigious certifications:
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li>Certified Practitioner of Neuro-Linguistic Programming (ABNLP-USA) to master NLP techniques for leadership, communication, and personal transformation. </li>
+//             <li> Certified Practitioner of NLP Coaching (ABNLP-USA) to launch your career as a transformational coach. </li>
+//             <li> Certified Practitioner of Time Line Therapy Techniques (TLTA-USA) for eliminating negative emotions and limiting beliefs at an unconscious level.</li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram4,
+//         alt: "Triple Certification",
+//       },
+//     },
+//     {
+//       title: "Five Years Access to Training",
+//       description: (
+//         <p>
+//           True mastery comes with practice, and we ensure you never stop growing with a 5-year opportunity to revise and revisit our NLP Practitioner Training Program. This means you’re not just investing in 10 days—you’re investing in a lifetime of continuous learning and transformation.
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram5,
+//         alt: "Five Years Access",
+//       },
+//     },
+//     {
+//       title: "A Global Support Network",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Join a vibrant, global community of AL&CO graduates—a space where learning thrives beyond the training room. You’ll:
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li>Practice interventions with peers to sharpen your skills.</li>
+//             <li> Gain access to expert mentorship and guidance whenever you need it.</li>
+//             <li>Stay motivated and inspired through shared experiences and collaborative growth.</li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram6,
+//         alt: "Global Network",
+//       },
+//     },
+//   ],
+// };
+
 const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
   title: {
     line1: "This Program Includes",
@@ -201,7 +303,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       title: "10 Days of Immersive, Online Learning",
       description: (
         <p>
-          Step into a life-changing journey with our dynamic, 10-day live NLP Practitioner (Triple Certification) Training. Experience world-class NLP concepts in an interactive, engaging environment where learning is fun, practical, and immediately actionable. Each session is designed to give you proven tools to create breakthroughs, whether for yourself or others. Imagine the impact of transforming your mindset and mastering techniques to reshape emotions, behaviors, and goals, all from the comfort of your home.
+          Join a 10-day live NLP Practitioner (Triple Certification) journey designed to transform your thinking, emotions, and actions. This immersive training simplifies NLP concepts into practical tools with interactive sessions. Learn from anywhere while gaining clarity, confidence, and skills you can apply immediately in personal and professional life.
         </p>
       ),
       theme: "dark",
@@ -214,7 +316,11 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       title: "Comprehensive Home Study Manual",
       description: (
         <p>
-          Dive deeper into the transformative world of NLP with a 450+ page home study manual meticulously designed to complement your learning journey. It covers every concept in detail, providing clarity, structure, and practical exercises you can revisit anytime.This isn’t just a manual; it’s your ongoing roadmap to success, ensuring you confidently apply what you learn, even after the training.
+          Dive deeper into the transformative world of NLP with a 450+ page home study manual
+          designed to support your complete learning journey. It covers every concept in detail, offering
+          clarity, structure, and practical exercises you can revisit anytime. More than just a manual, it acts
+          as your personal roadmap to success, helping you reinforce your understanding and confidently
+          apply what you learn long after the training ends.
         </p>
       ),
       theme: "light",
@@ -227,8 +333,10 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       title: "Exclusive Audio Resources",
       description: (
         <p>
-          Access over 220 audio files recorded by Dr. Tad James, a pioneer and global leader in NLP. These expertly crafted lessons align with your manual, allowing you to absorb knowledge at your own pace.
-          Imagine having the wisdom of a global authority at your fingertips, guiding you to master the art and science of NLP.
+          Access over 220 powerful audio files recorded by Dr. Tad James, a globally recognized leader in
+          NLP. These expertly designed lessons align with your manual, allowing you to learn anytime,
+          anywhere at your own pace. Absorb key concepts, deepen your understanding, and reinforce
+          your skills with ease, giving you continuous guidance as you master the art and science of NLP.
         </p>
       ),
       theme: "yellow",
@@ -242,12 +350,12 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       description: (
         <>
           <p className="mb-2">
-            Earn three prestigious certifications:
+            Earn three globally recognized certifications that elevate your credibility and expand your professional opportunities in NLP and coaching. You will receive:
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Certified Practitioner of Neuro-Linguistic Programming (ABNLP-USA) to master NLP techniques for leadership, communication, and personal transformation. </li>
-            <li> Certified Practitioner of NLP Coaching (ABNLP-USA) to launch your career as a transformational coach. </li>
-            <li> Certified Practitioner of Time Line Therapy Techniques (TLTA-USA) for eliminating negative emotions and limiting beliefs at an unconscious level.</li>
+            <li>Certified Practitioner of Neuro-Linguistic Programming (ABNLP-USA).</li>
+            <li>Certified Practitioner of NLP Coaching (ABNLP-USA).</li>
+            <li>Certified Practitioner of Time Line Therapy Techniques (TLTA-USA).</li>
           </ul>
         </>
       ),
@@ -261,7 +369,10 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       title: "Five Years Access to Training",
       description: (
         <p>
-          True mastery comes with practice, and we ensure you never stop growing with a 5-year opportunity to revise and revisit our NLP Practitioner Training Program. This means you’re not just investing in 10 days—you’re investing in a lifetime of continuous learning and transformation.
+          True mastery requires ongoing practice, which is why you receive five years of access to revisit
+          and reinforce your learning. Continue refining your NLP skills, refresh key concepts, and stay
+          connected to your growth journey. This extended access ensures that your transformation doesn’t
+          stop after 10 days, it evolves into long-term personal and professional development.
         </p>
       ),
       theme: "dark",
@@ -292,6 +403,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
     },
   ],
 };
+
 
 const LevelContentDataLevel1: LevelContentType = {
   title: {
@@ -1828,7 +1940,7 @@ const LevelBenefitsTableDataLevel6: LevelBenefitsTableType = {
 
 const ContentSectionImgContentListData6: ContentSectionType = {
   title: "WHO SHOULD ENROLL?",
-  contentlist: [ 
+  contentlist: [
     {
       title: "NLP Trainers",
       description: "Ready to take the next step and train other trainers.",
