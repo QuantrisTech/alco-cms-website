@@ -158,67 +158,68 @@ const studentReviews: TestimonialsPost[] = [
 ]
 
 export default function Testimonials() {
-    const [activeTab, setActiveTab] = useState<"testimonials" | "dummy">("testimonials");
+    const [activeTab, setActiveTab] = useState<"testimonials" | "students">("testimonials");
     return (
         <section id="testimonials" className="py-6 md:py-8 lg:py-12 xl:py-16  px-4 bg-light-neutral bg-cover bg-top-left w-full">
             <div className="container mx-auto ">
 
                 {/* <section className="max-w-screen-xl mx-auto px-4 py-6 md:py-8 lg:py-12 xl:py-16 w-full"> */}
                 {/* Tabs navigation */}
-                <div
-                    className="flex mb-8 justify-center"
-                    role="tablist"
-                    aria-label="Testimonials Tabs"
-                >
+                <div role="tablist" aria-label="Testimonials Tabs" className="flex mb-8 justify-center">
                     <button
                         onClick={() => setActiveTab("testimonials")}
-                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "testimonials"
-                                ? "border-primary text-primary"
-                                : "border-transparent text-gray-600 hover:text-primary"
-                            }`}
                         role="tab"
-                        aria-selected={activeTab === "testimonials"}
-                        aria-controls="tabpanel-testimonials"
                         id="tab-testimonials"
+                        aria-selected={activeTab === "testimonials"}
+                        aria-controls="panel-testimonials"
+                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "testimonials"
+                            ? "border-primary text-primary"
+                            : "border-transparent text-gray-600 hover:text-primary"
+                            }`}
                     >
                         Testimonials
                     </button>
 
                     <button
-                        onClick={() => setActiveTab("dummy")}
-                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "dummy"
-                                ? "border-primary text-primary"
-                                : "border-transparent text-gray-600 hover:text-primary"
-                            }`}
+                        onClick={() => setActiveTab("students")}
                         role="tab"
-                        aria-selected={activeTab === "dummy"}
-                        aria-controls="tabpanel-students"
                         id="tab-students"
+                        aria-selected={activeTab === "students"}
+                        aria-controls="panel-students"
+                        className={`px-4 py-2 font-outfit font-semibold text-lg border-b-2 -mb-px transition-colors ${activeTab === "students"
+                            ? "border-primary text-primary"
+                            : "border-transparent text-gray-600 hover:text-primary"
+                            }`}
                     >
                         What Our Students Say
                     </button>
                 </div>
-                <div role="tabpanel" aria-labelledby={activeTab} className="max-w-6xl mx-auto ">
-                    {activeTab === "testimonials" &&
+                <div className="max-w-6xl mx-auto">
+
+                    <div
+                        role="tabpanel"
+                        id="panel-testimonials"
+                        aria-labelledby="tab-testimonials"
+                        hidden={activeTab !== "testimonials"}
+                    >
                         <TestimonialsCarousel
                             slides={testimonialsData}
-                            options={{
-                                loop: true,
-                                align: "start",
-                                skipSnaps: false,
-                            }}
+                            options={{ loop: true, align: "start", skipSnaps: false }}
                             onEditSlide={(slide) => alert(`Edit ${slide.name}`)}
                         />
-                    }
-                    {activeTab === "dummy" &&
+                    </div>
+
+                    <div
+                        role="tabpanel"
+                        id="panel-students"
+                        aria-labelledby="tab-students"
+                        hidden={activeTab !== "students"}
+                    >
                         <StudentReviewCarousel
                             slides={studentReviews}
-                            options={{
-                                // loop: true,
-                                align: "start",
-                                skipSnaps: false,
-                            }}
-                        />}
+                            options={{ align: "start", skipSnaps: false }}
+                        />
+                    </div>
 
                 </div>
 

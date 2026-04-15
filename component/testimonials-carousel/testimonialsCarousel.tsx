@@ -29,20 +29,20 @@ const TestimonialsCarousel = ({ slides, padding, options, onEditSlide }: PropTyp
     {
       ...options,
       loop: true,
-    },
-    [autoplay]
+    }
+    // [autoplay]
   );
 
   return (
 
     <section className={`  ${padding ? padding : "pt-6 md:pt-8 lg:pt-12 xl:pt-16"}`}>
       <div className="testimonials_embla">
-        <div className="testimonials_embla__viewport container mx-auto " ref={emblaRef}>
+        <div className="testimonials_embla__viewport container mx-auto" ref={emblaRef}>
           <div className="testimonials_embla__container ">
             {slides.map((slide, index) => (
               <div className="testimonials_embla__slide" key={slide?._id}>
-                <div className="testimonials_embla__slide__content mb-4 rounded-md relative">
-                  <div className=" grid grid-cols-12 gap-8 ">
+                <div className="testimonials_embla__slide__content rounded-md relative h-full">
+                  <div className=" grid grid-cols-12 lg:gap-8 h-full ">
                     <div
                       className="col-span-12 lg:col-span-5 relative cursor-pointer overflow-hidden rounded-md"
                     >
@@ -59,9 +59,11 @@ const TestimonialsCarousel = ({ slides, padding, options, onEditSlide }: PropTyp
                     </div> */}
                     </div>
 
-                    <div className="col-span-12  lg:col-span-7 flex flex-col justify-between">
-                      <p className="font-outfit text-base md:text-lg lg:text-xl text-black mb-2">{slide.description}</p>
-                      <div>
+                    <div className="col-span-12  lg:col-span-7 flex flex-col justify-between  h-full">
+                      <div className="">
+                      <p className="font-outfit text-base md:text-lg lg:text-xl text-black mb-2 mt-2 lg:mt-0">{slide.description}</p>
+                      </div>
+                      <div className="">
                         <h5 className="font-outfit font-semibold text-lg">{slide.name}</h5>
                         <p className="font-outfit text-sm text-gray-600">{slide.designation}</p>
                         <div className="flex items-center gap-1">
@@ -87,7 +89,7 @@ const TestimonialsCarousel = ({ slides, padding, options, onEditSlide }: PropTyp
             ))}
           </div>
         </div>
-        <div className="testimonials_embla__controls">
+        <div className="testimonials_embla__controls absolute right-2 bottom-0">
           <div className="testimonials_embla__buttons">
             <button
               onClick={() => emblaApi?.scrollPrev()}
