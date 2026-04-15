@@ -21,12 +21,12 @@ type Blog = {
 
 // ── Helpers ──
 const categoryColor: Record<string, { bg: string; text: string; dot: string }> = {
-  nlp:           { bg: "bg-sky-50",     text: "text-sky-600",     dot: "bg-sky-400"     },
-  icf:           { bg: "bg-emerald-50", text: "text-emerald-600", dot: "bg-emerald-400" },
-  hypnotherapy:  { bg: "bg-violet-50",  text: "text-violet-600",  dot: "bg-violet-400"  },
-  coaching:      { bg: "bg-amber-50",   text: "text-amber-600",   dot: "bg-amber-400"   },
-  mindset:       { bg: "bg-rose-50",    text: "text-rose-600",    dot: "bg-rose-400"    },
-  general:       { bg: "bg-gray-50",    text: "text-gray-600",    dot: "bg-gray-400"    },
+  nlp: { bg: "bg-sky-50", text: "text-sky-600", dot: "bg-sky-400" },
+  icf: { bg: "bg-emerald-50", text: "text-emerald-600", dot: "bg-emerald-400" },
+  hypnotherapy: { bg: "bg-violet-50", text: "text-violet-600", dot: "bg-violet-400" },
+  coaching: { bg: "bg-amber-50", text: "text-amber-600", dot: "bg-amber-400" },
+  mindset: { bg: "bg-rose-50", text: "text-rose-600", dot: "bg-rose-400" },
+  general: { bg: "bg-gray-50", text: "text-gray-600", dot: "bg-gray-400" },
 };
 
 const getCategoryStyle = (cat: string) =>
@@ -238,7 +238,7 @@ export default function BlogsPage() {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-5 leading-tight">
-            NLP Wisdom for Real  <br/><span className="text-amber-400">Life Impact</span>
+            NLP Wisdom for Real  <br /><span className="text-amber-400">Life Impact</span>
           </h1>
           <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Deep dives into NLP, coaching, mindset transformation, and human potential.
@@ -273,11 +273,10 @@ export default function BlogsPage() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all capitalize ${
-                  activeCategory === cat
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all capitalize ${activeCategory === cat
                     ? "bg-primary text-white border border-primary"
                     : "bg-white text-primary border border-primary hover:border-primary hover:text-primary"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -351,11 +350,10 @@ export default function BlogsPage() {
                       <button
                         key={item}
                         onClick={() => setPage(item as number)}
-                        className={`w-10 h-10 rounded-xl text-sm font-bold transition ${
-                          page === item
+                        className={`w-10 h-10 rounded-xl text-sm font-bold transition ${page === item
                             ? "bg-primary-dark text-white shadow-md"
                             : "bg-white border border-primary-dark text-primary-dark hover:bg-primary-dark"
-                        }`}
+                          }`}
                       >
                         {item}
                       </button>
@@ -663,7 +661,7 @@ export default function BlogsPage() {
 
 // export default function Blogs() {
 //   return (
-//     <div className="min-h-[70dvh] flex flex-col items-center justify-center text-center px-4 
+//     <div className="min-h-[70dvh] flex flex-col items-center justify-center text-center px-4
 //     bg-gradient-to-br from-[#e7e7fc] via-[#fdfcf2] to-[#e0f2fe]">
 
 //       {/* Small top label (optional like image) */}

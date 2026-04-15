@@ -26,28 +26,27 @@ const aboutSEO: Record<string, SEOData> = {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const seo = aboutSEO[params.slug];
 
-  const title = seo?.title || "About Us | AL&CO";
-  const description =
-    seo?.description || "Learn more about AL&CO and our mission.";
+  const { slug } = await params;
+
+  const seo = aboutSEO[slug];
 
   return {
-    title,
-    description,
+    title: seo?.title ||"About Us | AL&CO",
+    description: seo?.description || "Learn more about AL&CO and our mission.",
 
     // ✅ Canonical URL (important for SEO)
     alternates: {
-      canonical: `https://arslanlarik.com/about-us/${params.slug}`,
+      canonical: `https://arslanlarik.com/about-us/${slug}`,
     },
 
     // ✅ Open Graph (social sharing)
     openGraph: {
-      title,
-      description,
-      url: `https://arslanlarik.com/about-us/${params.slug}`,
+      title: seo?.title,
+      description: seo?.description,
+      url: `https://arslanlarik.com/about-us/${slug}`,
       siteName: "AL&CO",
       type: "website",
     },
@@ -58,4 +57,8 @@ export async function generateMetadata({
       follow: true,
     },
   };
+}
+
+export default function Layout({ children }: any) {
+  return children;
 }

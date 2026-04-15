@@ -13,7 +13,7 @@ const Gallery = ({ data }: Props) => {
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 px-4">
       {/* Title */}
       {data?.title && (
-        <h2 className="h4 font-semibold text-center text-primary underline max-w-5xl mb-5 mx-auto">
+        <h2 className={`h4 font-semibold text-center text-primary ${data?.underline === false ? "" : "underline"} max-w-5xl mb-5 mx-auto`}>
           {data?.title}
         </h2>
       )}

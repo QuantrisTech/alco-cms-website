@@ -37,8 +37,8 @@ const heroData: HeroData = [
   },
   {
     "title": {
-      "line1": "Discover the Power of ",
-      "line2": "NLP"
+      "line1": "Discover the ",
+      "line2": "Power of NLP"
     },
     "description": "Neuro-Linguistic Programming is a transformative system that empowers you to master your thoughts, emotions, and behaviors—opening doors to success and fulfillment in every area of life.",
     "button1": {

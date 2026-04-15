@@ -76,42 +76,49 @@ const ContentSectionImgContentListDataRE: ContentSectionType = {
     {
       title: "Create Your Own Future With NLP",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook1.src,
       alt: "Create Your Own Future With NLP",
     },
     {
       title: "Relationship Mastery Through NLP",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook2.src,
       alt: "Relationship Mastery Through NLP",
     },
     {
       title: "Emotional Mastery With NLP",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook3.src,
       alt: "Emotional Mastery With NLP",
     },
     {
       title: "I Am Not Good Enough",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook4.src,
       alt: "I Am Not Good Enough",
     },
     {
       title: "101 Powerful Coaching Questions",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook5.src,
       alt: "101 Powerful Coaching Questions",
     },
     {
       title: "How To Get Your First Coaching Client",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook6.src,
       alt: "How To Get Your First Coaching Client",
     },
     {
       title: "Financial Freedom Through NLP",
       height: "h-80",
+      position: "object-contain lg:object-cover",
       src: ResourcesBook7.src,
       alt: "Financial Freedom Through NLP",
     },
@@ -190,12 +197,13 @@ const bannerDataFCM: BannerType = {
     align: "text-center mx-auto"
   },
   image: FourCloudsModel.src,
-  className: "bg-center bg-contain bg-no-repeat bg-primary bg-origin-content !p-8"
+  className: "bg-center bg-cover bg-no-repeat bg-primary "
+  // className: "bg-center bg-contain bg-no-repeat bg-primary bg-origin-content !p-8"
 };
 
 const ContentSectionData1FCM: ContentSectionType = {
   description: (
-    <>
+    <div className="max-w-7xl mx-auto">
       <p className="mb-4">
         Have you ever felt like you have one foot on the accelerator, wanting to move forward in your life, while at the very same time, you also have one foot on the brake, slowing your life down? Consciously, you want to move forward, yet there is something getting in the way and stopping you.
       </p>
@@ -208,7 +216,7 @@ const ContentSectionData1FCM: ContentSectionType = {
         <br />
         So, using the same metaphor of the sun and the dark cloud, let’s shift your focus to the four clouds that stop us from living an awesome life. These clouds create energy leaks in our being that rob us of all our power and eventually put us in a Stuck Phase.
       </p>
-    </>
+    </div>
   ),
   underline: true,
   padding: "py-6 md:py-8 lg:py-12 xl:py-16 ",
@@ -223,24 +231,28 @@ const ContentSectionImgContentListDataFCM: ContentSectionType = {
     {
       title: "NLP Trainers",
       height: "h-40",
+      position: "object-contain lg:object-cover",
       src: FourCloudsModelEnroll1.src,
       alt: "NLP Trainers",
     },
     {
       title: "Business Owners",
       height: "h-40",
+      position: "object-contain lg:object-cover",
       src: FourCloudsModelEnroll2.src,
       alt: "Business Owners",
     },
     {
       title: "Global Leaders",
       height: "h-40",
+      position: "object-contain lg:object-cover",
       src: FourCloudsModelEnroll3.src,
       alt: "Global Leaders",
     },
     {
       title: "Visionaries",
       height: "h-40",
+      position: "object-contain lg:object-cover",
       src: FourCloudsModelEnroll4.src,
       alt: "Visionaries",
     },
@@ -329,9 +341,62 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
             <strong>Limiting beliefs</strong> are what we tell ourselves about who we are, and those beliefs that stop/limit hold us back from becoming who we are meant to be. These beliefs limit us from reaching our full potential. They are very unconscious in nature. We don’t know we have them until someone points them out to us.
           </p>
 
-          <p>
-            Limiting beliefs are statements like, <strong>“I am not good enough”</strong>, <strong>“I am not capable enough”</strong>, <strong>“I don’t have enough knowledge”</strong>, <strong>“Life is too hard”</strong>, <strong>“All men are disloyal”</strong>, <strong>“I am too young to work”</strong>, <strong>“I can’t make money”</strong>, <strong>“I am too old to start over again,”</strong>, <strong>“I can never be loved,”</strong> etc. All these statements indicate a belief system that is so deeply rooted that it puts a person in the pitfall of self-doubt.
-          </p>
+          {/* <p>
+            Limiting beliefs are statements like, 
+            <strong>“I am not good enough”</strong>, 
+            <strong>“I am not capable enough”</strong>, 
+            <strong>“I don’t have enough knowledge”</strong>, 
+            <strong>“Life is too hard”</strong>, 
+            <strong>“All men are disloyal”</strong>, 
+            <strong>“I am too young to work”</strong>, 
+            <strong>“I can’t make money”</strong>, 
+            <strong>“I am too old to start over again,”</strong>, 
+            <strong>“I can never be loved,”</strong> 
+            etc. All these statements indicate a belief system that is so deeply rooted that it puts a person in the pitfall of self-doubt.
+          </p> */}
+
+          {/* <p>
+            Limiting beliefs are statements like, 
+            <strong>“I am not good enough”</strong>, 
+            <strong>“I am not capable enough”</strong>, 
+            <strong>“Life is too hard”</strong>,  
+            <strong>“I can never be loved,”</strong> 
+            etc. All these statements indicate a belief system that is so deeply rooted that it puts a person in the pitfall of self-doubt.
+          </p> */}
+
+          <p>Limiting beliefs are statements like:</p>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <ul className="list-none  space-y-1">
+              <li className="font-semibold italic">
+                “Life is too hardh”
+              </li>
+              <li className="font-semibold italic">
+                “I can never be loved”
+              </li>
+              <li className="font-semibold italic">
+                “I am not good enough”
+              </li>
+              <li className="font-semibold italic">
+                “I am not capable enough”
+              </li>
+            </ul>
+            <ul className="list-none  space-y-1">
+              
+               <li className="font-semibold italic">
+                “I can’t make money”
+              </li>
+              <li className="font-semibold italic">
+                “I am too young to work”
+              </li>
+              <li className="font-semibold italic">
+                “I am too old to start over again”
+              </li>
+              <li className="font-semibold italic">
+                “I don’t have enough knowledge”
+              </li>
+            </ul>
+          </div>
+
 
           <p>
             These limiting beliefs do not have any reality, but our unconscious mind presents them to us in a manner that makes them appear real.

@@ -11,4 +11,5 @@ export type GalleryItem = {
     title: string
     description?: React.ReactNode
     image: GalleryImage[]
+    underline?: boolean
 };

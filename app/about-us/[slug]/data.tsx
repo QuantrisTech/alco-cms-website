@@ -175,7 +175,7 @@ const ContentSectionData3AL: ContentSectionType = {
       <Image
         src={accreditedBrands}
         alt="accredited brands"
-        className="object-contain my-4"
+        className="object-contain my-4 mx-auto"
         width={800}
         height={100}
       />
@@ -204,7 +204,7 @@ const ContentSectionData4AL: ContentSectionType = {
         As the <strong>Master Trainer and Managing Director of AL&CO,</strong> Arslan has set new standards in coaching, training, and personal development. His dynamic, results-driven programs equip participants with the tools to:
       </p>
       <p className="mt-4">
-        Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals,</strong> and organizations worldwide.
+        Arslan’s ability to simplify complex concepts while delivering impactful solutions has made him a <strong>trusted mentor for individuals, professionals</strong> and organizations worldwide.
       </p>
     </div>
   ),
@@ -301,13 +301,13 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
 const galleryDataBP: GalleryItem = {
   title: "A Proven Leader with a Personal Touch",
   description: (
-    <>
+    <div className="max-w-6xl mx-auto">
       <p className="mb-4">
         Bismillah’s career is built on the belief that true leadership comes from empowering others. Whether she’s mentoring a team, facilitating workshops, or working one-on-one with clients, her focus is always on creating meaningful and measurable change.
       </p>
       <p>
         Her work with Pakistan’s leading organizations has equipped teams to embrace innovation, collaboration, and emotional intelligence. Her ability to connect with diverse audiences, simplify complex ideas, and inspire action makes her an in-demand trainer in the corporate world.      </p>
-    </>
+    </div>
   ),
   image: [
     { src: GalleryBM2, alt: "", title: "Gallery Image 2" },
@@ -326,14 +326,14 @@ const galleryDataBP: GalleryItem = {
 const ContentSectionData2BP: ContentSectionType = {
   title: "The Philosophy of Empowerment",
   description: (
-    <>
+    <div className="max-w-6xl mx-auto">
       <p className="mb-4">
         At the heart of Bismillah’s work is a deeply held belief: empowerment starts with modeling the best. This philosophy is not just her mantra—it is the foundation of her approach to leadership and coaching. She inspires individuals to harness their strengths, overcome challenges, and take control of their destinies.
       </p>
       <p>
         For Bismillah, success isn’t about following trends; it’s about creating meaningful impact. Her dedication to empowering others has made her a trusted coach, a compassionate mentor, and a dynamic leader.
       </p>
-    </>
+    </div>
   ),
   underline: true
 }
@@ -341,14 +341,14 @@ const ContentSectionData2BP: ContentSectionType = {
 const ContentSectionData3BP: ContentSectionType = {
   title: "Your Partner in Transformation",
   description: (
-    <>
+    <div className="max-w-6xl mx-auto">
       <p className="mb-4">
         If you’re ready to unlock your potential, elevate your team’s performance, or achieve new heights of personal and professional success, Bismillah Pervez is here to guide you.
       </p>
       <p>
         Her expertise, combined with her unwavering commitment to modeling the best, ensures that every journey she facilitates leads to transformation.
       </p>
-    </>
+    </div>
   ),
   underline: true
 }
@@ -407,13 +407,14 @@ const ContentSectionData1WTALCO: ContentSectionType = {
 }
 
 const galleryDataWTALCO: GalleryItem = {
-  title: "Why settle for ordinary when you can achieve extraordinary? ",
+  title: "Why Settle for Ordinary when you can Achieve Extraordinary? ",
   description: (
     <>
       <p className="mb-4">
         Your transformation starts here.      </p>
     </>
   ),
+  underline: false,
   image: [
     { src: GalleryWTALCO1, alt: "", title: "Gallery Image 1" },
     { src: GalleryWTALCO2, alt: "", title: "Gallery Image 2" },

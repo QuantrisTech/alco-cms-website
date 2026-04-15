@@ -141,7 +141,7 @@ export const createLead = (data: any) => API.post("/api/v1/leads", data);
 // Blog APIs — PUBLIC (No Token Required)
 // ─────────────────────────────────────────────
 export const getBlogs = (params?: any) =>
-    PUBLIC_API.get("/api/v1/blogs/public");
+    PUBLIC_API.get("/api/v1/blogs/public", { params });
 
 export const getBlogBySlug = (slug: string) =>
     PUBLIC_API.get(`/api/v1/blogs/public/${slug}`);

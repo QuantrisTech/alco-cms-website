@@ -103,7 +103,8 @@ const ContentSection = ({ data }: Props) => {
                             iconRight={true}
                             text={data.button.text}
                             href={data.button.link}
-                            variant="outlineSecondary"
+                            variant="secondary"
+                            className="px-6"
                         />
                     </div>
                 )}

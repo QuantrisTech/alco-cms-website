@@ -70,7 +70,8 @@ const bannerDataLevel1: BannerType = {
     line1: "NLP Practitioner"
   },
   description: "Triple Certification Training Program",
-  image: programLevel1.src
+  image: programLevel1.src,
+  // className: "bg-no-repeat bg-top-right bg-cover"
 };
 
 const LevelIntroWithVideoDataLevel1: LevelIntroWithVideoType = {
@@ -622,6 +623,118 @@ const LevelBenefitsTableDataLevel2: LevelBenefitsTableType = {
   ],
 };
 
+// const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
+//   title: {
+//     line1: "This Program Includes",
+//     line2: ""
+//   },
+//   points: [
+//     {
+//       title: "13 Days of Immersive, Online Learning",
+//       description: (
+//         <p>
+//           Take the next step in your journey with our dynamic, 13-day live NLP Master Practitioner (Triple Certification) Training. Delve into advanced concepts and techniques in an interactive, engaging environment where learning is practical, transformative, and immediately applicable. Imagine mastering tools that reshape emotions, behaviors, and unconscious patterns—not only for yourself but also for those you guide and influence—all while learning from the comfort of your home.
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram1,
+//         alt: "13 Days of Immersive, Online Learning",
+//       },
+//     },
+//     {
+//       title: "Triple International Certification: Credibility That Sets You Apart",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Earn three globally recognized certifications that signify your expertise and open doors to boundless opportunities:
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li>Certified Master Practitioner of Neuro-Linguistic Programming via The American Board of Neuro-Linguistic Programming (ABNLP-USA): Elevate your skills to lead, influence, and create profound change using advanced NLP techniques.</li>
+//             <li>Certified Master Practitioner of NLP Coaching via Coaching Division of ABNLP (USA): Guide others with mastery-level coaching tools, empowering them to achieve their goals and unlock their potential.</li>
+//             <li>Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association (TLTA-USA): Master tools to eliminate deep-rooted emotional barriers, limiting beliefs, and unresolved traumas at their root.</li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram2,
+//         alt: "Triple International Certification: Credibility That Sets You Apart",
+//       },
+//     },
+//     {
+//       title: "Comprehensive Home Study Materials",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Deepen your expertise with meticulously designed resources, including:
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li>A 600+ page NLP Master Practitioner manual covering advanced concepts, techniques, and applications in detail.</li>
+//             <li>A 100+ page Time Line Therapy™ Techniques manual with practical exercises and applications.</li>
+//             <li>Worksheets, questionnaires, and action guides to complement and enhance your learning experience.</li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram3,
+//         alt: "Comprehensive Home Study Materials",
+//       },
+//     },
+//     {
+//       title: "Exclusive Audio Resources from NLP Pioneer Dr. Tad James",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Access over 250 audio files recorded by Dr. Tad James, a pioneer in the field of NLP. These lessons align with your training materials, allowing you to learn at your own pace and revisit advanced concepts anytime.
+//             Imagine having a world-renowned mentor guide you through every step of your journey.
+//           </p>
+//         </>
+//       ),
+//       theme: "yellow",
+//       image: {
+//         src: LevelProgram4,
+//         alt: "Exclusive Audio Resources from NLP Pioneer Dr. Tad James",
+//       },
+//     },
+//     {
+//       title: "Lifetime Access to Training: Your Journey Never Ends",
+//       description: (
+//         <p>
+//           True mastery requires continuous learning. That’s why we provide lifetime access to revisit and revise our NLP Master Practitioner (Triple Certification) Training Program.
+//           This ensures you’re not just investing in 13 days—you’re investing in a lifetime of growth and evolution.
+//         </p>
+//       ),
+//       theme: "dark",
+//       image: {
+//         src: LevelProgram5,
+//         alt: "Lifetime Access to Training: Your Journey Never Ends",
+//       },
+//     },
+//     {
+//       title: "A Global Support Network: Empowered Together",
+//       description: (
+//         <>
+//           <p className="mb-2">
+//             Join the thriving AL&CO Global Coaches Support Community, where over 1,000 graduates connect, collaborate, and grow. In this vibrant community, you’ll:
+//           </p>
+//           <ul className="list-disc pl-5 space-y-1">
+//             <li>Practice advanced interventions with peers to refine your skills.</li>
+//             <li>Gain access to expert mentorship and guidance.</li>
+//             <li>Stay motivated through shared experiences and collaborative learning.</li>
+//           </ul>
+//         </>
+//       ),
+//       theme: "light",
+//       image: {
+//         src: LevelProgram6,
+//         alt: "A Global Support Network: Empowered Together",
+//       },
+//     },
+//   ],
+// };
+
 const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
   title: {
     line1: "This Program Includes",
@@ -642,23 +755,23 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       },
     },
     {
-      title: "Triple International Certification: Credibility That Sets You Apart",
+      title: "Triple International Certification",
       description: (
         <>
           <p className="mb-2">
             Earn three globally recognized certifications that signify your expertise and open doors to boundless opportunities:
           </p>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Certified Master Practitioner of Neuro-Linguistic Programming via The American Board of Neuro-Linguistic Programming (ABNLP-USA): Elevate your skills to lead, influence, and create profound change using advanced NLP techniques.</li>
-            <li>Certified Master Practitioner of NLP Coaching via Coaching Division of ABNLP (USA): Guide others with mastery-level coaching tools, empowering them to achieve their goals and unlock their potential.</li>
-            <li>Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association (TLTA-USA): Master tools to eliminate deep-rooted emotional barriers, limiting beliefs, and unresolved traumas at their root.</li>
+            <li>Certified Master Practitioner of Neuro-Linguistic Programming via The American Board of Neuro-Linguistic Programming (ABNLP-USA).</li>
+            <li>Certified Master Practitioner of NLP Coaching via Coaching Division of ABNLP (USA).</li>
+            <li>Certified Master Practitioner of Time Line Therapy™ Techniques via Time Line Therapy™ Association (TLTA-USA).</li>
           </ul>
         </>
       ),
       theme: "light",
       image: {
         src: LevelProgram2,
-        alt: "Triple International Certification: Credibility That Sets You Apart",
+        alt: "Triple International Certification",
       },
     },
     {
@@ -686,8 +799,11 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       description: (
         <>
           <p className="mb-2">
-            Access over 250 audio files recorded by Dr. Tad James, a pioneer in the field of NLP. These lessons align with your training materials, allowing you to learn at your own pace and revisit advanced concepts anytime.
-            Imagine having a world-renowned mentor guide you through every step of your journey.
+            Access over 250 powerful audio recordings by Dr. Tad James, a globally recognized pioneer in
+            NLP. These expertly designed lessons align with your training materials, allowing you to learn
+            anytime and reinforce advanced concepts with ease. Absorb knowledge at your own pace and
+            revisit key techniques whenever needed, ensuring continuous growth and deeper mastery
+            throughout your journey.
           </p>
         </>
       ),
@@ -701,8 +817,10 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       title: "Lifetime Access to Training: Your Journey Never Ends",
       description: (
         <p>
-          True mastery requires continuous learning. That’s why we provide lifetime access to revisit and revise our NLP Master Practitioner (Triple Certification) Training Program.
-          This ensures you’re not just investing in 13 days—you’re investing in a lifetime of growth and evolution.
+          True mastery comes with continuous learning and consistent practice. That’s why you receive
+          lifetime access to revisit and refine your NLP Master Practitioner Training anytime you need.
+          Strengthen your skills, refresh key concepts, and continue evolving long after the program ends
+          —ensuring your transformation becomes a lifelong journey of growth and success.
         </p>
       ),
       theme: "dark",
@@ -1003,10 +1121,10 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
             <strong className="me-1">Led by Arslan Larik:</strong>
             A globally acclaimed Master Trainer of Hypnotherapy via ABH & NGH.
           </p>
-          <p>
+          {/* <p>
             <strong className="me-1">Hands-On Training:</strong>
             Build real-world proficiency in hypnosis techniques under the direct mentorship of Master Trainer Arslan Larik.
-          </p>
+          </p> */}
         </>
       ),
       theme: "dark",
@@ -1016,10 +1134,19 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       },
     },
     {
-      title: "Dual Certifications via Prestigious Global Boards",
+      title: "Triple Certifications via Prestigious Global Boards",
       description: (
         <>
-          <p>
+          <p className="mb-2">
+            Earn globally recognized certifications that validate your expertise and enhance your
+            professional credibility in the field of hypnotherapy. You will receive:
+          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li>Certified Practitioner of Hypnosis (ABH-USA).</li>
+            <li>Certified Master Practitioner of Hypnosis (ABH-USA).</li>
+            <li>Certified Master Hypnotherapy (NGH-USA).</li>
+          </ul>
+          {/* <p>
             Certified Practitioner of Hypnosis (ABH-USA).
           </p>
           <p>
@@ -1027,7 +1154,7 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
           </p>
           <p>
             Certified Master Hypnotherapy (NGH-USA).
-          </p>
+          </p> */}
         </>
       ),
       theme: "light",
@@ -1040,8 +1167,10 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       title: "One-Year Paid NGH Board Membership",
       description: (
         <>
-          <p>Access exclusive NGH resources, research, and professional support.</p>
-          <p>Become a standing board member within the global hypnotherapy community.</p>
+          <p>Receive a one-year paid membership with the National Guild of Hypnotists (NGH), giving you
+            access to exclusive resources, research, and ongoing professional support. This membership
+            connects you with a global network of practitioners and enhances your credibility. It also
+            positions you as a recognized member within the international hypnotherapy community.</p>
         </>
       ),
       theme: "yellow",
@@ -1054,7 +1183,11 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       title: "Mastery of 7-Path Self-Hypnosis",
       description: (
         <>
-          <p>Learn and master a self-hypnosis methodology that combines hypnosis with personal growth strategies.</p>
+          <p>Learn and master the powerful 7-Path Self-Hypnosis methodology, designed to combine
+            hypnosis techniques with personal growth strategies. This approach helps you create lasting
+            positive change by working at a deeper subconscious level. You’ll gain tools to enhance self-
+            awareness, improve mental clarity, and support both personal transformation and client
+            outcomes.</p>
         </>
       ),
       // title: "Comprehensive Training Materials",
@@ -1082,7 +1215,10 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       title: "Honorary Quintuple Acknowledgement Certificate",
       description: (
         <p>
-          Receive an honorary Quintuple Certification Holder Certificate via AL&CO.
+          Receive a prestigious honorary Quintuple Certification Holder Certificate from AL&CO,
+          recognizing your extensive learning and achievement across multiple disciplines. This
+          acknowledgment highlights your dedication, expertise, and commitment to personal and
+          professional growth, setting you apart as a highly qualified practitioner in the field.
         </p>
       ),
       theme: "light",
@@ -1096,24 +1232,17 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       description: (
         <>
           <p className="mb-2">
-            <strong>
-              Training Manuals:
-            </strong>
+
+            Access high-quality materials to support your learning.
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li>2 approved manuals from The American Board of Hypnotherapy</li>
             <li>4 approved manuals from The National Guild of Hypnotists</li>
             <li>3 bonus home study manuals for advanced learning</li>
-          </ul>
-          <p className="my-2">
-            <strong>
-              Additional Resources:
-            </strong>
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
             <li>Access to 500+ hypnotic scripts as a bonus</li>
-            <li>Exclusive access to the extensive Hypnosis Video Library by the National Guild of Hypnotists</li>
+            <li>Exclusive access to the Hypnosis Video Library by NGH.</li>
           </ul>
+
         </>
       ),
       theme: "dark",
@@ -1125,9 +1254,10 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
     {
       title: "Lifetime Access to Training Content",
       description: (
-        <p>
-          Enjoy unlimited access to training materials, allowing you to revisit, revise, and strengthen your skills anytime through AL&CO.
-        </p>
+        <p className="mb-4">
+          Enjoy lifetime access to all training materials, allowing you to revisit, revise, and strengthen your skills whenever needed. This ensures your learning doesn’t stop after the training ends, giving you the flexibility to continuously improve and stay aligned with your growth journey through AL&CO.
+
+          Learn at your own pace, anytime, without time limits or pressure. Continuous access helps you refine skills and master techniques over time.       </p>
       ),
       theme: "dark",
       image: {
@@ -1415,8 +1545,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       title: "Personal Transformation",
       description: (
         <p>
-          Teaching others is the ultimate path to mastering yourself. Through this training, you’ll experience profound growth, refine your communication skills, and step into your best self.
-        </p>
+Teaching others is the ultimate path to mastering yourself. Through this training, you’ll experience profound growth, refine your communication skills, and step into your best self. Build confidence, clarity, and lasting personal transformation.        </p>
       ),
       theme: "dark",
       image: {
@@ -1723,8 +1852,7 @@ const LevelProgramIncludesDataLevel5: LevelProgramIncludesType = {
       title: "Create Meaningful Impact",
       description: (
         <p>
-          Transform lives by teaching others how to use hypnosis for personal growth, professional success, and emotional well-being.
-        </p>
+          Transform lives by teaching others how to use hypnosis for personal growth, professional success, and emotional well-being. Empower individuals to unlock their subconscious potential and create lasting positive change in their lives.        </p>
       ),
       theme: "dark",
       image: {
@@ -2010,8 +2138,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       title: "Gain Global Recognition",
       description: (
         <p>
-          Be certified by ABNLP and join the ranks of internationally respected NLP leaders. Your credentials will position you as an authority in the NLP community.
-        </p>
+          Be certified by ABNLP and join the ranks of internationally respected NLP leaders. Your credentials will position you as an authority in the NLP community, giving you enhanced professional credibility.        </p>
       ),
       theme: "yellow",
       image: {
@@ -2024,7 +2151,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       description: (
         <>
           <p className="mb-2">
-            Get lifetime access to manuals, slides, audios, and business tools that have been fine-tuned to produce results.
+            Get lifetime access to manuals, slides, audios, and business tools designed for practical, results-driven learning that helps you apply concepts effectively and achieve real-world outcomes.
           </p>
         </>
       ),
@@ -2038,8 +2165,7 @@ const LevelProgramIncludesDataLevel6: LevelProgramIncludesType = {
       title: "Mentorship and Networking",
       description: (
         <p>
-          Be guided by Arslan Larik, Pakistan’s first and only NLP Master Trainer certified via ABNLP, and connect with a global network of NLP Trainers.
-        </p>
+          Be guided by Arslan Larik, Pakistan’s first and only NLP Master Trainer certified via ABNLP, and connect with a global network of NLP Trainers. Gain expert mentorship to elevate your professional journey.        </p>
       ),
       theme: "dark",
       image: {

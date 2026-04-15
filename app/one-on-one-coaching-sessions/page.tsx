@@ -251,18 +251,30 @@ const OneOnOneCoachingData: LevelProgramIncludesType = {
                     <p className="font-semibold">
                         Why Choose a Junior Coach?
                     </p>
+                    <p>
+                        Get access to practical, results-oriented coaching at an affordable price point while still
+                        benefiting from structured methodologies and expert guidance. Associate coaches are
+                        professionally trained and mentored to help you take action, stay accountable, and achieve your
+                        goals with clarity and confidence.
+                    </p>
 
                     <ul className="list-disc pl-5 space-y-2">
                         <li>
-                            <strong>Affordable & Impactful:</strong> High-quality coaching at an accessible price.
+                            <strong>Affordable & Impactful:</strong> High-quality coaching at an accessible investment level.
                         </li>
 
                         <li>
-                            <strong>Expertly Trained:</strong> Mentored by Arslan Larik in NLP Coaching techniques.
+                            <strong>Expertly Trained:</strong> Guided and mentored by Arslan Larik in NLP Coaching techniques.
                         </li>
 
                         <li>
-                            <strong>Targeted Approach:</strong> Ideal for procrastination, productivity, and goal-setting challenges.
+                            <strong>Targeted Approach:</strong> Ideal for productivity, procrastination, and goal-setting challenges.
+                        </li>
+                        <li>
+                            <strong>Practical Application:</strong> Focus on real-life implementation and consistent progress.
+                        </li>
+                        <li>
+                            <strong>Growth-Oriented:</strong> Helps build discipline, focus, and measurable improvement.
                         </li>
                     </ul>
 

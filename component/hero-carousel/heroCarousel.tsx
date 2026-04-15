@@ -187,7 +187,7 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                     </>
                   )}
                   <p
-                    className="custom-text1 my-4 font-light max-w-[700px] w-full"
+                    className="custom-text1 my-4 font-light max-w-[800px] w-full"
                     dangerouslySetInnerHTML={{ __html: slide?.description }}
                   />
                   <div className="mt-4 flex gap-2 ">

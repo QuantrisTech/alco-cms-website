@@ -7,6 +7,8 @@
 /* ===== MAIN SLIDER ===== */
 .gallery_embla__viewport {
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .gallery_embla__container {
