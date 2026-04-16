@@ -11,6 +11,7 @@ type InputProps = {
   disabled?: boolean;
   size?: "small" | "medium" | "large";
   error?: string;
+  warning?: string;
 };
 
 const InputField: React.FC<InputProps> = ({
@@ -23,6 +24,7 @@ const InputField: React.FC<InputProps> = ({
   disabled = false,
   size = "medium",
   error,
+  warning
 }) => {
   const [focus, setFocus] = useState(false);
 
@@ -40,7 +42,9 @@ const InputField: React.FC<InputProps> = ({
 
   const borderClass = error
     ? "border-red-500 focus:border-red-500"
-    : "border-gray-300 focus:border-primary";
+    : warning
+      ? "border-yellow-400 focus:border-yellow-400"
+      : "border-gray-300 focus:border-primary";
 
   return (
     <div className="relative w-full">
@@ -91,6 +95,11 @@ const InputField: React.FC<InputProps> = ({
       {error && (
         <span className="absolute -bottom-4 right-0 text-[10px] text-red-500">
           {error}
+        </span>
+      )}
+      {warning && !error && (
+        <span className="absolute -bottom-4 right-0 text-[10px] text-yellow-500">
+          {warning}
         </span>
       )}
     </div>

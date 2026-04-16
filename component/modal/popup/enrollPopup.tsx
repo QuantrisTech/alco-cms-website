@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Popup from "./popup";
 import Button from "@/component/button";
 import { usePopup } from "@/context/enrollPopupContext";
@@ -10,6 +10,8 @@ import { useForm, Controller } from "react-hook-form";
 import EnrollPopupImage from "@/assets/enroll-popup/enroll-popup.webp";
 import Image from "next/image";
 import Link from "next/link";
+import { createLead, getProgramsPublic } from "@/utils/api";
+import toast from "react-hot-toast";
 
 type EnrollPopupProps = {
   buttonText?: string;
@@ -28,30 +30,23 @@ const goalOptions = [
   { label: "Personal Development", value: "personal" },
 ];
 
-const programOptions = [
-  { label: "NLP Practitioner (Triple Certification)", value: "nlp_practitioner" },
-  { label: "NLP Master Practitioner", value: "nlp_master" },
-  { label: "Advanced Hypnotherapy", value: "hypno" },
-  { label: "NLP Trainer Certification", value: "trainer" },
-  { label: "Hypnosis Trainer Certification", value: "hypnosis_trainer" },
-  { label: "NLP Master Trainer Program", value: "master_trainer" },
-];
-
 export default function EnrollPopup({
   title = "Welcome To AL&CO",
   description = (
     <>
       <p className="mb-2">
-        We are Internationally Certified and Pakistan’s Best Institute of NLP Training & Coaching Accreditation.
+        We are Internationally Certified and Pakistan's Best Institute of NLP
+        Training & Coaching Accreditation.
       </p>
       <p className="mb-2">
-        We offer a variety of NLP courses and certification at all levels, including:
+        We offer a variety of NLP courses and certification at all levels,
+        including:
       </p>
       <ul className="list-disc pl-5 space-y-1">
-        <li>NLP Practitioner </li>
+        <li>NLP Practitioner</li>
         <li>NLP Master Practitioner Training</li>
-        <li>Advanced Hypnotherapy and Interventionist training </li>
-        <li>NLP and Hypnosis Trainer’s Training Program</li>
+        <li>Advanced Hypnotherapy and Interventionist training</li>
+        <li>NLP and Hypnosis Trainer's Training Program</li>
         <li>NLP Master Trainer Program</li>
       </ul>
     </>
@@ -60,49 +55,95 @@ export default function EnrollPopup({
 }: EnrollPopupProps) {
   const { isOpen, closePopup } = usePopup();
 
+  // ✅ Programs state
+  const [programOptions, setProgramOptions] = useState<{ label: string; value: string }[]
+  >([]);
+  const [programsLoading, setProgramsLoading] = useState(false);
+
   const {
     handleSubmit,
     control,
-    watch,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm({
+    mode: "onBlur",
     defaultValues: {
-      name: "",
+      first_name: "",
+      last_name: "",
       email: "",
       phone: "",
-      program: "",
+      program_id: "",
       profession: "",
-      concern: "",
+      query: "",
       otherInfo: "",
       goals: [] as string[],
-      programs: [] as string[],
-      acceptPolicy: false,
-      acceptTerms: false,
+      programs: "",
+      acceptPolicy: true,   // ✅ default checked
+      acceptTerms: true,    // ✅ default checked
     },
   });
 
-  const onSubmit = (data: any) => {
-    console.log("Form Submitted:", data);
-    closePopup();
-  };
+  // ✅ Fetch programs when popup opens
+  useEffect(() => {
+    if (!isOpen) return;
+    const fetchPrograms = async () => {
+      setProgramsLoading(true);
+      try {
+        const res = await getProgramsPublic();
+        console.log(res, "resresresresres")
+        const options = res.data.data.map((p: any) => ({
+          label: p.name,
+          value: p._id,
+        }));
+        setProgramOptions(options);
+      } catch {
+        toast.error("Failed to load programs");
+      } finally {
+        setProgramsLoading(false);
+      }
+    };
+    fetchPrograms();
+  }, [isOpen]);
 
-  const watchAllFields = watch();
+  const onSubmit = async (data: any) => {
+    try {
+      // ✅ Split full name
+      const [first_name, ...rest] = data.name.trim().split(" ");
+      const last_name = rest.join(" ") || "";
+
+      const payload = {
+        first_name: data.first_name,
+        last_name: data.last_name,
+        email: data.email,
+        phone: data.phone,
+        program_id: data.program_id,
+        profession: data.profession,
+        query: data.query,
+        message: data.otherInfo,
+        goals: data.goals,
+      };
+
+      await createLead(payload);
+      toast.success("Enrolled successfully! Check your email for credentials.");
+      reset();
+      closePopup();
+    } catch (err: any) {
+      const msg =
+        err?.response?.data?.message || "Something went wrong. Try again.";
+      toast.error(msg);
+    }
+  };
 
   return (
     <Popup isOpen={isOpen} onClose={() => closePopup()}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="grid grid-cols-12 gap-x-6 gap-y-4 h-[80dvh] overflow-y-auto pr-2 pb-4 xl:pb-0 xl:h-full xl:overflow-hidden mini-scroll">
           {/* Left Column */}
-          <div className="col-span-12 xl:col-span-4 ">
-            {/* <img
-              src={EnrollPopupImage.src}
-              alt="Enroll popup"
-              className="w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px] object-cover rounded-md "
-            /> */}
+          <div className="col-span-12 xl:col-span-4">
             {EnrollPopupImage && (
               <div className="relative w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px]">
                 <Image
-                  src={EnrollPopupImage} // StaticImageData imported
+                  src={EnrollPopupImage}
                   alt="Enroll popup"
                   fill
                   className="object-cover rounded-md"
@@ -111,7 +152,9 @@ export default function EnrollPopup({
             )}
             <div className="mt-4">
               <h2 className="text-3xl font-outfit font-semibold">{title}</h2>
-              <div className="text-sm font-outfit text-gray-600 mt-3">{description}</div>
+              <div className="text-sm font-outfit text-gray-600 mt-3">
+                {description}
+              </div>
             </div>
           </div>
 
@@ -121,16 +164,17 @@ export default function EnrollPopup({
               <div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-4">
-                    {/* Name */}
+
+
                     <Controller
-                      name="name"
+                      name="first_name"
                       control={control}
-                      rules={{ required: "Full Name is required" }}
+                      rules={{ required: "First Name is required" }}
                       render={({ field }) => (
                         <InputField
-                          label="Full Name"
+                          label="First Name"
                           {...field}
-                          error={errors.name?.message}
+                          error={errors.first_name?.message}
                         />
                       )}
                     />
@@ -139,7 +183,13 @@ export default function EnrollPopup({
                     <Controller
                       name="phone"
                       control={control}
-                      rules={{ required: "Phone Number is required" }}
+                      rules={{
+                        required: "Phone number is required",
+                        pattern: {
+                          value: /^[0-9+\s\-]{10,15}$/,
+                          message: "Enter a valid phone number (10-15 digits)",
+                        },
+                      }}
                       render={({ field }) => (
                         <InputField
                           label="Phone"
@@ -150,40 +200,65 @@ export default function EnrollPopup({
                       )}
                     />
 
-                    {/* Program */}
+                    {/* Program - from API */}
                     <Controller
-                      name="program"
+                      name="program_id"
                       control={control}
                       rules={{ required: "Program is required" }}
                       render={({ field }) => (
                         <SelectField
-                          label="Select Program"
-                          options={[
-                            { label: "NLP Practitioner", value: "nlp_practitioner" },
-                            { label: "NLP Master Practitioner", value: "nlp_master" },
-                          ]}
+                          label={
+                            programsLoading
+                              ? "Loading programs..."
+                              : "Select Program"
+                          }
+                          options={programOptions}
                           value={field.value}
                           onChange={field.onChange}
-                          error={errors.program?.message}
+                          error={errors.program_id?.message}
                         />
                       )}
                     />
                   </div>
 
                   <div className="flex flex-col gap-4">
+
+                    <Controller
+                      name="last_name"
+                      control={control}
+                      render={({ field }) => (
+                        <InputField
+                          label="Last Name"
+                          {...field}
+                          error={errors.last_name?.message}
+                        />
+                      )}
+                    />
+
                     {/* Email */}
                     <Controller
                       name="email"
                       control={control}
-                      rules={{ required: "Email is required" }}
-                      render={({ field }) => (
-                        <InputField
-                          label="Email"
-                          type="email"
-                          {...field}
-                          error={errors.email?.message}
-                        />
-                      )}
+                      rules={{
+                        required: "Email is required",
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Enter a valid email address",
+                        },
+                      }}
+                      render={({ field, fieldState }) => {
+                        const val = field.value;
+                        const isInvalidFormat = val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+                        return (
+                          <InputField
+                            label="Email"
+                            type="email"
+                            {...field}
+                            error={fieldState.error?.message}
+                            warning={isInvalidFormat && !fieldState.error ? "Email format is incorrect" : undefined}
+                          />
+                        );
+                      }}
                     />
 
                     {/* Profession */}
@@ -202,8 +277,8 @@ export default function EnrollPopup({
                   </div>
                 </div>
 
-                {/* Goals and Concern */}
-                <div className="grid  grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                {/* Goals and Query */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                   <div className="flex flex-col gap-2 justify-between">
                     <Controller
                       name="goals"
@@ -219,15 +294,15 @@ export default function EnrollPopup({
                     />
 
                     <Controller
-                      name="concern"
+                      name="query"
                       control={control}
-                      rules={{ required: "Concern is required" }}
+                      rules={{ required: "Please share your concern" }}
                       render={({ field }) => (
                         <InputField
                           label="Share your concern briefly"
                           {...field}
                           textarea
-                          error={errors.concern?.message}
+                          error={errors.query?.message}
                         />
                       )}
                     />
@@ -241,8 +316,14 @@ export default function EnrollPopup({
                         <Checkboxfield
                           label="Which program do you want to enroll in?"
                           options={programOptions}
-                          values={field.value}
-                          onChange={field.onChange}
+                          // values={field.value}
+                          // onChange={field.onChange}
+                          values={field.value ? [field.value] : []}
+                          onChange={(selected: string[]) => {
+                            // ✅ sirf last selected value rakho
+                            const last = selected[selected.length - 1];
+                            field.onChange(last || "");
+                          }}
                         />
                       )}
                     />
@@ -265,12 +346,11 @@ export default function EnrollPopup({
           </div>
 
           {/* Checkboxes and Submit */}
-          <div className="col-span-12 space-y-2 ">
+          <div className="col-span-12 space-y-2">
             <div className="space-y-2">
               <Controller
                 name="acceptPolicy"
                 control={control}
-                defaultValue={false}
                 rules={{ required: "You must accept Policy consent" }}
                 render={({ field }) => (
                   <Checkboxfield
@@ -279,9 +359,11 @@ export default function EnrollPopup({
                     color="black"
                     label={
                       <span>
-                        By checking this box, I consent to receive transactional messages related to my account, orders, or services I have requested. These messages may include appointment reminders, order confirmations, and account notifications among others.
-                        Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
-
+                        By checking this box, I consent to receive transactional
+                        messages related to my account, orders, or services I
+                        have requested. Message frequency may vary. Message &
+                        Data rates may apply. Reply HELP for help or STOP to
+                        opt-out.
                       </span>
                     }
                   />
@@ -291,7 +373,6 @@ export default function EnrollPopup({
               <Controller
                 name="acceptTerms"
                 control={control}
-                defaultValue={false}
                 rules={{ required: "You must accept Terms consent" }}
                 render={({ field }) => (
                   <Checkboxfield
@@ -300,8 +381,11 @@ export default function EnrollPopup({
                     color="black"
                     label={
                       <span>
-                        By checking this box, I consent to receive marketing and promotional messages, including special offers, discounts, new product updates among others.
-                        Message frequency may vary. Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
+                        By checking this box, I consent to receive marketing and
+                        promotional messages, including special offers,
+                        discounts, new product updates among others. Message
+                        frequency may vary. Message & Data rates may apply.
+                        Reply HELP for help or STOP to opt-out.
                       </span>
                     }
                   />
@@ -309,9 +393,12 @@ export default function EnrollPopup({
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center ">
+            <div className="flex flex-col sm:flex-row justify-between items-center">
               <div className="text-xs text-gray-500 mb-2 sm:mb-0 sm:ms-6">
-                <Link href="/privacy-policy" className="underline text-primary me-2">
+                <Link
+                  href="/privacy-policy"
+                  className="underline text-primary me-2"
+                >
                   Privacy Policy
                 </Link>
                 |
@@ -319,8 +406,14 @@ export default function EnrollPopup({
                   Terms of Service
                 </Link>
               </div>
-              <div className="w-full sm:max-w-[150px]">
-                <Button text="Submit" type="submit" variant="primary" className="mt-2 w-full " />
+              <div className="w-full sm:max-w-[150px] z-50">
+                <Button
+                  text={isSubmitting ? "Submitting..." : "Submit"}
+                  type="submit"
+                  variant="primary"
+                  className="mt-2 w-full"
+                  disabled={isSubmitting}
+                />
               </div>
             </div>
           </div>

@@ -112,13 +112,17 @@ export const PUBLIC_API = axios.create({
 //   newPassword: string;
 // }) => API.patch("/api/users/change-password", data);
 // export const deleteMyAccount = () => API.delete("/api/users/delete-account");
+// ─────────────────────────────────────────────
+// Programs APIs
+// ─────────────────────────────────────────────
+export const getProgramsPublic = () => PUBLIC_API.get("/api/v1/programs/name");
 
 // ─────────────────────────────────────────────
 // Lead APIs
 // ─────────────────────────────────────────────
 // export const getAllLeads = (params?: any) =>
-//   API.get("/api/v1/leads", { params });
-export const createLead = (data: any) => API.post("/api/v1/leads", data);
+//   API.get("/api/v1/leads", { params });// ✅ Public - no auth
+export const createLead = (data: any) => PUBLIC_API.post("/api/v1/leads", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
 // export const deleteLead = (id: string) => API.delete(`/api/v1/leads/${id}`);

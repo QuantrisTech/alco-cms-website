@@ -9,7 +9,7 @@ type Option = {
 type CheckboxfieldProps = {
   label: any;
   options?: Option[];
-  values?: string[]; // 👈 optional
+  values?: any; // 👈 optional
   checked?: boolean;
   onChange: (values: any) => void; // 👈 simple & flexible
   color?: "primary" | "black" | "green" | "red";
@@ -26,7 +26,7 @@ export default function Checkboxfield({
 
   const handleChange = (value: string) => {
     if (values.includes(value)) {
-      onChange(values.filter((v) => v !== value));
+      onChange(values.filter((v: any) => v !== value));
     } else {
       onChange([...values, value]);
     }
