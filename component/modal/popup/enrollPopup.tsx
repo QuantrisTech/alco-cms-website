@@ -108,8 +108,8 @@ export default function EnrollPopup({
   const onSubmit = async (data: any) => {
     try {
       // ✅ Split full name
-      const [first_name, ...rest] = data.name.trim().split(" ");
-      const last_name = rest.join(" ") || "";
+      // const [first_name, ...rest] = data.name.trim().split(" ");
+      // const last_name = rest.join(" ") || "";
 
       const payload = {
         first_name: data.first_name,
@@ -134,9 +134,13 @@ export default function EnrollPopup({
     }
   };
 
+  const onError = (errors: any) => {
+    console.log("FORM ERRORS:", errors);
+  };
+
   return (
     <Popup isOpen={isOpen} onClose={() => closePopup()}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit, onError)}>
         <div className="grid grid-cols-12 gap-x-6 gap-y-4 h-[80dvh] overflow-y-auto pr-2 pb-4 xl:pb-0 xl:h-full xl:overflow-hidden mini-scroll">
           {/* Left Column */}
           <div className="col-span-12 xl:col-span-4">
@@ -411,7 +415,7 @@ export default function EnrollPopup({
                   text={isSubmitting ? "Submitting..." : "Submit"}
                   type="submit"
                   variant="primary"
-                  className="mt-2 w-full"
+                  className="mt-2 w-full z-50"
                   disabled={isSubmitting}
                 />
               </div>
