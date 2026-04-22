@@ -78,8 +78,8 @@ export default function EnrollPopup({
       otherInfo: "",
       goals: [] as string[],
       programs: "",
-      acceptPolicy: true,   // ✅ default checked
-      acceptTerms: true,    // ✅ default checked
+      acceptPolicy: true,
+      acceptTerms: true,
     },
   });
 
@@ -105,11 +105,31 @@ export default function EnrollPopup({
     fetchPrograms();
   }, [isOpen]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window?.location?.search);
+
+    const source =
+      params.get("utm_source") ||
+      params.get("source") ||
+      params.get("ref");
+
+    if (source) {
+      // OPTION A: first-touch (recommended)
+      if (!localStorage.getItem("user_source")) {
+        localStorage.setItem("user_source", source);
+      }
+
+      // OPTION B: latest-touch (overwrite)
+      // localStorage.setItem("user_source", source);
+    }
+  }, []);
+
   const onSubmit = async (data: any) => {
     try {
       // ✅ Split full name
       // const [first_name, ...rest] = data.name.trim().split(" ");
       // const last_name = rest.join(" ") || "";
+      const source = localStorage.getItem("user_source");
 
       const payload = {
         first_name: data.first_name,
@@ -121,10 +141,12 @@ export default function EnrollPopup({
         query: data.query,
         message: data.otherInfo,
         goals: data.goals,
+        source: source || "direct",
       };
 
       await createLead(payload);
       toast.success("Enrolled successfully! Check your email for credentials.");
+      localStorage.removeItem("user_source");
       reset();
       closePopup();
     } catch (err: any) {
@@ -313,7 +335,7 @@ export default function EnrollPopup({
                   </div>
 
                   <div className="flex flex-col gap-2 justify-between">
-                    <Controller
+                    {/* <Controller
                       name="programs"
                       control={control}
                       render={({ field }) => (
@@ -328,6 +350,18 @@ export default function EnrollPopup({
                             const last = selected[selected.length - 1];
                             field.onChange(last || "");
                           }}
+                        />
+                      )}
+                    /> */}
+                    <Controller
+                      name="program_id"
+                      control={control}
+                      render={({ field }) => (
+                        <SelectField
+                          label={programsLoading ? "Loading programs..." : "Select Program"}
+                          options={programOptions}
+                          value={field.value}
+                          onChange={field.onChange}
                         />
                       )}
                     />
