@@ -125,10 +125,13 @@ export default function EnrollPopup({
   }, []);
 
   const onSubmit = async (data: any) => {
+    console.log("FORM DATA:", data);  // ← yeh add karo
+    console.log("PHONE VALUE:", data.phone);  // ← yeh bhi
     try {
       // ✅ Split full name
       // const [first_name, ...rest] = data.name.trim().split(" ");
       // const last_name = rest.join(" ") || "";
+
       const source = localStorage.getItem("user_source");
 
       const payload = {
@@ -141,7 +144,7 @@ export default function EnrollPopup({
         query: data.query,
         message: data.otherInfo,
         goals: data.goals,
-        source: source || "direct",
+        source: source || "enroll",
       };
 
       await createLead(payload);
@@ -226,25 +229,47 @@ export default function EnrollPopup({
                       )}
                     />
 
-                    {/* Program - from API */}
+                    {/* Profession */}
                     <Controller
-                      name="program_id"
+                      name="profession"
                       control={control}
-                      rules={{ required: "Program is required" }}
+                      rules={{ required: "Profession is required" }}
                       render={({ field }) => (
-                        <SelectField
-                          label={
-                            programsLoading
-                              ? "Loading programs..."
-                              : "Select Program"
-                          }
-                          options={programOptions}
-                          value={field.value}
-                          onChange={field.onChange}
-                          error={errors.program_id?.message}
+                        <InputField
+                          label="Profession"
+                          {...field}
+                          error={errors.profession?.message}
                         />
                       )}
                     />
+
+                    {/* Goals and Query */}
+                    <Controller
+                      name="goals"
+                      control={control}
+                      render={({ field }) => (
+                        <Checkboxfield
+                          label="Which goal would you like to attain via NLP?"
+                          options={goalOptions}
+                          values={field.value}
+                          onChange={field.onChange}
+                        />
+                      )}
+                    />
+
+                    {/* Program - from API */}
+                    {/* <Controller
+                      name="program_id"
+                      control={control}
+                      render={({ field }) => (
+                        <SelectField
+                          label={programsLoading ? "Loading programs..." : "Select Program"}
+                          options={programOptions}
+                          value={field.value}
+                          onChange={field.onChange}
+                        />
+                      )}
+                    /> */}
                   </div>
 
                   <div className="flex flex-col gap-4">
@@ -287,38 +312,18 @@ export default function EnrollPopup({
                       }}
                     />
 
-                    {/* Profession */}
                     <Controller
-                      name="profession"
-                      control={control}
-                      rules={{ required: "Profession is required" }}
-                      render={({ field }) => (
-                        <InputField
-                          label="Profession"
-                          {...field}
-                          error={errors.profession?.message}
-                        />
-                      )}
-                    />
-                  </div>
-                </div>
-
-                {/* Goals and Query */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="flex flex-col gap-2 justify-between">
-                    <Controller
-                      name="goals"
+                      name="program_id"
                       control={control}
                       render={({ field }) => (
-                        <Checkboxfield
-                          label="Which goal would you like to attain via NLP?"
-                          options={goalOptions}
-                          values={field.value}
+                        <SelectField
+                          label={programsLoading ? "Loading programs..." : "Select Program"}
+                          options={programOptions}
+                          value={field.value}
                           onChange={field.onChange}
                         />
                       )}
                     />
-
                     <Controller
                       name="query"
                       control={control}
@@ -332,10 +337,33 @@ export default function EnrollPopup({
                         />
                       )}
                     />
+
+                    <Controller
+                      name="otherInfo"
+                      control={control}
+                      render={({ field }) => (
+                        <InputField
+                          label="Any other query/information"
+                          {...field}
+                          textarea
+                        />
+                      )}
+                    />
+
+
+                  </div>
+                </div>
+
+                {/* Goals and Query */}
+                {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                  <div className="flex flex-col gap-2 justify-between">
+
+
+
                   </div>
 
-                  <div className="flex flex-col gap-2 justify-between">
-                    {/* <Controller
+                  <div className="flex flex-col gap-2 ">
+                     <Controller
                       name="programs"
                       control={control}
                       render={({ field }) => (
@@ -352,33 +380,10 @@ export default function EnrollPopup({
                           }}
                         />
                       )}
-                    /> */}
-                    <Controller
-                      name="program_id"
-                      control={control}
-                      render={({ field }) => (
-                        <SelectField
-                          label={programsLoading ? "Loading programs..." : "Select Program"}
-                          options={programOptions}
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    />
-
-                    <Controller
-                      name="otherInfo"
-                      control={control}
-                      render={({ field }) => (
-                        <InputField
-                          label="Any other query/information"
-                          {...field}
-                          textarea
-                        />
-                      )}
-                    />
+                    /> 
+                    
                   </div>
-                </div>
+                </div> */}
               </div>
             )}
           </div>

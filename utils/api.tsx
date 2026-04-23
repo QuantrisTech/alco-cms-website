@@ -123,6 +123,14 @@ export const getProgramsPublic = () => PUBLIC_API.get("/api/v1/programs/name");
 // export const getAllLeads = (params?: any) =>
 //   API.get("/api/v1/leads", { params });// ✅ Public - no auth
 export const createLead = (data: any) => PUBLIC_API.post("/api/v1/leads", data);
+export const createLeadContact = (data: {
+  first_name: string;
+  last_name?: string;
+  email: string;
+  phone?: string;
+  query?: string;
+  source?: string;
+}) => PUBLIC_API.post("/api/v1/leads/contact", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
 // export const deleteLead = (id: string) => API.delete(`/api/v1/leads/${id}`);

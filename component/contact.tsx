@@ -1,19 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Button from "./button";
 import InputField from "./inputfield";
 import ContactBg from "@/assets/background/contact-info.webp";
 import Link from "next/link";
+import { createLeadContact } from "@/utils/api";
+import toast from "react-hot-toast";
 
 type ContactFormValues = {
-    firstName: string;
-    lastName: string;
+    first_name: string;
+    last_name: string;
     email: string;
     phone: string;
-    comments: string;
+    query: string;
 };
 
 const ContactUS = () => {
@@ -24,18 +26,75 @@ const ContactUS = () => {
         reset,
     } = useForm<ContactFormValues>({
         defaultValues: {
-            firstName: "",
-            lastName: "",
+            first_name: "",
+            last_name: "",
             email: "",
             phone: "",
-            comments: "",
+            query: "",
         },
     });
 
-    const onSubmit = (data: ContactFormValues) => {
-        console.log("Contact Form:", data);
-        alert("Form submitted!");
-        reset();
+    // const onSubmit = (data: ContactFormValues) => {
+    //     console.log("Contact Form:", data);
+    //     // Call the API to create a lead contact
+    //     createLeadContact({
+    //         first_name: data.first_name,
+    //         last_name: data.last_name,
+    //         email: data.email,
+    //         phone: data.phone,
+    //         query: data.query,
+    //     })
+    //         .then(() => {
+    //             alert("Form submitted!");
+    //             reset();
+    //         })
+    //         .catch((error) => {
+    //             console.error("Error submitting form:", error);
+    //             alert("Error submitting form. Please try again.");
+    //         });
+    // };
+
+
+    useEffect(() => {
+        const params = new URLSearchParams(window?.location?.search);
+    
+        const source =
+          params.get("utm_source") ||
+          params.get("source") ||
+          params.get("ref");
+    
+        if (source) {
+          // OPTION A: first-touch (recommended)
+          if (!localStorage.getItem("user_source")) {
+            localStorage.setItem("user_source", source);
+          }
+    
+          // OPTION B: latest-touch (overwrite)
+          // localStorage.setItem("user_source", source);
+        }
+      }, []);
+
+    const onSubmit = async (formData: ContactFormValues) => {
+
+        
+      const source = localStorage.getItem("user_source");
+
+        const res = await createLeadContact({
+            first_name: formData.first_name,
+            last_name: formData.last_name,
+            email: formData.email,
+            phone: formData.phone,
+            query: formData.query,
+            source: source || "contact",
+        });
+        console.log("Contact API Response:", res.data);
+        if (res?.data?.duplicate === true) {
+            // "We already have your details..."
+            toast.success(res.data.message);
+        } else {
+            // "Thank you for reaching out!"
+            toast.success(res.data.message);
+        }
     };
 
     return (
@@ -106,27 +165,27 @@ const ContactUS = () => {
                     {/* First + Last */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <Controller
-                            name="firstName"
+                            name="first_name"
                             control={control}
                             rules={{ required: "First Name is required" }}
                             render={({ field }) => (
                                 <InputField
                                     label="First Name*"
                                     {...field}
-                                    error={errors.firstName?.message}
+                                    error={errors.first_name?.message}
                                 />
                             )}
                         />
 
                         <Controller
-                            name="lastName"
+                            name="last_name"
                             control={control}
                             rules={{ required: "Last Name is required" }}
                             render={({ field }) => (
                                 <InputField
                                     label="Last Name*"
                                     {...field}
-                                    error={errors.lastName?.message}
+                                    error={errors.last_name?.message}
                                 />
                             )}
                         />
@@ -178,18 +237,18 @@ const ContactUS = () => {
                         />
                     </div>
 
-                    {/* Comments */}
+                    {/* query */}
                     <div className="my-6">
                         <Controller
-                            name="comments"
+                            name="query"
                             control={control}
-                            rules={{ required: "Comments are required" }}
+                            rules={{ required: "Query is required" }}
                             render={({ field }) => (
                                 <InputField
-                                    label="Comments*"
+                                    label="Comment*"
                                     textarea={true}
                                     {...field}
-                                    error={errors.comments?.message}
+                                    error={errors.query?.message}
                                 />
                             )}
                         />

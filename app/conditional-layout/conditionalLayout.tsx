@@ -8,6 +8,7 @@ import EnrollPopup from "@/component/modal/popup/enrollPopup";
 import FloatingChatButton from "@/component/FloatingChatButton";
 import Navbar from "@/component/Navbar";
 import Footer from "@/component/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -39,6 +40,7 @@ export default function ConditionalLayout({ children }: { children: React.ReactN
         <FloatingChatButton whatsappNumber="18886814808" phoneNumber="+18886814808" />
         {!hideLayout && <Footer />}
       </PopupProvider>
+      <Toaster />
     </>
   );
 }
