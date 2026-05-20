@@ -1,8 +1,8 @@
 import { HeroData } from "@/type/heroType";
 import { HeroType } from "@/type/homeType";
 import heroSlide1 from "@/assets/hero/hero_slide1.webp";
-import heroSlide2 from "@/assets/hero/hero_slide1.webp";
-import heroSlide3 from "@/assets/hero/hero_slide1.webp";
+import heroSlide2 from "@/assets/hero/hero_slide2.webp";
+import heroSlide3 from "@/assets/hero/hero_slide3.jpg";
 
 const heroData: HeroData = [
   {

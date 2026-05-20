@@ -17,26 +17,9 @@ import Thumbnail6 from "@/assets/testimonial/thumbnail_6.webp"
 import dynamic from "next/dynamic";
 // Example testimonial data
 const testimonialsData: TestimonialsPost[] = [
+    
     {
         _id: "1",
-        thumbnail: Thumbnail1,
-        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597497/testimonial_1_bumlft.mp4",
-        name: "Aneeka Messey",
-        designation: "Client",
-        rating: 5,
-        description: "Aneeka, an entrepreneur, wife, mother, and NLP coach, attributes her ability to balance these diverse roles to AL&CO. The transformative journey profoundly shifted her perspective, empowering her to develop new strategies for nurturing relationships and advancing her professional ventures.",
-    },
-    {
-        _id: "2",
-        thumbnail: Thumbnail2,
-        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597479/testimonial_2_v6euks.mp4",
-        name: "Hibba-Tur-Rehman",
-        designation: "Client",
-        rating: 5,
-        description: "Hibba Tur Rehman battled severe depression for four years, relying on heavy medication. Encouraged by our team, she joined our NLP program, and her medication reduced from 20 mg to just 2 mg. She credits this transformation to Arslan's guidance and the program's powerful content. After completing the Master Practitioner course, Hibba feels truly blessed and transformed.",
-    },
-    {
-        _id: "3",
         thumbnail: Thumbnail3,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597477/testimonial_3_lne9lq.mp4",
         name: "Christine Best",
@@ -45,7 +28,7 @@ const testimonialsData: TestimonialsPost[] = [
         description: "I'm Christine Best. I'm from Australia. The NLP training I undertook with AL&CO was presented by Arslan Larik. Each session informative interesting and interactive. His relaxed style and sense of humour made those sessions easy to learn and fun.",
     },
     {
-        _id: "4",
+        _id: "2",
         thumbnail: Thumbnail4,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597477/testimonial_4_gv7myy.mp4",
         name: "Joan Seurei",
@@ -54,7 +37,34 @@ const testimonialsData: TestimonialsPost[] = [
         description: "My name is Joan. I'm from Kenya. I'm so proud and excited to announce that I recently got certified as an NLP Coach and Practitioner and Timeline Therapy Techniques Practitioner through AL&CO. My training experiences a company was empowering and absolutely awesome.",
     },
     {
+        _id: "3",
+        thumbnail: Thumbnail6,
+        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597483/testimonial_6_zj8tb1.mp4",
+        name: "Sadie Jones",
+        rating: 5,
+        designation: "Client",
+        description: "Sadie Jones is a UK-based coach specializing in supporting women overcoming trauma through nutrition, mindset, and fitness. She found AL&CO's NLP training transformative, appreciating its personalized approach that catered to her specific learning needs. Describing NLP as an eye-opener that repositioned her mindset, Sadie encourages others to undertake this training as a valuable tool for both coaching and personal growth.",
+    },
+    {
+        _id: "4",
+        thumbnail: Thumbnail1,
+        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597497/testimonial_1_bumlft.mp4",
+        name: "Aneeka Messey",
+        designation: "Client",
+        rating: 5,
+        description: "Aneeka, an entrepreneur, wife, mother, and NLP coach, attributes her ability to balance these diverse roles to AL&CO. The transformative journey profoundly shifted her perspective, empowering her to develop new strategies for nurturing relationships and advancing her professional ventures.",
+    },
+    {
         _id: "5",
+        thumbnail: Thumbnail2,
+        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597479/testimonial_2_v6euks.mp4",
+        name: "Hibba-Tur-Rehman",
+        designation: "Client",
+        rating: 5,
+        description: "Hibba Tur Rehman battled severe depression for four years, relying on heavy medication. Encouraged by our team, she joined our NLP program, and her medication reduced from 20 mg to just 2 mg. She credits this transformation to Arslan's guidance and the program's powerful content. After completing the Master Practitioner course, Hibba feels truly blessed and transformed.",
+    },
+    {
+        _id: "6",
         thumbnail: Thumbnail5,
         videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597483/testimonial_5_dbbbqd.mp4",
         name: "Rabia Khan",
@@ -63,15 +73,7 @@ const testimonialsData: TestimonialsPost[] = [
         description: "Rabia experienced significant emotional challenges, particularly with fear and anxiety. Through Neuro-Linguistic Programming (NLP), she transformed her mindset, emotions, perspectives, and beliefs, becoming aware of her power to change. NLP provided effective tools that deeply shifted her mindset, leading to a profound life transformation.",
 
     },
-    {
-        _id: "6",
-        thumbnail: Thumbnail6,
-        videoUrl: "https://res.cloudinary.com/dmbpjv9e8/video/upload/v1774597483/testimonial_6_zj8tb1.mp4",
-        name: "Sadie Jones",
-        rating: 5,
-        designation: "Client",
-        description: "Sadie Jones is a UK-based coach specializing in supporting women overcoming trauma through nutrition, mindset, and fitness. She found AL&CO's NLP training transformative, appreciating its personalized approach that catered to her specific learning needs. Describing NLP as an eye-opener that repositioned her mindset, Sadie encourages others to undertake this training as a valuable tool for both coaching and personal growth.",
-    },
+    
 ];
 
 const studentReviews: TestimonialsPost[] = [

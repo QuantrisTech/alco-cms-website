@@ -34,6 +34,26 @@ import ThumbnailBP1 from "@/assets/thumbnail/about/collerbration_BP_1.webp";
 import ThumbnailBP2 from "@/assets/thumbnail/about/collerbration_BP_2.webp";
 import ThumbnailBP3 from "@/assets/thumbnail/about/collerbration_BP_3.webp";
 import Image from "next/image";
+import { CertificateItem } from "@/type/certificatetypes";
+import certificate1 from "@/assets/certificate/bismillah/certificate_1.webp"
+import certificate2 from "@/assets/certificate/bismillah/certificate_2.webp"
+import certificate3 from "@/assets/certificate/bismillah/certificate_3.webp"
+import CertApprovedSchoolHypnosis     from "@/assets/certificate/arslan_larik/Approved School of Hypnosis.webp"
+import CertCertifiedCoachTrainer      from "@/assets/certificate/arslan_larik/Certified Coach Trainer.webp"
+import CertCoachTrainerBadge          from "@/assets/certificate/arslan_larik/Certified Coach Trainer Badge.webp"
+import CertHypnosisMasterBadge        from "@/assets/certificate/arslan_larik/Certified Hypnosis Master Badge.webp"
+import CertHypnosisMaster             from "@/assets/certificate/arslan_larik/Certified Hypnosis Master_.webp"
+import CertMasterTrainerNLP           from "@/assets/certificate/arslan_larik/Certified Master Trainer of NLP.webp"
+import CertMasterTrainerNLPBadge      from "@/assets/certificate/arslan_larik/Certified Master Trainer of NLP Badge.webp"
+import CertInstituteNLP               from "@/assets/certificate/arslan_larik/Institute of NLP.webp"
+import CertMasterTrainerMemberANLP    from "@/assets/certificate/arslan_larik/Master Trainer Member of ANLP.webp"
+import CertMasterTrainerNLP2          from "@/assets/certificate/arslan_larik/Master Trainer of NLP.webp"
+import CertMasterTrainerNLPBadge2     from "@/assets/certificate/arslan_larik/Master Trainer of NLP Badge.webp"
+import CertMasteryCoachingLevel3      from "@/assets/certificate/arslan_larik/Mastery Coaching Program Level 3.webp"
+import CertSupervisorMemberANLP       from "@/assets/certificate/arslan_larik/Supervisor Member of ANLP.webp"
+import CertTrainerCoachMemberANLP     from "@/assets/certificate/arslan_larik/Trainer and Coach Member of ANLP.webp"
+import CertTrainerMasterTLT           from "@/assets/certificate/arslan_larik/Trainer-Master of TLT.webp"
+import CertTrainerMasterTLTBadge      from "@/assets/certificate/arslan_larik/Trainer-Master of TLT Badge.webp"
 
 type Faq = {
   question: string;
@@ -65,8 +85,190 @@ quickly and persevere with positivity.`,
   thumbnail: ThumbnailAL1
 };
 
+export const certificateDataAL: CertificateItem[] = [
+  {
+    id: "1",
+    tabLabel: "ABNLP — Master Trainer",
+    tag: "American Board of NLP",
+    title: "Certified Master Trainer of NLP",
+    organization: "American Board of Neuro-Linguistic Programming (ABNLP)",
+    description:
+      "Recognised as a Certified Master Trainer of NLP by the American Board of NLP — the highest NLP trainer designation globally. Demonstrates mastery-level knowledge and proficiency in Neuro-Linguistic Programming training and facilitation.",
+    duration: "Issued: 3 Sep 2025",
+    mode: "Membership No: N34570",
+    accreditation: "Expires: 1 Sep 2026",
+    badgeText: "ABNLP Certified Master Trainer of NLP",
+    level: "advanced",
+    image: CertMasterTrainerNLP,
+    badgeImage: CertMasterTrainerNLPBadge,
+  },
+  {
+    id: "2",
+    tabLabel: "ABNLP — NLP Institute",
+    tag: "American Board of NLP",
+    title: "ABNLP Approved Institute of Neuro Linguistic Programming",
+    organization: "American Board of Neuro-Linguistic Programming (ABNLP)",
+    description:
+      "Arslan Larik & Company is certified as an ABNLP Approved Institute of Neuro Linguistic Programming — confirming the institute meets all qualifications and training standards set by ABNLP to teach NLP programmes globally.",
+    duration: "Issued: 3 Sep 2025",
+    mode: "Membership No: N34570",
+    accreditation: "Expires: 1 Sep 2026",
+    badgeText: "ABNLP Approved NLP Institute",
+    level: "advanced",
+    image: CertInstituteNLP,
+    badgeImage: CertMasterTrainerNLPBadge2,
+  },
+  {
+    id: "3",
+    tabLabel: "ABNLP — Coach Trainer",
+    tag: "Coaching Division of ABNLP",
+    title: "Certified Coach Trainer",
+    organization: "Coaching Division of The American Board of NLP",
+    description:
+      "Certified as a Coach Trainer by the Coaching Division of the American Board of NLP. Demonstrates knowledge and proficiency in NLP-based coaching training at the highest international standard.",
+    duration: "Issued: 30 Nov 2025",
+    mode: "Membership No: N63747",
+    accreditation: "Expires: 1 Dec 2026",
+    badgeText: "ABNLP Coaching Division — Certified Coach Trainer",
+    level: "coaching",
+    image: CertCertifiedCoachTrainer,
+    badgeImage: CertCoachTrainerBadge,
+  },
+  {
+    id: "4",
+    tabLabel: "ABNLP — Coaching Institute",
+    tag: "Coaching Division of ABNLP",
+    title: "ABNLP Approved Institute of NLP-Coaching",
+    organization: "Coaching Division of The American Board of NLP",
+    description:
+      "Arslan Larik & Company is certified as an ABNLP Approved Institute of Neuro-Linguistic Programming Coaching — confirming the institute possesses the qualifications and training necessary to teach NLP-Coaching programmes.",
+    duration: "Issued: 30 Nov 2025",
+    mode: "Membership No: N63747",
+    accreditation: "Expires: 1 Dec 2026",
+    badgeText: "ABNLP Approved NLP-Coaching Institute",
+    level: "coaching",
+    image: CertInstituteNLP,
+  },
+  {
+    id: "5",
+    tabLabel: "ABH — Hypnosis Master Trainer",
+    tag: "American Board of Hypnotherapy",
+    title: "Certified Hypnosis Master Trainer",
+    organization: "American Board of Hypnotherapy (ABH)",
+    description:
+      "Certified as a Hypnosis Master Trainer by the American Board of Hypnotherapy — one of the most prestigious hypnotherapy credentials internationally. Demonstrates mastery in hypnotherapy techniques, induction, and advanced clinical applications.",
+    duration: "Issued: 3 Sep 2025",
+    mode: "Certificate No: H37708",
+    accreditation: "Expires: 1 Sep 2026",
+    badgeText: "ABH Certified Hypnosis Master Trainer",
+    level: "clinical",
+    image: CertHypnosisMaster,
+    badgeImage: CertHypnosisMasterBadge,
+  },
+  {
+    id: "6",
+    tabLabel: "ABH — Approved School",
+    tag: "American Board of Hypnotherapy",
+    title: "ABH Approved School of Hypnosis",
+    organization: "American Board of Hypnotherapy (ABH)",
+    description:
+      "Arslan Larik & Company is recognised as an ABH Approved School of Hypnosis in good standing — entitled to all the privileges and rights of an internationally accredited hypnosis training institution.",
+    duration: "Issued: 3 Sep 2025",
+    mode: "Certificate No: H37708",
+    accreditation: "Expires: 1 Sep 2026",
+    badgeText: "ABH Approved School of Hypnosis",
+    level: "clinical",
+    image: CertApprovedSchoolHypnosis,
+  },
+  {
+    id: "7",
+    tabLabel: "ANLP — Master Trainer",
+    tag: "ANLP International CIC",
+    title: "Master Trainer Member — ANLP International CIC",
+    organization: "The Global Association for NLP (ANLP)",
+    description:
+      "Recognised as a Master Trainer Member of ANLP International CIC — one of the most prestigious NLP trainer designations globally. Reflects a deep commitment to excellence, professional integrity, and ethical NLP practice.",
+    duration: "Valid until: 31 Jan 2026",
+    mode: "ANLP Master Trainer Member",
+    accreditation: "ANLP International CIC",
+    badgeText: "ANLP Master Trainer Member",
+    level: "advanced",
+    image: CertMasterTrainerMemberANLP,
+  },
+  {
+    id: "8",
+    tabLabel: "ANLP — Trainer & Coach",
+    tag: "ANLP International CIC",
+    title: "Trainer and Coach Member — ANLP International CIC",
+    organization: "The Global Association for NLP (ANLP)",
+    description:
+      "Admitted as a Trainer and Coach Member of ANLP International CIC — confirming professional standing as an ethical, credible, and proficient NLP Trainer and Coach committed to the ANLP Code of Ethics.",
+    duration: "Valid until: 31 Jan 2026",
+    mode: "ANLP Trainer & Coach Member",
+    accreditation: "ANLP International CIC",
+    badgeText: "ANLP Trainer and Coach Member",
+    level: "coaching",
+    image: CertTrainerCoachMemberANLP,
+  },
+  {
+    id: "9",
+    tabLabel: "ANLP — Supervisor",
+    tag: "ANLP International CIC",
+    title: "Supervisor Member — ANLP International CIC",
+    organization: "The Global Association for NLP (ANLP)",
+    description:
+      "Recognised as a Supervisor Member of ANLP International CIC — demonstrating advanced competence in NLP supervision, ethical oversight, and professional development of NLP practitioners and coaches.",
+    duration: "Valid until: 31 Jan 2026",
+    mode: "ANLP Supervisor Member",
+    accreditation: "ANLP International CIC",
+    badgeText: "ANLP Supervisor Member",
+    level: "advanced",
+    image: CertSupervisorMemberANLP,
+  },
+  {
+    id: "10",
+    tabLabel: "TLT — Master Trainer",
+    tag: "Time Line Therapy Association",
+    title: "Trainer / Master Practitioner of Time Line Therapy®",
+    organization: "Time Line Therapy® Association",
+    description:
+      "Certified as a Trainer and Master Practitioner of Time Line Therapy® — demonstrating advanced proficiency in timeline-based interventions for releasing negative emotions, limiting decisions, and creating compelling futures.",
+    duration: "Certificate No: T52607",
+    mode: "Issued: Nov 30, 2025",
+    accreditation: "Time Line Therapy® Association",
+    badgeText: "TLT Trainer / Master Practitioner",
+    level: "therapy",
+    image: CertTrainerMasterTLT,
+    badgeImage: CertTrainerMasterTLTBadge,
+  },
+  {
+    id: "11",
+    tabLabel: "Coacharya — Level 3",
+    tag: "Certificate of Completion",
+    title: "Coach to Lead — Mastery Coaching Program Level 3",
+    organization: "Coacharya (ICF-Accredited Coach Education)",
+    description:
+      "Successfully completed all requirements of Coacharya's Level 3 Mastery Coaching Program — totalling 90 hours inclusive of 75 hours of Accredited Coach Education and 15 hours of Mentor Coaching. ICF Level 3 accredited programme.",
+    duration: "Issued: 3 Feb 2026",
+    mode: "90 hours — 75 ACE + 15 Mentor",
+    accreditation: "ICF Accredited Coach Education — Level 3",
+    badgeText: "Coacharya · ICF Accredited Level 3",
+    level: "coaching",
+    image: CertMasteryCoachingLevel3,
+  },
+]
+
+const CertificatesSectionDataAL = {
+  data: certificateDataAL,
+  heading: "Arslan Larik's Certifications",
+  subheading: "Internationally recognised credentials in NLP, Coaching & Hypnotherapy",
+  badge: "Certifications",
+}
+
 const LevelBenefitsTableDataAL: LevelBenefitsTableType = {
   introPage: true,
+  
+  bgColor: "bg-dark-primary",
   title: {
     line1: "A Legacy of Excellence and Mastery",
     line2: `Arslan Larik’s
@@ -231,8 +433,64 @@ their mindset.`,
   intoBanner: true
 };
 
+const certificateDataBP: CertificateItem[] = [
+  {
+    id: "1",
+    tabLabel: "ICF — MCC",
+    tag: "International Coaching Federation",
+    title: "Master Certified Coach (MCC)™",
+    organization: "ICF Credentials and Standards",
+    description:
+      "The highest ICF coaching designation, earned by demonstrating knowledge and proficient use of core coaching skills through a comprehensive application and evaluation process — ensuring the highest standards for the coaching profession.",
+    duration: "Awarded: 10 Feb 2026",
+    mode: "Valid through: 28 Feb 2029",
+    accreditation: "ICF — International Coaching Federation",
+    badgeText: "ICF Master Certified Coach (MCC)™",
+    level: "advanced",
+    image: certificate1,
+  },
+  {
+    id: "2",
+    tabLabel: "ANLP — Accredited Trainer",
+    tag: "ANLP International CIC",
+    title: "Accredited Trainer — ANLP International CIC",
+    organization: "The Global Association for NLP",
+    description:
+      "Admitted as an Accredited Trainer of ANLP International CIC, upholding the highest standards of ethical, professional, and credible NLP practice. Committed to the ANLP Code of Ethics in all coaching and training work.",
+    duration: "Valid until: 31 Mar 2027",
+    mode: "ANLP Accredited",
+    accreditation: "ANLP International CIC",
+    badgeText: "ANLP Accredited Trainer · Valid until Mar 2027",
+    level: "advanced",
+    image: certificate2,
+  },
+  {
+    id: "3",
+    tabLabel: "ANLP — Master Trainer",
+    tag: "ANLP International CIC",
+    title: "Master Trainer Member — ANLP International CIC",
+    organization: "The Global Association for NLP",
+    description:
+      "Recognised as a Master Trainer Member of ANLP International CIC — one of the most prestigious NLP trainer designations globally. Reflects excellence, integrity, and a deep commitment to the NLP profession.",
+    duration: "Valid until: 31 Mar 2027",
+    mode: "ANLP Master Trainer Member",
+    accreditation: "ANLP International CIC",
+    badgeText: "ANLP Master Trainer Member · Valid until Mar 2027",
+    level: "advanced",
+    image: certificate3,
+  },
+]
+
+const CertificatesSectionData = {
+  data: certificateDataBP,
+  heading: "Bismillah Pervez's Certifications",
+  subheading: "Global certifications in NLP training, coaching and personal development",
+  badge: "Certifications",
+}
+
 const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
   introPage: true,
+  bgColor: "bg-dark-primary",
   title: {
     line1: "Experienced project leader and trainer with a proven track record of success at Arslan Larik & Company (AL&CO).",
     line2: "Bismillah Pervez demonstrated proficiency in managing projects and delivering  high-quality training sessions.",
@@ -611,6 +869,7 @@ export const about: AboutType[] = [
   {
     slug: "who-is-arslan-larik",
     BannerData: bannerDataAL,
+    CertificatesSectionData: CertificatesSectionDataAL,
     LevelBenefitsTableData: LevelBenefitsTableDataAL,
     ContentSectionData2: ContentSectionData2AL,
     ContentSectionData3: ContentSectionData3AL,
@@ -619,6 +878,7 @@ export const about: AboutType[] = [
   {
     slug: "who-is-bismillah-pervez",
     BannerData: bannerDataBP,
+    CertificatesSectionData: CertificatesSectionData,
     LevelBenefitsTableData: LevelBenefitsTableDataBP,
     galleryData: galleryDataBP,
     ContentSectionData2: ContentSectionData2BP,

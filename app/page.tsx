@@ -10,11 +10,12 @@ import WhyTrainWithAL from "@/component/WhyTrainWithAL";
 import ALCOCenter from "@/component/ALCOCenter";
 import Testimonials from "@/component/testimonial";
 import { home } from "./data";
+import LiveSessionsSection from "@/component/Livesessionssection";
 
 export default function Home() {
   return (
     <div className="">
-      <Hero data={home.hero}/>
+      <Hero data={home.hero} />
       <Brand />
       <WhatIsNlp />
       <AralanLarikIntro />
@@ -23,6 +24,7 @@ export default function Home() {
       <Accredited />
       <WhyTrainWithAL />
       <ALCOCenter />
+      <LiveSessionsSection />   
       <Testimonials />
     </div>
   );
