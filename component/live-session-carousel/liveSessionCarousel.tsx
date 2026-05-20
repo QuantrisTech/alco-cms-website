@@ -5,8 +5,8 @@ import Image from "next/image"
 import { LiveSessionItem } from "@/type/liveSessionType"
 import "./liveSessionCarousel.css"
 
-function tagClass(tag: string): string {
-  if (tag === "Workshop")     return "ls_tag ls_tag--workshop"
+function tagClass(tag?: string): string {
+  if (tag === "Workshop") return "ls_tag ls_tag--workshop"
   if (tag === "Announcement") return "ls_tag ls_tag--announcement"
   return "ls_tag"
 }
