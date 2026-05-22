@@ -9,54 +9,54 @@ import "./certificateSectionCarousel.css"
 const IconCertificate = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="2" y="3" width="20" height="14" rx="2"/>
-    <path d="M8 21h8M12 17v4"/>
-    <circle cx="12" cy="10" r="3"/>
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <path d="M8 21h8M12 17v4" />
+    <circle cx="12" cy="10" r="3" />
   </svg>
 )
 const IconBuilding = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/>
+    <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
   </svg>
 )
 const IconClock = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+    <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
   </svg>
 )
 const IconUsers = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-    <circle cx="9" cy="7" r="4"/>
-    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
   </svg>
 )
 const IconWorld = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
   </svg>
 )
 const IconRosette = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/>
+    <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z" />
   </svg>
 )
 const IconChevronLeft = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <polyline points="15 18 9 12 15 6"/>
+    <polyline points="15 18 9 12 15 6" />
   </svg>
 )
 const IconChevronRight = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <polyline points="9 18 15 12 9 6"/>
+    <polyline points="9 18 15 12 9 6" />
   </svg>
 )
 
@@ -235,12 +235,32 @@ const CertificateSectionCarousel = ({ certificates }: PropType) => {
               </span>
             </div>
           </div>
+          {/* ── Accredited By panel ── */}
+        {cert.accreditedBadges && cert.accreditedBadges.length > 0 && (
+          <div className="cert_accredited_panel">
+            {/* <span className="cert_accredited_label">Accredited By</span> */}
+            <div className="cert_accredited_badges">
+              {cert.accreditedBadges.map((src, i) => (
+                <div key={i} className="cert_accredited_badge">
+                  <Image
+                    src={src}
+                    alt={`Accreditation badge ${i + 1}`}
+                    fill
+                    className="object-contain object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
           <span className="cert_badge">
             <IconRosette />
             {cert.badgeText}
           </span>
         </div>
+
+        
       </div>
     </div>
   )

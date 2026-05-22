@@ -52,6 +52,14 @@ import cert3Level2 from "@/assets/level-certificate/certificate-3-level-2.webp"
 import cert3Level3 from "@/assets/level-certificate/certificate-3-level-3.webp"
 import cert4Level3 from "@/assets/level-certificate/certificate-4-level-3.webp"
 import cert5Level3 from "@/assets/level-certificate/certificate-5-level-3.webp"
+import badgeABNLP  from "@/assets/level-certificate/badges/abnlp.webp"
+import badgeTLTA   from "@/assets/level-certificate/badges/tlta.webp"
+import badgeCDAB   from "@/assets/level-certificate/badges/cdab.webp"
+import badgeABH    from "@/assets/level-certificate/badges/abh.webp"
+import badgeNGH    from "@/assets/level-certificate/badges/ngh.webp"
+import badgeICFMCC from "@/assets/level-certificate/badges/icf-mcc.webp"
+import badgeCPD    from "@/assets/level-certificate/badges/cpd.webp"
+import badgeALCO   from "@/assets/level-certificate/badges/alco.webp"
 import CertApprovedSchoolHypnosis     from "@/assets/certificate/arslan_larik/Approved School of Hypnosis.webp"
 import CertCertifiedCoachTrainer      from "@/assets/certificate/arslan_larik/Certified Coach Trainer.webp"
 import CertCoachTrainerBadge          from "@/assets/certificate/arslan_larik/Certified Coach Trainer Badge.webp"
@@ -99,7 +107,7 @@ quickly and persevere with positivity.`,
   thumbnail: ThumbnailAL1
 };
 
-export const certificateDataAL: CertificateItem[] = [
+const certificateDataAL: CertificateItem[] = [
   {
     id: "1",
     tabLabel: "ABNLP — Master Trainer",
@@ -115,6 +123,7 @@ export const certificateDataAL: CertificateItem[] = [
     level: "advanced",
     image: CertMasterTrainerNLP,
     badgeImage: CertMasterTrainerNLPBadge,
+    accreditedBadges: [badgeABNLP],
   },
   {
     id: "2",
@@ -131,6 +140,7 @@ export const certificateDataAL: CertificateItem[] = [
     level: "advanced",
     image: CertInstituteNLP,
     badgeImage: CertMasterTrainerNLPBadge2,
+    accreditedBadges: [badgeABNLP],
   },
   {
     id: "3",
@@ -147,6 +157,7 @@ export const certificateDataAL: CertificateItem[] = [
     level: "coaching",
     image: CertCertifiedCoachTrainer,
     badgeImage: CertCoachTrainerBadge,
+    accreditedBadges: [badgeCDAB],
   },
   {
     id: "4",
@@ -162,6 +173,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "ABNLP Approved NLP-Coaching Institute",
     level: "coaching",
     image: CertInstituteNLP,
+    accreditedBadges: [badgeCDAB],
   },
   {
     id: "5",
@@ -178,6 +190,7 @@ export const certificateDataAL: CertificateItem[] = [
     level: "clinical",
     image: CertHypnosisMaster,
     badgeImage: CertHypnosisMasterBadge,
+    accreditedBadges: [badgeABH],
   },
   {
     id: "6",
@@ -193,6 +206,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "ABH Approved School of Hypnosis",
     level: "clinical",
     image: CertApprovedSchoolHypnosis,
+    accreditedBadges: [badgeABH],
   },
   {
     id: "7",
@@ -208,6 +222,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "ANLP Master Trainer Member",
     level: "advanced",
     image: CertMasterTrainerMemberANLP,
+    accreditedBadges: [badgeCPD],
   },
   {
     id: "8",
@@ -223,6 +238,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "ANLP Trainer and Coach Member",
     level: "coaching",
     image: CertTrainerCoachMemberANLP,
+    accreditedBadges: [badgeCPD],
   },
   {
     id: "9",
@@ -238,6 +254,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "ANLP Supervisor Member",
     level: "advanced",
     image: CertSupervisorMemberANLP,
+    accreditedBadges: [badgeCPD],
   },
   {
     id: "10",
@@ -254,6 +271,7 @@ export const certificateDataAL: CertificateItem[] = [
     level: "therapy",
     image: CertTrainerMasterTLT,
     badgeImage: CertTrainerMasterTLTBadge,
+    accreditedBadges: [badgeTLTA],
   },
   {
     id: "11",
@@ -269,6 +287,7 @@ export const certificateDataAL: CertificateItem[] = [
     badgeText: "Coacharya · ICF Accredited Level 3",
     level: "coaching",
     image: CertMasteryCoachingLevel3,
+    accreditedBadges: [badgeICFMCC],
   },
 ]
 
@@ -449,7 +468,7 @@ their mindset.`,
 
 export const certificateDataBP: CertificateItem[] = [
  
-  // ─── Previously existing entries ───────────────────────────────
+  // ─── ICF Certifications ───────────────────────────────────────────────────
   {
     id: "1",
     tabLabel: "ICF — MCC",
@@ -464,6 +483,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ICF Master Certified Coach (MCC)™",
     level: "advanced",
     image: certificate1,
+    accreditedBadges: [badgeICFMCC],
   },
   {
     id: "2",
@@ -479,6 +499,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ANLP Accredited Trainer · Valid until Mar 2027",
     level: "advanced",
     image: certificate2,
+    accreditedBadges: [badgeCPD],
   },
   {
     id: "3",
@@ -494,9 +515,10 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ANLP Master Trainer Member · Valid until Mar 2027",
     level: "advanced",
     image: certificate3,
+    accreditedBadges: [badgeCPD],
   },
  
-  // ─── NLP Certificates (Certificate 1 — ABNLP) ──────────────────
+  // ─── NLP Certificates (ABNLP) ─────────────────────────────────────────────
   {
     id: "4",
     tabLabel: "NLP Practitioner",
@@ -511,6 +533,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified NLP Practitioner",
     level: "foundation",
     image: cert1Level1,
+    accreditedBadges: [badgeABNLP, badgeALCO],
   },
   {
     id: "5",
@@ -526,6 +549,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified NLP Master Practitioner",
     level: "advanced",
     image: cert1Level2,
+    accreditedBadges: [badgeABNLP, badgeALCO],
   },
   {
     id: "6",
@@ -541,6 +565,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABH Certified Practitioner of Hypnosis",
     level: "foundation",
     image: cert1Level3,
+    accreditedBadges: [badgeABH, badgeALCO],
   },
   {
     id: "7",
@@ -556,6 +581,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified Trainer of NLP",
     level: "advanced",
     image: cert1Level4,
+    accreditedBadges: [badgeABNLP, badgeALCO],
   },
   {
     id: "8",
@@ -571,6 +597,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABH Certified Trainer of Hypnosis",
     level: "advanced",
     image: cert1Level5,
+    accreditedBadges: [badgeABH, badgeALCO],
   },
   {
     id: "9",
@@ -586,9 +613,10 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified Master Trainer of NLP · Year 1 of 3",
     level: "advanced",
     image: cert1Level6,
+    accreditedBadges: [badgeABNLP, badgeALCO],
   },
  
-  // ─── Time Line Therapy Certificates (Certificate 2 — TLTA) ──────
+  // ─── Time Line Therapy Certificates (TLTA) ────────────────────────────────
   {
     id: "10",
     tabLabel: "TLT Practitioner",
@@ -603,6 +631,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "TLTA Certified Practitioner of Time Line Therapy™",
     level: "therapy",
     image: cert2Level1,
+    accreditedBadges: [badgeTLTA, badgeALCO],
   },
   {
     id: "11",
@@ -618,6 +647,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "TLTA Certified Master Practitioner of Time Line Therapy™",
     level: "therapy",
     image: cert2Level2,
+    accreditedBadges: [badgeTLTA, badgeALCO],
   },
   {
     id: "12",
@@ -633,9 +663,10 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABH Certified Master Practitioner of Hypnosis",
     level: "clinical",
     image: cert2Level3,
+    accreditedBadges: [badgeABH, badgeALCO],
   },
  
-  // ─── NLP Coaching Certificates (Certificate 3 — ABNLP Coaching) ─
+  // ─── NLP Coaching Certificates (ABNLP Coaching Division) ─────────────────
   {
     id: "13",
     tabLabel: "NLP Coach",
@@ -650,6 +681,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified NLP Coach",
     level: "coaching",
     image: cert3Level1,
+    accreditedBadges: [badgeCDAB, badgeALCO],
   },
   {
     id: "14",
@@ -665,9 +697,10 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "ABNLP Certified NLP Master Coach",
     level: "coaching",
     image: cert3Level2,
+    accreditedBadges: [badgeCDAB, badgeALCO],
   },
  
-  // ─── AH&I — Quintuple Certification (Certificate 3 Level 3) ─────
+  // ─── AH&I — Quintuple Certification (ALL 6 badges) ───────────────────────
   {
     id: "15",
     tabLabel: "AH&I — Quintuple Cert",
@@ -682,9 +715,17 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "AL&CO Quintuple Certified — AH&I Graduate",
     level: "advanced",
     image: cert3Level3,
+    accreditedBadges: [
+      badgeABNLP,
+      badgeTLTA,
+      badgeCDAB,
+      badgeABH,
+      badgeNGH,
+      badgeALCO,
+    ],
   },
  
-  // ─── National Guild of Hypnotists (Certificate 4 & 5) ───────────
+  // ─── National Guild of Hypnotists ─────────────────────────────────────────
   {
     id: "16",
     tabLabel: "NGH — Certified Hypnotherapist",
@@ -699,6 +740,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "NGH Certified Hypnotherapist",
     level: "clinical",
     image: cert4Level3,
+    accreditedBadges: [badgeNGH],
   },
   {
     id: "17",
@@ -714,6 +756,7 @@ export const certificateDataBP: CertificateItem[] = [
     badgeText: "NGH Member in Good Standing · Since 2023",
     level: "clinical",
     image: cert5Level3,
+    accreditedBadges: [badgeNGH],
   },
 ]
 

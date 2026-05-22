@@ -14,4 +14,5 @@ export type CertificateItem = {
   level?: "foundation" | "advanced" | "coaching" | "therapy" | "clinical" | "other"
   image?: StaticImageData
   badgeImage?: StaticImageData
+  accreditedBadges?: StaticImageData[]   // paths to badge images
 }
