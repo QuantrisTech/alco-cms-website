@@ -38,6 +38,20 @@ import { CertificateItem } from "@/type/certificatetypes";
 import certificate1 from "@/assets/certificate/bismillah/certificate_1.webp"
 import certificate2 from "@/assets/certificate/bismillah/certificate_2.webp"
 import certificate3 from "@/assets/certificate/bismillah/certificate_3.webp"
+import cert1Level1 from "@/assets/level-certificate/certificate-1-level-1.webp"
+import cert1Level2 from "@/assets/level-certificate/certificate-1-level-2.webp"
+import cert1Level3 from "@/assets/level-certificate/certificate-1-level-3.webp"
+import cert1Level4 from "@/assets/level-certificate/certificate-1-level-4.webp"
+import cert1Level5 from "@/assets/level-certificate/certificate-1-level-5.webp"
+import cert1Level6 from "@/assets/level-certificate/certificate-1-level-6.webp"
+import cert2Level1 from "@/assets/level-certificate/certificate-2-level-1.webp"
+import cert2Level2 from "@/assets/level-certificate/certificate-2-level-2.webp"
+import cert2Level3 from "@/assets/level-certificate/certificate-2-level-3.webp"
+import cert3Level1 from "@/assets/level-certificate/certificate-3-level-1.webp"
+import cert3Level2 from "@/assets/level-certificate/certificate-3-level-2.webp"
+import cert3Level3 from "@/assets/level-certificate/certificate-3-level-3.webp"
+import cert4Level3 from "@/assets/level-certificate/certificate-4-level-3.webp"
+import cert5Level3 from "@/assets/level-certificate/certificate-5-level-3.webp"
 import CertApprovedSchoolHypnosis     from "@/assets/certificate/arslan_larik/Approved School of Hypnosis.webp"
 import CertCertifiedCoachTrainer      from "@/assets/certificate/arslan_larik/Certified Coach Trainer.webp"
 import CertCoachTrainerBadge          from "@/assets/certificate/arslan_larik/Certified Coach Trainer Badge.webp"
@@ -433,7 +447,9 @@ their mindset.`,
   intoBanner: true
 };
 
-const certificateDataBP: CertificateItem[] = [
+export const certificateDataBP: CertificateItem[] = [
+ 
+  // ─── Previously existing entries ───────────────────────────────
   {
     id: "1",
     tabLabel: "ICF — MCC",
@@ -478,6 +494,226 @@ const certificateDataBP: CertificateItem[] = [
     badgeText: "ANLP Master Trainer Member · Valid until Mar 2027",
     level: "advanced",
     image: certificate3,
+  },
+ 
+  // ─── NLP Certificates (Certificate 1 — ABNLP) ──────────────────
+  {
+    id: "4",
+    tabLabel: "NLP Practitioner",
+    tag: "American Board of NLP (ABNLP)",
+    title: "Certified Practitioner of Neuro Linguistic Programming",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP",
+    description:
+      "Has completed the 130-hour Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and The American Board of NLP (ABNLP).",
+    duration: "Awarded: 23rd September 2019",
+    mode: "130-Hour Practitioner Training",
+    accreditation: "American Board of NLP (ABNLP)",
+    badgeText: "ABNLP Certified NLP Practitioner",
+    level: "foundation",
+    image: cert1Level1,
+  },
+  {
+    id: "5",
+    tabLabel: "NLP Master Practitioner",
+    tag: "American Board of NLP (ABNLP)",
+    title: "Certified Master Practitioner of Neuro Linguistic Programming",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP",
+    description:
+      "Has completed the 140-hour Master Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and The American Board of NLP (ABNLP).",
+    duration: "Awarded: 12th October 2019",
+    mode: "140-Hour Master Practitioner Training",
+    accreditation: "American Board of NLP (ABNLP)",
+    badgeText: "ABNLP Certified NLP Master Practitioner",
+    level: "advanced",
+    image: cert1Level2,
+  },
+  {
+    id: "6",
+    tabLabel: "Hypnosis Practitioner",
+    tag: "American Board of Hypnotherapy (ABH)",
+    title: "Certified Practitioner of Hypnosis",
+    organization: "Arslan Larik & Company (AL&CO) · ABH",
+    description:
+      "Has completed the 130-hour Practitioner Training in Hypnosis and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and The American Board of Hypnotherapy (ABH).",
+    duration: "Awarded: 7th February 2023",
+    mode: "130-Hour Practitioner Training",
+    accreditation: "American Board of Hypnotherapy (ABH)",
+    badgeText: "ABH Certified Practitioner of Hypnosis",
+    level: "foundation",
+    image: cert1Level3,
+  },
+  {
+    id: "7",
+    tabLabel: "NLP Trainer",
+    tag: "American Board of NLP (ABNLP)",
+    title: "Certified Trainer of Neuro-Linguistic Programming",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP",
+    description:
+      "Has completed the 165-hour NLP Trainer's Certification Training in Neuro-Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Master Trainer Arslan Larik.",
+    duration: "Awarded: 1st January 2021",
+    mode: "165-Hour Trainer Certification Training",
+    accreditation: "American Board of NLP (ABNLP)",
+    badgeText: "ABNLP Certified Trainer of NLP",
+    level: "advanced",
+    image: cert1Level4,
+  },
+  {
+    id: "8",
+    tabLabel: "Hypnosis Trainer",
+    tag: "American Board of Hypnotherapy (ABH)",
+    title: "Certified Trainer of Hypnosis",
+    organization: "Arslan Larik & Company (AL&CO) · ABH",
+    description:
+      "Has successfully completed the Trainer's Evaluation & Certification Training in Hypnosis and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Master Trainer Arslan Larik.",
+    duration: "Awarded: 1st July 2021",
+    mode: "Trainer's Evaluation & Certification",
+    accreditation: "American Board of Hypnotherapy (ABH)",
+    badgeText: "ABH Certified Trainer of Hypnosis",
+    level: "advanced",
+    image: cert1Level5,
+  },
+  {
+    id: "9",
+    tabLabel: "NLP Master Trainer — Yr 1",
+    tag: "American Board of NLP (ABNLP)",
+    title: "Certified Master Trainer of NLP — Year 1 of 3",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP",
+    description:
+      "Has completed Year 1 of the Master Trainer Development Program in Neuro-Linguistic Programming, having demonstrated the highest level of mastery of the content and process of NLP. Conferred by Arslan Larik & Company (AL&CO) and Master Trainer Arslan Larik.",
+    duration: "Awarded: 31st December 2024",
+    mode: "Master Trainer Development Program",
+    accreditation: "American Board of NLP (ABNLP)",
+    badgeText: "ABNLP Certified Master Trainer of NLP · Year 1 of 3",
+    level: "advanced",
+    image: cert1Level6,
+  },
+ 
+  // ─── Time Line Therapy Certificates (Certificate 2 — TLTA) ──────
+  {
+    id: "10",
+    tabLabel: "TLT Practitioner",
+    tag: "Time Line Therapy Association (TLTA)",
+    title: "Certified Practitioner of Time Line Therapy™",
+    organization: "Arslan Larik & Company (AL&CO) · TLTA",
+    description:
+      "Has completed the 130-hour Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Time Line Therapy Association (TLTA).",
+    duration: "Awarded: 23rd September 2019",
+    mode: "130-Hour Practitioner Training",
+    accreditation: "Time Line Therapy Association (TLTA)",
+    badgeText: "TLTA Certified Practitioner of Time Line Therapy™",
+    level: "therapy",
+    image: cert2Level1,
+  },
+  {
+    id: "11",
+    tabLabel: "TLT Master Practitioner",
+    tag: "Time Line Therapy Association (TLTA)",
+    title: "Certified Master Practitioner of Time Line Therapy™",
+    organization: "Arslan Larik & Company (AL&CO) · TLTA",
+    description:
+      "Has completed the 140-hour Master Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Time Line Therapy Association (TLTA).",
+    duration: "Awarded: 12th October 2019",
+    mode: "140-Hour Master Practitioner Training",
+    accreditation: "Time Line Therapy Association (TLTA)",
+    badgeText: "TLTA Certified Master Practitioner of Time Line Therapy™",
+    level: "therapy",
+    image: cert2Level2,
+  },
+  {
+    id: "12",
+    tabLabel: "Hypnosis Master Practitioner",
+    tag: "American Board of Hypnotherapy (ABH)",
+    title: "Certified Master Practitioner of Hypnosis",
+    organization: "Arslan Larik & Company (AL&CO) · ABH",
+    description:
+      "Has completed the 140-hour Master Practitioner Training in Hypnosis and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and The American Board of Hypnotherapy (ABH).",
+    duration: "Awarded: 7th February 2023",
+    mode: "140-Hour Master Practitioner Training",
+    accreditation: "American Board of Hypnotherapy (ABH)",
+    badgeText: "ABH Certified Master Practitioner of Hypnosis",
+    level: "clinical",
+    image: cert2Level3,
+  },
+ 
+  // ─── NLP Coaching Certificates (Certificate 3 — ABNLP Coaching) ─
+  {
+    id: "13",
+    tabLabel: "NLP Coach",
+    tag: "Coaching Division of The American Board of NLP (ABNLP)",
+    title: "Certified NLP Coach",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP Coaching Division",
+    description:
+      "Has completed the 130-hour Master Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Coaching Division of The American Board of NLP (ABNLP).",
+    duration: "Awarded: 23rd September 2019",
+    mode: "130-Hour Master Practitioner Training",
+    accreditation: "Coaching Division of ABNLP",
+    badgeText: "ABNLP Certified NLP Coach",
+    level: "coaching",
+    image: cert3Level1,
+  },
+  {
+    id: "14",
+    tabLabel: "NLP Master Coach",
+    tag: "Coaching Division of The American Board of NLP (ABNLP)",
+    title: "Certified NLP Master Coach",
+    organization: "Arslan Larik & Company (AL&CO) · ABNLP Coaching Division",
+    description:
+      "Has completed the 140-hour Master Practitioner Training in Neuro Linguistic Programming and has demonstrated the highest degree of competence and skill. Conferred by Arslan Larik & Company (AL&CO) and Coaching Division of The American Board of NLP (ABNLP).",
+    duration: "Awarded: 12th October 2019",
+    mode: "140-Hour Master Practitioner Training",
+    accreditation: "Coaching Division of ABNLP",
+    badgeText: "ABNLP Certified NLP Master Coach",
+    level: "coaching",
+    image: cert3Level2,
+  },
+ 
+  // ─── AH&I — Quintuple Certification (Certificate 3 Level 3) ─────
+  {
+    id: "15",
+    tabLabel: "AH&I — Quintuple Cert",
+    tag: "Arslan Larik & Company (AL&CO)",
+    title: "Advanced Hypnotherapy and Interventionist (AH&I) — Quintuple Certification",
+    organization: "Arslan Larik & Company (AL&CO)",
+    description:
+      "Awarded to graduates having completed Quintuple Certification and are a part of the ongoing Journey of Mastery. Has completed the prescribed course of study in Advanced Hypnotherapy and Interventionist (AH&I) — demonstrating the ability to skillfully perform NLP Interventions, Time Line Therapy® Techniques, Coaching Skills, and Hypnosis.",
+    duration: "Testament To The Graduate",
+    mode: "Advanced Hypnotherapy & Interventionist Curriculum",
+    accreditation: "ABNLP · TLTA · ABNLP Coaching Division · ABH · NGH",
+    badgeText: "AL&CO Quintuple Certified — AH&I Graduate",
+    level: "advanced",
+    image: cert3Level3,
+  },
+ 
+  // ─── National Guild of Hypnotists (Certificate 4 & 5) ───────────
+  {
+    id: "16",
+    tabLabel: "NGH — Certified Hypnotherapist",
+    tag: "National Guild of Hypnotists, Inc.",
+    title: "Certified Hypnotherapist — National Guild of Hypnotists",
+    organization: "National Guild of Hypnotists, Inc. · Merrimack, New Hampshire",
+    description:
+      "Having satisfactorily completed the required studies, has been found by the Board of Directors to possess the qualifications required by Constitutional bylaws, and is hereby registered as a Certified Hypnotherapist by the National Guild of Hypnotists, Inc.",
+    duration: "Awarded: 7th February 2023",
+    mode: "Required Studies — Constitutional Bylaws",
+    accreditation: "National Guild of Hypnotists, Inc. (NGH)",
+    badgeText: "NGH Certified Hypnotherapist",
+    level: "clinical",
+    image: cert4Level3,
+  },
+  {
+    id: "17",
+    tabLabel: "NGH — Member in Good Standing",
+    tag: "National Guild of Hypnotists, Inc.",
+    title: "Certified Hypnotherapist — Member in Good Standing",
+    organization: "National Guild of Hypnotists, Inc.",
+    description:
+      "Recognised as a Certified Hypnotherapist and Member in Good Standing of the National Guild of Hypnotists, Inc. — the oldest and largest hypnosis organisation in the world. Loyal Member since 2023.",
+    duration: "Loyal Member Since: 2023",
+    mode: "Member in Good Standing",
+    accreditation: "National Guild of Hypnotists, Inc. (NGH)",
+    badgeText: "NGH Member in Good Standing · Since 2023",
+    level: "clinical",
+    image: cert5Level3,
   },
 ]
 
