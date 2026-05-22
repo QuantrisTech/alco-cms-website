@@ -14,15 +14,19 @@ const quickLinks = [
   { name: "Home", link: "/" },
   { name: "Blogs", link: "/blogs" },
   { name: "Contact", link: "/contact" },
+  { name: "Refund Policy", link: "/refund-policy" },
+  { name: "Service Policy", link: "/service-policy" },
   { name: "Privacy Policy", link: "/privacy-policy" },
   { name: "Terms & Conditions", link: "/terms" },
 ];
 
 const usefulLinks = [
-  { name: "Our Mission, Vision & Core Values", link: "/our-mission" },
+  { name: "Resource", link: "/services/resources" },
+  { name: "Four Clouds Model", link: "/services/four-clouds-model" },
   { name: "Who is Arsalan Larik", link: "/about-us/who-is-arslan-larik" },
   { name: "Who is Bismillah pervez", link: "/about-us/who-is-bismillah-pervez" },
   { name: "Why Train With AL&CO", link: "/about-us/why-train-with-alco" },
+  { name: "Our Mission, Vision & Core Values", link: "/our-mission" },
 ];
 
 const ContactDetails = [
@@ -50,7 +54,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-10">
 
           {/* Logo */}
-          <div>
+          {/* <div>
             <Link href="/" className="flex items-center gap-2">
               <Image
                 src={Logo}
@@ -59,6 +63,16 @@ export default function Footer() {
                 priority
               />
             </Link>
+          </div> */}
+          <div>
+            <Link href="/" className="flex items-center gap-2">
+              <Image src={Logo} alt="Arslan Larik & Company Logo" className="h-10 md:h-11 xl:h-12 2xl:h-20  w-auto"
+                priority />
+            </Link>
+            <p className="text-white/70 text-xs mt-3 leading-snug">
+              Center for Human Brilliance and<br />
+              Behavioral Reengineering
+            </p>
           </div>
 
           {/* Quick Links */}
@@ -124,7 +138,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="footer-menu-font text-white sm:text-center">
-            © 2026 Vistar Media. All Rights Reserved.
+           © 2026 Arslan Larik & Co. All Rights Reserved.
           </span>
 
           <div className="flex mt-4 sm:mt-0 sm:justify-center gap-3">
