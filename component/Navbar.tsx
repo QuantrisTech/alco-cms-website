@@ -27,7 +27,7 @@ const menuData = [
     name: "About Us",
     submenu: [
       { name: "Our Mission", link: "/our-mission" },
-      { name: "Who is Arsalan Larik", link: "/about-us/who-is-arslan-larik" },
+      { name: "Who is Arslan Larik", link: "/about-us/who-is-arslan-larik" },
       { name: "Who is Bismillah pervez", link: "/about-us/who-is-bismillah-pervez" },
       { name: "Why Train With AL&CO", link: "/about-us/why-train-with-alco" },
       { name: "FAQs", link: "/faqs" },

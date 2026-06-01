@@ -90,7 +90,7 @@ const studentReviews: TestimonialsPost[] = [
         rating: 5,
         designation: "Student",
         description:
-            "Hello I have done my Master's practitioner from Arsalan Larik and co. Its one of the best company to do this course. The course helped me shift my mindset and approach challenges with confidence.",
+            "Hello I have done my Master's practitioner from Arslan Larik and co. Its one of the best company to do this course. The course helped me shift my mindset and approach challenges with confidence.",
     },
     {
         _id: "2",
