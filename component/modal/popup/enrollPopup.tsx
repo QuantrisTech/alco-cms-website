@@ -126,7 +126,33 @@ export default function EnrollPopup({
       console.log("ERROR RESPONSE", err?.response);
       console.log("ERROR MESSAGE", err?.message);
 
-      toast.error("Failed to load programs");
+      // ✅ API fail hogi toh manually fallback set karo
+      setProgramOptions([
+        {
+          label: "NLP Master Trainer Program",
+          value: "69e8c025afaf0d3fb90233d4",
+        },
+        {
+          label: "Hypnosis Trainer's Training Certification and Evaluation Program",
+          value: "69e8bfb7afaf0d3fb90233a8",
+        },
+        {
+          label: "NLP Trainers' Training And Evaluation Certification Program",
+          value: "69e8bf8cafaf0d3fb90233a0",
+        },
+        {
+          label: "Advanced Hypnotherapy & Interventionist Training Program",
+          value: "69e8bf48afaf0d3fb9023398",
+        },
+        {
+          label: "NLP Master Practitioner Program",
+          value: "69d8a8ed06f01d73ae725722",
+        },
+        {
+          label: "NLP Practitioner Program",
+          value: "69d88bcd3b3f401bb2e711bc",
+        },
+      ]);
     } finally {
       setProgramsLoading(false);
     }
