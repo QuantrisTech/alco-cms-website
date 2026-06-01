@@ -97,42 +97,42 @@ const ourProgramData: OurProgramData = {
         alt: "Arslan Larik"
       }
     },
-    {
-      title: "NLP Trainer’s Training Program",
-      description: "An 18-day hybrid course by Arslan Larik &amp; Company with ABNLP accreditation. Become a certified trainer in public speaking, training design, audience engagement, and transformation.",
-      href: "/program/nlp-trainers-training-program",
-      button: {
-        text: "Learn More"
-      },
-      image: {
-        src: Level4,
-        alt: "Arslan Larik"
-      }
-    },
-    {
-      title: "Hypnosis Trainer’s Training Program",
-      description: "An 8-day online training program, accredited by The American Board of Hypnotherapy, opening doors to multiple career paths, from therapeutic environments to corporate wellness and stage hypnosis.",
-      href: "/program/hypnosis-trainers-training-program",
-      button: {
-        text: "Learn More"
-      },
-      image: {
-        src: Level5,
-        alt: "Arslan Larik"
-      }
-    },
-    {
-      title: "NLP Master Trainer Program",
-      description: "A global mentoring program designed for results-focused NLP Trainers who want to elevate their training businesses, deepen their expertise, and gain international recognition.",
-      href: "program/nlp-master-trainer-program",
-      button: {
-        text: "Learn More"
-      },
-      image: {
-        src: Level6,
-        alt: "Arslan Larik"
-      }
-    },
+    // {
+    //   title: "NLP Trainer’s Training Program",
+    //   description: "An 18-day hybrid course by Arslan Larik &amp; Company with ABNLP accreditation. Become a certified trainer in public speaking, training design, audience engagement, and transformation.",
+    //   href: "/program/nlp-trainers-training-program",
+    //   button: {
+    //     text: "Learn More"
+    //   },
+    //   image: {
+    //     src: Level4,
+    //     alt: "Arslan Larik"
+    //   }
+    // },
+    // {
+    //   title: "Hypnosis Trainer’s Training Program",
+    //   description: "An 8-day online training program, accredited by The American Board of Hypnotherapy, opening doors to multiple career paths, from therapeutic environments to corporate wellness and stage hypnosis.",
+    //   href: "/program/hypnosis-trainers-training-program",
+    //   button: {
+    //     text: "Learn More"
+    //   },
+    //   image: {
+    //     src: Level5,
+    //     alt: "Arslan Larik"
+    //   }
+    // },
+    // {
+    //   title: "NLP Master Trainer Program",
+    //   description: "A global mentoring program designed for results-focused NLP Trainers who want to elevate their training businesses, deepen their expertise, and gain international recognition.",
+    //   href: "program/nlp-master-trainer-program",
+    //   button: {
+    //     text: "Learn More"
+    //   },
+    //   image: {
+    //     src: Level6,
+    //     alt: "Arslan Larik"
+    //   }
+    // },
   ]
 }
 
