@@ -57,27 +57,27 @@ const ContactUS = () => {
 
     useEffect(() => {
         const params = new URLSearchParams(window?.location?.search);
-    
+
         const source =
-          params.get("utm_source") ||
-          params.get("source") ||
-          params.get("ref");
-    
+            params.get("utm_source") ||
+            params.get("source") ||
+            params.get("ref");
+
         if (source) {
-          // OPTION A: first-touch (recommended)
-          if (!localStorage.getItem("user_source")) {
-            localStorage.setItem("user_source", source);
-          }
-    
-          // OPTION B: latest-touch (overwrite)
-          // localStorage.setItem("user_source", source);
+            // OPTION A: first-touch (recommended)
+            if (!localStorage.getItem("user_source")) {
+                localStorage.setItem("user_source", source);
+            }
+
+            // OPTION B: latest-touch (overwrite)
+            // localStorage.setItem("user_source", source);
         }
-      }, []);
+    }, []);
 
     const onSubmit = async (formData: ContactFormValues) => {
 
-        
-      const source = localStorage.getItem("user_source");
+
+        const source = localStorage.getItem("user_source");
 
         const res = await createLeadContact({
             first_name: formData.first_name,
@@ -130,9 +130,14 @@ const ContactUS = () => {
 
                         <div>
                             <h3 className="font-semibold text-secondary-dark order">Call Us On</h3>
-                            <Link href="tel:+18886814808" className="text-white hover:underline">
-                                +1(888) 681-4808
-                            </Link>
+                            <div className="flex gap-1 text-white">
+                                <Link href="tel:+18886814808" className="text-white hover:underline">
+                                    +1(888) 681-4808
+                                </Link>,&nbsp;&nbsp;
+                                <Link href="tel:+9233600822222" className="text-white hover:underline">
+                                    +92 336 008 2222
+                                </Link>
+                            </div>
                         </div>
                     </div>
 

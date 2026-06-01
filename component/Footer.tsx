@@ -31,6 +31,7 @@ const usefulLinks = [
 
 const ContactDetails = [
   { icon: <FiPhone />, name: "+1 (888) 681 4808", isLinked: true, href: "tel:+18886814808" },
+  {  name: "+92 336 008 2222", isLinked: true, href: "tel:+9233600822222", className: "-mt-1" },
   { icon: <FiMail />, name: "connect@arslanlarik.com", isLinked: true, href: "mailto:connect@arslanlarik.com" },
   { icon: <FiMapPin />, name: "D-86/1, Block-7, Gulshan-e-iqbal, Karachi Sindh, Pakistan." },
 
@@ -113,7 +114,7 @@ export default function Footer() {
               {ContactDetails.map((item, index) => (
                 <li key={index} className="flex gap-2 ">
                   <div className="h-4 w-4  mt-1">{item.icon}</div>
-                  <div className="">
+                  <div className={item.className}>
                     {
                       item.isLinked === true ? <Link
                         href={item?.href}
