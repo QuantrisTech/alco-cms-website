@@ -9,7 +9,7 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "ALCO CMS Website | NLP & Hypnotherapy Training",
+  title: "Arslan Larik Company | NLP & Hypnotherapy Training",
   description:
     "SEO Friendly CMS Website built with Next.js. Learn NLP & Hypnotherapy with AL&CO certified trainers.",
 

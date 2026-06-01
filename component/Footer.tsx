@@ -24,7 +24,7 @@ const usefulLinks = [
   { name: "Resource", link: "/services/resources" },
   { name: "Four Clouds Model", link: "/services/four-clouds-model" },
   { name: "Who is Arslan Larik", link: "/about-us/who-is-arslan-larik" },
-  { name: "Who is Bismillah pervez", link: "/about-us/who-is-bismillah-pervez" },
+  { name: "Who is Bismillah Pervez", link: "/about-us/who-is-bismillah-pervez" },
   { name: "Why Train With AL&CO", link: "/about-us/why-train-with-alco" },
   { name: "Our Mission, Vision & Core Values", link: "/our-mission" },
 ];

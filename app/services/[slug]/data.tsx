@@ -368,7 +368,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <ul className="list-none  space-y-1">
               <li className="font-semibold italic">
-                “Life is too hardh”
+                “Life is too hard”
               </li>
               <li className="font-semibold italic">
                 “I can never be loved”

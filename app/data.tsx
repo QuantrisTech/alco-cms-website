@@ -22,10 +22,10 @@ const heroData: HeroData = [
   },
   {
     "title": {
-      "line1": "A Journey That ",
-      "line2": "Changes Everything"
+      "line1": "Transform Your Mind ",
+      "line2": "Transform Your Life"
     },
-    "description": "At Arslan Larik & Company, we help you break free from limiting beliefs and emotional barriers so you can unlock your hidden potential and step into a powerful new reality.",
+    "description": "At Arslan Larik & Company, we help you break free from limiting beliefs and emotional barriers so you can unlock your hidden potential, create lasting change, and step into a more empowered future.",
     "button1": {
       "text": "Enroll Now",
     },
