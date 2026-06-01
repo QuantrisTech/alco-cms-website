@@ -84,24 +84,57 @@ export default function EnrollPopup({
   });
 
   // ✅ Fetch programs when popup opens
+  // useEffect(() => {
+  //   if (!isOpen) return;
+  //   const fetchPrograms = async () => {
+  //     setProgramsLoading(true);
+  //     try {
+  //       const res = await getProgramsPublic();
+  //       console.log(res, "resresresresres")
+  //       const options = res.data.data.map((p: any) => ({
+  //         label: p.name,
+  //         value: p._id,
+  //       }));
+  //       setProgramOptions(options);
+  //     } catch {
+  //       toast.error("Failed to load programs");
+  //     } finally {
+  //       setProgramsLoading(false);
+  //     }
+  //   };
+  //   fetchPrograms();
+  // }, [isOpen]);
+
+  const fetchPrograms = async () => {
+    setProgramsLoading(true);
+
+    try {
+      console.log("Calling API...");
+
+      const res = await getProgramsPublic();
+
+      console.log("API SUCCESS", res);
+
+      const options = res.data.data.map((p: any) => ({
+        label: p.name,
+        value: p._id,
+      }));
+
+      setProgramOptions(options);
+    } catch (err: any) {
+      console.log("API ERROR", err);
+      console.log("ERROR RESPONSE", err?.response);
+      console.log("ERROR MESSAGE", err?.message);
+
+      toast.error("Failed to load programs");
+    } finally {
+      setProgramsLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (!isOpen) return;
-    const fetchPrograms = async () => {
-      setProgramsLoading(true);
-      try {
-        const res = await getProgramsPublic();
-        console.log(res, "resresresresres")
-        const options = res.data.data.map((p: any) => ({
-          label: p.name,
-          value: p._id,
-        }));
-        setProgramOptions(options);
-      } catch {
-        toast.error("Failed to load programs");
-      } finally {
-        setProgramsLoading(false);
-      }
-    };
+
     fetchPrograms();
   }, [isOpen]);
 
