@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import ConditionalLayout from "./conditional-layout/conditionalLayout";
 import { Lexend } from "next/font/google";
 import "@/styles/globals.css";
@@ -53,6 +54,7 @@ export default function RootLayout({
           <main className="pt-[72px]">{children}</main>
         </ConditionalLayout>
       </body>
+      <GoogleAnalytics gaId="G-G4W2XBWFX5" />
     </html>
   );
 }
