@@ -69,7 +69,7 @@ const ContentSectionData1RE: ContentSectionType = {
   fullBg: "bg-neutral-100"
 }
 
-const ContentSectionImgContentListDataRE: ContentSectionType = {
+export const ContentSectionImgContentListDataRE: ContentSectionType = {
   title: "Explore. Learn. Evolve.",
   titleColor: "text-white",
   contentlist: [
@@ -484,7 +484,7 @@ export const services: servicesType[] = [
     slug: "resources",
     BannerData: bannerDataRE,
     ContentSectionData1: ContentSectionData1RE,
-    ContentSectionImgContentListData: ContentSectionImgContentListDataRE,
+    // ContentSectionImgContentListData: ContentSectionImgContentListDataRE,
     ContentSectionData2: ContentSectionData2RE,
     ContentSectionContentListData: ContentSectionContentListDataRE,
   },

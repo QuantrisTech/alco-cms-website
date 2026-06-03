@@ -13,6 +13,8 @@ type contentType = {
   textAlign?: string
   height?: string
   position?: string
+   _id?: string;           // ← add
+  is_available?: boolean;
 };
 
 type ButtonType = {

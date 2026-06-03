@@ -21,7 +21,11 @@ type ButtonProps = {
     iconLeft?: React.ReactNode;  // Left side icon
     iconRight?: React.ReactNode; // Right side icon
     className?: string; // Extra Tailwind classes
-    type?: "button" | "submit" | "reset"; 
+    type?: "button" | "submit" | "reset";
+    fullWidth?: boolean;
+    isLoading?: boolean;
+    loadingText?: string;
+    children?: React.ReactNode;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -35,6 +39,10 @@ const Button: React.FC<ButtonProps> = ({
     iconRight = false,
     className = "",
     type = "button",
+    fullWidth = false,
+    isLoading = false,
+    loadingText = "Loading...",
+    children,
 }) => {
     // Variant classes
     const variantClasses: Record<string, string> = {
@@ -57,12 +65,13 @@ const Button: React.FC<ButtonProps> = ({
         large: "px-6 py-3 text-lg",
     };
     const commonClasses = `
-    inline-flex items-center justify-center
-    rounded-md font-medium transition font-outfit
-    ${variantClasses[variant]} 
-    ${sizeClasses[size]} 
-    ${disabled ? "opacity-50 cursor-not-allowed" : ""}
-    ${className}
+inline-flex items-center justify-center
+rounded-md font-medium transition font-outfit
+${variantClasses[variant]}
+${sizeClasses[size]}
+${fullWidth ? "w-full" : ""}
+${disabled || isLoading ? "opacity-50 cursor-not-allowed" : ""}
+${className}
 `;
 
     // If href is provided, render as Link

@@ -8,9 +8,10 @@ import Image from "next/image";
 
 type Props = {
     data?: ContentSectionType
+    onItemClick?: (item: any, index: number) => void;
 };
 
-const ContentSection = ({ data }: Props) => {
+const ContentSection = ({ data, onItemClick }: Props) => {
     return (
         data &&
         <section className={`${data?.padding ? data?.padding : "pb-6 md:pb-8 lg:pb-12 xl:pb-16 "} ${data?.fullBg ? data?.fullBg : "max-w-7xl"} mx-auto sm:px-4`}>
@@ -38,14 +39,11 @@ const ContentSection = ({ data }: Props) => {
                 {data?.contentlist && data.contentlist.length > 0 && (
                     <div className={data.contentlistClass ? data.contentlistClass : `grid ${data.contentlistColumn ? data.contentlistColumn : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 "}   max-w-6xl mx-auto pt-6 md:pt-8 lg:pt-12 xl:pt-16 `}>
                         {data.contentlist.map((content, index) => (
-                            <div className={data?.contentlisItemClass ? data?.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`}>
-                                {/* Images */}
-                                {/* {content.src && (<img
-                                    key={index}
-                                    src={content.src}
-                                    alt={content.alt}
-                                    className={`w-full ${content.height ? content.height : "h-28"} rounded-lg`}
-                                />)} */}
+                            <div
+                                className={`${data?.contentlisItemClass ? data?.contentlisItemClass : `rounded-xl bg-slate-200/60 drop-shadow-sm px-4 py-6`} ${(content as any)?.is_available === false ? "cursor-not-allowed" : "cursor-pointer"}`}
+                                onClick={() => onItemClick?.(content, index)}
+                            >
+                                {/* Image */}
                                 {content.src && (
                                     <div className={`relative w-full ${content.height ? content.height : "h-36"}`}>
                                         <Image
@@ -54,10 +52,19 @@ const ContentSection = ({ data }: Props) => {
                                             alt={content.alt || "image"}
                                             fill
                                             sizes="(max-width: 768px) 100vw, 600px"
-                                            className={`rounded-lg ${content.position ? content.position : "object-cover"}`}
+                                            className={`rounded-lg ${content.position ? content.position : "object-cover"} ${(content as any)?.is_available === false ? "opacity-70" : "opacity-100"} `}
                                         />
+                                        {/* Coming Soon overlay */}
+                                        {(content as any)?.is_available === false && (
+                                            <div className="absolute inset-0 flex items-center justify-center ">
+                                                <span className="text-white text-xs font-semibold bg-black/60 px-3 py-1 rounded-full">
+                                                    Coming Soon
+                                                </span>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
+
                                 {/* Title */}
                                 {content?.title && (
                                     <div className={data.contentlistTitle ? data.contentlistTitle : `text-2xl font-semibold ${content?.textAlign ? content?.textAlign : "text-center"} text-primary my-4 min-h-12`}>
@@ -67,10 +74,10 @@ const ContentSection = ({ data }: Props) => {
 
                                 {/* Description */}
                                 {content?.description && (
-                                    <div className={`${content?.textAlign ? content?.textAlign : "text-center"} text-primary-light text-base`}>{content?.description}</div>
+                                    <div className={`${content?.textAlign ? content?.textAlign : "text-center"} text-primary-light text-base`}>
+                                        {content?.description}
+                                    </div>
                                 )}
-
-
                             </div>
                         ))}
                     </div>
