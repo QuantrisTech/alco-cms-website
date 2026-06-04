@@ -260,7 +260,7 @@ export default function EnrollPopup({
                       rules={{ required: "First Name is required" }}
                       render={({ field }) => (
                         <InputField
-                          label="First Name"
+                          label="First Name*"
                           {...field}
                           error={errors.first_name?.message}
                         />
@@ -280,7 +280,7 @@ export default function EnrollPopup({
                       }}
                       render={({ field }) => (
                         <InputField
-                          label="Phone"
+                          label="Phone*"
                           type="tel"
                           {...field}
                           error={errors.phone?.message}
@@ -295,7 +295,7 @@ export default function EnrollPopup({
                       rules={{ required: "Profession is required" }}
                       render={({ field }) => (
                         <InputField
-                          label="Profession"
+                          label="Profession*"
                           {...field}
                           error={errors.profession?.message}
                         />
@@ -336,9 +336,10 @@ export default function EnrollPopup({
                     <Controller
                       name="last_name"
                       control={control}
+                      rules={{ required: "Last Name is required" }}
                       render={({ field }) => (
                         <InputField
-                          label="Last Name"
+                          label="Last Name*"
                           {...field}
                           error={errors.last_name?.message}
                         />
@@ -361,7 +362,7 @@ export default function EnrollPopup({
                         const isInvalidFormat = val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
                         return (
                           <InputField
-                            label="Email"
+                            label="Email*"
                             type="email"
                             {...field}
                             error={fieldState.error?.message}
@@ -374,12 +375,14 @@ export default function EnrollPopup({
                     <Controller
                       name="program_id"
                       control={control}
+                      rules={{ required: "Program is required" }}
                       render={({ field }) => (
                         <SelectField
-                          label={programsLoading ? "Loading programs..." : "Select Program"}
+                          label="Select Program*"
                           options={programOptions}
                           value={field.value}
                           onChange={field.onChange}
+                          error={errors.program_id?.message}
                         />
                       )}
                     />

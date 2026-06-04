@@ -86,9 +86,12 @@ export default function SelectField({
 
       {/* Dropdown */}
       <div
-        className={`absolute w-full bg-white border border-gray-200 rounded-lg mt-1 shadow-lg z-50 overflow-hidden transition-all duration-300 origin-top
-        ${open ? "max-h-60 opacity-100 scale-y-100" : "max-h-0 opacity-0 scale-y-95"}
-        `}
+        className={`absolute w-full bg-white border border-gray-200 rounded-lg mt-1 shadow-lg z-50 transition-all duration-300 origin-top
+        ${open
+            ? "max-h-60 opacity-100 scale-y-100 overflow-y-auto"
+            : "max-h-0 opacity-0 scale-y-95 overflow-hidden"
+          }
+      `}
       >
         {options.map((opt) => (
           <div
