@@ -106,6 +106,85 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
 
+    {
+      url: "https://arslanlarik.com/blogs/pressure-comes-from-a-lack-of-preparation",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/internal-pressure-awareness-reflection-and-personal-mastery",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/pressure-isnt-supposed-to-break-us-its-designed-to-make-us",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/understanding-the-model-of-the-world-beliefs-and-key-decisions",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-moment-you-accept-your-struggles-the-door-to-growth-opens",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/vision-depends-on-perspective-not-just-knowledge",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/push-through-tough-times-and-inspire-others",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-science-behind-a-positive-state-of-mind",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-weight-of-thoughts",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/everything-is-hard-choose-your-hard",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-power-of-language-transform-your-mindset-with-words",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-internal-representational-system-designing-your-reality",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/the-power-of-reframing-transforming-setbacks-into-opportunities",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+
     // Services
     {
       url: "https://arslanlarik.com/services/four-clouds-model",
