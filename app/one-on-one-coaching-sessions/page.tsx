@@ -1,4 +1,6 @@
 "use client";
+import { Metadata } from "next";
+import { buildMetadata } from "@/utils/buildMetadata";
 import programLevel2 from "@/assets/background/program-level-2.webp"
 import Banner from "@/component/banner";
 import { BannerType } from "@/type/bannerType";
@@ -365,10 +367,35 @@ const ContentSectionListData: ContentSectionType = {
     textAlign: "text-start"
 }
 
+async function getSeoData() {
+    try {
+        const res = await fetch(
+            `${process.env.NEXT_PUBLIC_API_URL}/api/v1/seo/page/one-on-one-coaching-sessions`,
+            { next: { revalidate: 3600 } }
+        );
+        const { data } = await res.json();
+        return data;
+    } catch {
+        return null;
+    }
+}
 
-export default function OneOnOneCoachingSessions() {
+export async function generateMetadata(): Promise<Metadata> {
+    const data = await getSeoData();
+    return data ? buildMetadata(data) : { title: "One On One Coaching Sessions | AL&CO" };
+}
+
+export default async function OneOnOneCoachingSessions() {
+    const seoData = await getSeoData();
+
     return (
         <>
+            {seoData?.structuredData && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: seoData.structuredData }}
+                />
+            )}
             <Banner data={bannerData} />
             <ContentSection data={WhatWeAddressList} />
             <LevelProgramIncludes data={OneOnOneCoachingData} />

@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import { buildMetadata } from "@/utils/buildMetadata";
 import Banner from "@/component/banner";
 import ContactUS from "@/component/contact";
 import ContentSection from "@/component/contentSection";
@@ -25,24 +27,50 @@ const ContentSectionData: ContentSectionType = {
   miniTitle: "The Gold Standard for NLP Training Globally",
   detailContent: (
     <>
-    <ul className="list-disc pl-5 space-y-1 text-gray-600 my-4">
-            <li>Best-in-Class Coaching</li>
-            <li>Most Practical NLP Program</li>
-            <li>Multiple Repetitions and Revisions</li>
-            <li>Knowledge Center & Community</li>
-          </ul>
+      <ul className="list-disc pl-5 space-y-1 text-gray-600 my-4">
+        <li>Best-in-Class Coaching</li>
+        <li>Most Practical NLP Program</li>
+        <li>Multiple Repetitions and Revisions</li>
+        <li>Knowledge Center & Community</li>
+      </ul>
       <p className="text-gray-600">
         Trusted by 250,000 individuals and the world’s leading companies.
       </p>
     </>
   ),
-  textAlign:"text-start",
+  textAlign: "text-start",
   padding: "py-6 md:py-8 lg:py-12 xl:py-16 "
 }
 
-export default function Contact() {
+async function getSeoData() {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/seo/page/contact`,
+      { next: { revalidate: 3600 } }
+    );
+    const { data } = await res.json();
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getSeoData();
+  return data ? buildMetadata(data) : { title: "Contact | AL&CO" };
+}
+
+export default async function Contact() {
+  const seoData = await getSeoData();
+  
   return (
     <>
+      {seoData?.structuredData && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: seoData.structuredData }}
+        />
+      )}
       <Banner data={bannerData} />
       <ContentSection data={ContentSectionData} />
       <ContactUS />
