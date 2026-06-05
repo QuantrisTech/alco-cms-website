@@ -1276,7 +1276,7 @@ const LevelContentDataLevel3: LevelContentType = {
 
   button: {
     text: "Learn More",
-    href: '/course-outline/advanced-hypnotherapy-interventionis/'
+    href: '/course-outline/advanced-hypnotherapy-interventionist/'
   },
 
   points: [
@@ -2267,7 +2267,7 @@ export const programs: ProgramType[] = [
   },
 
   {
-    slug: "advanced-hypnotherapy-interventionis",
+    slug: "advanced-hypnotherapy-interventionist",
     title: "Advanced Hypnotherapy Training",
     BannerData: bannerDataLevel3,
     LevelIntroWithVideoData: LevelIntroWithVideoDataLevel3,

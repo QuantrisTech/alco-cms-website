@@ -286,7 +286,7 @@ export const courseInnerDetail: CourseTypeInnerDetail[] = [
     LevelBenefitsTableData1: LevelBenefitsTableData1Level2,
   },
   {
-    slug: "advanced-hypnotherapy-interventionis",
+    slug: "advanced-hypnotherapy-interventionist",
     BannerData: bannerDataLevel3,
     LevelBenefitsTableData1: LevelBenefitsTableData1Level3,
   }

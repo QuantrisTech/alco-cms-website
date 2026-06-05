@@ -16,7 +16,7 @@ const menuData = [
     submenu: [
       { name: "NLP Practitioner", link: "/program/nlp-practitioner" },
       { name: "NLP Master Practitioner", link: "/program/nlp-master-practitioner" },
-      { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionis" },
+      { name: "Advanced Hypnotherapy Training", link: "/program/advanced-hypnotherapy-interventionist" },
       { name: "NLP Trainer’s Training Program", link: "/program/nlp-trainers-training-program" },
       { name: "Hypnosis Trainer’s Training Program", link: "/program/hypnosis-trainers-training-program" },
       { name: "NLP Master Trainer Program", link: "/program/nlp-master-trainer-program" },

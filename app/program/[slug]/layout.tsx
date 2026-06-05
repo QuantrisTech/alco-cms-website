@@ -9,7 +9,7 @@
 //       title: "NLP Master Practitioner | ALCO",
 //       description: "Triple Certification Training Program.",
 //     },
-//     "advanced-hypnotherapy-interventionis": {
+//     "advanced-hypnotherapy-interventionist": {
 //       title: "Advanced Hypnotherapy & Interventionist Training | ALCO",
 //       description: "Dual Certification Training Program",
 //     },

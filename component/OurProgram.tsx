@@ -52,7 +52,7 @@ const ourProgramData: OurProgramData = {
     {
       title: "Advanced Hypnotherapy Training",
       description: "A 12-day dual certification course from ABH and NGH. Learn advanced hypnotherapy, Ericksonian techniques, self-hypnosis, and regression with lifetime access and 500+ scripts.",
-      href: "/program/advanced-hypnotherapy-interventionis",
+      href: "/program/advanced-hypnotherapy-interventionist",
       button: {
         text: "Learn More"
       },
