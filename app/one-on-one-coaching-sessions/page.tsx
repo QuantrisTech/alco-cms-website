@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { Metadata } from "next";
 import { buildMetadata } from "@/utils/buildMetadata";
 import programLevel2 from "@/assets/background/program-level-2.webp"
