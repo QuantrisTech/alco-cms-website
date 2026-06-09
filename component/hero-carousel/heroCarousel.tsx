@@ -203,8 +203,11 @@ const HeroCarousel = ({ slides, options, onEditSlide }: PropType) => {
                 <div className="hero_embla__slide__content mb-4 rounded-md text-white relative">
                   {index === 0 ? (
                     <>
-                      <h1 className="h1 text-white overflow-hidden">{slide?.title?.line1}</h1>
-                      <h1 className="h1 text-secondary overflow-hidden">{slide?.title?.line2}</h1>
+                    <h1 className="h1 overflow-hidden">
+                      <span className="text-white">{slide?.title?.line1}</span>
+                      <br/>
+                      <span className="text-secondary">{slide?.title?.line2}</span>
+                      </h1>
                     </>
                   ) : (
                     <>
