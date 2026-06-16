@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Popup from "./popup";
 import Button from "@/component/button";
 import { usePopup } from "@/context/enrollPopupContext";
@@ -12,6 +12,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { createLead, getProgramsPublic } from "@/utils/api";
 import toast from "react-hot-toast";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 type EnrollPopupProps = {
   buttonText?: string;
@@ -54,11 +55,10 @@ export default function EnrollPopup({
   children,
 }: EnrollPopupProps) {
   const { isOpen, closePopup } = usePopup();
-
-  // ✅ Programs state
-  const [programOptions, setProgramOptions] = useState<{ label: string; value: string }[]
-  >([]);
+  const [programOptions, setProgramOptions] = useState<{ label: string; value: string }[]>([]);
   const [programsLoading, setProgramsLoading] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const turnstileRef = useRef<any>(null);
 
   const {
     handleSubmit,
@@ -83,75 +83,23 @@ export default function EnrollPopup({
     },
   });
 
-  // ✅ Fetch programs when popup opens
-  // useEffect(() => {
-  //   if (!isOpen) return;
-  //   const fetchPrograms = async () => {
-  //     setProgramsLoading(true);
-  //     try {
-  //       const res = await getProgramsPublic();
-  //       console.log(res, "resresresresres")
-  //       const options = res.data.data.map((p: any) => ({
-  //         label: p.name,
-  //         value: p._id,
-  //       }));
-  //       setProgramOptions(options);
-  //     } catch {
-  //       toast.error("Failed to load programs");
-  //     } finally {
-  //       setProgramsLoading(false);
-  //     }
-  //   };
-  //   fetchPrograms();
-  // }, [isOpen]);
-
   const fetchPrograms = async () => {
     setProgramsLoading(true);
-
     try {
-      console.log("Calling API...");
-
       const res = await getProgramsPublic();
-
-      console.log("API SUCCESS", res);
-
       const options = res.data.data.map((p: any) => ({
         label: p.name,
         value: p._id,
       }));
-
       setProgramOptions(options);
-    } catch (err: any) {
-      console.log("API ERROR", err);
-      console.log("ERROR RESPONSE", err?.response);
-      console.log("ERROR MESSAGE", err?.message);
-
-      // ✅ API fail hogi toh manually fallback set karo
+    } catch {
       setProgramOptions([
-        {
-          label: "NLP Master Trainer Program",
-          value: "69e8c025afaf0d3fb90233d4",
-        },
-        {
-          label: "Hypnosis Trainer's Training Certification and Evaluation Program",
-          value: "69e8bfb7afaf0d3fb90233a8",
-        },
-        {
-          label: "NLP Trainers' Training And Evaluation Certification Program",
-          value: "69e8bf8cafaf0d3fb90233a0",
-        },
-        {
-          label: "Advanced Hypnotherapy & Interventionist Training Program",
-          value: "69e8bf48afaf0d3fb9023398",
-        },
-        {
-          label: "NLP Master Practitioner Program",
-          value: "69d8a8ed06f01d73ae725722",
-        },
-        {
-          label: "NLP Practitioner Program",
-          value: "69d88bcd3b3f401bb2e711bc",
-        },
+        { label: "NLP Master Trainer Program", value: "69e8c025afaf0d3fb90233d4" },
+        { label: "Hypnosis Trainer's Training Certification and Evaluation Program", value: "69e8bfb7afaf0d3fb90233a8" },
+        { label: "NLP Trainers' Training And Evaluation Certification Program", value: "69e8bf8cafaf0d3fb90233a0" },
+        { label: "Advanced Hypnotherapy & Interventionist Training Program", value: "69e8bf48afaf0d3fb9023398" },
+        { label: "NLP Master Practitioner Program", value: "69d8a8ed06f01d73ae725722" },
+        { label: "NLP Practitioner Program", value: "69d88bcd3b3f401bb2e711bc" },
       ]);
     } finally {
       setProgramsLoading(false);
@@ -160,37 +108,24 @@ export default function EnrollPopup({
 
   useEffect(() => {
     if (!isOpen) return;
-
     fetchPrograms();
   }, [isOpen]);
 
   useEffect(() => {
     const params = new URLSearchParams(window?.location?.search);
-
-    const source =
-      params.get("utm_source") ||
-      params.get("source") ||
-      params.get("ref");
-
-    if (source) {
-      // OPTION A: first-touch (recommended)
-      if (!localStorage.getItem("user_source")) {
-        localStorage.setItem("user_source", source);
-      }
-
-      // OPTION B: latest-touch (overwrite)
-      // localStorage.setItem("user_source", source);
+    const source = params.get("utm_source") || params.get("source") || params.get("ref");
+    if (source && !localStorage.getItem("user_source")) {
+      localStorage.setItem("user_source", source);
     }
   }, []);
 
   const onSubmit = async (data: any) => {
-    console.log("FORM DATA:", data);  // ← yeh add karo
-    console.log("PHONE VALUE:", data.phone);  // ← yeh bhi
-    try {
-      // ✅ Split full name
-      // const [first_name, ...rest] = data.name.trim().split(" ");
-      // const last_name = rest.join(" ") || "";
+    if (!turnstileToken) {
+      toast.error("Please complete the security check.");
+      return;
+    }
 
+    try {
       const source = localStorage.getItem("user_source");
 
       const payload = {
@@ -204,17 +139,22 @@ export default function EnrollPopup({
         message: data.otherInfo,
         goals: data.goals,
         source: source || "enroll",
+        turnstileToken, // backend pe verify karo
       };
 
       await createLead(payload);
       toast.success("Enrolled successfully! Check your email for credentials.");
       localStorage.removeItem("user_source");
       reset();
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
       closePopup();
     } catch (err: any) {
-      const msg =
-        err?.response?.data?.message || "Something went wrong. Try again.";
+      const msg = err?.response?.data?.message || "Something went wrong. Try again.";
       toast.error(msg);
+      // token expire ho jata hai after use, reset karo
+      setTurnstileToken("");
+      turnstileRef.current?.reset();
     }
   };
 
@@ -230,19 +170,12 @@ export default function EnrollPopup({
           <div className="col-span-12 xl:col-span-4">
             {EnrollPopupImage && (
               <div className="relative w-full h-[180px] sm:h-[200px] md:h-[300px] xl:h-[200px]">
-                <Image
-                  src={EnrollPopupImage}
-                  alt="Enroll popup"
-                  fill
-                  className="object-cover rounded-md"
-                />
+                <Image src={EnrollPopupImage} alt="Enroll popup" fill className="object-cover rounded-md" />
               </div>
             )}
             <div className="mt-4">
               <h2 className="text-3xl font-outfit font-semibold">{title}</h2>
-              <div className="text-sm font-outfit text-gray-600 mt-3">
-                {description}
-              </div>
+              <div className="text-sm font-outfit text-gray-600 mt-3">{description}</div>
             </div>
           </div>
 
@@ -252,22 +185,14 @@ export default function EnrollPopup({
               <div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-4">
-
-
                     <Controller
                       name="first_name"
                       control={control}
                       rules={{ required: "First Name is required" }}
                       render={({ field }) => (
-                        <InputField
-                          label="First Name*"
-                          {...field}
-                          error={errors.first_name?.message}
-                        />
+                        <InputField label="First Name*" {...field} error={errors.first_name?.message} />
                       )}
                     />
-
-                    {/* Phone */}
                     <Controller
                       name="phone"
                       control={control}
@@ -279,30 +204,17 @@ export default function EnrollPopup({
                         },
                       }}
                       render={({ field }) => (
-                        <InputField
-                          label="Phone*"
-                          type="tel"
-                          {...field}
-                          error={errors.phone?.message}
-                        />
+                        <InputField label="Phone*" type="tel" {...field} error={errors.phone?.message} />
                       )}
                     />
-
-                    {/* Profession */}
                     <Controller
                       name="profession"
                       control={control}
                       rules={{ required: "Profession is required" }}
                       render={({ field }) => (
-                        <InputField
-                          label="Profession*"
-                          {...field}
-                          error={errors.profession?.message}
-                        />
+                        <InputField label="Profession*" {...field} error={errors.profession?.message} />
                       )}
                     />
-
-                    {/* Goals and Query */}
                     <Controller
                       name="goals"
                       control={control}
@@ -315,38 +227,17 @@ export default function EnrollPopup({
                         />
                       )}
                     />
-
-                    {/* Program - from API */}
-                    {/* <Controller
-                      name="program_id"
-                      control={control}
-                      render={({ field }) => (
-                        <SelectField
-                          label={programsLoading ? "Loading programs..." : "Select Program"}
-                          options={programOptions}
-                          value={field.value}
-                          onChange={field.onChange}
-                        />
-                      )}
-                    /> */}
                   </div>
 
                   <div className="flex flex-col gap-4">
-
                     <Controller
                       name="last_name"
                       control={control}
                       rules={{ required: "Last Name is required" }}
                       render={({ field }) => (
-                        <InputField
-                          label="Last Name*"
-                          {...field}
-                          error={errors.last_name?.message}
-                        />
+                        <InputField label="Last Name*" {...field} error={errors.last_name?.message} />
                       )}
                     />
-
-                    {/* Email */}
                     <Controller
                       name="email"
                       control={control}
@@ -371,7 +262,6 @@ export default function EnrollPopup({
                         );
                       }}
                     />
-
                     <Controller
                       name="program_id"
                       control={control}
@@ -391,61 +281,18 @@ export default function EnrollPopup({
                       control={control}
                       rules={{ required: "Please share your concern" }}
                       render={({ field }) => (
-                        <InputField
-                          label="Share your concern briefly"
-                          {...field}
-                          textarea
-                          error={errors.query?.message}
-                        />
+                        <InputField label="Share your concern briefly" {...field} textarea error={errors.query?.message} />
                       )}
                     />
-
                     <Controller
                       name="otherInfo"
                       control={control}
                       render={({ field }) => (
-                        <InputField
-                          label="Any other query/information"
-                          {...field}
-                          textarea
-                        />
+                        <InputField label="Any other query/information" {...field} textarea />
                       )}
                     />
-
-
                   </div>
                 </div>
-
-                {/* Goals and Query */}
-                {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                  <div className="flex flex-col gap-2 justify-between">
-
-
-
-                  </div>
-
-                  <div className="flex flex-col gap-2 ">
-                     <Controller
-                      name="programs"
-                      control={control}
-                      render={({ field }) => (
-                        <Checkboxfield
-                          label="Which program do you want to enroll in?"
-                          options={programOptions}
-                          // values={field.value}
-                          // onChange={field.onChange}
-                          values={field.value ? [field.value] : []}
-                          onChange={(selected: string[]) => {
-                            // ✅ sirf last selected value rakho
-                            const last = selected[selected.length - 1];
-                            field.onChange(last || "");
-                          }}
-                        />
-                      )}
-                    /> 
-                    
-                  </div>
-                </div> */}
               </div>
             )}
           </div>
@@ -464,17 +311,14 @@ export default function EnrollPopup({
                     color="black"
                     label={
                       <span>
-                        By checking this box, I consent to receive transactional
-                        messages related to my account, orders, or services I
-                        have requested. Message frequency may vary. Message &
-                        Data rates may apply. Reply HELP for help or STOP to
-                        opt-out.
+                        By checking this box, I consent to receive transactional messages related to my account,
+                        orders, or services I have requested. Message frequency may vary. Message & Data rates may
+                        apply. Reply HELP for help or STOP to opt-out.
                       </span>
                     }
                   />
                 )}
               />
-
               <Controller
                 name="acceptTerms"
                 control={control}
@@ -486,11 +330,9 @@ export default function EnrollPopup({
                     color="black"
                     label={
                       <span>
-                        By checking this box, I consent to receive marketing and
-                        promotional messages, including special offers,
-                        discounts, new product updates among others. Message
-                        frequency may vary. Message & Data rates may apply.
-                        Reply HELP for help or STOP to opt-out.
+                        By checking this box, I consent to receive marketing and promotional messages, including
+                        special offers, discounts, new product updates among others. Message frequency may vary.
+                        Message & Data rates may apply. Reply HELP for help or STOP to opt-out.
                       </span>
                     }
                   />
@@ -498,18 +340,25 @@ export default function EnrollPopup({
               />
             </div>
 
+
+
+
             <div className="flex flex-col sm:flex-row justify-between items-center">
-              <div className="text-xs text-gray-500 mb-2 sm:mb-0 sm:ms-6">
-                <Link
-                  href="/privacy-policy"
-                  className="underline text-primary me-2"
-                >
-                  Privacy Policy
-                </Link>
-                |
-                <Link href="/terms" className="underline text-primary ms-2">
-                  Terms of Service
-                </Link>
+              <div className="flex flex-col justify-start mt-2">
+                {/* ✅ Turnstile Widget */}
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                  onExpire={() => setTurnstileToken("")}
+                  onError={() => setTurnstileToken("")}
+                />
+                <div className="text-xs text-gray-500 mb-2 sm:mb-0 sm:ms-6 md:ms-0 mt-2">
+                  <Link href="/privacy-policy" className="underline text-primary me-2">Privacy Policy</Link>
+                  |
+                  <Link href="/terms" className="underline text-primary ms-2">Terms of Service</Link>
+                </div>
+
               </div>
               <div className="w-full sm:max-w-[150px] z-50">
                 <Button
@@ -517,7 +366,7 @@ export default function EnrollPopup({
                   type="submit"
                   variant="primary"
                   className="mt-2 w-full z-50"
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !turnstileToken}
                 />
               </div>
             </div>

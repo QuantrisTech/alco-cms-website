@@ -130,6 +130,7 @@ export const createLeadContact = (data: {
   phone?: string;
   query?: string;
   source?: string;
+  turnstileToken?: string; 
 }) => PUBLIC_API.post("/api/v1/leads/contact", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
