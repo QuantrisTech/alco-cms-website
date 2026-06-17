@@ -13,6 +13,7 @@ import Link from "next/link";
 import { createLead, getProgramsPublic } from "@/utils/api";
 import toast from "react-hot-toast";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { event } from "@/libs/fpixel";
 
 type EnrollPopupProps = {
   buttonText?: string;
@@ -142,7 +143,9 @@ export default function EnrollPopup({
         turnstileToken, // backend pe verify karo
       };
 
-      await createLead(payload);
+      await 
+      // Facebook Pixel Lead event
+      event("Lead", { content_name: "Enroll Popup Form" });
       toast.success("Enrolled successfully! Check your email for credentials.");
       localStorage.removeItem("user_source");
       reset();

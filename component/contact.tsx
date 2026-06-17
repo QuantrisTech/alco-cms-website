@@ -9,6 +9,7 @@ import ContactBg from "@/assets/background/contact-info.webp";
 import Link from "next/link";
 import { createLeadContact } from "@/utils/api";
 import toast from "react-hot-toast";
+import { event } from "@/libs/fpixel";
 
 type ContactFormValues = {
     first_name: string;
@@ -87,6 +88,10 @@ const ContactUS = () => {
             query: formData.query,
             source: source || "contact",
         });
+
+        // Facebook Pixel Lead event
+        event("Lead", { content_name: "Contact Us Form" });
+        
         console.log("Contact API Response:", res.data);
         if (res?.data?.duplicate === true) {
             // "We already have your details..."
