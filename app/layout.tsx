@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import ConditionalLayout from "./conditional-layout/conditionalLayout";
 import { Lexend } from "next/font/google";
-import FacebookPixel from "@/component/FacebookPixel";
 import "@/styles/globals.css";
+import { Suspense } from "react";
+import FacebookPixel from "@/component/FacebookPixel";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -51,7 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lexend.className}>
-        <FacebookPixel />
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
         <ConditionalLayout>
           <main className="pt-[72px]">{children}</main>
         </ConditionalLayout>
