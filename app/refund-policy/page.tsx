@@ -16,7 +16,7 @@ const bannerData: BannerType = {
                 Effective: May 2025 &nbsp;·&nbsp; Governed by the laws of Pakistan
             </p>
             <p className="text-sm text-center text-white mt-2 font-light">
-                This policy outlines the conditions under which refunds or cancellations may be requested for services and programs offered by Arslan Larik & Company.
+                This policy outlines the conditions under which refund or cancellation requests may be considered for programs and services offered by Arslan Larik & Company (AL&CO).
             </p>
         </>
     )
@@ -30,10 +30,10 @@ const refundData: PolicyContentType = {
             content: (
                 <>
                     <p className="text-neutral-600 custom-text1 mb-3">
-                        AL&CO is committed to delivering high-quality programs and services. This Refund & Return Policy is established in accordance with applicable consumer protection laws in Pakistan, including the Punjab Consumer Protection Act 2005, the Sindh Consumer Protection Act 2014, and general principles of contract law under the Contract Act, 1872.
+                        AL&CO is committed to delivering transformational, high-quality programs that create lasting personal and professional impact. By enrolling in any AL&CO program, including but not limited to NLP Practitioner, Master Practitioner, Train the Trainer, Advanced Hypnotherapy Interventionist Training, Master Trainer Program, and any associated coaching or certification program, participants acknowledge and agree to the terms of this policy in full.
                     </p>
                     <p className="text-neutral-500 custom-text1 mb-4">
-                        As our services are primarily educational and intangible in nature, refunds are subject to the specific conditions outlined below. All requests are assessed fairly and on a case-by-case basis.
+                        This policy is established in accordance with applicable consumer protection laws in Pakistan, including the Punjab Consumer Protection Act 2005, the Sindh Consumer Protection Act 2014, and general principles of contract law under the Contract Act, 1872.
                     </p>
                     <div className="border-l-2 border-secondary bg-secondary/5 px-5 py-4 rounded-r-lg">
                         <p className="text-neutral-600 custom-text1 font-medium">
@@ -45,25 +45,55 @@ const refundData: PolicyContentType = {
         },
         {
             label: "Section 02",
-            title: "Eligibility for Refund",
+            title: "Core Refund Principle: Program Commencement",
+            content: (
+                <>
+                    <p className="text-neutral-600 custom-text1 mb-3">
+                        Once a program has commenced and a participant has attended or been granted access to any session, class, or program material, the enrollment fee becomes fully and permanently non-refundable.
+                    </p>
+                    <p className="text-neutral-500 custom-text1 mb-5">
+                        This applies universally across all AL&CO programs, regardless of:
+                    </p>
+                    <ul className="space-y-2 mb-5">
+                        {[
+                            "The number of sessions attended after commencement",
+                            "The participant's personal, professional, or scheduling circumstances",
+                            "Whether the participant continues to attend subsequent sessions",
+                            "The format of delivery, whether in-person, online, hybrid, or recorded",
+                        ].map((item, i) => (
+                            <li key={i} className="flex gap-3 text-neutral-500 custom-text1">
+                                <span className="text-secondary mt-1 flex-shrink-0">—</span>
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="border-l-2 border-secondary bg-secondary/5 px-5 py-4 rounded-r-lg">
+                        <p className="text-neutral-600 custom-text1 font-medium">
+                            The commencement of a program is defined as the date on which the first session of the enrolled batch is held, irrespective of whether the participant was physically or virtually present on that date.
+                        </p>
+                    </div>
+                </>
+            ),
+        },
+        {
+            label: "Section 03",
+            title: "Pre-Commencement Requests",
             content: (
                 <>
                     <p className="text-neutral-500 custom-text1 mb-5">
-                        The following conditions determine eligibility for a refund request:
+                        Refund or cancellation requests submitted before a program has commenced will be considered on a case-by-case basis under the following conditions only:
                     </p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                         {/* Eligible */}
                         <div className="rounded-xl border border-green-200 bg-green-50/50 px-5 py-5">
                             <p className="text-xs font-semibold tracking-widest uppercase text-green-700 mb-4">
-                                ✓ Eligible Circumstances
+                                ✓ Potentially Eligible Circumstances
                             </p>
                             <ul className="space-y-2">
                                 {[
-                                    "Cancellation submitted 14 or more days before the program start date",
+                                    "Written cancellation request submitted 14 or more calendar days before the program start date",
                                     "Program cancelled or permanently discontinued by AL&CO",
-                                    "Significant, undisclosed material change to program content or format",
-                                    "Duplicate or erroneous payment verified by AL&CO",
-                                    "Confirmed failure to deliver purchased digital access within 7 business days",
+                                    "Verified duplicate or erroneous payment",
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-2 text-neutral-500 custom-text1">
                                         <span className="text-green-600 flex-shrink-0 mt-1">—</span>
@@ -79,12 +109,10 @@ const refundData: PolicyContentType = {
                             </p>
                             <ul className="space-y-2">
                                 {[
-                                    "Cancellation made within 7 days of the program start date",
-                                    "Digital or online content that has been accessed or downloaded",
-                                    "Failure to attend a program without prior notice (no-show)",
-                                    "Failure to meet attendance or assessment requirements",
-                                    "Change of mind after course materials have been made available",
-                                    "Enrollments made under promotional or discounted pricing",
+                                    "Cancellation requested within 13 days or fewer of the program start date",
+                                    "Change of personal plans, scheduling conflicts, or professional commitments",
+                                    "Failure to review program dates, timings, or format prior to enrollment",
+                                    "Enrollments made under promotional, discounted, or bundled pricing",
                                 ].map((item, i) => (
                                     <li key={i} className="flex gap-2 text-neutral-500 custom-text1">
                                         <span className="text-red-500 flex-shrink-0 mt-1">—</span>
@@ -94,108 +122,53 @@ const refundData: PolicyContentType = {
                             </ul>
                         </div>
                     </div>
-                </>
-            ),
-        },
-        {
-            label: "Section 03",
-            title: "Refund Schedule",
-            content: (
-                <>
-                    <p className="text-neutral-500 custom-text1 mb-5">
-                        Where a refund is approved, the applicable amount is determined by the notice period provided prior to the program start date:
+                    <p className="text-neutral-500 custom-text1">
+                        Where a pre-commencement refund is approved, AL&CO reserves the right to deduct applicable administrative and payment processing fees from the refunded amount.
                     </p>
-                    <div className="divide-y divide-primary/10 border border-primary/10 rounded-xl overflow-hidden">
-                        {[
-                            {
-                                period: "14+ Days",
-                                sub: "Prior to Start",
-                                title: "Full Refund",
-                                desc: "The complete amount paid is refunded, less any applicable payment processing or gateway fees.",
-                            },
-                            {
-                                period: "8–13 Days",
-                                sub: "Prior to Start",
-                                title: "50% Refund",
-                                desc: "Half of the enrollment fee is refunded. The remaining 50% is retained as a cancellation and administrative charge.",
-                            },
-                            {
-                                period: "4–7 Days",
-                                sub: "Prior to Start",
-                                title: "25% Refund or Full Program Credit",
-                                desc: "A 25% cash refund is available, or alternatively, a 100% credit toward any future AL&CO program, valid for 12 months.",
-                            },
-                            {
-                                period: "0–3 Days",
-                                sub: "Prior to Start",
-                                title: "No Cash Refund — Credit Only",
-                                desc: "No monetary refund is applicable. A program credit valid for 6 months may be issued at AL&CO's discretion.",
-                            },
-                            {
-                                period: "After Start",
-                                sub: "Post Commencement",
-                                title: "No Refund",
-                                desc: "Once a program has commenced, no refund is applicable regardless of the participant's attendance or continued participation.",
-                            },
-                        ].map((row, i) => (
-                            <div key={i} className="flex flex-col sm:flex-row gap-4 px-5 py-4 bg-primary/3">
-                                <div className="sm:min-w-[130px]">
-                                    <p className="text-primary font-semibold text-base">{row.period}</p>
-                                    <p className="text-xs uppercase tracking-wider text-neutral-400 mt-0.5">{row.sub}</p>
-                                </div>
-                                <div>
-                                    <p className="text-neutral-700 font-medium custom-text1 mb-1">{row.title}</p>
-                                    <p className="text-neutral-500 custom-text1">{row.desc}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
                 </>
             ),
         },
         {
             label: "Section 04",
-            title: "Digital & Online Course Purchases",
+            title: "Post-Commencement: No Refund Policy",
             content: (
                 <>
-                    <p className="text-neutral-500 custom-text1 mb-4">
-                        For programs delivered digitally or through our online platform, the following additional conditions apply:
+                    <p className="text-neutral-600 custom-text1 mb-4">
+                        Once a program has commenced, no refund, partial refund, credit, or transfer of fee will be issued under any circumstance. This includes but is not limited to situations where:
                     </p>
-                    <ul className="space-y-2 mb-4">
+                    <ul className="space-y-2 mb-5">
                         {[
-                            "A full refund may be requested within 48 hours of purchase, provided less than 10% of the course content has been accessed",
-                            "Once 10% or more of the content has been viewed or downloaded, the purchase is considered final and no refund is applicable",
-                            "Technical issues preventing access must be reported within 7 business days; AL&CO will resolve the issue or issue a service credit",
-                            "Refunds are not available on bundled packages once any component of the bundle has been accessed",
+                            "The participant attended one or more sessions and chose to discontinue",
+                            "The participant did not attend sessions after commencement due to personal reasons",
+                            "The participant was unable to attend due to work, travel, health, or scheduling conflicts",
+                            "The participant disagreed with program content, delivery style, or schedule after commencement",
+                            "The participant enrolled expecting a different outcome than experienced",
                         ].map((item, i) => (
                             <li key={i} className="flex gap-3 text-neutral-500 custom-text1">
-                                <span className="text-secondary mt-1 flex-shrink-0">—</span>
+                                <span className="text-red-500 mt-1 flex-shrink-0">—</span>
                                 <span>{item}</span>
                             </li>
                         ))}
                     </ul>
-                    <div className="border-l-2 border-secondary bg-secondary/5 px-5 py-4 rounded-r-lg">
-                        <p className="text-neutral-600 custom-text1 font-medium">
-                            If you experience technical difficulties accessing any digital content, please contact our support team before initiating a refund request. Most issues are resolved promptly.
-                        </p>
-                    </div>
+                    <p className="text-neutral-500 custom-text1">
+                        AL&CO reserves and holds a seat exclusively for each enrolled participant across the full duration of their program. The reservation of that seat, the preparation of program materials, and the facilitation of each session constitute the delivery of service, regardless of the participant's attendance record.
+                    </p>
                 </>
             ),
         },
         {
             label: "Section 05",
-            title: "Refund Processing",
+            title: "Digital & Online Program Access",
             content: (
                 <>
                     <p className="text-neutral-500 custom-text1 mb-4">
-                        Approved refunds are returned via the original payment method used at the time of purchase:
+                        For programs delivered digitally or through AL&CO's online platform:
                     </p>
-                    <ul className="space-y-2 mb-4">
+                    <ul className="space-y-2">
                         {[
-                            "Bank transfer: 7–14 business days",
-                            "Credit or debit card: 5–10 business days, subject to the issuing bank's processing times",
-                            "Mobile wallet (JazzCash, EasyPaisa, etc.): 3–7 business days",
-                            "Program credits are issued digitally and confirmed via email",
+                            "Once login credentials, course materials, or any program content has been shared or made accessible, the enrollment is considered commenced and the fee is non-refundable",
+                            "A refund request may only be considered within 48 hours of purchase, provided no content has been accessed and the program start date has not passed",
+                            "Technical issues preventing access must be reported within 7 business days; AL&CO will resolve the issue or issue a service credit at its discretion",
                         ].map((item, i) => (
                             <li key={i} className="flex gap-3 text-neutral-500 custom-text1">
                                 <span className="text-secondary mt-1 flex-shrink-0">—</span>
@@ -203,34 +176,42 @@ const refundData: PolicyContentType = {
                             </li>
                         ))}
                     </ul>
-                    <p className="text-neutral-500 custom-text1">
-                        AL&CO reserves the right to deduct any non-recoverable payment processing fees from the refund amount. Refunds will not be issued to a different account or method than the original payment.
-                    </p>
                 </>
             ),
         },
         {
             label: "Section 06",
-            title: "Corporate & Group Enrollments",
+            title: "Seat Reservation & Batch Flexibility",
             content: (
-                <p className="text-neutral-500 custom-text1">
-                    Refund and cancellation terms for corporate clients or group bookings of five or more participants are governed by the signed service agreement between AL&CO and the client organization. In the absence of a specific written agreement, this standard Refund Policy shall apply in full.
-                </p>
+                <>
+                    <p className="text-neutral-500 custom-text1 mb-3">
+                        AL&CO genuinely values every participant's journey. Where a participant is unable to attend their enrolled batch due to unavoidable circumstances, AL&CO may, at its sole discretion, offer a seat transfer to a future batch of the same program at no additional charge. This is a goodwill accommodation and does not constitute an entitlement or an acknowledgement of refund eligibility.
+                    </p>
+                    <p className="text-neutral-500 custom-text1">
+                        Participants wishing to explore this option should contact AL&CO in writing at <span className="text-secondary">connect@arslanlarik.com</span> as early as possible.
+                    </p>
+                </>
             ),
         },
         {
             label: "Section 07",
+            title: "Corporate & Group Enrollments",
+            content: (
+                <p className="text-neutral-500 custom-text1">
+                    Refund and cancellation terms for corporate clients or group bookings of five or more participants are governed by the signed service agreement between AL&CO and the client organisation. In the absence of a specific written agreement, this standard policy applies in full.
+                </p>
+            ),
+        },
+        {
+            label: "Section 08",
             title: "Dispute Resolution",
             content: (
                 <>
                     <p className="text-neutral-500 custom-text1 mb-3">
-                        If you are dissatisfied with a refund decision, you may escalate your concern in writing to AL&CO's management. We will review and respond within 10 business days.
-                    </p>
-                    <p className="text-neutral-500 custom-text1 mb-3">
-                        All disputes arising from this policy shall be governed by the laws of Pakistan. Unresolved matters may be referred to the relevant Consumer Protection Council or the courts of competent jurisdiction in Karachi, Pakistan.
+                        If you are dissatisfied with a decision made under this policy, you may escalate your concern in writing to AL&CO's management. We will review and respond within 10 business days.
                     </p>
                     <p className="text-neutral-500 custom-text1">
-                        For international participants, AL&CO commits to good-faith resolution efforts prior to any formal legal process.
+                        All disputes arising from this policy shall be governed by the laws of Pakistan. Unresolved matters may be referred to the relevant Consumer Protection Council or the courts of competent jurisdiction in Karachi, Pakistan.
                     </p>
                 </>
             ),
@@ -240,7 +221,7 @@ const refundData: PolicyContentType = {
         title: "Submit a Refund Request",
         description: "Email us with your enrollment details and reason for the request. Please allow up to 3 business days for an initial response.",
         email: "connect@arslanlarik.com",
-        address: "Arslan Larik & Company, Karachi, Pakistan · Dubai, UAE",
+        address: "Arslan Larik & Company, D-86/1, Block-7, Gulshan-e-Iqbal, Karachi, Pakistan",
     },
 };
 

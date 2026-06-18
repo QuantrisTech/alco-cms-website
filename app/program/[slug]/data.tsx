@@ -333,12 +333,19 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
     {
       title: "Exclusive Audio Resources",
       description: (
+        // <p>
+        //   Access over 220 powerful audio files recorded by Dr. Tad James, a globally recognized leader in
+        //   NLP. These expertly designed lessons align with your manual, allowing you to learn anytime,
+        //   anywhere at your own pace. Absorb key concepts, deepen your understanding, and reinforce
+        //   your skills with ease, giving you continuous guidance as you master the art and science of NLP.
         <p>
-          Access over 220 powerful audio files recorded by Dr. Tad James, a globally recognized leader in
+          Access premium 450+ audio resources for Level 1 and Level 2 graduates,
+          recorded by Dr. Tad James, a globally recognized leader in
           NLP. These expertly designed lessons align with your manual, allowing you to learn anytime,
           anywhere at your own pace. Absorb key concepts, deepen your understanding, and reinforce
           your skills with ease, giving you continuous guidance as you master the art and science of NLP.
         </p>
+        // </p>
       ),
       theme: "yellow",
       image: {
@@ -1545,7 +1552,7 @@ const LevelProgramIncludesDataLevel4: LevelProgramIncludesType = {
       title: "Personal Transformation",
       description: (
         <p>
-Teaching others is the ultimate path to mastering yourself. Through this training, you’ll experience profound growth, refine your communication skills, and step into your best self. Build confidence, clarity, and lasting personal transformation.        </p>
+          Teaching others is the ultimate path to mastering yourself. Through this training, you’ll experience profound growth, refine your communication skills, and step into your best self. Build confidence, clarity, and lasting personal transformation.        </p>
       ),
       theme: "dark",
       image: {

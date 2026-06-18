@@ -214,8 +214,8 @@ const privacyData: PolicyContentType = {
                 <>
                     <p className="text-neutral-500 custom-text1 mb-6">
                         You have the following rights regarding your personal data held by AL&CO, exercisable by submitting a written request to{" "}
-                        <Link href="mailto:privacy@arslanlarik.com" className="text-secondary underline">
-                            privacy@arslanlarik.com
+                        <Link href="mailto:connect@arslanlarik.com" className="text-secondary underline">
+                            connect@arslanlarik.com
                         </Link>:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -289,7 +289,7 @@ const privacyData: PolicyContentType = {
     contactCard: {
         title: "Privacy Inquiries",
         description: "For any data-related requests or concerns, contact our privacy team.",
-        email: "privacy@arslanlarik.com",
+        email: "connect@arslanlarik.com",
         address: "Arslan Larik & Company, Karachi, Pakistan",
     },
 };
