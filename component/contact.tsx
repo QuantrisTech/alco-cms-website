@@ -75,9 +75,8 @@ const ContactUS = () => {
         }
     }, []);
 
-    const onSubmit = async (formData: ContactFormValues) => {
-
-
+const onSubmit = async (formData: ContactFormValues) => {
+    try {
         const source = localStorage.getItem("user_source");
 
         const res = await createLeadContact({
@@ -89,18 +88,19 @@ const ContactUS = () => {
             source: source || "contact",
         });
 
-        // Facebook Pixel Lead event
         event("Lead", { content_name: "Contact Us Form" });
-        
-        console.log("Contact API Response:", res.data);
+
         if (res?.data?.duplicate === true) {
-            // "We already have your details..."
             toast.success(res.data.message);
         } else {
-            // "Thank you for reaching out!"
             toast.success(res.data.message);
         }
-    };
+        reset();
+    } catch (err: any) {
+        const msg = err?.response?.data?.message || "Something went wrong. Try again.";
+        toast.error(msg);
+    }
+};
 
     return (
         <section className="max-w-7xl mx-auto pb-6 md:pb-8 lg:pb-12 xl:pb-16 px-4">

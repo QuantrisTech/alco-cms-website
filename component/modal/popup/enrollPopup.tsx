@@ -143,9 +143,11 @@ export default function EnrollPopup({
         turnstileToken, // backend pe verify karo
       };
 
-      await 
+      await createLead(payload);
+
       // Facebook Pixel Lead event
       event("Lead", { content_name: "Enroll Popup Form" });
+      toast.success("Enrolled successfully! Check your email for credentials.");
       toast.success("Enrolled successfully! Check your email for credentials.");
       localStorage.removeItem("user_source");
       reset();
