@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     icon: [{ url: "/mini-logo.svg", type: "image/svg+xml" }],
   },
 
+  other: {
+    'facebook-domain-verification': 'yi9ep7s1xi6v5r5sn01f1mxwc3cgvu',
+  },
+
   // ✅ Canonical
   // alternates: {
   //   canonical: "https://arslanlarik.com",
