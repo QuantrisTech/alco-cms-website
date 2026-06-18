@@ -116,7 +116,7 @@ export default function Navbar() {
               onClick={openPopup}
             />
             <Button
-              iconRight={false} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" href="/one-on-one-coaching-sessions" />
+              iconRight={false} text="GET 1-1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px]" href="/one-on-one-coaching-sessions" />
           </div>
 
           {/* Mobile Toggle */}
@@ -183,7 +183,7 @@ export default function Navbar() {
                   onClick={openPopup}
                 />
                 <Button
-                  iconRight={false} text="GET 1:1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px] min-w-[160px]" href="/one-on-one-coaching-sessions" />
+                  iconRight={false} text="GET 1-1 COACHING" variant="outlinePrimary" className="header-menu-button px-[12px] min-w-[160px]" href="/one-on-one-coaching-sessions" />
               </div>
 
 

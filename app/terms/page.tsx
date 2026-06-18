@@ -330,7 +330,7 @@ const termsData: PolicyContentType = {
     contactCard: {
         title: "Questions About These Terms?",
         description: "If you have any queries regarding these Terms and Conditions, please reach out.",
-        email: "info@arslanlarik.com",
+        email: "connect@arslanlarik.com",
         address: "Arslan Larik & Company, Karachi, Pakistan · Dubai, UAE",
     },
 };

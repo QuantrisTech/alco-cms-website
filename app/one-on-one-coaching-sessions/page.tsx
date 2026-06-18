@@ -29,7 +29,7 @@ import LevelProgram3 from "@/assets/level-program-included/program-3.webp"
 
 const bannerData: BannerType = {
     title: {
-        line1: "One On One Coaching Sessions",
+        line1: "1-1 Coaching Sessions",
         align: "text-center mx-auto "
     },
     image: programLevel2.src,
@@ -124,11 +124,11 @@ const WhatWeAddressList: ContentSectionType = {
             alt: "Goal alignment",
         },
         {
-            title: "Addictions challenges",
+            title: "Addiction challenges",
             height: "h-40",
             position: "object-contain",
             src: OneOnOneCoachingSessionsImg13.src,
-            alt: "Addictions challenges",
+            alt: "Addiction challenges",
         },
         {
             title: "Weight management challenges",
@@ -382,7 +382,7 @@ async function getSeoData() {
 
 export async function generateMetadata(): Promise<Metadata> {
     const data = await getSeoData();
-    return data ? buildMetadata(data) : { title: "One On One Coaching Sessions | AL&CO" };
+    return data ? buildMetadata(data) : { title: "1-1 Coaching Sessions | AL&CO" };
 }
 
 export default async function OneOnOneCoachingSessions() {

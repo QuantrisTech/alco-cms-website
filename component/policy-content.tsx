@@ -47,14 +47,14 @@ export default function PolicyContent({ data }: Props) {
 
                     {/* Contact card */}
                     <div className="mt-12 border border-primary/10 rounded-2xl px-6 py-10 text-center bg-primary/3">
-                        <h3 className="h4 font-semibold text-neutral-600 mb-3">Privacy Inquiries</h3>
+                        <h3 className="h4 font-semibold text-neutral-600 mb-3">Service Inquiries</h3>
                         <p className="text-neutral-500 custom-text1 mb-2">
-                            For any data-related requests or concerns, contact our privacy team.
+                            For questions regarding this policy or our programs, please contact us.
                         </p>
                         <p className="text-neutral-500 custom-text1 mb-1">
                             Email:{" "}
-                            <Link href="mailto:privacy@arslanlarik.com" className="text-secondary underline">
-                                privacy@arslanlarik.com
+                            <Link href="mailto:connect@arslanlarik.co" className="text-secondary underline">
+                                connect@arslanlarik.co
                             </Link>
                         </p>
                         <p className="text-neutral-500 custom-text1">

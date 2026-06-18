@@ -338,7 +338,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
       description: (
         <div className="space-y-3 leading-relaxed">
           <p>
-            <strong>Limiting beliefs</strong> are what we tell ourselves about who we are, and those beliefs that stop/limit hold us back from becoming who we are meant to be. These beliefs limit us from reaching our full potential. They are very unconscious in nature. We don’t know we have them until someone points them out to us.
+            <strong>Limiting beliefs</strong> are what we tell ourselves about who we are, and those beliefs that stop or hold us back from becoming who we are meant to be. These beliefs limit us from reaching our full potential. They are very unconscious in nature. We don’t know we have them until someone points them out to us.
           </p>
 
           {/* <p>
@@ -403,7 +403,7 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
           </p>
 
           <p>
-            <strong>Always Remember: ALL LIMITING BELIEFS ARE LIES !!!</strong>
+            <strong>Always Remember: ALL LIMITING BELIEFS ARE LIES!</strong>
           </p>
         </div>
       ),

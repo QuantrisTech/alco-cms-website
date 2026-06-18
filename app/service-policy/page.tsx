@@ -241,7 +241,7 @@ const serviceData: PolicyContentType = {
     contactCard: {
         title: "Service Inquiries",
         description: "For questions regarding this policy or our programs, please contact us.",
-        email: "info@arslanlarik.com",
+        email: "connect@arslanlarik.com",
         address: "Arslan Larik & Company, Karachi, Pakistan · Dubai, UAE",
     },
 };

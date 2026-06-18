@@ -16,11 +16,11 @@ const empowerYourself: EmpowerYourselfData = {
     "We empower you to live a life of purpose. Whether you’re looking to make a career change, start your own business, or simply find more fulfillment in your day-to-day life, we can surely help you in achieving that.",
   points: [
     {
-      title: "Misson",
+      title: "Mission",
       description: "At AL&CO, we understand that every individual has unique talents, goals, and aspirations. However, not everyone has equal access to the tools, resources, and support they need to reach their full potential and live extraordinary lives. This is why our mission is to empower individuals by providing them with the means to achieve their aspirations. We believe that by providing individuals with the right tools and resources, they can improve their skills, gain knowledge, and achieve their goals. Our mission also extends to the community level. We believe that by helping individuals reach their full potential, we can make a positive impact on their families and communities, and ultimately make the world a better place for everyone.",
       image: {
         src: About1.src,
-        alt: "Misson"
+        alt: "Mission"
       },
     },
     {

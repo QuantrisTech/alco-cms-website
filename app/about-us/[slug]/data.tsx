@@ -89,7 +89,7 @@ const bannerDataAL: BannerType = {
     line2: `Master Trainer Of NLP & HYPNOSIS`
   },
   miniTitle: {
-    line1: "First board certified master trainer of nlp & HYPNOSIS in pakistan via",
+    line1: "First Board Certified Master Trainer of NLP & HYPNOSIS in Pakistan via",
     line2: `ABH-ABNLP`
   },
   description: `Everyone make mistakes,
@@ -772,7 +772,7 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
   bgColor: "bg-dark-primary",
   title: {
     line1: "Experienced project leader and trainer with a proven track record of success at Arslan Larik & Company (AL&CO).",
-    line2: "Bismillah Pervez demonstrated proficiency in managing projects and delivering  high-quality training sessions.",
+    line2: "Bismillah Pervez demonstrates a proven track record in managing projects and delivering  high-quality training sessions.",
   },
 
   headers: [
@@ -782,7 +782,7 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
     {
       content: "Certified Trainer of Neuro Linguistic Programming via The American Board of Neuro Linguistic Programming (USA)",
       values: [
-        "Certified Trainer of Hypnosis via The American Board of Neuro Linguistic Programming (USA)",
+        "American Board of Hypnotherapy (ABH) via The American Board of Neuro Linguistic Programming (USA)",
       ],
     },
     {
@@ -798,7 +798,7 @@ const LevelBenefitsTableDataBP: LevelBenefitsTableType = {
       ],
     },
     {
-      content: "Certified Master Hypnotherapist via National Guild of Hypnotist-NGH (USA)",
+      content: "Certified Master Hypnotherapist via National Guild of Hypnotists (NGH) (USA)",
       values: [
         "Certified Master Educationist by Punjab University",
       ],

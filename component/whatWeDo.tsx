@@ -34,7 +34,7 @@ const whatWeDoData: WhatWeDoData = {
     {
       title: "SOLUTION ORIENTATION",
       description:
-        "Making wise decisions can be powerfull for transforming your life. By carefully considering what is best, you are taking charge of your future and paving the way to an improved quality of life with our help.",
+        "Making wise decisions can be powerful for transforming your life. By carefully considering what is best, you are taking charge of your future and paving the way to an improved quality of life with our help.",
     },
   ],
 }

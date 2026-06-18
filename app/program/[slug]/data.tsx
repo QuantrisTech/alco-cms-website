@@ -117,7 +117,7 @@ const LevelCertificationDataLevel1: LevelCertificationType = {
         alt: "Accredited Brand Two"
       },
       imageCerficate: {
-        src: Certificate2Level2,
+        src: Certificate2Level1,
         alt: "Certificate Two"
       },
     },
@@ -528,7 +528,7 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate1Level1,
+        src: Certificate1Level2,
         alt: "Accredited One"
       },
     },
@@ -552,7 +552,7 @@ const LevelCertificationDataLevel2: LevelCertificationType = {
         alt: "Accredited Brand One"
       },
       imageCerficate: {
-        src: Certificate3Level3,
+        src: Certificate3Level2,
         alt: "Accredited Three"
       },
     }
@@ -1777,7 +1777,7 @@ const ContentSectionImgContentListData5: ContentSectionType = {
       position: "object-contain",
     },
     {
-      title: "Aspiring Hypnosis Trainerss",
+      title: "Aspiring Hypnosis Trainers",
       description: "Looking to gain recognition and start a fulfilling career in hypnosis training.",
       src: ContentSectionEnroll2.src,
       alt: "Aspiring Hypnosis Trainers",

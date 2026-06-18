@@ -37,7 +37,7 @@ const refundData: PolicyContentType = {
                     </p>
                     <div className="border-l-2 border-secondary bg-secondary/5 px-5 py-4 rounded-r-lg">
                         <p className="text-neutral-600 custom-text1 font-medium">
-                            All refund requests must be submitted in writing to <span className="text-secondary">info@arslanlarik.com</span>, including your full name, program name, payment reference, and reason for the request.
+                            All refund requests must be submitted in writing to <span className="text-secondary">connect@arslanlarik.com</span>, including your full name, program name, payment reference, and reason for the request.
                         </p>
                     </div>
                 </>
@@ -239,7 +239,7 @@ const refundData: PolicyContentType = {
     contactCard: {
         title: "Submit a Refund Request",
         description: "Email us with your enrollment details and reason for the request. Please allow up to 3 business days for an initial response.",
-        email: "info@arslanlarik.com",
+        email: "connect@arslanlarik.com",
         address: "Arslan Larik & Company, Karachi, Pakistan · Dubai, UAE",
     },
 };
