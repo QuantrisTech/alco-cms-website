@@ -6,6 +6,7 @@ import ContentSection from "@/component/contentSection";
 import ContactInfo from "@/component/contactInfo";
 import LevelProgramIncludes from "@/component/levelProgramIncludes";
 import ResourcesPageClient from "../resources-page-client";
+import ContentSectionWithModal from "@/component/contentSectionWithModal";
 
 export default async function Services({
   params,
@@ -31,7 +32,8 @@ export default async function Services({
         : <ContentSection data={ContentSectionImgContentListData} />
       }
       <ContentSection data={ContentSectionData2} />
-      <ContentSection data={ContentSectionContentListData} />
+      {/* <ContentSection data={ContentSectionContentListData} /> */}
+      <ContentSectionWithModal data={ContentSectionContentListData} />
       <LevelProgramIncludes data={LevelProgramIncludesData} />
       <ContactInfo />
     </div>

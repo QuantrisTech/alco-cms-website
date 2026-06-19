@@ -15,6 +15,7 @@ type contentType = {
   position?: string
    _id?: string;           // ← add
   is_available?: boolean;
+  programId?: string; 
 };
 
 type ButtonType = {

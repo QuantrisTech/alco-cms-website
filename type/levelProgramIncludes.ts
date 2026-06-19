@@ -18,6 +18,7 @@ export type LevelProgramIncludesType = {
       src: StaticImageData
       alt: string
     }
+    programId?: string;
   }[]
 
 }

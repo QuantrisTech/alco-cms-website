@@ -32,7 +32,7 @@ API.interceptors.response.use(
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");
                 localStorage.removeItem("refresh_token");
-                window.location.href = "/login";
+                window.location.href = "/auth";
                 return Promise.reject(error);
             }
 
@@ -65,7 +65,7 @@ API.interceptors.response.use(
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");
                 localStorage.removeItem("refresh_token");
-                window.location.href = "/login";
+                window.location.href = "/auth";
                 return Promise.reject(refreshError);
             }
         }
@@ -86,7 +86,7 @@ export const PUBLIC_API = axios.create({
 // Auth APIs
 // ─────────────────────────────────────────────
 // export const loginUser = (data: LoginData) =>
-//   API.post("/api/auth/login", data);
+//   API.post("/api/auth/auth", data);
 // export const registerUser = (data: RegisterData) =>
 //   API.post("/api/auth/register", data);
 // export const forgotPassword = (data: { email: string }) =>
@@ -132,6 +132,13 @@ export const createLeadContact = (data: {
   source?: string;
   turnstileToken?: string; 
 }) => PUBLIC_API.post("/api/v1/leads/contact", data);
+export const createProgramLead = (data: {
+  name: string;
+  email: string;
+  phone: string;
+  programId: string;
+  turnstileToken: string;
+}) => PUBLIC_API.post("/leads/program", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
 // export const deleteLead = (id: string) => API.delete(`/api/v1/leads/${id}`);

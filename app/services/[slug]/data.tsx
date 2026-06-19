@@ -161,6 +161,7 @@ const ContentSectionContentListDataRE: ContentSectionType = {
   contentlist: [
     {
       title: "AL&CO LEVEL 1:",
+      programId: "69d88bcd3b3f401bb2e711bc",
       description: (
         <div className="text-gray-600">
           <p className="text-lg px-4 mb-4">
@@ -174,6 +175,7 @@ const ContentSectionContentListDataRE: ContentSectionType = {
     },
     {
       title: "AL&CO LEVEL 2:",
+      programId: "69d8a8ed06f01d73ae725722",
       description: (
         <div className="text-gray-600">
           <p className="text-lg px-4 mb-4">
