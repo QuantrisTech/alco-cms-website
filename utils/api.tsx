@@ -138,7 +138,7 @@ export const createProgramLead = (data: {
   phone: string;
   programId: string;
   turnstileToken: string;
-}) => PUBLIC_API.post("/leads/program", data);
+}) => PUBLIC_API.post("/api/v1/leads/program", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
 // export const deleteLead = (id: string) => API.delete(`/api/v1/leads/${id}`);
