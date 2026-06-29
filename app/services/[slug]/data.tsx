@@ -383,8 +383,8 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
               </li>
             </ul>
             <ul className="list-none  space-y-1">
-              
-               <li className="font-semibold italic">
+
+              <li className="font-semibold italic">
                 “I can’t make money”
               </li>
               <li className="font-semibold italic">

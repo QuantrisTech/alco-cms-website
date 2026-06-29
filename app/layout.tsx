@@ -26,26 +26,26 @@ export const metadata: Metadata = {
   },
 
   // ✅ Canonical
-  // alternates: {
-  //   canonical: "https://arslanlarik.com",
-  // },
+  alternates: {
+    canonical: "https://arslanlarik.com",
+  },
 
   // ✅ Open Graph (Facebook, WhatsApp, LinkedIn)
-  // openGraph: {
-  //   title: "ALCO CMS Website | NLP Training",
-  //   description:
-  //     "Learn NLP & Hypnotherapy with certified trainers at AL&CO.",
-  //   url: "https://arslanlarik.com",
-  //   siteName: "ALCO",
-  //   locale: "en_US",
-  //   type: "website",
-  // },
+  openGraph: {
+    title: "ALCO CMS Website | NLP Training",
+    description:
+      "Learn NLP & Hypnotherapy with certified trainers at AL&CO.",
+    url: "https://arslanlarik.com",
+    siteName: "ALCO",
+    locale: "en_US",
+    type: "website",
+  },
 
   // ✅ Robots (HOME PAGE MUST BE INDEXED)
-  // robots: {
-  //   index: true,
-  //   follow: true,
-  // },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

@@ -46,7 +46,7 @@ export default function WhatWeDo() {
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-dark-primary bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
 
-        <h3 className="h3 text-start">
+        <h4 className="h3 text-start">
           <span className="text-secondary">
             {data.title.line1}
           </span>
@@ -54,7 +54,7 @@ export default function WhatWeDo() {
           <span className="text-white">
             {data.title.line2}
           </span>
-        </h3>
+        </h4>
 
         <div className="bg-white p-4 lg:p-6 xl:p-8 rounded-lg shadow-lg mt-3 md:mt-4 lg:mt-6 xl:mt-8">
 

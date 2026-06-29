@@ -55,7 +55,7 @@ export default function EnrollPopup({
   ),
   children,
 }: EnrollPopupProps) {
-  const { isOpen, closePopup } = usePopup();
+  const { isOpen, closePopup, openPopup  } = usePopup();
   const [programOptions, setProgramOptions] = useState<{ label: string; value: string }[]>([]);
   const [programsLoading, setProgramsLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>("");
@@ -119,6 +119,13 @@ export default function EnrollPopup({
       localStorage.setItem("user_source", source);
     }
   }, []);
+
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('openEnroll') === 'true') {
+    openPopup(); // your existing state setter
+  }
+}, []);
 
   const onSubmit = async (data: any) => {
     if (!turnstileToken) {

@@ -299,6 +299,13 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
     line1: "This Program Includes",
     line2: "NLP Practitioner Training"
   },
+  description: (
+    <>
+      <p className="my-4 ">
+        The NLP Practitioner Certification is a foundational program in Neuro-Linguistic Programming, delivered by Arslan Larik, ABNLP Certified Master Trainer of NLP. This program is accredited by the American Board of NLP (ABNLP) and is designed for professionals, coaches, leaders, and individuals who wish to develop a scientifically grounded understanding of human communication, behaviour, and transformation.      </p>
+      <p className=" ">
+        Participants develop practical competency in the core tools of NLP, including the Meta Model, the Milton Model, language patterns, anchoring, submodality work, and outcome-based thinking. These skills are immediately applicable in coaching, leadership, sales, education, and personal development.      </p></>
+  ),
   points: [
     {
       title: "10 Days of Immersive, Online Learning",
@@ -409,7 +416,56 @@ const LevelProgramIncludesDataLevel1: LevelProgramIncludesType = {
         alt: "Global Network",
       },
     },
+    // {
+    //   title: "What You Will Walk Away With",
+    //   description: (
+    //     <>
+    //       <p className="mb-2">
+    //         Upon completing this certification, you will be equipped to identify and shift limiting beliefs, communicate with precision and influence, facilitate powerful change conversations, and apply NLP methodologies within your professional practice.
+    //       </p>
+    //     </>
+    //   ),
+    //   theme: "dark",
+    //   image: {
+    //     src: LevelProgram2,
+    //     alt: "Walk Away",
+    //   },
+    // },
+    // {
+    //   title: "Program Investment",
+    //   description: (
+    //     <>
+    //       <p className="mb-2">
+    //         AL&CO operates on a Regional Tuition Model based on Purchasing Power Parity (PPP). This means our international investment reflects the global standard for an ABNLP-accredited NLP Practitioner certification, while Pakistani nationals are offered a regionally adjusted rate as part of our commitment to making world-class training accessible within Pakistan. Pakistani Nationals: PKR 2,00,000 · International: USD 3,500. Both rates represent the same program, the same certification, and the same standard of delivery.
+    //       </p>
+    //     </>
+    //   ),
+    //   theme: "light",
+    //   image: {
+    //     src: LevelProgram1,
+    //     alt: "Program Investment",
+    //   },
+    // },
   ],
+
+  // pointsClass: "grid grid-col-1 lg:grid-cols-2 gap-4 lg:gap-8 py-2 md:py-4 lg:py-8 xl:py-12",
+  textAlign: "text-start",
+  detailContent: (
+    <div className="text-gray-600 ">
+      <p className="mb-2 ">
+        <strong>What You Will Walk Away With</strong>
+      </p>
+      <p className="mb-4 ">
+        Upon completing this certification, you will be equipped to identify and shift limiting beliefs, communicate with precision and influence, facilitate powerful change conversations, and apply NLP methodologies within your professional practice.
+      </p>
+      <p className="mb-2 ">
+        <strong>Program Investment</strong>
+      </p>
+      <p className="mb-4 ">
+        AL&CO operates on a Regional Tuition Model based on Purchasing Power Parity (PPP). This means our international investment reflects the global standard for an ABNLP-accredited NLP Practitioner certification, while Pakistani nationals are offered a regionally adjusted rate as part of our commitment to making world-class training accessible within Pakistan. Both rates represent the same program, the same certification, and the same standard of delivery. NLP Practitioner (Standalone): Pakistani Nationals - PKR 2,00,000 · International: USD 3,500.
+      </p>
+    </div>
+  ),
 };
 
 
@@ -747,6 +803,14 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
     line1: "This Program Includes",
     line2: ""
   },
+  description: (
+    <>
+      <p className="my-4 ">
+        The NLP Master Practitioner Certification is the advanced progression of the Practitioner program, designed for those who are ready to deepen their expertise and operate at a higher level of precision in communication and human behaviour change. This program is delivered by Arslan Larik, ABNLP Certified Master Trainer of NLP, and is accredited by the American Board of NLP (ABNLP).      </p>
+      <p className="mb-4 ">
+        At this level, participants work with advanced language patterns, values elicitation, belief change methodologies, timeline techniques, parts integration, and generative NLP processes. The program is designed for coaches, trainers, leaders, therapists, and practitioners who work with human transformation at depth.      </p>
+    </>
+  ),
   points: [
     {
       title: "13 Days of Immersive, Online Learning",
@@ -857,6 +921,25 @@ const LevelProgramIncludesDataLevel2: LevelProgramIncludesType = {
       },
     },
   ],
+  textAlign: "text-start",
+  detailContent: (
+    <div className="text-gray-600">
+      <p className="mb-2 ">
+        <strong>Who This Program Is For</strong>
+      </p>
+      <p className="mb-4 ">
+        This certification is suited for individuals who have completed an NLP Practitioner program and are ready to move from foundational competency to mastery-level application. It is particularly valuable for those working in coaching, organisational development, human resources, sales leadership, or any field that requires sophisticated interpersonal influence and change facilitation.      </p>
+      <p className="mb-2 ">
+        <strong>Program Investment</strong>
+      </p>
+      <p className="mb-4 ">
+        AL&CO operates on a Regional Tuition Model based on Purchasing Power Parity (PPP). The international rate reflects the global standard for an ABNLP-accredited NLP Master Practitioner certification. Pakistani nationals receive a regionally adjusted rate as part of AL&CO's commitment to accessible, world-class professional development within Pakistan.
+        For Pakistani participants enrolling in both the NLP Practitioner and NLP Master Practitioner programs together, a combined investment rate is available. This is the most cost-effective route for those who wish to complete both certifications.
+        NLP Master Practitioner (Standalone): Pakistani Nationals - PKR 3,50,000 · International - USD 4,500.
+        NLP Practitioner + Master Practitioner (Bundle) : Pakistani Nationals: PKR 4,50,000 · International: Individual rates apply.
+      </p>
+    </div>
+  )
 };
 
 const LevelContentDataLevel2: LevelContentType = {
@@ -1112,6 +1195,14 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
     line1: "This Program Includes",
     line2: ""
   },
+  description: (
+    <>
+      <p className="my-4 ">
+        The Advanced Hypnotherapy and Interventionist Training is AL&CO's most specialised certification, designed for practitioners who are ready to work at the deeper layers of the human mind. Delivered by Arslan Larik, ABNLP Certified Master Trainer of NLP and Trainer of Hypnotherapy, this program is accredited by the American Board of Hypnotherapy (ABH).      </p>
+      <p className="mb-4 ">
+        Participants develop expertise in hypnotic induction techniques, regression methodologies, suggestion therapy, parts integration, phobia resolution, and advanced interventionist processes. This training is designed for NLP practitioners, coaches, therapists, counsellors, and professionals who require precision tools for deep behavioural and psychological change work.      </p>
+    </>
+  ),
   points: [
     {
       title: "Twelve Intensive Days of Online Training",
@@ -1273,6 +1364,25 @@ const LevelProgramIncludesDataLevel3: LevelProgramIncludesType = {
       },
     },
   ],
+  textAlign: "text-start",
+  detailContent: (
+    <div className="text-gray-600">
+      <p className="mb-2 ">
+        <strong>Who This Program Is For</strong>
+      </p>
+      <p className="mb-4 ">
+        This certification is suited for individuals who hold an NLP Practitioner or Master Practitioner qualification and wish to add a structured hypnotherapy credential to their professional toolkit. It is particularly relevant for those working in coaching, therapy, wellness, corporate leadership development, and applied psychology.      </p>
+      <p className="mb-2 ">
+        <strong>Program Investment</strong>
+      </p>
+      <p className="mb-4 ">
+        AL&CO operates on a Regional Tuition Model based on Purchasing Power Parity (PPP). The international rate reflects the global standard for an ABH-accredited Advanced Hypnotherapy certification delivered by a qualified Trainer of Hypnotherapy. Pakistani nationals receive a regionally adjusted rate as part of AL&CO's commitment to accessible, world-class professional development within Pakistan.
+        For international participants who wish to complete the full AL&CO certification track, a combined investment is available for all three programs: NLP Practitioner, NLP Master Practitioner, and Advanced Hypnotherapy and Interventionist Training. This represents the most comprehensive and cost-effective path for international professionals.
+        Advanced Hypnotherapy (Standalone): Pakistani Nationals - PKR 4,50,000 · International - USD 3,500.
+        Practitioner + Master Practitioner + Advanced Hypnotherapy(Full Track): Pakistani Nationals - Individual rates apply · International - USD 6,000.
+      </p>
+    </div>
+  ),
 };
 
 const LevelContentDataLevel3: LevelContentType = {

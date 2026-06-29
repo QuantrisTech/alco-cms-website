@@ -1,8 +1,32 @@
 import { MetadataRoute } from "next";
+import { getProgramsPublic } from "@/utils/api";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const lastModified = new Date("2026-06-04");
+
+   // Dynamic programs from DB
+  let programEntries: MetadataRoute.Sitemap = [];
+  try {
+    const res = await getProgramsPublic();
+    const programs = res.data.data;
+    programEntries = programs.map((p: any) => ({
+      url: `https://arslanlarik.com/program/${p.slug}`,
+      lastModified: p.updatedAt || lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    }));
+  } catch {
+    // fallback agar API fail ho
+    programEntries = [
+      { url: "https://arslanlarik.com/program/nlp-practitioner", lastModified, changeFrequency: "monthly", priority: 0.9 },
+      { url: "https://arslanlarik.com/program/nlp-master-practitioner", lastModified, changeFrequency: "monthly", priority: 0.9 },
+      { url: "https://arslanlarik.com/program/advanced-hypnotherapy-interventionist", lastModified, changeFrequency: "monthly", priority: 0.9 },
+      { url: "https://arslanlarik.com/program/nlp-trainers-training-program", lastModified, changeFrequency: "monthly", priority: 0.9 },
+      { url: "https://arslanlarik.com/program/hypnosis-trainers-training-program", lastModified, changeFrequency: "monthly", priority: 0.9 },
+      { url: "https://arslanlarik.com/program/nlp-master-trainer-program", lastModified, changeFrequency: "monthly", priority: 0.9 },
+    ];
+  }
 
   return [
     {
@@ -30,43 +54,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
 
+      ...programEntries,
+
     // Programs
-    {
-      url: "https://arslanlarik.com/program/nlp-practitioner",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://arslanlarik.com/program/nlp-master-practitioner",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://arslanlarik.com/program/advanced-hypnotherapy-interventionist",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://arslanlarik.com/program/nlp-trainers-training-program",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://arslanlarik.com/program/hypnosis-trainers-training-program",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: "https://arslanlarik.com/program/nlp-master-trainer-program",
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
+    // {
+    //   url: "https://arslanlarik.com/program/nlp-practitioner",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: "https://arslanlarik.com/program/nlp-master-practitioner",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: "https://arslanlarik.com/program/advanced-hypnotherapy-interventionist",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: "https://arslanlarik.com/program/nlp-trainers-training-program",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: "https://arslanlarik.com/program/hypnosis-trainers-training-program",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: "https://arslanlarik.com/program/nlp-master-trainer-program",
+    //   lastModified,
+    //   changeFrequency: "monthly",
+    //   priority: 0.9,
+    // },
 
     // About Us
     {

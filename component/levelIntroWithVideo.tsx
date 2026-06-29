@@ -15,7 +15,7 @@ export default function LevelIntroWithVideo({ data }: Props) {
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-light-neutral bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
 
-        <h3 className="h3 text-start">
+        <h4 className="h3 text-start">
           <span className="text-primary">
             {data?.title?.line1}
           </span>
@@ -23,7 +23,7 @@ export default function LevelIntroWithVideo({ data }: Props) {
           <span className="">
             {data?.title?.line2}
           </span>
-        </h3>
+        </h4>
         <div
           className="custom-text1 font-light text-black my-2 xl:my-3"
           dangerouslySetInnerHTML={{ __html: data?.description }}

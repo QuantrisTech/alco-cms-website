@@ -35,14 +35,14 @@ export default function LevelBenefitsTable({ data }: Props) {
           <div className="flex flex-col xl:flex-row justify-between xl:items-center">
             {!data?.introPage && (
               <>
-                <h3 className="h3 text-start">
+                <h2 className="h3 text-start">
                   <span className={`${data?.bgColor ? "text-primary" : "text-secondary"} mr-2`}>
                     {data?.title?.line1}
                   </span>
                   <span className={data?.title?.line2Class ? data?.title?.line2Class : `text-white`}>
                     {data?.title?.line2}
                   </span>
-                </h3>
+                </h2>
 
                 {data?.button && (<div className="mt-4">
                   <Button

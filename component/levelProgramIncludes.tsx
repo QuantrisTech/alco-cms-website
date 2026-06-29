@@ -21,16 +21,22 @@ export default function LevelProgramIncludes({ data }: Props) {
     <section className="py-6 md:py-8 lg:py-12 xl:py-16 sm:px-4 bg-gradient-light-neutral-lg bg-cover bg-top-left w-full">
       <div className="container mx-auto px-4">
         <div className="flex flex-col xl:flex-row justify-between xl:items-center">
-          <h3 className="h3 text-start">
+          <h2 className="h3 text-start">
             <span className="text-primary">
               {data?.title?.line1}
             </span>
-          </h3>
+          </h2>
+          
           {/* <div className="my-2">
             <Button
               iconRight={true} variant="primary" size="medium" text="Learn More" href="#" className='my-auto' />
           </div> */}
         </div>
+        {data.description && (
+            <div className="custom-text1 font-light text-gray-600 text-start ">
+              {data.description}
+            </div>
+          )}
 
         <div className={data?.pointsClass ? data?.pointsClass : "grid grid-col-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 2xl:gap-12 py-2 md:py-4 lg:py-8 xl:py-12"}>
           {data?.points.map((point, index) => (
