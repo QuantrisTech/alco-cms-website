@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getBlogBySlug, getBlogs } from "@/utils/api";
+import RichText from "@/component/blog/RichText";
 
 // ── Types ──
 type Blog = {
@@ -97,7 +98,7 @@ const renderBlock = (block: any, index: any) => {
             return <h3 key={index} className="text-xl font-semibold mt-6 mb-2">{block.text}</h3>;
 
         case "p":
-            return <p key={index} className="text-base leading-7 mb-4 text-gray-700">{block.text}</p>;
+            return <p key={index} className="text-base leading-7 mb-4 text-gray-700"><RichText text={block.text} /></p>;
 
         case "quote":
             return (
@@ -111,7 +112,7 @@ const renderBlock = (block: any, index: any) => {
                 <ul key={index} className="list-disc pl-6 mb-4 space-y-2">
                     {block.items.map((item: any, i: any) => (
                         <li key={i} className="text-gray-700">
-                            <strong>{item.bold}</strong> {item.text}
+                            <strong>{item.bold}</strong> <RichText text={block.text} />
                         </li>
                     ))}
                 </ul>
@@ -122,7 +123,7 @@ const renderBlock = (block: any, index: any) => {
                 <ol key={index} className="list-decimal pl-6 mb-4 space-y-2">
                     {block.items.map((item: any, i: any) => (
                         <li key={i} className="text-gray-700">
-                            <strong>{item.bold}</strong> {item.text}
+                            <strong>{item.bold}</strong> <RichText text={block.text} />
                         </li>
                     ))}
                 </ol>
