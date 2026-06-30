@@ -112,7 +112,7 @@ const renderBlock = (block: any, index: any) => {
                 <ul key={index} className="list-disc pl-6 mb-4 space-y-2">
                     {block.items.map((item: any, i: any) => (
                         <li key={i} className="text-gray-700">
-                            <strong>{item.bold}</strong> <RichText text={block.text} />
+                            <strong>{item.bold}</strong> {item.text}
                         </li>
                     ))}
                 </ul>
@@ -123,7 +123,7 @@ const renderBlock = (block: any, index: any) => {
                 <ol key={index} className="list-decimal pl-6 mb-4 space-y-2">
                     {block.items.map((item: any, i: any) => (
                         <li key={i} className="text-gray-700">
-                            <strong>{item.bold}</strong> <RichText text={block.text} />
+                            <strong>{item.bold}</strong> {item.text}
                         </li>
                     ))}
                 </ol>
