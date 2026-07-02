@@ -54,45 +54,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
 
-      ...programEntries,
+      // ...programEntries,
 
     // Programs
-    // {
-    //   url: "https://arslanlarik.com/program/nlp-practitioner",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
-    // {
-    //   url: "https://arslanlarik.com/program/nlp-master-practitioner",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
-    // {
-    //   url: "https://arslanlarik.com/program/advanced-hypnotherapy-interventionist",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
-    // {
-    //   url: "https://arslanlarik.com/program/nlp-trainers-training-program",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
-    // {
-    //   url: "https://arslanlarik.com/program/hypnosis-trainers-training-program",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
-    // {
-    //   url: "https://arslanlarik.com/program/nlp-master-trainer-program",
-    //   lastModified,
-    //   changeFrequency: "monthly",
-    //   priority: 0.9,
-    // },
+    {
+      url: "https://arslanlarik.com/program/nlp-practitioner",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://arslanlarik.com/program/nlp-master-practitioner",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://arslanlarik.com/program/advanced-hypnotherapy-interventionist",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://arslanlarik.com/program/nlp-trainers-training-program",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://arslanlarik.com/program/hypnosis-trainers-training-program",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://arslanlarik.com/program/nlp-master-trainer-program",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
 
     // About Us
     {
