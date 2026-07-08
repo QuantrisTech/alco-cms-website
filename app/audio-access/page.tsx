@@ -42,20 +42,51 @@ export default function AudioAccessPage() {
 
   // ── Fetch programs ─────────────────────────────────────────
   const fetchPrograms = async () => {
-    setProgramsLoading(true);
-    try {
-      const res = await getProgramsPublic();
-      const options = res.data.data.map((p: any) => ({
-        label: p.name,
-        value: p._id,
-      }));
-      setProgramOptions(options);
-    } catch {
-      toast.error("Failed to load programs");
-    } finally {
-      setProgramsLoading(false);
-    }
-  };
+  setProgramsLoading(true);
+
+  try {
+    const res = await getProgramsPublic();
+
+    const options = res.data.data.map((p: any) => ({
+      label: p.name,
+      value: p._id,
+    }));
+
+    setProgramOptions(options);
+  } catch {
+    // Fallback to hardcoded programs
+    setProgramOptions([
+      {
+        label: "NLP Master Trainer Program",
+        value: "69e8c025afaf0d3fb90233d4",
+      },
+      {
+        label: "Hypnosis Trainer's Training Certification and Evaluation Program",
+        value: "69e8bfb7afaf0d3fb90233a8",
+      },
+      {
+        label: "NLP Trainers' Training And Evaluation Certification Program",
+        value: "69e8bf8cafaf0d3fb90233a0",
+      },
+      {
+        label: "Advanced Hypnotherapy & Interventionist Training Program",
+        value: "69e8bf48afaf0d3fb9023398",
+      },
+      {
+        label: "NLP Master Practitioner Program",
+        value: "69d8a8ed06f01d73ae725722",
+      },
+      {
+        label: "NLP Practitioner Program",
+        value: "69d88bcd3b3f401bb2e711bc",
+      },
+    ]);
+
+    // toast.error("Failed to load programs. Showing default list.");
+  } finally {
+    setProgramsLoading(false);
+  }
+};
 
   // useEffect(() => {
   //   if (pinVerified) fetchPrograms();
