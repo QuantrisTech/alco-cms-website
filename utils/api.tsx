@@ -124,20 +124,20 @@ export const getProgramsPublic = () => PUBLIC_API.get("/api/v1/programs/name");
 //   API.get("/api/v1/leads", { params });// ✅ Public - no auth
 export const createLead = (data: any) => PUBLIC_API.post("/api/v1/leads", data);
 export const createLeadContact = (data: {
-  first_name: string;
-  last_name?: string;
-  email: string;
-  phone?: string;
-  query?: string;
-  source?: string;
-  turnstileToken?: string; 
+    first_name: string;
+    last_name?: string;
+    email: string;
+    phone?: string;
+    query?: string;
+    source?: string;
+    turnstileToken?: string;
 }) => PUBLIC_API.post("/api/v1/leads/contact", data);
 export const createProgramLead = (data: {
-  name: string;
-  email: string;
-  phone: string;
-  programId: string;
-  turnstileToken: string;
+    name: string;
+    email: string;
+    phone: string;
+    programId: string;
+    turnstileToken: string;
 }) => PUBLIC_API.post("/api/v1/leads/program", data);
 // export const updateLead = (id: string, data: any) =>
 //   API.put(`/api/v1/leads/${id}`, data);
@@ -165,5 +165,16 @@ export const getBlogs = (params?: any) =>
 
 export const getBlogBySlug = (slug: string) =>
     PUBLIC_API.get(`/api/v1/blogs/public/${slug}`);
+
+export const verifyAudioPin = (pin: string) =>
+    API.post("/api/v1/audio-access/verify-pin", { pin });
+
+export const requestAudioAccess = (data: {
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+  programsRequested: string[];
+}) => API.post("/api/v1/audio-access/request", data);
 
 export default API;

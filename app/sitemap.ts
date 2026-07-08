@@ -210,6 +210,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: "https://arslanlarik.com/blogs/somatic-coaching-certification-for-nervous-system-depth",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/choose-the-best-online-coach-training-program",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/enhance-corporate-learning-with-nlp-trainer-training",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
 
     // Services
     {
