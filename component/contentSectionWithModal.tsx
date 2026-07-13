@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ContentSection from "@/component/contentSection";
-import ProgramLeadModal from "@/component/modal/programLeadModal";
+import AudioResourceRequestModal from "@/component/modal/audioResourceRequestModal";
 import { ContentSectionType } from "@/type/contentSection";
 
 type Props = {
@@ -9,26 +9,23 @@ type Props = {
 };
 
 export default function ContentSectionWithModal({ data }: Props) {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedProgramId, setSelectedProgramId] = useState("");
-  const [selectedProgramName, setSelectedProgramName] = useState("");
+  const [selectedProgram, setSelectedProgram] = useState<{ id: string; name: string } | null>(null);
 
   const handleItemClick = (item: any) => {
-    if (!item?.programId) return; // jis card pe programId nahi, kuch nahi hoga
-    setSelectedProgramId(item.programId);
-    setSelectedProgramName(item.title || "");
-    setModalOpen(true);
+    setSelectedProgram({ id: item.programId, name: item.title });
   };
 
   return (
     <>
       <ContentSection data={data} onItemClick={handleItemClick} />
-      <ProgramLeadModal
-        isOpen={modalOpen}
-        programId={selectedProgramId}
-        programName={selectedProgramName}
-        onClose={() => setModalOpen(false)}
-      />
+      {selectedProgram && (
+        <AudioResourceRequestModal
+          isOpen={!!selectedProgram}
+          programId={selectedProgram.id}
+          programName={selectedProgram.name}
+          onClose={() => setSelectedProgram(null)}
+        />
+      )}
     </>
   );
 }

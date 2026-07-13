@@ -1,12 +1,10 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Button from "@/component/button";
 import InputField from "@/component/inputfield";
 import { useForm, Controller } from "react-hook-form";
-import { createProgramLead } from "@/utils/api";
+import { requestAudioAccess } from "@/utils/api";
 import toast from "react-hot-toast";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { event } from "@/libs/fpixel";
 import Popup from "./popup/popup";
 
 type Props = {
@@ -16,10 +14,7 @@ type Props = {
   onClose: () => void;
 };
 
-export default function ProgramLeadModal({ isOpen, programId, programName, onClose }: Props) {
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const turnstileRef = useRef<any>(null);
-
+export default function AudioResourceRequestModal({ isOpen, programId, programName, onClose }: Props) {
   const {
     handleSubmit,
     control,
@@ -30,52 +25,29 @@ export default function ProgramLeadModal({ isOpen, programId, programName, onClo
     defaultValues: { name: "", email: "", phone: "" },
   });
 
-  useEffect(() => {
-    const params = new URLSearchParams(window?.location?.search);
-    const source = params.get("utm_source") || params.get("source") || params.get("ref");
-    if (source && !localStorage.getItem("user_source")) {
-      localStorage.setItem("user_source", source);
-    }
-  }, []);
-
   if (!isOpen) return null;
 
   const onSubmit = async (data: any) => {
-    if (!turnstileToken) {
-      toast.error("Please complete the security check.");
-      return;
-    }
-
     const nameParts = data.name.trim().split(" ");
     const first_name = nameParts[0];
-    const last_name = nameParts.slice(1).join(" ") || first_name; // backend last_name required mange to fallback
+    const last_name = nameParts.slice(1).join(" ") || null; // ✅ sirf ek naam ho tw null
 
     try {
-      const source = localStorage.getItem("user_source");
-
-      const payload = {
-        name: data.name,
+      const res = await requestAudioAccess({
+        first_name,
+        last_name,
         email: data.email,
         phone: data.phone,
-        programId,
-        turnstileToken,
-      };
+        programsRequested: [programId],
+        source: "resource",
+      });
 
-      await createProgramLead(payload);
-
-      event("Lead", { content_name: `Program Card - ${programName || programId}` });
-      toast.success("Submitted! Our team will reach out shortly.");
-
-      localStorage.removeItem("user_source");
+      toast.success(res?.data?.message || "Submitted! Our team will reach out shortly.");
       reset();
-      setTurnstileToken("");
-      turnstileRef.current?.reset();
       onClose();
     } catch (err: any) {
       const msg = err?.response?.data?.message || "Something went wrong. Try again.";
       toast.error(msg);
-      setTurnstileToken("");
-      turnstileRef.current?.reset();
     }
   };
 
@@ -119,22 +91,12 @@ export default function ProgramLeadModal({ isOpen, programId, programName, onClo
           />
         </div>
 
-        <div className="mt-4">
-          <Turnstile
-            ref={turnstileRef}
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-            onSuccess={(token) => setTurnstileToken(token)}
-            onExpire={() => setTurnstileToken("")}
-            onError={() => setTurnstileToken("")}
-          />
-        </div>
-
         <Button
           text={isSubmitting ? "Submitting..." : "Submit"}
           type="submit"
           variant="primary"
           className="mt-4 w-full"
-          disabled={isSubmitting || !turnstileToken}
+          disabled={isSubmitting}
         />
       </form>
     </Popup>

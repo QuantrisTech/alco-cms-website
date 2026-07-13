@@ -174,7 +174,8 @@ export const requestAudioAccess = (data: {
     last_name: string;
     email: string;
     phone: string;
-  programsRequested: string[];
+    programsRequested: string[];
+    source?: "access-request" | "resource" | "register" | "other";
 }) => API.post("/api/v1/audio-access/request", data);
 
 export default API;
