@@ -64,10 +64,11 @@ export default function RootLayout({
           <main className="pt-[72px]">{children}</main>
         </ConditionalLayout>
 
-        <Script id="alco-chatbot-config" strategy="afterInteractive">
-       {`window.ALCO_CHATBOT_CONFIG = { apiUrl: "${process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}" };`}
-        </Script>
-        <Script src="/widget.js" strategy="afterInteractive" />
+        <Script
+  src="/widget.js"
+  data-api-url={process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}
+  strategy="afterInteractive"
+/>
 
       </body>
       <GoogleAnalytics gaId="G-G4W2XBWFX5" />
