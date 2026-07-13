@@ -1,0 +1,341 @@
+(function () {
+  const currentScript = document.currentScript;
+  const API_BASE_URL = currentScript.getAttribute("data-api-url") || "http://127.0.0.1:8001";
+
+  if (!document.querySelector('link[href*="Space+Grotesk"]')) {
+    const fontLink = document.createElement("link");
+    fontLink.rel = "stylesheet";
+    fontLink.href = "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap";
+    document.head.appendChild(fontLink);
+  }
+
+  const styles = `
+    #alco-launcher {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 64px;
+      height: 64px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      z-index: 999999;
+    }
+    #alco-launcher svg { width: 64px; height: 64px; position: relative; z-index: 1; }
+    .alco-badge { position: relative; border-radius: 50%; display: inline-block; }
+    .alco-badge::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, transparent 0%, #F5A623 12%, transparent 30%, #7C6FFF 45%, transparent 62%);
+      opacity: 0.55;
+      filter: blur(2px);
+      animation: alco-signal-spin 7s linear infinite;
+      z-index: 0;
+    }
+    @keyframes alco-signal-spin { to { transform: rotate(360deg); } }
+    .alco-node {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: alco-node-fire 3.2s ease-in-out infinite;
+    }
+    .alco-node.n1 { animation-delay: 0s; }
+    .alco-node.n2 { animation-delay: 0.35s; }
+    .alco-node.n3 { animation-delay: 0.7s; }
+    .alco-node.n4 { animation-delay: 1.05s; }
+    .alco-node.n5 { animation-delay: 1.4s; }
+    .alco-node.n6 { animation-delay: 1.75s; }
+    .alco-node.hub { animation-delay: 0s; }
+    @keyframes alco-node-fire {
+      0%, 100% { opacity: 0.55; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+    .alco-badge.fast .alco-node { animation-duration: 0.9s; }
+    .alco-badge.fast::before { animation-duration: 2s; }
+
+    #alco-panel {
+      position: fixed;
+      bottom: 108px;
+      right: 28px;
+      width: 380px;
+      height: 580px;
+      background: rgba(22, 34, 58, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      color: #F5F3EE;
+      z-index: 999999;
+    }
+    #alco-panel.open { display: flex; }
+
+    @media (max-width: 900px), (max-height: 700px) {
+  #alco-panel {
+    width: 340px;
+    height: 480px;
+    bottom: 90px;
+    right: 16px;
+  }
+}
+
+    /* Header: now just the logo lockup (icon + AL&CO + slogan baked in) + close button.
+       No more separate name/status text elements — the logo image carries that content now. */
+    #alco-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    #alco-header-logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+    #alco-close { background: none; border: none; color: #93A0B8; font-size: 18px; cursor: pointer; padding: 4px; flex-shrink: 0; }
+
+    #alco-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    #alco-messages::-webkit-scrollbar { width: 6px; }
+    #alco-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+
+    .alco-msg { max-width: 78%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5; }
+    .alco-msg.visitor {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #F5A623, #C97F12);
+      color: #14213D;
+      font-weight: 500;
+      border-bottom-right-radius: 4px;
+    }
+    .alco-msg.bot {
+      align-self: flex-start;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #F5F3EE;
+      border-bottom-left-radius: 4px;
+    }
+    .alco-whatsapp-link {
+      align-self: flex-start;
+      font-size: 12px;
+      color: #F5A623;
+      text-decoration: none;
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin-top: -2px;
+    }
+    .alco-whatsapp-link:hover { background: rgba(245, 166, 35, 0.1); }
+
+    .alco-typing-row { display: flex; align-items: center; gap: 10px; align-self: flex-start; }
+    .alco-typing-row svg { width: 26px; height: 26px; }
+    .alco-typing-row span { font-size: 12px; color: #93A0B8; }
+
+    #alco-input-row { display: flex; align-items: center; gap: 8px; padding: 14px; border-top: 1px solid rgba(255,255,255,0.08); }
+    #alco-input-pill {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 4px 8px 4px 16px; 
+      min-width: 0;
+    }
+    #alco-input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: #F5F3EE;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      padding: 10px 0;
+      min-width: 0;
+    }
+    #alco-input::placeholder { color: #93A0B8; }
+    #alco-send {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #F5A623, #C97F12);
+      color: #14213D;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    #alco-send:disabled { opacity: 0.4; cursor: not-allowed; }
+    #alco-input:disabled { opacity: 0.6; }
+
+    @media (max-width: 640px) {
+      #alco-panel {
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100%; height: 100%;
+        border-radius: 0; border: none;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      #alco-launcher { bottom: 20px; right: 20px; }
+    }
+  `;
+
+  const styleTag = document.createElement("style");
+  styleTag.textContent = styles;
+  document.head.appendChild(styleTag);
+
+  function networkBadgeSVG() {
+    return `
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="#0F1B2E" stroke="rgba(245,166,35,0.35)" stroke-width="1"/>
+        <g stroke="#F5A623" stroke-width="1" opacity="0.35">
+          <line x1="20" y1="20" x2="20" y2="8"/>
+          <line x1="20" y1="20" x2="32" y2="16"/>
+          <line x1="20" y1="20" x2="32" y2="28"/>
+          <line x1="20" y1="20" x2="20" y2="34"/>
+          <line x1="20" y1="20" x2="8" y2="28"/>
+          <line x1="20" y1="20" x2="8" y2="16"/>
+        </g>
+        <circle class="alco-node hub" cx="20" cy="20" r="3" fill="#F5A623"/>
+        <circle class="alco-node n1" cx="20" cy="8" r="2.2" fill="#F5A623"/>
+        <circle class="alco-node n2" cx="32" cy="16" r="2.2" fill="#F5A623"/>
+        <circle class="alco-node n3" cx="32" cy="28" r="2.2" fill="#7C6FFF"/>
+        <circle class="alco-node n4" cx="20" cy="34" r="2.2" fill="#F5A623"/>
+        <circle class="alco-node n5" cx="8" cy="28" r="2.2" fill="#F5A623"/>
+        <circle class="alco-node n6" cx="8" cy="16" r="2.2" fill="#F5A623"/>
+      </svg>
+    `;
+  }
+
+  const launcher = document.createElement("button");
+  launcher.id = "alco-launcher";
+  launcher.setAttribute("aria-label", "Open chat");
+  launcher.innerHTML = `<div class="alco-badge">${networkBadgeSVG()}</div>`;
+  document.body.appendChild(launcher);
+
+  const panel = document.createElement("div");
+  panel.id = "alco-panel";
+  panel.innerHTML = `
+    <div id="alco-header">
+      <img src="/alco_logo_white.png" alt="AL&CO" id="alco-header-logo" />
+      <button id="alco-close" aria-label="Close chat">✕</button>
+    </div>
+    <div id="alco-messages"></div>
+    <div id="alco-input-row">
+      <div id="alco-input-pill">
+        <input id="alco-input" type="text" placeholder="Ask about a program, pricing, anything..." />
+      </div>
+      <button id="alco-send" aria-label="Send">↑</button>
+    </div>
+  `;
+  document.body.appendChild(panel);
+
+  setTimeout(() => {
+  const bubble = document.createElement("div");
+  bubble.textContent = "👋 Hi, I'm Sarah! Looking for a program? Ask me anything.";
+  bubble.style.cssText = "position:fixed;bottom:100px;right:28px;background:#1B2E4D;color:#F5F3EE;padding:10px 16px;border-radius:16px;font-family:Inter,sans-serif;font-size:13px;max-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.4);cursor:pointer;z-index:999998;";
+  bubble.onclick = () => { panel.classList.add("open"); bubble.remove(); };
+  document.body.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 8000);
+}, 3000);
+
+  const messagesEl = panel.querySelector("#alco-messages");
+  const inputEl = panel.querySelector("#alco-input");
+  const sendBtn = panel.querySelector("#alco-send");
+  const closeBtn = panel.querySelector("#alco-close");
+
+  launcher.addEventListener("click", () => panel.classList.add("open"));
+  closeBtn.addEventListener("click", () => panel.classList.remove("open"));
+
+  function addMessage(text, sender) {
+    const el = document.createElement("div");
+    el.className = `alco-msg ${sender}`;
+    el.textContent = text;
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return el;
+  }
+
+  function addWhatsappLink(url) {
+    const el = document.createElement("a");
+    el.href = url;
+    el.target = "_blank";
+    el.rel = "noopener";
+    el.className = "alco-whatsapp-link";
+    el.textContent = "Prefer WhatsApp? Chat with a team member →";
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function addTypingIndicator() {
+    const row = document.createElement("div");
+    row.className = "alco-typing-row";
+    row.innerHTML = `<div class="alco-badge fast">${networkBadgeSVG()}</div><span>Thinking...</span>`;
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return row;
+  }
+
+  async function sendMessage() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+
+    addMessage(text, "visitor");
+    inputEl.value = "";
+    inputEl.disabled = true;
+    sendBtn.disabled = true;
+
+    const typingEl = addTypingIndicator();
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({ message: text }),
+      });
+
+      const data = await response.json();
+      typingEl.remove();
+
+      if (data.error) {
+        addMessage("Something went wrong on my end. Please try again.", "bot");
+        return;
+      }
+
+      addMessage(data.reply, "bot");
+      if (data.whatsapp_link) {
+        addWhatsappLink(data.whatsapp_link);
+      }
+    } catch (err) {
+      typingEl.remove();
+      addMessage("I couldn't connect. Please check your connection and try again.", "bot");
+    } finally {
+      inputEl.disabled = false;
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  inputEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  addMessage("Hi, I'm Sarah, your AL&CO guide. Ask me about our programs, pricing, or anything else.", "bot");
+})();
