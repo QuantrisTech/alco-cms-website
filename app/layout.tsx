@@ -5,6 +5,7 @@ import { Lexend } from "next/font/google";
 import "@/styles/globals.css";
 import { Suspense } from "react";
 import FacebookPixel from "@/component/FacebookPixel";
+import Script from "next/script";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -62,6 +63,12 @@ export default function RootLayout({
         <ConditionalLayout>
           <main className="pt-[72px]">{children}</main>
         </ConditionalLayout>
+
+        <Script id="alco-chatbot-config" strategy="afterInteractive">
+       {`window.ALCO_CHATBOT_CONFIG = { apiUrl: "${process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}" };`}
+        </Script>
+        <Script src="/widget.js" strategy="afterInteractive" />
+
       </body>
       <GoogleAnalytics gaId="G-G4W2XBWFX5" />
     </html>
