@@ -67,6 +67,7 @@ export default function RootLayout({
         <Script
   src="/widget.js"
   data-api-url={process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}
+  data-avatar-url="/sarah-avatar.png"
   strategy="afterInteractive"
 />
 

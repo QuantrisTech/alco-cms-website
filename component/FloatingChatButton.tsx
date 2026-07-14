@@ -17,7 +17,7 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
   const [showOptions, setShowOptions] = useState<boolean>(false);
 
   return (
-    <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end">
+    <div className="fixed bottom-8 left-8 z-50 flex flex-col items-end">
       {/* Options menu */}
       {showOptions && (
         <div className="flex flex-col space-y-4 mb-4 animate-slide-up">
