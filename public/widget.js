@@ -1,6 +1,9 @@
 (function () {
   const currentScript = document.currentScript;
   const API_BASE_URL = currentScript.getAttribute("data-api-url") || "http://127.0.0.1:8001";
+  // Path to Sarah's avatar PNG (transparent background). Host sarah-avatar.png in your
+  // public/ folder and override with data-avatar-url="/some/other/path.png" if needed.
+  const AVATAR_URL = currentScript.getAttribute("data-avatar-url") || "/sarah-avatar.png";
 
   if (!document.querySelector('link[href*="Space+Grotesk"]')) {
     const fontLink = document.createElement("link");
@@ -12,29 +15,68 @@
   const styles = `
     #alco-launcher {
       position: fixed;
-      bottom: 28px;
-      right: 28px;
-      width: 64px;
-      height: 64px;
+      bottom: 24px;
+      right: 24px;
+      width: clamp(52px, 9vw, 84px);
+      height: clamp(68px, 12vw, 110px);
       border: none;
       background: none;
       cursor: pointer;
       z-index: 999999;
+      padding: 0;
     }
-    #alco-launcher svg { width: 64px; height: 64px; position: relative; z-index: 1; }
-    .alco-badge { position: relative; border-radius: 50%; display: inline-block; }
-    .alco-badge::before {
-      content: '';
+    #alco-avatar-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: alco-idle-float 3.6s ease-in-out infinite;
+      filter: drop-shadow(0 8px 16px rgba(15, 23, 48, 0.28));
+    }
+    #alco-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+      pointer-events: none;
+    }
+    @keyframes alco-idle-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(-1deg); }
+    }
+    #alco-avatar-wrap.greet {
+      animation: alco-greet-nod 0.9s ease-in-out 1;
+    }
+    @keyframes alco-greet-nod {
+      0%   { transform: translateY(0) rotate(0deg) scale(1); }
+      20%  { transform: translateY(-8px) rotate(-4deg) scale(1.03); }
+      45%  { transform: translateY(-1px) rotate(3deg) scale(1.02); }
+      70%  { transform: translateY(-4px) rotate(-2deg) scale(1.02); }
+      100% { transform: translateY(0) rotate(0deg) scale(1); }
+    }
+
+    #alco-status-dot {
       position: absolute;
-      inset: -4px;
+      bottom: 4%;
+      right: 8%;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      background: conic-gradient(from 0deg, transparent 0%, #F5A623 12%, transparent 30%, #7C6FFF 45%, transparent 62%);
-      opacity: 0.55;
-      filter: blur(2px);
-      animation: alco-signal-spin 7s linear infinite;
-      z-index: 0;
+      background: #3fc270;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-    @keyframes alco-signal-spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 480px) {
+      #alco-launcher {
+        bottom: 16px;
+        right: 16px;
+        width: clamp(46px, 14vw, 64px);
+        height: clamp(60px, 18vw, 84px);
+      }
+    }
+
+    .alco-badge { position: relative; border-radius: 50%; display: inline-block; }
     .alco-node {
       transform-origin: center;
       transform-box: fill-box;
@@ -224,9 +266,16 @@
 
   const launcher = document.createElement("button");
   launcher.id = "alco-launcher";
-  launcher.setAttribute("aria-label", "Open chat");
-  launcher.innerHTML = `<div class="alco-badge">${networkBadgeSVG()}</div>`;
+  launcher.setAttribute("aria-label", "Open chat with Sarah");
+  launcher.innerHTML = `
+    <div id="alco-avatar-wrap">
+      <img id="alco-avatar-img" src="${AVATAR_URL}" alt="Sarah" />
+      <span id="alco-status-dot"></span>
+    </div>
+  `;
   document.body.appendChild(launcher);
+
+  const avatarWrap = launcher.querySelector("#alco-avatar-wrap");
 
   const panel = document.createElement("div");
   panel.id = "alco-panel";
@@ -245,14 +294,19 @@
   `;
   document.body.appendChild(panel);
 
+  // Greet sequence: nod, then the speech bubble.
   setTimeout(() => {
-  const bubble = document.createElement("div");
-  bubble.textContent = "👋 Hi, I'm Sarah! Looking for a program? Ask me anything.";
-  bubble.style.cssText = "position:fixed;bottom:100px;right:28px;background:#1B2E4D;color:#F5F3EE;padding:10px 16px;border-radius:16px;font-family:Inter,sans-serif;font-size:13px;max-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.4);cursor:pointer;z-index:999998;";
-  bubble.onclick = () => { panel.classList.add("open"); bubble.remove(); };
-  document.body.appendChild(bubble);
-  setTimeout(() => bubble.remove(), 8000);
-}, 3000);
+    avatarWrap.classList.add("greet");
+  }, 2600);
+
+  setTimeout(() => {
+    const bubble = document.createElement("div");
+    bubble.textContent = "Hi, I'm Sarah! Looking for a program? Ask me anything.";
+    bubble.style.cssText = "position:fixed;bottom:64px;right:104px;background:#1B2E4D;color:#F5F3EE;padding:10px 16px;border-radius:16px 16px 2px 16px;font-family:Inter,sans-serif;font-size:13px;line-height:1.4;max-width:min(220px, calc(100vw - 160px));box-sizing:border-box;box-shadow:0 8px 24px rgba(0,0,0,0.4);cursor:pointer;z-index:1000000;";
+    bubble.onclick = () => { panel.classList.add("open"); bubble.remove(); };
+    document.body.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 8000);
+  }, 3000);
 
   const messagesEl = panel.querySelector("#alco-messages");
   const inputEl = panel.querySelector("#alco-input");
