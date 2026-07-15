@@ -98,8 +98,8 @@
 
     #alco-panel {
       position: fixed;
-      bottom: 108px;
-      right: 28px;
+      bottom: 60px;
+      right: 116px;
       width: 380px;
       height: 580px;
       background: rgba(22, 34, 58, 0.94);
@@ -121,8 +121,8 @@
   #alco-panel {
     width: 340px;
     height: 480px;
-    bottom: 90px;
-    right: 16px;
+    bottom: 50px;
+    right: 100px;
   }
 }
 
@@ -295,25 +295,49 @@
   document.body.appendChild(panel);
 
   // Greet sequence: nod, then the speech bubble.
-  setTimeout(() => {
-    avatarWrap.classList.add("greet");
-  }, 2600);
+  // Greet bubble — reusable so it can fire on load AND on hover.
+  let activeBubble = null;
+  let bubbleAutoHide = null;
 
-  setTimeout(() => {
+  function showGreetBubble() {
+    if (activeBubble) return; // already showing, don't stack another
     const bubble = document.createElement("div");
     bubble.textContent = "Hi, I'm Sarah! Looking for a program? Ask me anything.";
     bubble.style.cssText = "position:fixed;bottom:64px;right:104px;background:#1B2E4D;color:#F5F3EE;padding:10px 16px;border-radius:16px 16px 2px 16px;font-family:Inter,sans-serif;font-size:13px;line-height:1.4;max-width:min(220px, calc(100vw - 160px));box-sizing:border-box;box-shadow:0 8px 24px rgba(0,0,0,0.4);cursor:pointer;z-index:1000000;";
-    bubble.onclick = () => { panel.classList.add("open"); bubble.remove(); };
+    bubble.onclick = () => { panel.classList.add("open"); hideGreetBubble(); };
     document.body.appendChild(bubble);
-    setTimeout(() => bubble.remove(), 8000);
-  }, 3000);
+    activeBubble = bubble;
+    bubbleAutoHide = setTimeout(hideGreetBubble, 8000);
+  }
+
+  function hideGreetBubble() {
+    if (bubbleAutoHide) { clearTimeout(bubbleAutoHide); bubbleAutoHide = null; }
+    if (activeBubble) { activeBubble.remove(); activeBubble = null; }
+  }
+
+  // Greet sequence on page load.
+  setTimeout(() => {
+    avatarWrap.classList.add("greet");
+  }, 2600);
+  setTimeout(showGreetBubble, 3000);
+
+  // Show the same bubble on hover, as long as the chat panel isn't already open.
+  launcher.addEventListener("mouseenter", () => {
+    if (!panel.classList.contains("open")) showGreetBubble();
+  });
+  launcher.addEventListener("mouseleave", () => {
+    hideGreetBubble();
+  });
 
   const messagesEl = panel.querySelector("#alco-messages");
   const inputEl = panel.querySelector("#alco-input");
   const sendBtn = panel.querySelector("#alco-send");
   const closeBtn = panel.querySelector("#alco-close");
 
-  launcher.addEventListener("click", () => panel.classList.add("open"));
+  launcher.addEventListener("click", () => {
+    panel.classList.add("open");
+    hideGreetBubble();
+  });
   closeBtn.addEventListener("click", () => panel.classList.remove("open"));
 
   function addMessage(text, sender) {
