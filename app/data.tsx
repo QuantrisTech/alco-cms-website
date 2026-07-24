@@ -3,12 +3,12 @@ import { HeroType } from "@/type/homeType";
 import heroSlide1 from "@/assets/hero/hero_slide1.webp";
 import heroSlide2 from "@/assets/hero/hero_slide2.webp";
 import heroSlide3 from "@/assets/hero/hero_slide3.jpg";
-
+ 
 const heroData: HeroData = [
   {
     "title": {
-      "line1": "World Class NLP Practitioner ",
-      "line2": "& Hypnotherapy Certification"
+      "line1": "World Class NLP & ",
+      "line2": "Hypnotherapy Certification Trainings"
     },
     "description": "Have you ever felt held back by thoughts, emotions, or beliefs that seem impossible to escape? <br/> Imagine breaking free from those invisible chains and discovering a version of yourself you never thought possible. At Arslan Larik & Company (AL&CO), this isn’t just a promise; it’s your new reality. <br/> Your life’s transformation starts here!",
     "button1": {
