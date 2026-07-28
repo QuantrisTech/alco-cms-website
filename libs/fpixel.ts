@@ -19,37 +19,40 @@ export const event = (name: string, options: Record<string, any> = {}) => {
 };
 
 export function trackLeadWithCapi(data: {
-  email?: string;
-  phone?: string;
-  contentName?: string;
+    email?: string;
+    phone?: string;
+    firstName?: string;
+    lastName?: string;
+    contentName?: string;
 }) {
-  const eventId = crypto.randomUUID();
+    const eventId = crypto.randomUUID();
 
-  // Pixel client-side
-  window.fbq(
-    "track",
-    "Lead",
-    { content_name: data.contentName },
-    { eventID: eventId }
-  );
+    window.fbq(
+        "track",
+        "Lead",
+        { content_name: data.contentName },
+        { eventID: eventId }
+    );
 
-  const fbp = getCookie("_fbp");
-  const fbc = getCookie("_fbc");
+    const fbp = getCookie("_fbp");
+    const fbc = getCookie("_fbc");
 
-  fetch("/api/fb-conversion", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      eventName: "Lead",
-      eventSourceUrl: window.location.href,
-      eventId,
-      email: data.email,
-      phone: data.phone,
-      fbp,
-      fbc,
-      customData: { content_name: data.contentName },
-    }),
-  });
+    fetch("/api/fb-conversion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            eventName: "Lead",
+            eventSourceUrl: window.location.href,
+            eventId,
+            email: data.email,
+            phone: data.phone,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            fbp,
+            fbc,
+            customData: { content_name: data.contentName },
+        }),
+    });
 }
 
 function getCookie(name: string): string | undefined {

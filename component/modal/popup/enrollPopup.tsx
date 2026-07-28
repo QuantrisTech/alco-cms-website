@@ -55,7 +55,7 @@ export default function EnrollPopup({
   ),
   children,
 }: EnrollPopupProps) {
-  const { isOpen, closePopup, openPopup  } = usePopup();
+  const { isOpen, closePopup, openPopup } = usePopup();
   const [programOptions, setProgramOptions] = useState<{ label: string; value: string }[]>([]);
   const [programsLoading, setProgramsLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>("");
@@ -121,11 +121,11 @@ export default function EnrollPopup({
   }, []);
 
   useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('openEnroll') === 'true') {
-    openPopup(); // your existing state setter
-  }
-}, []);
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('openEnroll') === 'true') {
+      openPopup(); // your existing state setter
+    }
+  }, []);
 
   const onSubmit = async (data: any) => {
     if (!turnstileToken) {
@@ -155,7 +155,13 @@ export default function EnrollPopup({
       // Facebook Pixel Lead event
       // event("Lead", { content_name: "Enroll Popup Form" });
 
-      trackLeadWithCapi({ email: data.email, phone: data.phone, contentName: "Enroll Popup Form", });
+      trackLeadWithCapi({
+        email: data.email,
+        phone: data.phone,
+        firstName: data.first_name,
+        lastName: data.last_name,
+        contentName: "Enroll Popup Form",
+      });
       // toast.success("Enrolled successfully! Check your email for credentials.");
       toast.success("Enrolled successfully! Check your email for credentials.");
       localStorage.removeItem("user_source");

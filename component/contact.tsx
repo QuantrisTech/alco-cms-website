@@ -67,6 +67,8 @@ const ContactUS = () => {
         trackLeadWithCapi({
             email: formData.email,
             phone: formData.phone,
+            firstName: formData.first_name,
+            lastName: formData.last_name,
             contentName: "Contact Us Form",
         });
 

@@ -76,6 +76,9 @@ interface SendEventParams {
     eventId: string;
     email?: string;
     phone?: string;
+    firstName?: string;
+    lastName?: string;
+    externalId?: string;
     fbp?: string;
     fbc?: string;
     customData?: Record<string, any>;
@@ -95,6 +98,9 @@ export async function sendFbConversionEvent(params: SendEventParams) {
                 user_data: {
                     em: params.email ? [hash(params.email)] : undefined,
                     ph: params.phone ? [hash(params.phone.replace(/\D/g, ""))] : undefined,
+                    fn: params.firstName ? [hash(params.firstName)] : undefined,
+                    ln: params.lastName ? [hash(params.lastName)] : undefined,
+                    external_id: params.externalId ? [hash(params.externalId)] : undefined,
                     client_ip_address: params.clientIp,
                     client_user_agent: params.userAgent,
                     fbp: params.fbp,
