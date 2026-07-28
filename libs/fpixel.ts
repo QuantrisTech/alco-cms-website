@@ -17,3 +17,42 @@ export const event = (name: string, options: Record<string, any> = {}) => {
     window.fbq("track", name, options);
   }
 };
+
+export function trackLeadWithCapi(data: {
+  email?: string;
+  phone?: string;
+  contentName?: string;
+}) {
+  const eventId = crypto.randomUUID();
+
+  // Pixel client-side
+  window.fbq(
+    "track",
+    "Lead",
+    { content_name: data.contentName },
+    { eventID: eventId }
+  );
+
+  const fbp = getCookie("_fbp");
+  const fbc = getCookie("_fbc");
+
+  fetch("/api/fb-conversion", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      eventName: "Lead",
+      eventSourceUrl: window.location.href,
+      eventId,
+      email: data.email,
+      phone: data.phone,
+      fbp,
+      fbc,
+      customData: { content_name: data.contentName },
+    }),
+  });
+}
+
+function getCookie(name: string): string | undefined {
+  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
+  return match?.[2];
+}

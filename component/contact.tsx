@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { Turnstile } from "@marsidev/react-turnstile";
 import InputField from "@/component/inputfield";
 import Button from "@/component/button";
-import { event } from "@/libs/fpixel";
+import { event, trackLeadWithCapi } from "@/libs/fpixel";
 
 type ContactFormValues = {
     first_name: string;
@@ -63,7 +63,12 @@ const ContactUS = () => {
             source: source || "contact",
             turnstileToken, // backend pe verify karo
         });
-        event("Lead", { content_name: "Contact Us Form" });
+        // event("Lead", { content_name: "Contact Us Form" });
+        trackLeadWithCapi({
+            email: formData.email,
+            phone: formData.phone,
+            contentName: "Contact Us Form",
+        });
 
         if (res?.data?.duplicate === true) {
             toast.success(res.data.message);
