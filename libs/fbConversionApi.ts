@@ -62,8 +62,8 @@
 // }
 import crypto from "crypto";
 
-const FB_PIXEL_ID = process.env.FB_PIXEL_ID!;
-const FB_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN!;
+const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID!;
+const FB_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN!;
 const FB_API_VERSION = "v20.0";
 
 function hash(value: string) {
