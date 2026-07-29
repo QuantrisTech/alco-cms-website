@@ -228,6 +228,42 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: "https://arslanlarik.com/blogs/choose-the-right-online-hypnotherapy-certification",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/deliver-engaging,-high-impact-training-sessions",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/resolve-team-conflict-and-restore-peak-performance",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/career-clarity-strategies-with-mindset-coaching-tools",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/conquer-self-doubt-with-nlp-training-strategies",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://arslanlarik.com/blogs/nlp-coaching-basics-for-new-coaches-and-trainers",
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
 
     // Services
     {
