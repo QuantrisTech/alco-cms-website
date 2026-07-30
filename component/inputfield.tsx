@@ -56,11 +56,13 @@ const InputField: React.FC<InputProps> = ({
           disabled={disabled}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          spellCheck={false}        // ✅ NEW
           className={`${baseClasses} ${borderClass} resize-none mini-scroll min-h-[110px]`}
         // className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary resize-none font-light text-sm"
         // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary resize-none ${sizeClasses[size]}`}
         />
       ) : (
+        // InputField.tsx mein input tag update karo
         <input
           type={type}
           name={name}
@@ -69,6 +71,8 @@ const InputField: React.FC<InputProps> = ({
           disabled={disabled}
           onFocus={() => setFocus(true)}
           onBlur={() => setFocus(false)}
+          spellCheck={false}        // ✅ NEW
+          autoComplete="off"        // ✅ NEW
           className={`${baseClasses} ${borderClass}`}
         // className="w-full border border-gray-300 rounded-lg px-2 pt-4 pb-1 focus:outline-none focus:border-primary font-light text-sm"
         // className={`w-full border border-gray-300 rounded-lg focus:outline-none focus:border-primary ${sizeClasses[size]}`}
