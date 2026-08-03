@@ -14,9 +14,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "Arslan Larik Company | NLP & Hypnotherapy Training",
+  title: "World Class NLP & Hypnotherapy Certification Trainings",
   description:
-    "SEO Friendly CMS Website built with Next.js. Learn NLP & Hypnotherapy with AL&CO certified trainers.",
+    "Have you ever felt held back by thoughts, emotions, or beliefs that seem impossible to escape? <br/> Imagine breaking free from those invisible chains and discovering a version of yourself you never thought possible. At Arslan Larik & Company (AL&CO), this isn’t just a promise; it’s your new reality. <br/> Your life’s transformation starts here!",
 
   // ✅ Favicon
   icons: {
