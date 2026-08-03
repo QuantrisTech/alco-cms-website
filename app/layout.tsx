@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { GoogleAnalytics } from '@next/third-parties/google';
+// import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager } from '@next/third-parties/google'
 import ConditionalLayout from "./conditional-layout/conditionalLayout";
 import { Lexend } from "next/font/google";
 import "@/styles/globals.css";
@@ -13,9 +14,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  // title: "Arslan Larik Company | NLP & Hypnotherapy Training",
-  // description:
-  //   "SEO Friendly CMS Website built with Next.js. Learn NLP & Hypnotherapy with AL&CO certified trainers.",
+  title: "Arslan Larik Company | NLP & Hypnotherapy Training",
+  description:
+    "SEO Friendly CMS Website built with Next.js. Learn NLP & Hypnotherapy with AL&CO certified trainers.",
 
   // ✅ Favicon
   icons: {
@@ -65,14 +66,15 @@ export default function RootLayout({
         </ConditionalLayout>
 
         <Script
-  src="/widget.js"
-  data-api-url={process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}
-  data-avatar-url="/sarah-avatar.png"
-  strategy="afterInteractive"
-/>
+          src="/widget.js"
+          data-api-url={process.env.NEXT_PUBLIC_ALCO_CHATBOT_API_URL}
+          data-avatar-url="/sarah-avatar.png"
+          strategy="afterInteractive"
+        />
 
       </body>
-      <GoogleAnalytics gaId="G-G4W2XBWFX5" />
+      {/* <GoogleAnalytics gaId="G-G4W2XBWFX5" /> */}
+      <GoogleTagManager gtmId="GTM-5CND486G" />
     </html>
   );
 }
