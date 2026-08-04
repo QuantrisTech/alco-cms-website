@@ -14,6 +14,7 @@ import { createLead, getProgramsPublic } from "@/utils/api";
 import toast from "react-hot-toast";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { event, trackLeadWithCapi } from "@/libs/fpixel";
+import { useRouter } from "next/navigation";
 
 type EnrollPopupProps = {
   buttonText?: string;
@@ -60,6 +61,7 @@ export default function EnrollPopup({
   const [programsLoading, setProgramsLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const turnstileRef = useRef<any>(null);
+  const router = useRouter();
 
   const {
     handleSubmit,
@@ -164,6 +166,7 @@ export default function EnrollPopup({
       });
       // toast.success("Enrolled successfully! Check your email for credentials.");
       toast.success("Enrolled successfully! Check your email for credentials.");
+      router.push("/thank-you");
       localStorage.removeItem("user_source");
       reset();
       setTurnstileToken("");
