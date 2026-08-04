@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function ThankYouPage() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
-      <div className="max-w-lg">
+    <div className="flex flex-col items-center md:justify-center min-h-screen px-4 text-center">
+      <div className="max-w-lg ">
         <div className="mb-6">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
             <svg
