@@ -12,7 +12,8 @@ import { Toaster } from "react-hot-toast";
 
 export default function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const hideLayout = pathname.startsWith("/admin");
+  const hideLayout = pathname.startsWith("/admin") ||
+  pathname === "/thank-you";;
 
   const [loading, setLoading] = useState(true);
 
