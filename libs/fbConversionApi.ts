@@ -64,7 +64,7 @@ import crypto from "crypto";
 
 const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FB_PIXEL_ID!;
 const FB_ACCESS_TOKEN = process.env.META_ACCESS_TOKEN!;
-const FB_API_VERSION = "v20.0";
+const FB_API_VERSION = "v21.0";
 
 function hash(value: string) {
     return crypto.createHash("sha256").update(value.trim().toLowerCase()).digest("hex");
@@ -86,6 +86,13 @@ interface SendEventParams {
     userAgent?: string;
 }
 
+function phoneFix(p: string) {
+    let d = p.replace(/\D/g, "");
+    if (d.startsWith("0")) d = "92" + d.slice(1);
+    if (!d.startsWith("92")) d = "92" + d;
+    return d;
+}
+
 export async function sendFbConversionEvent(params: SendEventParams) {
     const payload = {
         data: [
@@ -97,10 +104,11 @@ export async function sendFbConversionEvent(params: SendEventParams) {
                 action_source: "website",
                 user_data: {
                     em: params.email ? [hash(params.email)] : undefined,
-                    ph: params.phone ? [hash(params.phone.replace(/\D/g, ""))] : undefined,
+                    ph: params.phone ? [hash(phoneFix(params.phone))] : undefined,
                     fn: params.firstName ? [hash(params.firstName)] : undefined,
                     ln: params.lastName ? [hash(params.lastName)] : undefined,
                     external_id: params.externalId ? [hash(params.externalId)] : undefined,
+                    country: hash("pk"),
                     client_ip_address: params.clientIp,
                     client_user_agent: params.userAgent,
                     fbp: params.fbp,
@@ -109,6 +117,8 @@ export async function sendFbConversionEvent(params: SendEventParams) {
                 custom_data: params.customData,
             },
         ],
+        // ⚠️ DELETE test_event_code BEFORE GO-LIVE — warna production events test stream mein chale jayenge
+        ...(process.env.META_TEST_EVENT_CODE && { test_event_code: process.env.META_TEST_EVENT_CODE }),
     };
 
     const res = await fetch(
