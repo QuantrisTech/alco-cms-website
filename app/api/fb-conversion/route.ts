@@ -16,6 +16,8 @@ export async function POST(req: NextRequest) {
             eventId: body.eventId,
             email: body.email,
             phone: body.phone,
+            firstName: body.firstName,   // 👈 add
+            lastName: body.lastName,     // 👈 add
             fbp: body.fbp,
             fbc: body.fbc,
             customData: body.customData,

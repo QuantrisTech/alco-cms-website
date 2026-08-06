@@ -9,7 +9,9 @@ import toast from "react-hot-toast";
 import { Turnstile } from "@marsidev/react-turnstile";
 import InputField from "@/component/inputfield";
 import Button from "@/component/button";
-import { event, trackLeadWithCapi } from "@/libs/fpixel";
+// import { event, trackLeadWithCapi } from "@/libs/fpixel";
+import { track } from "@/libs/track";
+import { useRouter } from "next/navigation";
 
 type ContactFormValues = {
     first_name: string;
@@ -22,6 +24,7 @@ type ContactFormValues = {
 const ContactUS = () => {
     const [turnstileToken, setTurnstileToken] = useState<string>("");
     const turnstileRef = useRef<any>(null);
+    const router = useRouter();
 
     const {
         handleSubmit,
@@ -63,24 +66,34 @@ const ContactUS = () => {
             source: source || "contact",
             turnstileToken, // backend pe verify karo
         });
-        // event("Lead", { content_name: "Contact Us Form" });
-        trackLeadWithCapi({
+
+        // Lead event ab /thank-you page se fire hoga, yahan nahi
+        sessionStorage.setItem("lead_data", JSON.stringify({
             email: formData.email,
             phone: formData.phone,
             firstName: formData.first_name,
-            lastName: formData.last_name,
-            contentName: "Contact Us Form",
-        });
+        }));
 
-        if (res?.data?.duplicate === true) {
-            toast.success(res.data.message);
-        } else {
-            toast.success(res.data.message);
-        }
+        // event("Lead", { content_name: "Contact Us Form" });
+        // trackLeadWithCapi({
+        //     email: formData.email,
+        //     phone: formData.phone,
+        //     firstName: formData.first_name,
+        //     lastName: formData.last_name,
+        //     contentName: "Contact Us Form",
+        // });
+
+        // if (res?.data?.duplicate === true) {
+        //     toast.success(res.data.message);
+        // } else {
+        //     toast.success(res.data.message);
+        // }
 
         reset();
         setTurnstileToken("");
         turnstileRef.current?.reset();
+        localStorage.removeItem("user_source");
+        router.push("/thank-you");
     };
 
     return (
@@ -104,14 +117,30 @@ const ContactUS = () => {
                     </div>
 
                     <div className="flex items-center gap-4 mb-6 z-20">
-                        <Link href="tel:+18886814808" className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90">
+                        <Link
+                            href="tel:+18886814808"
+                            onClick={() => track("Contact", { contentName: "call" })}
+                            className="w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white transition-transform duration-300 hover:-translate-y-1 hover:opacity-90"
+                        >
                             <FaPhoneAlt size={20} />
                         </Link>
                         <div>
                             <h3 className="font-semibold text-secondary-dark">Call Us On</h3>
                             <div className="flex gap-1 text-white">
-                                <Link href="tel:+18886814808" className="text-white hover:underline">+1(888) 681-4808</Link>,&nbsp;&nbsp;
-                                <Link href="tel:+9233600822222" className="text-white hover:underline">+92 336 008 2222</Link>
+                                <Link
+                                    href="tel:+18886814808"
+                                    onClick={() => track("Contact", { contentName: "call" })}
+                                    className="text-white hover:underline"
+                                >
+                                    +1(888) 681-4808
+                                </Link>,&nbsp;&nbsp;
+                                <Link
+                                    href="tel:+9233600822222"
+                                    onClick={() => track("Contact", { contentName: "call" })}
+                                    className="text-white hover:underline"
+                                >
+                                    +92 336 008 2222
+                                </Link>
                             </div>
                         </div>
                     </div>

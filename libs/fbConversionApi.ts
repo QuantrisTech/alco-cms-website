@@ -84,6 +84,7 @@ interface SendEventParams {
     customData?: Record<string, any>;
     clientIp?: string;
     userAgent?: string;
+    actionSource?: string;
 }
 
 function phoneFix(p: string) {
@@ -101,7 +102,7 @@ export async function sendFbConversionEvent(params: SendEventParams) {
                 event_time: Math.floor(Date.now() / 1000),
                 event_id: params.eventId,
                 event_source_url: params.eventSourceUrl,
-                action_source: "website",
+                action_source: params.actionSource || "website",
                 user_data: {
                     em: params.email ? [hash(params.email)] : undefined,
                     ph: params.phone ? [hash(phoneFix(params.phone))] : undefined,

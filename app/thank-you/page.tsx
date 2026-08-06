@@ -1,6 +1,19 @@
+"use client";
+import { track } from "@/libs/track";
+
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ThankYouPage() {
+  useEffect(() => {
+    const raw = sessionStorage.getItem("lead_data");
+    if (raw) {
+      const { email, phone, firstName } = JSON.parse(raw);
+      track("Lead", { email, phone, firstName });
+      sessionStorage.removeItem("lead_data"); // ek hi baar fire ho, refresh pe dobara nahi
+    }
+  }, []);
+
   return (
     <div className="flex flex-col items-center md:justify-center min-h-screen px-4 text-center">
       <div className="max-w-lg ">
@@ -22,9 +35,7 @@ export default function ThankYouPage() {
           </div>
         </div>
 
-        <h1 className="text-4xl font-bold text-primary mb-4">
-          Thank You!
-        </h1>
+        <h1 className="text-4xl font-bold text-primary mb-4">Thank You!</h1>
 
         <p className="text-lg text-gray-600 mb-2">
           Your request has been submitted successfully.
@@ -35,7 +46,7 @@ export default function ThankYouPage() {
           get back to you as soon as possible.
         </p>
 
-         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
             className="px-6 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 transition"
