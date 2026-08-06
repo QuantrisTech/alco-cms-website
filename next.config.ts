@@ -5,7 +5,16 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: false,
   images: {
-    domains: ["res.cloudinary.com", "lh3.googleusercontent.com"], // only domain, no https://
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
     formats: ["image/avif", "image/webp"],
   },
   async redirects() {
