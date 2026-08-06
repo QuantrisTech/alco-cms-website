@@ -6,6 +6,7 @@ import { Lexend } from "next/font/google";
 import "@/styles/globals.css";
 import { Suspense } from "react";
 import FacebookPixel from "@/component/FacebookPixel";
+import FbclidCookie from "@/component/FbclidCookie";
 import Script from "next/script";
 
 const lexend = Lexend({
@@ -16,9 +17,8 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: "World Class NLP & Hypnotherapy Certification Trainings",
   description:
-    "Have you ever felt held back by thoughts, emotions, or beliefs that seem impossible to escape? <br/> Imagine breaking free from those invisible chains and discovering a version of yourself you never thought possible. At Arslan Larik & Company (AL&CO), this isn’t just a promise; it’s your new reality. <br/> Your life’s transformation starts here!",
+    "Have you ever felt held back by thoughts, emotions, or beliefs that seem impossible to escape? <br/> Imagine breaking free from those invisible chains and discovering a version of yourself you never thought possible. At Arslan Larik & Company (AL&CO), this isn't just a promise; it's your new reality. <br/> Your life's transformation starts here!",
 
-  // ✅ Favicon
   icons: {
     icon: [{ url: "/mini-logo.svg", type: "image/svg+xml" }],
   },
@@ -27,12 +27,10 @@ export const metadata: Metadata = {
     'facebook-domain-verification': 'yi9ep7s1xi6v5r5sn01f1mxwc3cgvu',
   },
 
-  // ✅ Canonical
   alternates: {
     canonical: "https://arslanlarik.com",
   },
 
-  // ✅ Open Graph (Facebook, WhatsApp, LinkedIn)
   openGraph: {
     title: "ALCO CMS Website | NLP Training",
     description:
@@ -43,23 +41,11 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  // ✅ Robots (HOME PAGE MUST BE INDEXED)
   robots: {
     index: true,
     follow: true,
   },
 };
-
-
-// useEffect(() => {
-//   const fbclid = new URLSearchParams(window.location.search).get('fbclid');
-//   if (fbclid) {
-//     document.cookie =
-//       `_fbc=fb.1.${Date.now()}.${fbclid}; max-age=7776000; ` +
-//       `path=/; domain=.arslanlarik.com`;
-//   }
-// }, []);
-
 
 export default function RootLayout({
   children,
@@ -71,6 +57,7 @@ export default function RootLayout({
       <body className={lexend.className}>
         <Suspense fallback={null}>
           <FacebookPixel />
+          <FbclidCookie />
         </Suspense>
         <ConditionalLayout>
           <main className="pt-[72px]">{children}</main>
