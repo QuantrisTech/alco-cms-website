@@ -1,4 +1,5 @@
 "use client";
+import { event } from "@/libs/fpixel";
 import { createContext, useContext, useState } from "react";
 
 type EnrollPopupContextType = {
@@ -12,7 +13,11 @@ const EnrollPopupContext = createContext<EnrollPopupContextType | null>(null);
 export const PopupProvider = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openPopup = () => setIsOpen(true);
+  // inside your provider:
+  const openPopup = () => {
+    event("InitiateCheckout", { content_name: "Enroll Popup Form" });
+    setIsOpen(true);
+  };
   const closePopup = () => setIsOpen(false);
 
   return (

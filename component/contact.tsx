@@ -10,6 +10,7 @@ import { Turnstile } from "@marsidev/react-turnstile";
 import InputField from "@/component/inputfield";
 import Button from "@/component/button";
 // import { event, trackLeadWithCapi } from "@/libs/fpixel";
+import { event } from "@/libs/fpixel";
 import { track } from "@/libs/track";
 import { useRouter } from "next/navigation";
 
@@ -54,6 +55,9 @@ const ContactUS = () => {
             toast.error("Please complete the security check.");
             return;
         }
+
+
+        event("InitiateCheckout", { content_name: "Contact Form" });
 
         const source = localStorage.getItem("user_source");
 

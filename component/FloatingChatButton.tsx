@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiOutlineChatBubbleLeftRight, HiOutlinePhone } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
+import { track } from "@/libs/track";
 
 interface FloatingChatButtonProps {
   whatsappNumber: string;
@@ -26,12 +27,14 @@ const FloatingChatButton: React.FC<FloatingChatButtonProps> = ({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
+            onClick={() => track('Contact', { contentName: 'whatsapp' })}
             className="bg-emerald-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-green-800 transition"
           >
             <FaWhatsapp size={28} />
           </Link>
           <Link
             href={`tel:${phoneNumber}`}
+            onClick={() => track('Contact', { contentName: 'call' })}
             className="bg-cyan-600 text-white h-12 w-12 flex justify-center items-center rounded-full shadow hover:bg-cyan-800 transition"
           >
             <HiOutlinePhone size={24} />

@@ -4,7 +4,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import ConditionalLayout from "./conditional-layout/conditionalLayout";
 import { Lexend } from "next/font/google";
 import "@/styles/globals.css";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import FacebookPixel from "@/component/FacebookPixel";
 import Script from "next/script";
 
@@ -49,6 +49,17 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+
+useEffect(() => {
+  const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+  if (fbclid) {
+    document.cookie =
+      `_fbc=fb.1.${Date.now()}.${fbclid}; max-age=7776000; ` +
+      `path=/; domain=.arslanlarik.com`;
+  }
+}, []);
+
 
 export default function RootLayout({
   children,

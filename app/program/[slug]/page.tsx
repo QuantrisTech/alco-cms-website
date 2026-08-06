@@ -1,5 +1,4 @@
 import LevelIntroWithVideo from "@/component/levelIntroWithVideo";
-import { ProgramType } from "@/type/programType";
 import { notFound } from "next/navigation";
 import { programs } from "@/app/program/[slug]/data";
 import Banner from "@/component/banner";
@@ -10,6 +9,7 @@ import LevelProgramIncludes from "@/component/levelProgramIncludes";
 import LevelContent from "@/component/levelContent";
 import LevelGraduatesExperience from "@/component/levelGraduatesExperience";
 import ContentSection from "@/component/contentSection";
+import ViewContentTracker from "@/component/viewContentTracker";
 
 export default async function ProgramDetail({
   params,
@@ -19,12 +19,13 @@ export default async function ProgramDetail({
 
   const { slug } = await params;
 
-  const program = programs.find((p) => p.slug === slug);
+  const program: any = programs.find((p) => p.slug === slug);
 
   if (!program) return notFound();
 
   return (
     <div>
+      <ViewContentTracker contentName={program.name} />
       <Banner data={program.BannerData} />
       <LevelIntroWithVideo data={program.LevelIntroWithVideoData} />
       <LevelCertification data={program.LevelCertificationData} />
